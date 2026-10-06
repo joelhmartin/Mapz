@@ -1,4 +1,4 @@
-import type { ExpressionSpecification, FilterSpecification, Map as MapLibreMap } from 'maplibre-gl';
+import type { ExpressionSpecification, Map as MapLibreMap } from 'maplibre-gl';
 
 export const BATTLES_SOURCE = 'battles';
 export const BATTLE_ICON = 'crossed-swords';
@@ -19,27 +19,20 @@ export interface BattleProps {
   article?: string;
 }
 
-export function battleFilter(year: number): FilterSpecification {
-  return ['all', ['<=', ['get', 'year'], year], ['>', ['get', 'year'], year - BATTLE_TRAIL_YEARS]];
+// Battles are filtered by the style's global `year`, so a year change only re-lays out the
+// battles source in the worker and only the battles in the trail are ever drawn.
+const year: ExpressionSpecification = ['global-state', 'year'];
+const age: ExpressionSpecification = ['-', year, ['get', 'year']];
+const inTrail: ExpressionSpecification = ['all', ['>=', age, 0], ['<', age, BATTLE_TRAIL_YEARS]];
+
+export function isBattleVisible(battleYear: number, selectedYear: number): boolean {
+  const a = selectedYear - battleYear;
+  return a >= 0 && a < BATTLE_TRAIL_YEARS;
 }
 
-export function freshFilter(year: number): FilterSpecification {
-  return ['==', ['get', 'year'], year];
-}
-
-const age = (year: number): ExpressionSpecification => ['-', year, ['get', 'year']];
-
-export function battleOpacity(year: number): ExpressionSpecification {
-  return ['interpolate', ['linear'], age(year), 0, 1, BATTLE_TRAIL_YEARS, 0.3];
-}
-
-export function battleColor(year: number): ExpressionSpecification {
-  return ['interpolate', ['linear'], age(year), 0, FRESH, 6, OLD];
-}
-
-export function battleSize(year: number): ExpressionSpecification {
-  return ['interpolate', ['linear'], age(year), 0, 0.85, 4, 0.6, BATTLE_TRAIL_YEARS, 0.5];
-}
+const opacity: ExpressionSpecification = ['interpolate', ['linear'], age, 0, 1, BATTLE_TRAIL_YEARS, 0.3];
+const color: ExpressionSpecification = ['interpolate', ['linear'], ['max', age, 0], 0, FRESH, 6, OLD];
+const fresh: ExpressionSpecification = ['==', age, 0];
 
 // Crossed swords, drawn once onto a canvas and registered as an SDF icon so it can be tinted.
 function drawSwords(size: number): ImageData {
@@ -85,7 +78,7 @@ function drawSwords(size: number): ImageData {
   return ctx.getImageData(0, 0, size, size);
 }
 
-export function addBattleLayers(map: MapLibreMap, year: number, data: string) {
+export function addBattleLayers(map: MapLibreMap, data: string) {
   map.addImage(BATTLE_ICON, drawSwords(64), { sdf: true, pixelRatio: 2 });
   map.addSource(BATTLES_SOURCE, { type: 'geojson', data });
 
@@ -94,7 +87,7 @@ export function addBattleLayers(map: MapLibreMap, year: number, data: string) {
     id: 'battles-fresh',
     type: 'circle',
     source: BATTLES_SOURCE,
-    filter: freshFilter(year),
+    filter: fresh,
     paint: {
       'circle-radius': 15,
       'circle-color': FRESH,
@@ -109,32 +102,28 @@ export function addBattleLayers(map: MapLibreMap, year: number, data: string) {
     id: 'battles',
     type: 'symbol',
     source: BATTLES_SOURCE,
-    filter: battleFilter(year),
+    filter: inTrail,
     layout: {
       'icon-image': BATTLE_ICON,
-      'icon-size': battleSize(year),
+      'icon-size': ['interpolate', ['linear'], age, 0, 0.85, 4, 0.6, BATTLE_TRAIL_YEARS, 0.5],
       'icon-allow-overlap': ['step', ['zoom'], false, 4, true],
       'icon-padding': 0,
       // Newest battles win when icons collide.
       'symbol-sort-key': ['-', 0, ['get', 'year']],
     },
     paint: {
-      'icon-color': battleColor(year),
+      'icon-color': color,
       'icon-halo-color': '#f4ead0',
       'icon-halo-width': 1.5,
-      'icon-opacity': battleOpacity(year),
+      'icon-opacity': opacity,
     },
   });
 }
 
-export function updateBattleLayers(map: MapLibreMap, year: number, visible: boolean) {
-  if (!map.getLayer('battles')) return;
-  const visibility = visible ? 'visible' : 'none';
-  map.setLayoutProperty('battles', 'visibility', visibility);
-  map.setLayoutProperty('battles-fresh', 'visibility', visibility);
-  map.setFilter('battles', battleFilter(year));
-  map.setFilter('battles-fresh', freshFilter(year));
-  map.setLayoutProperty('battles', 'icon-size', battleSize(year));
-  map.setPaintProperty('battles', 'icon-color', battleColor(year));
-  map.setPaintProperty('battles', 'icon-opacity', battleOpacity(year));
+export function setBattlesVisible(map: MapLibreMap, visible: boolean) {
+  for (const id of ['battles', 'battles-fresh']) {
+    if (!map.getLayer(id)) continue;
+    const visibility = visible ? 'visible' : 'none';
+    if (map.getLayoutProperty(id, 'visibility') !== visibility) map.setLayoutProperty(id, 'visibility', visibility);
+  }
 }

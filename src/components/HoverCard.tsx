@@ -36,7 +36,7 @@ export function HoverCard({ hover, index }: Props) {
     <div className="hover-card panel" style={{ left, top }}>
       <div className="hover-title">
         <span className="swatch" style={{ background: props.color }} />
-        {props.name}
+        {displayName(props.key)}
       </div>
       {info && <div className="hover-line">{formatSpan(info.from, info.to)}</div>}
       <div className="hover-line muted">

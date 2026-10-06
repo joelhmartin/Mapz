@@ -113,7 +113,10 @@ clio.features.forEach((f, i) => {
   if (p.Certainty) props.certainty = p.Certainty;
   if (p.LandArea) props.land = Math.round(p.LandArea);
   const zc = zoomClass(props.area);
-  polyLines[zc].push(JSON.stringify({ type: 'Feature', id: i + 1, properties: props, geometry: f.geometry }));
+  // Polygons skip the display name (the UI derives it from `key`): the worker decodes every
+  // feature's properties each time the year filter changes, so lighter features reload faster.
+  const { name: _name, id: _id, ...polyProps } = props;
+  polyLines[zc].push(JSON.stringify({ type: 'Feature', id: i + 1, properties: polyProps, geometry: f.geometry }));
 
   if (!isComposite) {
     const [x, y] = polylabel(largestPolygon(f.geometry), 0.05);
@@ -171,23 +174,35 @@ console.log(`${clio.features.length} polygons, ${Object.keys(index).length} poli
 function tippecanoe(out, minzoom, layers) {
   const args = ['-q', '-o', out, '--force', `-Z${minzoom}`, '-z6'];
   args.push('--no-feature-limit', '--no-tile-size-limit', '--drop-rate=1');
-  args.push('--low-detail=10', '--simplification=8', '--use-attribute-for-id=id');
+  args.push('--low-detail=10', '--simplification=8');
   for (const [name, file] of layers) args.push('-L', `${name}:${file}`);
   execFileSync('tippecanoe', args, { stdio: 'inherit' });
 }
 
-// One tileset per zoom class (tippecanoe's per-feature "minzoom" is unreliable in some builds),
-// plus the physical basemap, then merged into a single PMTiles file.
+function join(out, parts, attribution) {
+  const args = ['-q', '-o', out, '--force', '--no-tile-size-limit'];
+  if (attribution) args.push(`--attribution=${attribution}`);
+  execFileSync('tile-join', [...args, ...parts], { stdio: 'inherit' });
+  console.log(`Wrote ${out} (${(fs.statSync(out).size / 1e6).toFixed(1)} MB)`);
+}
+
+// Three files, one per map source, so a change to one source never makes the map re-process
+// the others: the basemap never changes, territories are shown or hidden by year through paint
+// properties alone, and only the small labels source is re-filtered as the year moves.
+// Each is built per zoom class (tippecanoe's per-feature "minzoom" is unreliable in some
+// builds) and then merged.
 console.log('Running tippecanoe…');
-const parts = [];
+const polityParts = [];
+const labelParts = [];
 ZOOM_CLASSES.forEach((c, i) => {
   const poly = path.join(BUILD, `polities-z${c.minzoom}.ndjson`);
   const labels = path.join(BUILD, `labels-z${c.minzoom}.ndjson`);
   fs.writeFileSync(poly, polyLines[i].join('\n'));
   fs.writeFileSync(labels, labelLines[i].join('\n'));
-  const out = path.join(BUILD, `polities-z${c.minzoom}.pmtiles`);
-  tippecanoe(out, c.minzoom, [['polities', poly], ['labels', labels]]);
-  parts.push(out);
+  polityParts.push(path.join(BUILD, `polities-z${c.minzoom}.pmtiles`));
+  labelParts.push(path.join(BUILD, `labels-z${c.minzoom}.pmtiles`));
+  tippecanoe(polityParts.at(-1), c.minzoom, [['polities', poly]]);
+  tippecanoe(labelParts.at(-1), c.minzoom, [['labels', labels]]);
 });
 
 const basemap = path.join(BUILD, 'basemap.pmtiles');
@@ -197,16 +212,11 @@ tippecanoe(basemap, 0, [
   ['lakes', path.join(RAW, 'ne_50m_lakes.geojson')],
   ['rivers', path.join(RAW, 'ne_50m_rivers_lake_centerlines.geojson')],
 ]);
-parts.push(basemap);
 
-const pmtiles = path.join(OUT, 'world.pmtiles');
-execFileSync(
-  'tile-join',
-  [
-    '-q', '-o', pmtiles, '--force', '--no-tile-size-limit',
-    '--attribution=<a href="https://github.com/Seshat-Global-History-Databank/cliopatria">Cliopatria</a> (Seshat, CC-BY 4.0) · <a href="https://www.naturalearthdata.com">Natural Earth</a>',
-    ...parts,
-  ],
-  { stdio: 'inherit' },
-);
-console.log(`Wrote ${pmtiles} (${(fs.statSync(pmtiles).size / 1e6).toFixed(1)} MB)`);
+const POLITY_CREDIT =
+  '<a href="https://github.com/Seshat-Global-History-Databank/cliopatria">Cliopatria</a> (Seshat, CC-BY 4.0) · ' +
+  '<a href="https://github.com/aourednik/historical-basemaps">historical-basemaps</a> (GPL-3.0)';
+join(path.join(OUT, 'basemap.pmtiles'), [basemap], '<a href="https://www.naturalearthdata.com">Natural Earth</a>');
+join(path.join(OUT, 'polities.pmtiles'), polityParts, POLITY_CREDIT);
+join(path.join(OUT, 'labels.pmtiles'), labelParts);
+fs.rmSync(path.join(OUT, 'world.pmtiles'), { force: true });

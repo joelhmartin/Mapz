@@ -1,0 +1,6 @@
+# CodeRabbit is not used on this repository. Disable automatic reviews and chat replies.
+reviews:
+  auto_review:
+    enabled: false
+chat:
+  auto_reply: false

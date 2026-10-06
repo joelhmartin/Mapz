@@ -23,7 +23,6 @@ export type PolityIndex = Record<string, PolityInfo>;
 // Properties carried by each feature in the `polities` and `labels` tile layers.
 export interface PolityFeatureProps {
   key: string;
-  name: string;
   from: number;
   to: number;
   kind: PolityKind;

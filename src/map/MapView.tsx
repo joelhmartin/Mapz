@@ -5,8 +5,8 @@ import { Protocol } from 'pmtiles';
 import 'maplibre-gl/dist/maplibre-gl.css';
 // MapLibre locates its worker next to its own module by default, which breaks once bundled.
 import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url';
-import { SOURCE, TIME_LAYERS, buildStyle, fillOpacity, layerFilter, selectedFilter } from './style';
-import { addBattleLayers, updateBattleLayers, type BattleProps } from './battles';
+import { POLITIES, buildStyle } from './style';
+import { addBattleLayers, isBattleVisible, setBattlesVisible, type BattleProps } from './battles';
 import type { PolityFeatureProps } from '../lib/polities';
 import { viewFromUrl, writeViewToUrl } from '../lib/years';
 
@@ -30,28 +30,38 @@ interface Props {
 }
 
 // Where polities overlap (rival claims, vassals), prefer the smallest: it is the most specific.
-function pickPolity(features: MapGeoJSONFeature[]): MapGeoJSONFeature | undefined {
+// Features outside the year are still rendered (transparently), so they are skipped here.
+function pickPolity(features: MapGeoJSONFeature[], year: number): MapGeoJSONFeature | undefined {
   let best: MapGeoJSONFeature | undefined;
   for (const f of features) {
-    if (!best || (f.properties.area as number) < (best.properties.area as number)) best = f;
+    const p = f.properties as PolityFeatureProps;
+    if (p.from > year || p.to < year) continue;
+    if (!best || p.area < (best.properties.area as number)) best = f;
   }
   return best;
 }
 
 // Battles sit on top of territories, so they take priority under the cursor.
-function targetAt(map: MapLibreMap, e: MapMouseEvent): { target: MapTarget; polityId?: number } | null {
-  if (map.getLayer('battles')) {
+function targetAt(
+  map: MapLibreMap,
+  e: MapMouseEvent,
+  year: number,
+  showBattles: boolean,
+): { target: MapTarget; polityId?: number } | null {
+  if (showBattles && map.getLayer('battles')) {
     const box: [[number, number], [number, number]] = [
       [e.point.x - 6, e.point.y - 6],
       [e.point.x + 6, e.point.y + 6],
     ];
-    const battles = map.queryRenderedFeatures(box, { layers: ['battles'] });
+    const battles = map
+      .queryRenderedFeatures(box, { layers: ['battles'] })
+      .filter((f) => isBattleVisible(f.properties.year, year));
     if (battles.length) {
       const newest = battles.reduce((a, b) => (b.properties.year > a.properties.year ? b : a));
       return { target: { type: 'battle', props: newest.properties as BattleProps } };
     }
   }
-  const f = pickPolity(map.queryRenderedFeatures(e.point, { layers: ['polities-fill'] }));
+  const f = pickPolity(map.queryRenderedFeatures(e.point, { layers: ['polities-fill'] }), year);
   if (!f) return null;
   return { target: { type: 'polity', props: f.properties as PolityFeatureProps }, polityId: f.id as number };
 }
@@ -76,6 +86,8 @@ export function MapView({ year, selectedKey, showBattles, onHover, onSelect }: P
       maxZoom: 9,
       renderWorldCopies: false,
       attributionControl: false,
+      // Label fade-in keeps the map repainting after every year change; snap instead.
+      fadeDuration: 0,
     });
     mapRef.current = map;
     map.on('error', (e) => console.error('Map error:', e.error));
@@ -86,24 +98,40 @@ export function MapView({ year, selectedKey, showBattles, onHover, onSelect }: P
       const url = `${import.meta.env.BASE_URL}data/battles.geojson`;
       const res = await fetch(url, { method: 'HEAD' }).catch(() => null);
       if (!res?.ok || !mapRef.current) return;
-      addBattleLayers(map, state.current.year, new URL(url, window.location.href).href);
-      updateBattleLayers(map, state.current.year, state.current.showBattles);
+      addBattleLayers(map, new URL(url, window.location.href).href);
+      setBattlesVisible(map, state.current.showBattles);
+    });
+    // Catch up on any change made while the style was loading.
+    map.once('load', () => {
+      ready.current = true;
+      sync.current();
     });
 
     const setHover = (id: number | null) => {
       if (hoverId.current === id) return;
       if (hoverId.current !== null) {
-        map.setFeatureState({ source: SOURCE, sourceLayer: 'polities', id: hoverId.current }, { hover: false });
+        map.setFeatureState({ source: POLITIES, sourceLayer: 'polities', id: hoverId.current }, { hover: false });
       }
       hoverId.current = id;
-      if (id !== null) map.setFeatureState({ source: SOURCE, sourceLayer: 'polities', id }, { hover: true });
+      if (id !== null) map.setFeatureState({ source: POLITIES, sourceLayer: 'polities', id }, { hover: true });
     };
 
+    const at = (e: MapMouseEvent) => targetAt(map, e, state.current.year, state.current.showBattles);
+    // Hit-testing polygons is costly, so do it at most once per frame for the latest position.
+    let pendingMove: MapMouseEvent | null = null;
     const onMove = (e: MapMouseEvent) => {
-      const hit = targetAt(map, e);
-      setHover(hit?.polityId ?? null);
-      map.getCanvas().style.cursor = hit ? 'pointer' : '';
-      callbacks.current.onHover(hit ? { target: hit.target, x: e.point.x, y: e.point.y } : null);
+      if (pendingMove === null) {
+        requestAnimationFrame(() => {
+          const ev = pendingMove!;
+          pendingMove = null;
+          if (!mapRef.current) return;
+          const hit = at(ev);
+          setHover(hit?.polityId ?? null);
+          map.getCanvas().style.cursor = hit ? 'pointer' : '';
+          callbacks.current.onHover(hit ? { target: hit.target, x: ev.point.x, y: ev.point.y } : null);
+        });
+      }
+      pendingMove = e;
     };
 
     map.on('moveend', () => {
@@ -111,30 +139,38 @@ export function MapView({ year, selectedKey, showBattles, onHover, onSelect }: P
       writeViewToUrl({ center: [c.lng, c.lat], zoom: map.getZoom() });
     });
     map.on('mousemove', onMove);
-    map.on('click', (e) => callbacks.current.onSelect(targetAt(map, e)?.target ?? null));
+    map.on('click', (e) => callbacks.current.onSelect(at(e)?.target ?? null));
     map.getCanvas().addEventListener('mouseleave', () => {
       setHover(null);
       callbacks.current.onHover(null);
     });
 
     return () => {
+      ready.current = false;
       map.remove();
       mapRef.current = null;
     };
   }, []);
 
-  // Re-filter every time-dependent layer when the year or selection changes; no tiles are re-fetched.
-  useEffect(() => {
+  // Push the year and selection into the map at most once per frame, however fast the slider
+  // moves.
+  const frame = useRef<number | null>(null);
+  const ready = useRef(false);
+  const applied = useRef({ year: NaN, selectedKey: null as string | null });
+  const sync = useRef(() => {});
+  sync.current = () => {
+    frame.current = null;
     const map = mapRef.current;
-    if (!map) return;
-    for (const [layer, base] of Object.entries(TIME_LAYERS)) {
-      if (map.getLayer(layer)) map.setFilter(layer, layerFilter(year, base));
-    }
-    if (map.getLayer('polities-selected')) {
-      map.setFilter('polities-selected', selectedFilter(year, selectedKey));
-      map.setPaintProperty('polities-fill', 'fill-opacity', fillOpacity(selectedKey));
-    }
-    updateBattleLayers(map, year, showBattles);
+    if (!map || !ready.current) return;
+    const { year, selectedKey, showBattles } = state.current;
+    if (applied.current.year !== year) map.setGlobalStateProperty('year', year);
+    if (applied.current.selectedKey !== selectedKey) map.setGlobalStateProperty('selected', selectedKey ?? '');
+    setBattlesVisible(map, showBattles);
+    applied.current = { year, selectedKey };
+  };
+
+  useEffect(() => {
+    if (frame.current === null) frame.current = requestAnimationFrame(() => sync.current());
   }, [year, selectedKey, showBattles]);
 
   return <div ref={container} className="map" />;
