@@ -4,6 +4,10 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # Commits made by the battles workflow don't trigger push events, so redeploy after it.
+  workflow_run:
+    workflows: [Update battles]
+    types: [completed]
 
 permissions:
   contents: write
