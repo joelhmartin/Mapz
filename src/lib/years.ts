@@ -30,3 +30,12 @@ export function writeYearToUrl(year: number): void {
   url.searchParams.set('year', String(year));
   window.history.replaceState(null, '', url);
 }
+
+const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+// Wikidata dates like "1879-01-22". "-01-01" usually means only the year is known.
+export function formatBattleDate(date: string, year: number): string {
+  const m = /^-?\d+-(\d\d)-(\d\d)$/.exec(date);
+  if (year < 0 || !m || (m[1] === '01' && m[2] === '01')) return formatYear(year);
+  return `${Number(m[2])} ${MONTHS[Number(m[1]) - 1]} ${year}`;
+}

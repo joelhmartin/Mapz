@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
-import { displayName, fetchWikiSummary, type PolityIndex, type WikiSummary } from '../lib/polities';
+import { displayName, type PolityIndex } from '../lib/polities';
 import { formatSpan } from '../lib/years';
+import { WikiSummary } from './WikiSummary';
 
 interface Props {
   polityKey: string;
@@ -12,24 +12,6 @@ interface Props {
 
 export function InfoPanel({ polityKey, index, onClose, onJumpToYear, onSelectKey }: Props) {
   const info = index?.[polityKey];
-  const [summary, setSummary] = useState<WikiSummary | null>(null);
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    setSummary(null);
-    if (!info?.wikipedia) return;
-    let cancelled = false;
-    setLoading(true);
-    fetchWikiSummary(info.wikipedia).then((s) => {
-      if (cancelled) return;
-      setSummary(s);
-      setLoading(false);
-    });
-    return () => {
-      cancelled = true;
-    };
-  }, [info?.wikipedia]);
-
   const name = info?.name ?? displayName(polityKey);
   const related = [
     ...(info?.memberOf ?? []).map((k) => ({ key: k, label: 'Part of' })),
@@ -58,10 +40,7 @@ export function InfoPanel({ polityKey, index, onClose, onJumpToYear, onSelectKey
         </div>
       )}
 
-      {summary?.thumbnail && <img className="thumb" src={summary.thumbnail.source} alt="" />}
-      {loading && <p className="muted">Consulting the archives…</p>}
-      {summary && <p className="extract">{summary.extract}</p>}
-      {!loading && !summary && info?.wikipedia && <p className="muted">No summary available.</p>}
+      <WikiSummary title={info?.wikipedia} />
 
       {related.length > 0 && (
         <section>
@@ -80,11 +59,6 @@ export function InfoPanel({ polityKey, index, onClose, onJumpToYear, onSelectKey
       )}
 
       <section className="links">
-        {summary?.content_urls && (
-          <a href={summary.content_urls.desktop.page} target="_blank" rel="noreferrer">
-            Wikipedia
-          </a>
-        )}
         {info?.wikidata && (
           <a href={`https://www.wikidata.org/wiki/${info.wikidata}`} target="_blank" rel="noreferrer">
             Wikidata

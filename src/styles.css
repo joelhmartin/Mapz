@@ -148,6 +148,7 @@ button {
   font-style: italic;
   color: var(--ink-soft);
 }
+.toggle,
 .step-select,
 .year-input {
   font-size: 13px;
@@ -157,8 +158,20 @@ button {
   align-items: center;
   gap: 6px;
 }
-.step-select {
+.toggle {
   margin-left: auto;
+  cursor: pointer;
+}
+.toggle input {
+  accent-color: var(--accent);
+}
+.battle-glyph {
+  color: var(--accent);
+  font-size: 16px;
+  line-height: 1;
+}
+.battle-glyph.large {
+  font-size: 24px;
 }
 .step-select select,
 .year-input input {
@@ -374,6 +387,9 @@ button {
   .step-select,
   .year-input {
     display: none;
+  }
+  .toggle {
+    order: 5;
   }
   .year-display {
     min-width: 0;

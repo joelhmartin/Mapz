@@ -4,6 +4,8 @@ import { MAX_YEAR, MIN_YEAR, clampYear, formatYear } from '../lib/years';
 interface Props {
   year: number;
   activeCount: number | null;
+  showBattles: boolean;
+  onToggleBattles: (show: boolean) => void;
   onChange: (year: number) => void;
 }
 
@@ -11,7 +13,7 @@ const STEPS = [1, 10, 50, 100];
 const TICKS = [-3000, -2000, -1000, 1, 1000, 2000];
 const PLAY_INTERVAL_MS = 120;
 
-export function Timeline({ year, activeCount, onChange }: Props) {
+export function Timeline({ year, activeCount, showBattles, onToggleBattles, onChange }: Props) {
   const [playing, setPlaying] = useState(false);
   const [step, setStep] = useState(10);
   const yearRef = useRef(year);
@@ -31,6 +33,7 @@ export function Timeline({ year, activeCount, onChange }: Props) {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       const target = e.target as HTMLElement;
+      if (target.tagName === 'SELECT') return;
       if (target.tagName === 'INPUT' && (target as HTMLInputElement).type !== 'range') return;
       if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
         e.preventDefault();
@@ -70,6 +73,10 @@ export function Timeline({ year, activeCount, onChange }: Props) {
         <button className="icon-button" onClick={() => onChange(clampYear(year + step))} aria-label="Step forward">
           ›
         </button>
+        <label className="toggle">
+          <input type="checkbox" checked={showBattles} onChange={(e) => onToggleBattles(e.target.checked)} />
+          ⚔ battles
+        </label>
         <label className="step-select">
           step
           <select value={step} onChange={(e) => setStep(Number(e.target.value))}>

@@ -32,7 +32,7 @@ npm run data        # fetch sources into data/raw, then build public/data/*
 
 1. ~~Data pipeline: Cliopatria → PMTiles~~
 2. ~~Map with timeline slider~~
-3. Battles and wars from Wikidata as icons that pop in on the timeline
+3. ~~Battles from Wikidata as icons that pop in on the timeline~~ (11k battles; wars as their own layer still to do)
 4. Richer detail panel: rulers, conquests, wars
 5. Full hand-drawn styling (wobbly inked borders, watercolour fills)
 6. Curated content, starting with Southern and West Africa (Mutapa, Rozvi, Asante, Zulu, Ndebele are missing or thin in Cliopatria)
@@ -41,6 +41,7 @@ npm run data        # fetch sources into data/raw, then build public/data/*
 ## Data & credits
 
 - Polity borders: [Cliopatria](https://github.com/Seshat-Global-History-Databank/cliopatria), Seshat Global History Databank — CC BY 4.0. Bracketed composite entities (colonial empires, alliances) are drawn as dashed outlines; colours are generated.
+- Battles: [Wikidata](https://www.wikidata.org) — CC0. Fetched by `.github/workflows/update-battles.yml` (monthly, or when `scripts/fetch-battles.mjs` changes) and committed to `public/data/battles.geojson`.
 - Physical geography: [Natural Earth](https://www.naturalearthdata.com) — public domain.
 - Summaries: Wikipedia REST API, fetched live.
 - Fonts: IM FELL English by Igino Marini — SIL Open Font License (`public/fonts/OFL.txt`).

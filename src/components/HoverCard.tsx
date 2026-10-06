@@ -1,6 +1,6 @@
 import type { HoverInfo } from '../map/MapView';
 import { displayName, type PolityIndex } from '../lib/polities';
-import { formatSpan } from '../lib/years';
+import { formatBattleDate, formatSpan } from '../lib/years';
 
 interface Props {
   hover: HoverInfo;
@@ -8,12 +8,32 @@ interface Props {
 }
 
 export function HoverCard({ hover, index }: Props) {
-  const { props, x, y } = hover;
+  const { target, x, y } = hover;
+  // Keep the card on screen near the right and bottom edges.
+  const left = x + 300 > window.innerWidth ? x - 296 : x + 16;
+  const top = y + 160 > window.innerHeight ? y - 140 : y + 16;
+
+  if (target.type === 'battle') {
+    const b = target.props;
+    return (
+      <div className="hover-card panel" style={{ left, top }}>
+        <div className="hover-title">
+          <span className="battle-glyph">⚔</span>
+          {b.name}
+        </div>
+        <div className="hover-line">{formatBattleDate(b.date, b.year)}</div>
+        {b.war && <div className="hover-line muted">Part of {b.war}</div>}
+        {b.sides && <div className="hover-line muted">{b.sides.split('; ').join(' · ')}</div>}
+        <div className="hover-hint">Click for more</div>
+      </div>
+    );
+  }
+
+  const props = target.props;
   const info = index?.[props.key];
   const memberOf = info?.memberOf.map(displayName) ?? [];
-
   return (
-    <div className="hover-card panel" style={{ left: x + 16, top: y + 16 }}>
+    <div className="hover-card panel" style={{ left, top }}>
       <div className="hover-title">
         <span className="swatch" style={{ background: props.color }} />
         {props.name}

@@ -64,7 +64,8 @@ function parseYear(date) {
   const m = /^(-?)(\d+)-/.exec(date);
   if (!m) return null;
   const y = Number(m[2]);
-  return m[1] ? -y : y;
+  // The query service uses astronomical numbering for BCE: "-0489" is 490 BCE.
+  return m[1] ? -(y + 1) : y;
 }
 
 function parsePoint(wkt) {
