@@ -1,0 +1,46 @@
+# Mapz
+
+An interactive world map of who controlled what, from 3400 BCE to today. Drag the timeline to watch empires, kingdoms and chiefdoms rise and fall; hover a territory for a summary, click it for the full story.
+
+## Running locally
+
+```sh
+npm install
+npm run dev
+```
+
+The built map data (`public/data/world.pmtiles`, `public/data/polities.json`) is committed, so the app runs without the data pipeline.
+
+## Rebuilding the data
+
+Requires [tippecanoe](https://github.com/felt/tippecanoe) (`brew install tippecanoe` / `apt install tippecanoe`).
+
+```sh
+npm run data        # fetch sources into data/raw, then build public/data/*
+```
+
+`scripts/build-data.mjs` turns the Cliopatria polygons into a single PMTiles file. Each feature carries `from`/`to` years, so the map shows a given year by filtering client-side — moving the slider never refetches tiles. Small polities are only included from higher zoom levels to keep world-view tiles light.
+
+## Stack
+
+- Vite + React + TypeScript
+- MapLibre GL JS with a custom old-map style and IM Fell English labels (`font-faces`)
+- PMTiles vector tiles built with tippecanoe, served as a static file
+- Deployed to GitHub Pages by `.github/workflows/deploy.yml`
+
+## Roadmap
+
+1. ~~Data pipeline: Cliopatria → PMTiles~~
+2. ~~Map with timeline slider~~
+3. Battles and wars from Wikidata as icons that pop in on the timeline
+4. Richer detail panel: rulers, conquests, wars
+5. Full hand-drawn styling (wobbly inked borders, watercolour fills)
+6. Curated content, starting with Southern and West Africa (Mutapa, Rozvi, Asante, Zulu, Ndebele are missing or thin in Cliopatria)
+7. Worldwide gap-filling: Polynesia, the Americas, stateless societies
+
+## Data & credits
+
+- Polity borders: [Cliopatria](https://github.com/Seshat-Global-History-Databank/cliopatria), Seshat Global History Databank — CC BY 4.0. Bracketed composite entities (colonial empires, alliances) are drawn as dashed outlines; colours are generated.
+- Physical geography: [Natural Earth](https://www.naturalearthdata.com) — public domain.
+- Summaries: Wikipedia REST API, fetched live.
+- Fonts: IM FELL English by Igino Marini — SIL Open Font License (`public/fonts/OFL.txt`).

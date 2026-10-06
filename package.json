@@ -1,0 +1,40 @@
+{
+  "name": "mapz",
+  "version": "1.0.0",
+  "description": "Interactive historical world map with a timeline of territories, battles and wars",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "data:fetch": "sh scripts/fetch-sources.sh",
+    "data:build": "node scripts/build-data.mjs",
+    "data": "npm run data:fetch && npm run data:build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joelhmartin/Mapz.git"
+  },
+  "bugs": {
+    "url": "https://github.com/joelhmartin/Mapz/issues"
+  },
+  "homepage": "https://github.com/joelhmartin/Mapz#readme",
+  "dependencies": {
+    "maplibre-gl": "^6.12.0",
+    "pmtiles": "^4.5.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "@types/polylabel": "^2.0.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "polylabel": "^2.1.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.2"
+  },
+  "private": true,
+  "type": "module"
+}
