@@ -332,6 +332,13 @@ button {
   border: 1px solid var(--paper-edge);
   filter: sepia(0.35);
 }
+.description {
+  line-height: 1.45;
+  font-size: 15px;
+  border-left: 2px solid var(--paper-edge);
+  padding-left: 10px;
+  font-style: italic;
+}
 .extract {
   line-height: 1.45;
   font-size: 15px;

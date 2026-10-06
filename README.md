@@ -13,11 +13,19 @@ The built map data (`public/data/world.pmtiles`, `public/data/polities.json`) is
 
 ## Rebuilding the data
 
-Requires [tippecanoe](https://github.com/felt/tippecanoe) (`brew install tippecanoe` / `apt install tippecanoe`).
+Requires [tippecanoe](https://github.com/felt/tippecanoe) (`brew install tippecanoe` / `apt install tippecanoe`) and Python with shapely (`pip install shapely`).
 
 ```sh
-npm run data        # fetch sources into data/raw, then build public/data/*
+npm run data        # fetch sources, merge supplements, build public/data/*
 ```
+
+`scripts/supplement.py` fills gaps in Cliopatria. Supplementary polygons are clipped against whatever is already mapped for their time range, with precedence Cliopatria > curated > historical-basemaps:
+
+- **historical-basemaps** snapshots for sub-Saharan Africa and Aotearoa, each valid until the next snapshot year. Names, Wikipedia links and short notes are configured in `data/curated/africa.json`.
+- **Curated Polynesia** (`data/curated/polynesia.json`): real island coastlines with a sea halo, and settlement and dynasty dates from the archaeological and historical record.
+- **Curated Africa**: rough heartlands for states neither dataset maps (Mapungubwe, Butua, Mthethwa, Ndwandwe, Ngwane, Ife).
+
+Borders that are approximations are drawn dashed and flagged in the hover card. Peoples and cultures, as opposed to states, get a lighter wash and italic labels.
 
 `scripts/build-data.mjs` turns the Cliopatria polygons into a single PMTiles file. Each feature carries `from`/`to` years, so the map shows a given year by filtering client-side — moving the slider never refetches tiles. Small polities are only included from higher zoom levels to keep world-view tiles light.
 
@@ -35,13 +43,14 @@ npm run data        # fetch sources into data/raw, then build public/data/*
 3. ~~Battles from Wikidata as icons that pop in on the timeline~~ (11k battles; wars as their own layer still to do)
 4. Richer detail panel: rulers, conquests, wars
 5. Full hand-drawn styling (wobbly inked borders, watercolour fills)
-6. Curated content, starting with Southern and West Africa (Mutapa, Rozvi, Asante, Zulu, Ndebele are missing or thin in Cliopatria)
-7. Worldwide gap-filling: Polynesia, the Americas, stateless societies
+6. ~~Polynesia rise and fall~~ and ~~sub-Saharan Africa gap-filling~~; next: the Mfecane and other migrations as animated arrows
+7. Worldwide gap-filling: the Americas, Central Asia, stateless societies
 
 ## Data & credits
 
 - Polity borders: [Cliopatria](https://github.com/Seshat-Global-History-Databank/cliopatria), Seshat Global History Databank — CC BY 4.0. Bracketed composite entities (colonial empires, alliances) are drawn as dashed outlines; colours are generated.
 - Battles: [Wikidata](https://www.wikidata.org) — CC0. Fetched by `.github/workflows/update-battles.yml` (monthly, or when `scripts/fetch-battles.mjs` changes) and committed to `public/data/battles.geojson`.
+- Gap-filling borders: [historical-basemaps](https://github.com/aourednik/historical-basemaps) by André Ourednik — GPL-3.0.
 - Physical geography: [Natural Earth](https://www.naturalearthdata.com) — public domain.
 - Summaries: Wikipedia REST API, fetched live.
 - Fonts: IM FELL English by Igino Marini — SIL Open Font License (`public/fonts/OFL.txt`).

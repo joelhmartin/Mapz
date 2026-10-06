@@ -1,7 +1,8 @@
-// Build the map data: Cliopatria polities + Natural Earth basemap → public/data/world.pmtiles
+// Build the map data: Cliopatria polities + supplementary polities + Natural Earth basemap
+// → public/data/world.pmtiles
 //
 // Requires tippecanoe (https://github.com/felt/tippecanoe) on PATH.
-// Run `npm run data:fetch` first to download the raw sources.
+// Run `npm run data:fetch` and `npm run data:supplement` first.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -20,6 +21,16 @@ const clioFile = fs.readdirSync(clioDir).find((f) => f.endsWith('.geojson'));
 if (!clioFile) throw new Error(`No Cliopatria GeoJSON in ${clioDir}; run npm run data:fetch`);
 console.log(`Reading ${clioFile}…`);
 const clio = JSON.parse(fs.readFileSync(path.join(clioDir, clioFile), 'utf8'));
+
+// Gap-filling polities from historical-basemaps and data/curated (see scripts/supplement.py).
+const supplementFile = path.join(BUILD, 'supplement.ndjson');
+if (fs.existsSync(supplementFile)) {
+  const lines = fs.readFileSync(supplementFile, 'utf8').split('\n').filter(Boolean);
+  for (const line of lines) clio.features.push(JSON.parse(line));
+  console.log(`Added ${lines.length} supplementary features`);
+} else {
+  console.warn(`No ${supplementFile}; building from Cliopatria only`);
+}
 
 // Stable, muted colour per polity name so an empire keeps its colour through time.
 function hash(str) {
@@ -85,7 +96,7 @@ clio.features.forEach((f, i) => {
   // "(Alliance between Elam and Babylonia)" and colonial empires such as "(British Empire)".
   // They are outlined rather than filled so the members underneath stay readable.
   const isComposite = p.Name.startsWith('(');
-  const kind = p.Type === 'RELATION' ? 'relation' : isComposite ? 'empire' : 'polity';
+  const kind = p.Type === 'RELATION' ? 'relation' : isComposite ? 'empire' : (p.Kind ?? 'polity');
   const name = isComposite ? p.Name.replace(/^\(|\)$/g, '') : p.Name;
   const props = {
     id: i + 1,
@@ -95,8 +106,12 @@ clio.features.forEach((f, i) => {
     to: p.ToYear,
     kind,
     area: Math.round(p.Area),
-    color: colourFor(p.Name),
+    // A composite shares its colour with the polity of the same name, e.g. (Portuguese Empire).
+    color: colourFor(name),
   };
+  // Supplementary borders are less certain than Cliopatria's; the style draws them softer.
+  if (p.Certainty) props.certainty = p.Certainty;
+  if (p.LandArea) props.land = Math.round(p.LandArea);
   const zc = zoomClass(props.area);
   polyLines[zc].push(JSON.stringify({ type: 'Feature', id: i + 1, properties: props, geometry: f.geometry }));
 
@@ -119,7 +134,12 @@ clio.features.forEach((f, i) => {
     components: new Set(),
     color: props.color,
     maxArea: 0,
+    description: null,
+    sources: new Set(),
   });
+  entry.sources.add(p.Source ?? 'cliopatria');
+  entry.description ??= p.Description ?? null;
+  if (!entry.wikipedia && p.Wikipedia) entry.wikipedia = p.Wikipedia;
   entry.from = Math.min(entry.from, p.FromYear);
   entry.to = Math.max(entry.to, p.ToYear);
   entry.maxArea = Math.max(entry.maxArea, props.area);
@@ -135,7 +155,13 @@ clio.features.forEach((f, i) => {
 const jsonIndex = Object.fromEntries(
   Object.entries(index).map(([k, e]) => [
     k,
-    { ...e, seshat: [...e.seshat], memberOf: [...e.memberOf], components: [...e.components] },
+    {
+      ...e,
+      seshat: [...e.seshat],
+      memberOf: [...e.memberOf],
+      components: [...e.components],
+      sources: [...e.sources],
+    },
   ]),
 );
 
@@ -166,7 +192,8 @@ ZOOM_CLASSES.forEach((c, i) => {
 
 const basemap = path.join(BUILD, 'basemap.pmtiles');
 tippecanoe(basemap, 0, [
-  ['land', path.join(RAW, 'ne_50m_land.geojson')],
+  ['land', path.join(RAW, 'ne_10m_land.geojson')],
+  ['land', path.join(RAW, 'ne_10m_minor_islands.geojson')],
   ['lakes', path.join(RAW, 'ne_50m_lakes.geojson')],
   ['rivers', path.join(RAW, 'ne_50m_rivers_lake_centerlines.geojson')],
 ]);

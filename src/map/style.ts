@@ -10,23 +10,29 @@ const COAST = '#8a7357';
 const RIVER = '#9fb3ad';
 
 export const LABEL_FONT = 'IM Fell English SC';
+export const PEOPLE_FONT = 'IM Fell English Italic';
 
 export function timeFilter(year: number): ExpressionSpecification {
   return ['all', ['<=', ['get', 'from'], year], ['>=', ['get', 'to'], year]];
 }
 
-export function kindFilter(year: number, kinds: string[]): FilterSpecification {
-  return ['all', ['in', ['get', 'kind'], ['literal', kinds]], timeFilter(year)];
-}
+const kinds = (...k: string[]): ExpressionSpecification => ['in', ['get', 'kind'], ['literal', k]];
+// Borders from the supplementary sources that are rough approximations.
+const approximate: ExpressionSpecification = ['in', ['get', 'certainty'], ['literal', ['approximate', 'uncertain']]];
 
-// Layers whose filter depends on the selected year, and which feature kinds each shows.
-export const TIME_LAYERS: Record<string, string[]> = {
-  'polities-fill': ['polity'],
-  'polities-border': ['polity'],
-  'polities-hover': ['polity'],
-  'composites-outline': ['empire', 'relation'],
-  'polities-label': ['polity'],
+// Layers whose filter depends on the selected year, and what each shows regardless of year.
+export const TIME_LAYERS: Record<string, ExpressionSpecification> = {
+  'polities-fill': kinds('polity', 'people'),
+  'polities-border': ['all', kinds('polity', 'people'), ['!', approximate]],
+  'polities-border-approx': ['all', kinds('polity', 'people'), approximate],
+  'polities-hover': kinds('polity', 'people'),
+  'composites-outline': kinds('empire', 'relation'),
+  'polities-label': kinds('polity', 'people'),
 };
+
+export function layerFilter(year: number, base: ExpressionSpecification): FilterSpecification {
+  return ['all', base, timeFilter(year)];
+}
 
 // Selection is by polity name rather than feature id, so it follows the polity as its
 // borders change from one year range to the next.
@@ -35,7 +41,14 @@ export function selectedFilter(year: number, key: string | null): FilterSpecific
 }
 
 export function fillOpacity(key: string | null): ExpressionSpecification {
-  return ['case', ['==', ['get', 'key'], key ?? ''], 0.8, hovered, 0.72, 0.5];
+  return [
+    'case',
+    ['==', ['get', 'key'], key ?? ''], 0.8,
+    hovered, 0.72,
+    // Peoples and cultures, as opposed to states, are washed in more lightly.
+    ['==', ['get', 'kind'], 'people'], 0.28,
+    0.5,
+  ];
 }
 
 const hovered: ExpressionSpecification = ['boolean', ['feature-state', 'hover'], false];
@@ -47,6 +60,7 @@ export function buildStyle(year: number, selectedKey: string | null): StyleSpeci
     version: 8,
     'font-faces': {
       [LABEL_FONT]: abs('fonts/IMFeENsc28P.ttf'),
+      [PEOPLE_FONT]: abs('fonts/IMFeENit28P.ttf'),
     },
     sources: {
       [SOURCE]: {
@@ -68,7 +82,7 @@ export function buildStyle(year: number, selectedKey: string | null): StyleSpeci
         type: 'fill',
         source: SOURCE,
         'source-layer': 'polities',
-        filter: kindFilter(year, TIME_LAYERS['polities-fill']),
+        filter: layerFilter(year, TIME_LAYERS['polities-fill']),
         paint: {
           'fill-color': ['get', 'color'],
           'fill-opacity': fillOpacity(selectedKey),
@@ -108,11 +122,25 @@ export function buildStyle(year: number, selectedKey: string | null): StyleSpeci
         type: 'line',
         source: SOURCE,
         'source-layer': 'polities',
-        filter: kindFilter(year, TIME_LAYERS['polities-border']),
+        filter: layerFilter(year, TIME_LAYERS['polities-border']),
         paint: {
           'line-color': INK,
           'line-opacity': 0.55,
           'line-width': ['interpolate', ['linear'], ['zoom'], 0, 0.4, 6, 1.2],
+        },
+      },
+      {
+        // Uncertain borders are drawn as a broken line, like a surveyor's guess on an old chart.
+        id: 'polities-border-approx',
+        type: 'line',
+        source: SOURCE,
+        'source-layer': 'polities',
+        filter: layerFilter(year, TIME_LAYERS['polities-border-approx']),
+        paint: {
+          'line-color': INK,
+          'line-opacity': 0.45,
+          'line-width': ['interpolate', ['linear'], ['zoom'], 0, 0.4, 6, 1.2],
+          'line-dasharray': [3, 2],
         },
       },
       {
@@ -121,7 +149,7 @@ export function buildStyle(year: number, selectedKey: string | null): StyleSpeci
         type: 'line',
         source: SOURCE,
         'source-layer': 'polities',
-        filter: kindFilter(year, TIME_LAYERS['composites-outline']),
+        filter: layerFilter(year, TIME_LAYERS['composites-outline']),
         paint: {
           'line-color': ['get', 'color'],
           'line-width': ['interpolate', ['linear'], ['zoom'], 0, 1.2, 6, 3],
@@ -134,7 +162,7 @@ export function buildStyle(year: number, selectedKey: string | null): StyleSpeci
         type: 'line',
         source: SOURCE,
         'source-layer': 'polities',
-        filter: kindFilter(year, TIME_LAYERS['polities-hover']),
+        filter: layerFilter(year, TIME_LAYERS['polities-hover']),
         paint: {
           'line-color': INK,
           'line-width': ['case', hovered, 2, 0],
@@ -156,10 +184,10 @@ export function buildStyle(year: number, selectedKey: string | null): StyleSpeci
         type: 'symbol',
         source: SOURCE,
         'source-layer': 'labels',
-        filter: kindFilter(year, TIME_LAYERS['polities-label']),
+        filter: layerFilter(year, TIME_LAYERS['polities-label']),
         layout: {
           'text-field': ['get', 'name'],
-          'text-font': [LABEL_FONT],
+          'text-font': ['match', ['get', 'kind'], 'people', ['literal', [PEOPLE_FONT]], ['literal', [LABEL_FONT]]],
           'text-size': [
             'interpolate', ['linear'], ['zoom'],
             1, ['interpolate', ['linear'], ['get', 'area'], 1e5, 9, 1e6, 11, 1e7, 15],

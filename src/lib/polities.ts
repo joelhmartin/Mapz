@@ -1,5 +1,6 @@
 // Per-polity summary written by scripts/build-data.mjs, keyed by the Cliopatria name.
-export type PolityKind = 'polity' | 'empire' | 'relation';
+export type PolityKind = 'polity' | 'people' | 'empire' | 'relation';
+export type Certainty = 'approximate' | 'uncertain' | 'moderate' | 'precise';
 
 export interface PolityInfo {
   name: string;
@@ -13,6 +14,8 @@ export interface PolityInfo {
   components: string[];
   color: string;
   maxArea: number;
+  description: string | null;
+  sources: string[];
 }
 
 export type PolityIndex = Record<string, PolityInfo>;
@@ -26,6 +29,9 @@ export interface PolityFeatureProps {
   kind: PolityKind;
   area: number;
   color: string;
+  certainty?: Certainty;
+  // Land area for island polities, whose drawn shape includes the surrounding sea.
+  land?: number;
 }
 
 export async function loadPolityIndex(): Promise<PolityIndex> {
@@ -40,7 +46,7 @@ export function displayName(key: string): string {
 
 export function activeCount(index: PolityIndex, year: number): number {
   let n = 0;
-  for (const p of Object.values(index)) if (p.kind === 'polity' && p.from <= year && year <= p.to) n++;
+  for (const p of Object.values(index)) if ((p.kind === 'polity' || p.kind === 'people') && p.from <= year && year <= p.to) n++;
   return n;
 }
 

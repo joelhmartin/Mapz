@@ -40,8 +40,14 @@ export function HoverCard({ hover, index }: Props) {
       </div>
       {info && <div className="hover-line">{formatSpan(info.from, info.to)}</div>}
       <div className="hover-line muted">
-        These borders: {formatSpan(props.from, props.to)} · {Math.round(props.area).toLocaleString()} km²
+        These borders: {formatSpan(props.from, props.to)} · {Math.round(props.land ?? props.area).toLocaleString()} km²
+        {props.land ? ' of land' : ''}
       </div>
+      {(props.certainty === 'approximate' || props.certainty === 'uncertain') && (
+        <div className="hover-line muted small">
+          <em>Borders {props.certainty === 'uncertain' ? 'uncertain' : 'approximate'}</em>
+        </div>
+      )}
       {memberOf.length > 0 && <div className="hover-line muted">Part of {memberOf.join(', ')}</div>}
       <div className="hover-hint">Click for more</div>
     </div>

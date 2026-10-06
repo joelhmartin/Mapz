@@ -5,9 +5,10 @@ import { Protocol } from 'pmtiles';
 import 'maplibre-gl/dist/maplibre-gl.css';
 // MapLibre locates its worker next to its own module by default, which breaks once bundled.
 import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url';
-import { SOURCE, TIME_LAYERS, buildStyle, fillOpacity, kindFilter, selectedFilter } from './style';
+import { SOURCE, TIME_LAYERS, buildStyle, fillOpacity, layerFilter, selectedFilter } from './style';
 import { addBattleLayers, updateBattleLayers, type BattleProps } from './battles';
 import type { PolityFeatureProps } from '../lib/polities';
+import { viewFromUrl, writeViewToUrl } from '../lib/years';
 
 setWorkerUrl(workerUrl);
 addProtocol('pmtiles', new Protocol().tile);
@@ -65,11 +66,12 @@ export function MapView({ year, selectedKey, showBattles, onHover, onSelect }: P
   callbacks.current = { onHover, onSelect };
 
   useEffect(() => {
+    const view = viewFromUrl();
     const map = new MapLibreMap({
       container: container.current!,
       style: buildStyle(state.current.year, state.current.selectedKey),
-      center: [15, 8],
-      zoom: 2,
+      center: view?.center ?? [15, 8],
+      zoom: view?.zoom ?? 2,
       minZoom: 1,
       maxZoom: 9,
       renderWorldCopies: false,
@@ -104,6 +106,10 @@ export function MapView({ year, selectedKey, showBattles, onHover, onSelect }: P
       callbacks.current.onHover(hit ? { target: hit.target, x: e.point.x, y: e.point.y } : null);
     };
 
+    map.on('moveend', () => {
+      const c = map.getCenter();
+      writeViewToUrl({ center: [c.lng, c.lat], zoom: map.getZoom() });
+    });
     map.on('mousemove', onMove);
     map.on('click', (e) => callbacks.current.onSelect(targetAt(map, e)?.target ?? null));
     map.getCanvas().addEventListener('mouseleave', () => {
@@ -121,8 +127,8 @@ export function MapView({ year, selectedKey, showBattles, onHover, onSelect }: P
   useEffect(() => {
     const map = mapRef.current;
     if (!map) return;
-    for (const [layer, kinds] of Object.entries(TIME_LAYERS)) {
-      if (map.getLayer(layer)) map.setFilter(layer, kindFilter(year, kinds));
+    for (const [layer, base] of Object.entries(TIME_LAYERS)) {
+      if (map.getLayer(layer)) map.setFilter(layer, layerFilter(year, base));
     }
     if (map.getLayer('polities-selected')) {
       map.setFilter('polities-selected', selectedFilter(year, selectedKey));

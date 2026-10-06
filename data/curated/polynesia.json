@@ -1,0 +1,478 @@
+{
+  "about": "Curated Polynesian and wider Pacific polities. Geometry is real island coastline (Natural Earth 10m) inside the listed boxes, haloed to show the sea domain. Dates follow the archaeological and historical consensus summarised on the linked Wikipedia articles and are approximate, especially settlement dates.",
+  "boxes": {
+    "tonga": [
+      -176.5,
+      -22.6,
+      -173.5,
+      -15.4
+    ],
+    "samoa_west": [
+      -172.9,
+      -14.1,
+      -171.3,
+      -13.3
+    ],
+    "samoa_east": [
+      -171.1,
+      -14.6,
+      -168.0,
+      -14.1
+    ],
+    "uvea": [
+      -176.3,
+      -13.4,
+      -176.1,
+      -13.2
+    ],
+    "futuna": [
+      -178.2,
+      -14.4,
+      -177.9,
+      -14.2
+    ],
+    "niue": [
+      -170.0,
+      -19.2,
+      -169.7,
+      -18.9
+    ],
+    "lau": [
+      -179.99,
+      -19.9,
+      -178.0,
+      -16.9
+    ],
+    "fiji_main": [
+      176.8,
+      -19.3,
+      180.0,
+      -15.6
+    ],
+    "hawaii": [
+      -156.1,
+      18.9,
+      -154.8,
+      20.3
+    ],
+    "maui": [
+      -156.7,
+      20.5,
+      -155.9,
+      21.05
+    ],
+    "molokai": [
+      -157.35,
+      21.0,
+      -156.7,
+      21.25
+    ],
+    "lanai": [
+      -157.1,
+      20.7,
+      -156.8,
+      20.95
+    ],
+    "kahoolawe": [
+      -156.75,
+      20.5,
+      -156.5,
+      20.65
+    ],
+    "oahu": [
+      -158.3,
+      21.2,
+      -157.6,
+      21.75
+    ],
+    "kauai": [
+      -159.8,
+      21.85,
+      -159.25,
+      22.25
+    ],
+    "niihau": [
+      -160.3,
+      21.75,
+      -160.0,
+      22.05
+    ],
+    "society": [
+      -152.1,
+      -17.9,
+      -148.0,
+      -16.2
+    ],
+    "tuamotu": [
+      -149.0,
+      -23.5,
+      -134.0,
+      -14.0
+    ],
+    "austral": [
+      -152.0,
+      -28.0,
+      -143.0,
+      -21.5
+    ],
+    "marquesas": [
+      -140.9,
+      -10.6,
+      -138.6,
+      -7.8
+    ],
+    "cook_south": [
+      -160.0,
+      -22.1,
+      -157.2,
+      -18.8
+    ],
+    "cook_north": [
+      -166.0,
+      -11.0,
+      -157.3,
+      -8.9
+    ],
+    "rapanui": [
+      -109.5,
+      -27.25,
+      -109.2,
+      -27.0
+    ],
+    "chatham": [
+      -177.0,
+      -44.4,
+      -176.1,
+      -43.6
+    ],
+    "nz": [
+      165.8,
+      -47.5,
+      178.7,
+      -34.2
+    ]
+  },
+  "polities": [
+    {
+      "name": "Early Tongan chiefdoms",
+      "from": -850,
+      "to": 949,
+      "islands": [
+        "tonga"
+      ],
+      "wikipedia": "History of Tonga",
+      "description": "Lapita voyagers reached Tongatapu around 880–850 BCE, among the first people in Polynesia. Over the next two millennia Ancestral Polynesian culture took shape here and in Samoa."
+    },
+    {
+      "name": "Tuʻi Tonga Empire",
+      "from": 950,
+      "to": 1844,
+      "islands": [
+        "tonga"
+      ],
+      "wikipedia": "Tuʻi Tonga Empire",
+      "description": "Founded c. 950 by ʻAhoʻeitu, the first Tuʻi Tonga. Ruled from Muʻa on Tongatapu with a fleet of double-hulled kalia canoes. Power later passed to the Tuʻi Haʻatakalaua and Tuʻi Kanokupolu lines; civil wars from 1799 ended with unification under Tāufaʻāhau (George Tupou I)."
+    },
+    {
+      "name": "(Tuʻi Tonga Empire)",
+      "from": 1200,
+      "to": 1500,
+      "islands": [
+        "tonga",
+        "uvea",
+        "futuna",
+        "niue",
+        "lau",
+        "samoa_west",
+        "samoa_east"
+      ],
+      "halo": 1.0,
+      "wikipedia": "Tuʻi Tonga Empire",
+      "description": "At its height (c. 1200–1500) Tongan power and tribute networks reached ʻUvea, Futuna, Niue, the Lau Islands of Fiji and, through war and marriage alliances, Samoa. Drawn as a sphere of influence rather than a fixed border."
+    },
+    {
+      "name": "Kingdom of Tonga",
+      "from": 1845,
+      "to": 2024,
+      "islands": [
+        "tonga"
+      ],
+      "wikipedia": "Tonga",
+      "description": "Unified by George Tupou I in 1845, with a constitution in 1875. A British protected state from 1900 to 1970, but never colonised — the only Pacific kingdom to keep its monarchy throughout."
+    },
+    {
+      "name": "Samoan chiefdoms",
+      "from": -800,
+      "to": 1899,
+      "islands": [
+        "samoa_west",
+        "samoa_east"
+      ],
+      "wikipedia": "History of Samoa",
+      "description": "Settled by c. 800 BCE (Lapita pottery at Mulifanua). Ruled through the matai chiefly system and paramount titles. Tradition tells of Tongan occupation c. 950–1250, ended by the brothers Tuna and Fata and the rise of the Malietoa title; Salamasina became the first to hold all four paramount titles c. 1500. Rival claimants backed by Germany, Britain and the US fought civil wars in 1886–1899, ending in partition."
+    },
+    {
+      "name": "German Samoa",
+      "from": 1900,
+      "to": 1913,
+      "islands": [
+        "samoa_west"
+      ],
+      "wikipedia": "German Samoa",
+      "description": "Western Samoa became a German protectorate under the 1899 Tripartite Convention. The Mau resistance movement began under German rule."
+    },
+    {
+      "name": "Western Samoa (New Zealand)",
+      "from": 1914,
+      "to": 1961,
+      "islands": [
+        "samoa_west"
+      ],
+      "wikipedia": "Western Samoa Trust Territory",
+      "description": "Occupied by New Zealand in 1914. The Mau movement for independence grew after the 1918 influenza disaster and 'Black Saturday' in 1929."
+    },
+    {
+      "name": "Samoa",
+      "from": 1962,
+      "to": 2024,
+      "islands": [
+        "samoa_west"
+      ],
+      "wikipedia": "Samoa",
+      "description": "The first Pacific nation to regain independence, in 1962."
+    },
+    {
+      "name": "American Samoa",
+      "from": 1900,
+      "to": 2024,
+      "islands": [
+        "samoa_east"
+      ],
+      "wikipedia": "American Samoa",
+      "description": "Tutuila and Manuʻa were ceded to the United States in 1900 and 1904."
+    },
+    {
+      "name": "Niuean chiefdoms",
+      "from": 900,
+      "to": 1900,
+      "islands": [
+        "niue"
+      ],
+      "certainty": "uncertain",
+      "wikipedia": "History of Niue",
+      "description": "Settled from Samoa and later Tonga, perhaps around 900 CE. Niue had paramount kings (patuiki) from the 18th century and resisted outside contact; it became a British protectorate in 1900."
+    },
+    {
+      "name": "Fijian chiefdoms",
+      "from": -1000,
+      "to": 1870,
+      "islands": [
+        "fiji_main",
+        "lau"
+      ],
+      "wikipedia": "History of Fiji",
+      "description": "Settled by Lapita voyagers c. 1000 BCE. Fiji's warring chiefdoms (matanitu) such as Bau, Rewa, Verata and Cakaudrove were closely tied to Tonga; Tongan prince Enele Maʻafu dominated the Lau Islands in the 1850s–60s before Seru Epenisa Cakobau proclaimed a Kingdom of Fiji."
+    },
+    {
+      "name": "Colony of Fiji",
+      "from": 1877,
+      "to": 1972,
+      "islands": [
+        "fiji_main",
+        "lau"
+      ],
+      "wikipedia": "Colony of Fiji",
+      "description": "Cakobau ceded Fiji to Britain in 1874. Independence followed in 1970."
+    },
+    {
+      "name": "Hawaiʻi Island chiefdom",
+      "from": 1000,
+      "to": 1790,
+      "islands": [
+        "hawaii"
+      ],
+      "wikipedia": "Ancient Hawaii",
+      "description": "Polynesian voyagers reached Hawaiʻi roughly 1000–1200 CE. Hawaiʻi Island was unified under ʻUmi-a-Līloa (c. 1500); its aliʻi nui waged repeated wars on Maui. Kamehameha won the island after his last rival there, Keōua Kūʻahuʻula, was killed at Puʻukoholā Heiau in 1791."
+    },
+    {
+      "name": "Maui chiefdom",
+      "from": 1000,
+      "to": 1782,
+      "islands": [
+        "maui",
+        "molokai",
+        "lanai",
+        "kahoolawe"
+      ],
+      "wikipedia": "Ancient Hawaii",
+      "description": "Maui's chiefs, among them Piʻilani (c. 1500) who built the King's Highway, contested Molokaʻi and Lānaʻi and fought Hawaiʻi Island for centuries."
+    },
+    {
+      "name": "Maui chiefdom under Kahekili II",
+      "from": 1783,
+      "to": 1794,
+      "islands": [
+        "maui",
+        "molokai",
+        "lanai",
+        "kahoolawe",
+        "oahu"
+      ],
+      "wikipedia": "Kahekili II",
+      "description": "Kahekili II conquered Oʻahu in 1783 and ruled Maui, Oʻahu, Molokaʻi and Lānaʻi — the strongest rival to Kamehameha until his death in 1794."
+    },
+    {
+      "name": "Oʻahu chiefdom",
+      "from": 1000,
+      "to": 1782,
+      "islands": [
+        "oahu"
+      ],
+      "wikipedia": "Ancient Hawaii",
+      "description": "Oʻahu's ruling line (Kākuhihewa, Kūaliʻi and others) held the island until Kahekili II of Maui conquered it in 1783."
+    },
+    {
+      "name": "Kauaʻi chiefdom",
+      "from": 1000,
+      "to": 1809,
+      "islands": [
+        "kauai",
+        "niihau"
+      ],
+      "wikipedia": "Kaumualiʻi",
+      "description": "Kauaʻi and Niʻihau were never conquered: Kamehameha's invasion fleets of 1796 and 1804 failed (storm and epidemic). King Kaumualiʻi accepted Kamehameha's overlordship peacefully in 1810."
+    },
+    {
+      "name": "Society Islands chiefdoms",
+      "from": 1000,
+      "to": 1787,
+      "islands": [
+        "society"
+      ],
+      "wikipedia": "Society Islands",
+      "description": "Settled around 1000 CE, a launching point for voyages to Hawaiʻi, Aotearoa and Rapa Nui. Taputapuātea marae on Raiatea was the religious centre of eastern Polynesia; the ʻarioi society travelled between islands."
+    },
+    {
+      "name": "Kingdom of Tahiti",
+      "from": 1788,
+      "to": 1879,
+      "islands": [
+        "society"
+      ],
+      "wikipedia": "Kingdom of Tahiti",
+      "description": "Pōmare I unified Tahiti using European muskets and allies from the Bounty mutineers. Queen Pōmare IV ruled 1827–1877; France imposed a protectorate in 1842, which Tahitians resisted in the Franco-Tahitian War (1844–1847), and annexed the kingdom in 1880."
+    },
+    {
+      "name": "Marquesan chiefdoms",
+      "from": 1000,
+      "to": 1841,
+      "islands": [
+        "marquesas"
+      ],
+      "wikipedia": "Marquesas Islands",
+      "description": "Settled c. 1000 CE or earlier; a hub of East Polynesian voyaging. Valleys were ruled by rival tribal chiefs. France annexed the islands in 1842."
+    },
+    {
+      "name": "French Oceania",
+      "from": 1842,
+      "to": 1879,
+      "islands": [
+        "marquesas"
+      ],
+      "wikipedia": "French Polynesia",
+      "description": "France annexed the Marquesas in 1842, the first step in building French Oceania."
+    },
+    {
+      "name": "French Oceania",
+      "from": 1880,
+      "to": 1945,
+      "islands": [
+        "society",
+        "marquesas",
+        "tuamotu",
+        "austral"
+      ],
+      "wikipedia": "French Polynesia",
+      "description": "The Établissements français de l'Océanie, formed after France annexed the Kingdom of Tahiti in 1880."
+    },
+    {
+      "name": "French Polynesia",
+      "from": 1946,
+      "to": 2024,
+      "islands": [
+        "society",
+        "marquesas",
+        "tuamotu",
+        "austral"
+      ],
+      "wikipedia": "French Polynesia",
+      "description": "An overseas collectivity of France since 1946 (renamed 1957)."
+    },
+    {
+      "name": "Cook Islands chiefdoms",
+      "from": 1000,
+      "to": 1887,
+      "islands": [
+        "cook_south",
+        "cook_north"
+      ],
+      "certainty": "uncertain",
+      "wikipedia": "History of the Cook Islands",
+      "description": "Settled from the Society Islands around 1000 CE. Rarotonga was divided among ariki (high chiefs) of the Makea, Pa and Kainuku lines. Tradition names Rarotonga as a departure point for voyages to Aotearoa."
+    },
+    {
+      "name": "Cook Islands",
+      "from": 1888,
+      "to": 2024,
+      "islands": [
+        "cook_south",
+        "cook_north"
+      ],
+      "wikipedia": "Cook Islands",
+      "description": "A British protectorate from 1888, annexed to New Zealand in 1901, self-governing in free association with New Zealand since 1965."
+    },
+    {
+      "name": "Rapa Nui",
+      "from": 1200,
+      "to": 1887,
+      "islands": [
+        "rapanui"
+      ],
+      "wikipedia": "History of Easter Island",
+      "description": "The easternmost reach of Polynesian voyaging, settled c. 1200. Rapa Nui's clans carved nearly a thousand moai. From around 1760 the Tangata manu (birdman) contest at Orongo chose the island's leader. Peruvian slave raids in 1862 and epidemics devastated the population; Chile annexed the island in 1888."
+    },
+    {
+      "name": "Moriori",
+      "from": 1500,
+      "to": 1834,
+      "islands": [
+        "chatham"
+      ],
+      "certainty": "uncertain",
+      "wikipedia": "Moriori",
+      "description": "Polynesians who settled Rēkohu (the Chatham Islands) from Aotearoa around 1500 and developed a distinct culture. Under Nunuku-whenua's law they renounced war. In 1835 Māori of Ngāti Mutunga and Ngāti Tama invaded and enslaved them."
+    },
+    {
+      "name": "Colony of New Zealand",
+      "from": 1841,
+      "to": 1906,
+      "islands": [
+        "nz"
+      ],
+      "halo": 0.2,
+      "wikipedia": "Colony of New Zealand",
+      "description": "Proclaimed after the Treaty of Waitangi (1840). British sovereignty was contested across much of the North Island through the New Zealand Wars (1845–1872), and Māori held the King Country until the 1880s."
+    },
+    {
+      "name": "Dominion of New Zealand",
+      "from": 1907,
+      "to": 1947,
+      "islands": [
+        "nz"
+      ],
+      "halo": 0.2,
+      "wikipedia": "Dominion of New Zealand",
+      "description": "Self-governing dominion of the British Empire until full independence in 1947."
+    }
+  ]
+}

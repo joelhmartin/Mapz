@@ -11,9 +11,14 @@ if [ ! -d "$RAW/cliopatria" ]; then
 fi
 unzip -o -q "$RAW/cliopatria/cliopatria.geojson.zip" -d "$RAW/cliopatria/unzipped"
 
-# Natural Earth physical geography (public domain) for the basemap.
+# historical-basemaps (aourednik) — world border snapshots, GPL-3.0. Fills gaps in Cliopatria.
+if [ ! -d "$RAW/historical-basemaps" ]; then
+  git clone --depth 1 https://github.com/aourednik/historical-basemaps "$RAW/historical-basemaps"
+fi
+
+# Natural Earth physical geography (public domain) for the basemap and Pacific islands.
 NE="https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson"
-for f in ne_50m_land ne_50m_lakes ne_50m_rivers_lake_centerlines; do
+for f in ne_10m_land ne_10m_minor_islands ne_50m_lakes ne_50m_rivers_lake_centerlines; do
   if [ ! -f "$RAW/$f.geojson" ]; then
     curl -fsSL "$NE/$f.geojson" -o "$RAW/$f.geojson"
   fi

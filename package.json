@@ -9,7 +9,8 @@
     "typecheck": "tsc --noEmit",
     "data:fetch": "sh scripts/fetch-sources.sh",
     "data:build": "node scripts/build-data.mjs",
-    "data": "npm run data:fetch && npm run data:build"
+    "data": "npm run data:fetch && npm run data:supplement && npm run data:build",
+    "data:supplement": "python3 scripts/supplement.py"
   },
   "repository": {
     "type": "git",

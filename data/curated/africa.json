@@ -1,0 +1,233 @@
+{
+  "about": "Sub-Saharan Africa: how historical-basemaps snapshots are merged in, plus hand-placed approximate core areas for states neither dataset maps. 'blob' geometries mark an approximate heartland, not a surveyed border.",
+  "historicalBasemaps": {
+    "region": {
+      "minLon": -20,
+      "maxLon": 52,
+      "maxLat": 17,
+      "excludeArabia": true
+    },
+    "exclude": [
+      "",
+      "Africa",
+      "Bantu",
+      "Bantu peoples",
+      "Hunters-gatherers",
+      "Homo heidelbergensis",
+      "West African cereal farmers",
+      "Saharan pastoral nomads",
+      "Ethiopian highland farmers",
+      "Ethiopian Highland Peoples",
+      "Cushites",
+      "Netherlands",
+      "Dutch East Indies",
+      "Yemen",
+      "Hadramaut",
+      "Qataban",
+      "Sasanian dependencies",
+      "Rift Valley States"
+    ],
+    "rename": {
+      "Islamic city-states": "Swahili city-states",
+      "Sultinate of Zanzibar": "Sultanate of Zanzibar",
+      "Mwenemutapa": "Kingdom of Mutapa",
+      "Rozwi": "Rozvi Empire",
+      "Great Zimbabwe": "Kingdom of Zimbabwe",
+      "Ndebele": "Ndebele Kingdom",
+      "Ghana": "Ghana Empire",
+      "Kanem": "Empire of Kanem",
+      "Asante": "Ashanti Empire",
+      "Benin": "Kingdom of Benin",
+      "Dahomey": "Kingdom of Dahomey",
+      "Oyo": "Oyo Empire",
+      "Luba": "Luba Empire",
+      "Kuba": "Kuba Kingdom",
+      "Lozi": "Lozi Kingdom",
+      "Barotse": "Lozi Kingdom",
+      "Ndongo": "Kingdom of Ndongo",
+      "Segu": "Bamana Empire",
+      "Tekrur": "Takrur",
+      "Kazembe": "Kingdom of Kazembe",
+      "Axum": "Kingdom of Aksum",
+      "Kush": "Kingdom of Kush",
+      "Funj": "Funj Sultanate",
+      "Imerina": "Merina Kingdom",
+      "Mossi States": "Mossi Kingdoms",
+      "Hausa States": "Hausa Kingdoms",
+      "Zulu": "Zulu Kingdom",
+      "First Samori Empire": "Wassoulou Empire",
+      "Second Samori Empire": "Wassoulou Empire",
+      "Tukular Caliphate": "Toucouleur Empire",
+      "Azandes": "Zande",
+      "Mandes": "Mandé peoples",
+      "Mali": "Mali Empire",
+      "Songhai": "Songhai Empire",
+      "Wadai": "Wadai Empire",
+      "Darfur": "Sultanate of Darfur",
+      "Lunda": "Kingdom of Lunda",
+      "Adal": "Adal Sultanate",
+      "Ifat": "Ifat Sultanate",
+      "Kanem-Bornu": "Bornu Empire",
+      "Empire of Ghana": "Ghana Empire",
+      "Ethiopia": "Ethiopian Empire",
+      "Abyssinia": "Ethiopian Empire",
+      "Zanzibar": "Sultanate of Zanzibar",
+      "Madagascar": "Malagasy kingdoms",
+      "Fulani Empire": "Sokoto Caliphate"
+    },
+    "wikipedia": {
+      "Swahili city-states": "Swahili coast",
+      "Lozi Kingdom": "Barotseland",
+      "Mossi Kingdoms": "Mossi Kingdoms",
+      "Hausa Kingdoms": "Hausa Kingdoms",
+      "Khoisan": "Khoisan",
+      "Nguni": "Nguni people",
+      "Shona": "Shona people",
+      "Xhosa": "Xhosa people",
+      "Sotho": "Basotho",
+      "Akan": "Akan people",
+      "Oromo": "Oromo people",
+      "Zande": "Zande people",
+      "Malagasy": "Malagasy people",
+      "Ovimbundu": "Ovimbundu",
+      "Teke": "Anziku Kingdom",
+      "Futa Jalon": "Imamate of Futa Jallon",
+      "Futa Toro": "Imamate of Futa Toro",
+      "Bagirmi": "Kingdom of Baguirmi",
+      "Wadai": "Wadai Sultanate",
+      "Damot": "Kingdom of Damot",
+      "Shoa": "Shewa",
+      "Ifat": "Ifat Sultanate",
+      "Adal": "Adal Sultanate",
+      "Awsa": "Aussa Sultanate",
+      "Abyssinia": "Ethiopian Empire",
+      "Mbailundu": "Kingdom of Mbailundu",
+      "Ngwato": "Bamangwato",
+      "Yeke": "Yeke Kingdom",
+      "Mirambo Unyanyembe Ukimbu": "Mirambo",
+      "Borgu States": "Borgu",
+      "Kong": "Kong Empire",
+      "Tekrur": "Takrur",
+      "Kaarta": "Kaarta",
+      "Calabar": "Calabar",
+      "Beja people": "Beja people",
+      "Malagasy kingdoms": "History of Madagascar"
+    },
+    "peoples": [
+      "Khoisan",
+      "Nguni",
+      "Sotho",
+      "Xhosa",
+      "Shona",
+      "Oromo",
+      "Beja people",
+      "Zande",
+      "Mandé peoples",
+      "Akan",
+      "Malagasy",
+      "Vazimba",
+      "Ovimbundu",
+      "Kushites",
+      "Teke",
+      "Yaka"
+    ],
+    "notes": {
+      "Kingdom of Zimbabwe": "Builders of Great Zimbabwe, the largest stone ruins south of the Sahara. A Shona state that grew rich on gold and ivory traded to the Swahili coast, at its height c. 1220–1450.",
+      "Kingdom of Mutapa": "Founded c. 1430 by Nyatsimba Mutota after the decline of Great Zimbabwe. Mutapa conquered the land between the Zambezi and Limpopo and controlled gold trade with the Swahili and later the Portuguese, who made it a vassal in 1629.",
+      "Rozvi Empire": "Founded by Changamire Dombo, who broke from Mutapa and drove the Portuguese from the Zimbabwean plateau in the 1690s. A professional, hierarchical army collected cattle as tribute. It fell to Nguni invaders during the Mfecane in the 1830s.",
+      "Ndebele Kingdom": "Mzilikazi's Ndebele broke from Shaka in the 1820s, migrated north across the Limpopo during the Mfecane and conquered the remnants of the Rozvi, founding Mthwakazi with its capital at Bulawayo around 1840. It fell to the British South Africa Company in 1893.",
+      "Zulu Kingdom": "Shaka transformed a small clan into a conquest state after 1816, with the short stabbing spear, large shields and the 'buffalo horns' formation. His wars set off the Mfecane across southern Africa. The kingdom defeated the British at Isandlwana (1879) before falling to them later that year.",
+      "Ashanti Empire": "The Asante confederacy, founded c. 1701 under Osei Tutu and the Golden Stool, used organised armies and firearms to dominate the Akan states of modern Ghana. It fought the British in a series of wars until 1900.",
+      "Kingdom of Benin": "Ruled by the Obas from Benin City, with a disciplined army that subjugated hundreds of towns. Famous for its bronze plaques, looted in the British punitive expedition of 1897."
+    }
+  },
+  "backfill": [
+    {
+      "fromHistoricalBasemaps": [
+        "Ndebele",
+        1878
+      ],
+      "name": "Ndebele Kingdom",
+      "from": 1840,
+      "to": 1877,
+      "certainty": "approximate",
+      "wikipedia": "Ndebele Kingdom",
+      "description": "Mthwakazi under Mzilikazi and then Lobengula, after settling around Bulawayo c. 1840. Borders drawn from the 1878 map."
+    }
+  ],
+  "polities": [
+    {
+      "name": "Kingdom of Mapungubwe",
+      "from": 1075,
+      "to": 1220,
+      "blob": [
+        29.38,
+        -22.2,
+        1.1
+      ],
+      "wikipedia": "Kingdom of Mapungubwe",
+      "description": "The first class-divided state in southern Africa, centred on Mapungubwe Hill at the Limpopo–Shashe confluence. Traded gold and ivory to the Indian Ocean; famous for its golden rhinoceros. Its decline preceded the rise of Great Zimbabwe."
+    },
+    {
+      "name": "Kingdom of Butua (Torwa)",
+      "from": 1450,
+      "to": 1649,
+      "blob": [
+        28.4,
+        -20.3,
+        1.4
+      ],
+      "wikipedia": "Kingdom of Butua",
+      "description": "The Torwa dynasty ruled south-western Zimbabwe from Khami after Great Zimbabwe declined, rivalling Mutapa. It was absorbed into Changamire Dombo's Rozvi state in the 1680s."
+    },
+    {
+      "name": "Mthethwa Paramountcy",
+      "from": 1790,
+      "to": 1817,
+      "blob": [
+        32.15,
+        -28.55,
+        0.55
+      ],
+      "wikipedia": "Mthethwa Paramountcy",
+      "description": "Under Dingiswayo, the Mthethwa built a confederacy of northern Nguni chiefdoms and reorganised its army into age regiments. Shaka served as one of his commanders. Dingiswayo's death at the hands of Zwide in 1817/18 opened the way for the Zulu."
+    },
+    {
+      "name": "Ndwandwe",
+      "from": 1790,
+      "to": 1819,
+      "blob": [
+        31.45,
+        -27.45,
+        0.65
+      ],
+      "wikipedia": "Ndwandwe",
+      "description": "Zwide's Ndwandwe were the great rival of the Mthethwa and then the Zulu. Shaka defeated them at the Mhlatuze River in 1819; Ndwandwe fugitives under Soshangane, Zwangendaba and others carried the Mfecane north as far as Lake Victoria."
+    },
+    {
+      "name": "Kingdom of Eswatini (Ngwane)",
+      "from": 1745,
+      "to": 1884,
+      "blob": [
+        31.45,
+        -26.5,
+        0.75
+      ],
+      "wikipedia": "History of Eswatini",
+      "description": "The Dlamini kings led the Ngwane north to the Pongola and then into modern Eswatini. Sobhuza I avoided destruction in the Mfecane through diplomacy and strategic retreat; Mswati II made the Swazi a major regional power."
+    },
+    {
+      "name": "Ife",
+      "from": 1100,
+      "to": 1600,
+      "blob": [
+        4.56,
+        7.47,
+        0.8
+      ],
+      "certainty": "uncertain",
+      "wikipedia": "Ife Empire",
+      "description": "The sacred city-state of the Yoruba, whose naturalistic bronze and terracotta heads (12th–15th centuries) are among Africa's great artworks. Yoruba kings, including the Alaafin of Oyo, traced their authority to Ife's first ruler, Oduduwa."
+    }
+  ]
+}

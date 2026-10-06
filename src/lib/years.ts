@@ -39,3 +39,21 @@ export function formatBattleDate(date: string, year: number): string {
   if (year < 0 || !m || (m[1] === '01' && m[2] === '01')) return formatYear(year);
   return `${Number(m[2])} ${MONTHS[Number(m[1]) - 1]} ${year}`;
 }
+
+export interface MapView {
+  center: [number, number];
+  zoom: number;
+}
+
+// Map position in the URL as ?at=lng,lat,zoom so a view can be shared.
+export function viewFromUrl(): MapView | null {
+  const parts = new URLSearchParams(window.location.search).get('at')?.split(',').map(Number);
+  if (!parts || parts.length !== 3 || parts.some((n) => !Number.isFinite(n))) return null;
+  return { center: [parts[0], parts[1]], zoom: parts[2] };
+}
+
+export function writeViewToUrl({ center, zoom }: MapView): void {
+  const url = new URL(window.location.href);
+  url.searchParams.set('at', `${center[0].toFixed(2)},${center[1].toFixed(2)},${zoom.toFixed(1)}`);
+  window.history.replaceState(null, '', url);
+}

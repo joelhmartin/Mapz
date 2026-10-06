@@ -2,6 +2,19 @@ import { displayName, type PolityIndex } from '../lib/polities';
 import { formatSpan } from '../lib/years';
 import { WikiSummary } from './WikiSummary';
 
+const KIND_LABELS = {
+  polity: 'state',
+  people: 'people / culture',
+  empire: 'colonial empire',
+  relation: 'alliance / relation',
+} as const;
+
+const SOURCE_LABELS: Record<string, string> = {
+  cliopatria: 'Cliopatria (Seshat Global History Databank)',
+  'historical-basemaps': 'historical-basemaps (approximate)',
+  curated: 'Mapz curated data — island coastlines with approximate dates, or a rough heartland',
+};
+
 interface Props {
   polityKey: string;
   index: PolityIndex | null;
@@ -30,7 +43,7 @@ export function InfoPanel({ polityKey, index, onClose, onJumpToYear, onSelectKey
       {info && (
         <p className="span">
           {formatSpan(info.from, info.to)}
-          {info.kind !== 'polity' && <span className="kind"> · {info.kind === 'empire' ? 'colonial empire' : 'alliance / relation'}</span>}
+          {info.kind !== 'polity' && <span className="kind"> · {KIND_LABELS[info.kind]}</span>}
         </p>
       )}
       {info && (
@@ -40,6 +53,7 @@ export function InfoPanel({ polityKey, index, onClose, onJumpToYear, onSelectKey
         </div>
       )}
 
+      {info?.description && <p className="description">{info.description}</p>}
       <WikiSummary title={info?.wikipedia} />
 
       {related.length > 0 && (
@@ -65,7 +79,10 @@ export function InfoPanel({ polityKey, index, onClose, onJumpToYear, onSelectKey
           </a>
         )}
       </section>
-      <p className="muted small">Borders from Cliopatria (Seshat Global History Databank). Summary from Wikipedia.</p>
+      <p className="muted small">
+        Borders from {(info?.sources ?? ['cliopatria']).map((s) => SOURCE_LABELS[s] ?? s).join(' and ')}. Summary from
+        Wikipedia.
+      </p>
     </aside>
   );
 }
