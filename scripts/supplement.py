@@ -28,17 +28,6 @@ MIN_YEAR, MAX_YEAR = -3400, 2024
 WORLD = box(-180, -90, 180, 90)
 SLIVER_DEG2 = 0.01  # parts smaller than ~100 km² left over after clipping are dropped
 
-# Pacific features taken from historical-basemaps (everything else there comes from the curated file).
-PACIFIC_HB = {"Maori": "Māori iwi", "Maoris": "Māori iwi", "M?ori": "Māori iwi", "Māori": "Māori iwi"}
-PACIFIC_NOTES = {
-    "Māori iwi": (
-        "Māori people",
-        "Polynesian voyagers settled Aotearoa around 1280 and formed iwi (tribes) and hapū led by rangatira. "
-        "Inter-iwi warfare intensified with muskets in the Musket Wars (1807–1842).",
-    )
-}
-
-
 def area_km2(geom):
     if geom.is_empty:
         return 0.0
@@ -151,6 +140,19 @@ def blob(lon, lat, radius, seed):
     return Polygon(pts)
 
 
+# --- region configs ------------------------------------------------------------------------
+#
+# Every data/curated/*.json file may carry:
+#   historicalBasemaps: which snapshot features to take for a region, and how to name them
+#   boxes:              named lon/lat boxes for island polities
+#   polities:           curated polities, as "islands" (box names) or a "blob" [lon, lat, radius°];
+#                       "contested": true draws one over Cliopatria's colonial claims instead of
+#                       clipping it by them
+#   backfill:           historical-basemaps geometry reused for years before it first appears
+# Curated entries earlier in a file take precedence over later ones where they overlap.
+
+configs = [(path, json.load(open(path))) for path in sorted(glob.glob(f"{CURATED}/*.json"))]
+
 # --- historical-basemaps snapshots ---------------------------------------------------------
 
 
@@ -164,53 +166,73 @@ years = [snapshot_year(p) for p in snapshots]
 hb_geoms = {}  # (name, year) -> geometry, for backfill
 
 
-def in_africa(c, region):
-    if not (region["minLon"] < c.x < region["maxLon"] and c.y < region["maxLat"]):
-        return False
-    # Arabia sits inside the bounding box.
-    return not (region["excludeArabia"] and c.x > 42 and c.y > 11)
+def in_boxes(c, boxes):
+    return any(b[0] <= c.x <= b[2] and b[1] <= c.y <= b[3] for b in boxes)
 
 
-def in_pacific(c):
-    return (c.x > 155 or c.x < -125) and -50 < c.y < 30
+class Region:
+    def __init__(self, cfg):
+        self.boxes = cfg["region"]["boxes"]
+        self.exclude_boxes = cfg["region"].get("excludeBoxes", [])
+        self.include = set(cfg["include"]) if "include" in cfg else None
+        self.exclude = set(cfg.get("exclude", []))
+        self.drop_if_only_in = set(cfg.get("dropIfOnlyIn", []))
+        self.rename = cfg.get("rename", {})
+        self.wikipedia = cfg.get("wikipedia", {})
+        self.peoples = set(cfg.get("peoples", []))
+        self.people_keywords = [k.lower() for k in cfg.get("peopleKeywords", [])]
+        self.notes = cfg.get("notes", {})
+
+    def contains(self, c):
+        return in_boxes(c, self.boxes) and not in_boxes(c, self.exclude_boxes)
+
+    def accepts(self, raw, seen_years):
+        if raw in self.exclude or (self.include is not None and raw not in self.include):
+            return False
+        # Single-snapshot layers (e.g. the 1492 map of ~1,000 contemporary nations) are left out.
+        return not (self.drop_if_only_in and seen_years <= self.drop_if_only_in)
+
+    def kind(self, name):
+        lowered = name.lower()
+        if name in self.peoples or any(k in lowered for k in self.people_keywords):
+            return "people"
+        return None
 
 
-africa_cfg = json.load(open(f"{CURATED}/africa.json"))
-hb_cfg = africa_cfg["historicalBasemaps"]
-exclude = set(hb_cfg["exclude"])
-peoples = set(hb_cfg["peoples"])
+regions = [Region(cfg["historicalBasemaps"]) for _, cfg in configs if "historicalBasemaps" in cfg]
+
+features_by_snapshot = []
+seen = {}  # raw name -> snapshot years it appears in
+for path in snapshots:
+    feats = [f for f in json.load(open(path))["features"] if f.get("geometry")]
+    features_by_snapshot.append(feats)
+    for f in feats:
+        seen.setdefault((f["properties"].get("NAME") or "").strip(), set()).add(snapshot_year(path))
 
 hb_rows = []
-for i, path in enumerate(snapshots):
+for i, feats in enumerate(features_by_snapshot):
     start = years[i]
     end = years[i + 1] - 1 if i + 1 < len(years) else MAX_YEAR
     if end < MIN_YEAR:
         continue
     start = max(start, MIN_YEAR)
-    for f in json.load(open(path))["features"]:
+    for f in feats:
         raw = (f["properties"].get("NAME") or "").strip()
-        if not f.get("geometry") or raw in exclude:
+        if not raw:
             continue
         geom = make_valid(shape(f["geometry"]))
         hb_geoms[(raw, years[i])] = geom
         c = geom.representative_point()
-        if in_pacific(c):
-            if raw not in PACIFIC_HB:
-                continue
-            name = PACIFIC_HB[raw]
-            wiki, note = PACIFIC_NOTES[name]
-            kind = None
-        elif in_africa(c, hb_cfg["region"]):
-            name = hb_cfg["rename"].get(raw, raw)
-            wiki = hb_cfg["wikipedia"].get(name) or f["properties"].get("wikipedia") or name
-            note = hb_cfg["notes"].get(name)
-            kind = "people" if name in peoples else None
-        else:
+        region = next((r for r in regions if r.contains(c)), None)
+        if region is None or not region.accepts(raw, seen[raw]):
             continue
+        name = region.rename.get(raw, raw)
         precision = f["properties"].get("BORDERPRECISION") or 1
         hb_rows.append(
             dict(
-                name=name, start=start, end=end, geom=geom, wikipedia=wiki, description=note, kind=kind,
+                name=name, start=start, end=end, geom=geom,
+                wikipedia=region.wikipedia.get(name) or f["properties"].get("wikipedia") or name,
+                description=region.notes.get(name), kind=region.kind(name),
                 certainty={1: "approximate", 2: "moderate", 3: "precise"}.get(precision, "approximate"),
             )
         )
@@ -220,48 +242,46 @@ for i, path in enumerate(snapshots):
 curated = Coverage()
 out = []
 
-poly_cfg = json.load(open(f"{CURATED}/polynesia.json"))
-for p in poly_cfg["polities"]:
-    geom, land_area = islands([poly_cfg["boxes"][b] for b in p["islands"]], p.get("halo", 0.6))
+
+def overlaps_curated(geom, start, end):
+    """Curated polities already placed that overlap geom in space and time."""
+    return [g for s, e, g in curated.items if s <= end and start <= e and g.intersects(geom)]
+
+
+def add_curated(p, geom, source="curated", **extra):
     composite = p["name"].startswith("(")
     if not composite:
-        geom = subtract(geom, p["from"], p["to"], [clio])
+        # A contested polity is drawn over colonial claims to its land rather than clipped by them.
+        if not p.get("contested"):
+            geom = subtract(geom, p["from"], p["to"], [clio])
+        earlier = overlaps_curated(geom, p["from"], p["to"])
+        if earlier:
+            geom = clean(geom.difference(unary_union(earlier)))
+        if geom.is_empty:
+            return
         curated.add(p["from"], p["to"], geom)
-    if geom.is_empty:
-        continue
     out.append(
         feature(
             p["name"], p["from"], p["to"], geom,
             wikipedia=p.get("wikipedia"), Description=p.get("description"),
-            Certainty=p.get("certainty", "approximate"), Source="curated", LandArea=land_area,
+            Certainty=p.get("certainty", "approximate"), Source=source, Kind=p.get("kind"), **extra,
         )
     )
 
-for p in africa_cfg["polities"]:
-    lon, lat, r = p["blob"]
-    geom = subtract(blob(lon, lat, r, p["name"]), p["from"], p["to"], [clio])
-    if geom.is_empty:
-        continue
-    curated.add(p["from"], p["to"], geom)
-    out.append(
-        feature(
-            p["name"], p["from"], p["to"], geom,
-            wikipedia=p.get("wikipedia"), Description=p.get("description"),
-            Certainty=p.get("certainty", "approximate"), Source="curated",
-        )
-    )
 
-for p in africa_cfg["backfill"]:
-    src_name, src_year = p["fromHistoricalBasemaps"]
-    geom = subtract(hb_geoms[(src_name, src_year)], p["from"], p["to"], [clio])
-    curated.add(p["from"], p["to"], geom)
-    out.append(
-        feature(
-            p["name"], p["from"], p["to"], geom,
-            wikipedia=p.get("wikipedia"), Description=p.get("description"),
-            Certainty=p.get("certainty", "approximate"), Source="historical-basemaps",
-        )
-    )
+for path, cfg in configs:
+    for p in cfg.get("polities", []):
+        if "islands" in p:
+            geom, land_area = islands([cfg["boxes"][b] for b in p["islands"]], p.get("halo", 0.6))
+            add_curated(p, geom, LandArea=land_area)
+        elif "blob" in p:
+            lon, lat, r = p["blob"]
+            add_curated(p, blob(lon, lat, r, p["name"]))
+        else:
+            raise ValueError(f"{path}: {p['name']} has neither islands nor blob")
+    for p in cfg.get("backfill", []):
+        src_name, src_year = p["fromHistoricalBasemaps"]
+        add_curated(p, hb_geoms[(src_name, src_year)], source="historical-basemaps")
 
 curated.build()
 

@@ -1,0 +1,812 @@
+{
+  "about": "The Americas. historical-basemaps supplies cultures and states from the Archaic onward and named Native nations at 1492–1715; the single 1492 layer of ~1,000 contemporary nations is left out. Curated entries add rough heartlands ('blob') for nations and states neither dataset maps, and island coastlines for the Taíno and Kalinago. Entries marked contested are drawn over colonial claims instead of being clipped by them, because the nation, not the claimant, held the land.",
+  "historicalBasemaps": {
+    "region": {
+      "boxes": [
+        [
+          -170,
+          24,
+          -50,
+          85
+        ],
+        [
+          -125,
+          -60,
+          -30,
+          24
+        ]
+      ]
+    },
+    "dropIfOnlyIn": [
+      1492
+    ],
+    "exclude": [
+      "Polynesians",
+      "Spain",
+      "France",
+      "United Kingdom",
+      "Russian Empire",
+      "Rapa Nui",
+      "Mapuche",
+      "Kalinago",
+      "Montana",
+      "Coqs",
+      "Riro",
+      "Maiou",
+      "Saunan",
+      "Pewa",
+      "Naniaho",
+      "Knucati"
+    ],
+    "rename": {
+      "Olmec": "Olmec Civilization",
+      "Zapotec": "Zapotec Civilization",
+      "Zapotec Empire": "Zapotec Civilization",
+      "Monte Albán": "Zapotec Civilization",
+      "Maya chiefdoms and states": "Mayan City-States",
+      "Maya states": "Mayan City-States",
+      "Maya city-states": "Later Mayan City-States",
+      "Mayas": "Later Mayan City-States",
+      "Toltec Empire": "Toltec",
+      "Chimú Empire": "Chimu Empire",
+      "Veracruz civilization": "Classic Veracruz Culture",
+      "Aztec Empire": "Aztec Triple Alliance",
+      "Anasazi": "Ancestral Puebloans",
+      "Mixtecs": "Mixtec kingdoms",
+      "Mixtec Empire": "Mixtec kingdoms",
+      "Tiahuanaco Empire": "Tiwanaku",
+      "Huari Empire": "Wari Empire",
+      "Boethuk": "Beothuk",
+      "Athabascan": "Athabaskan",
+      "Chinchoros": "Chinchorro culture",
+      "Plateau fichers and hunter gatherers": "Plateau fishers and hunter-gatherers",
+      "Iroquois": "Haudenosaunee",
+      "Huron": "Wendat",
+      "Navaho": "Navajo",
+      "Hopie": "Hopi",
+      "Tlinoit": "Tlingit",
+      "Winebago": "Ho-Chunk",
+      "Obiwa": "Ojibwe",
+      "Menomini": "Menominee",
+      "Teton": "Lakota",
+      "Yankontai": "Yanktonai",
+      "Abnaki": "Abenaki",
+      "Muskogee": "Muscogee",
+      "Ninticoy": "Nanticoke",
+      "Wappynger": "Wappinger",
+      "Tenimo": "Tenino",
+      "Kijkitat": "Klickitat",
+      "Serano": "Serrano",
+      "Cahulia": "Cahuilla",
+      "Kawahsu": "Kawaiisu",
+      "Shoshoni": "Shoshone",
+      "Oto": "Otoe",
+      "Fox": "Meskwaki",
+      "Chtimacha": "Chitimacha",
+      "Papago": "Tohono Oʼodham",
+      "Pima": "Akimel Oʼodham",
+      "Yuma": "Quechan",
+      "Assiniboin": "Assiniboine",
+      "Mahican": "Mohican",
+      "Susquehanna": "Susquehannock",
+      "Conoy": "Piscataway",
+      "Thompson": "Nlaka'pamux",
+      "Otomies": "Otomi",
+      "Zacatecs": "Zacatecos",
+      "Caxcane": "Caxcan",
+      "Guachichiles": "Guachichil",
+      "Mi'kma'ki": "Mi'kmaq",
+      "Delaware": "Lenape",
+      "Kansa": "Kaw",
+      "Luisiana": "Spanish Louisiana",
+      "Louisiana": "French Louisiana",
+      "United States": "United States of America"
+    },
+    "wikipedia": {
+      "Mixtec kingdoms": "Mixtec",
+      "Wari Empire": "Wari culture",
+      "Chavin": "Chavín culture",
+      "Moche": "Moche culture",
+      "Nazca": "Nazca culture",
+      "Paracas": "Paracas culture",
+      "Norte Chico": "Caral–Supe civilization",
+      "Valdivia": "Valdivia culture",
+      "Chorrera": "Chorrera culture",
+      "Wankarani": "Wankarani culture",
+      "Thule": "Thule people",
+      "Dorset": "Dorset culture",
+      "Paleo-Inuit": "Paleo-Eskimo",
+      "Hopewell Culture": "Hopewell tradition",
+      "Adena Culture": "Adena culture",
+      "Poverty point culture": "Poverty Point culture",
+      "Glades Culture": "Glades culture",
+      "Marksville Culture": "Marksville culture",
+      "Swift Creek Culture": "Swift Creek culture",
+      "Caloosahatchee culture": "Calusa",
+      "Arawaks": "Arawak peoples",
+      "Tupis": "Tupi people",
+      "Taino": "Taíno",
+      "Wendat": "Wyandot people",
+      "Lakota": "Lakota people",
+      "Blackfoot": "Blackfoot Confederacy",
+      "Iowa": "Iowa people",
+      "Illinois": "Illinois Confederation",
+      "Missouri": "Missouria",
+      "Miami": "Miami people",
+      "Alabama": "Alabama people",
+      "Crow": "Crow people",
+      "Erie": "Erie people",
+      "Kaw": "Kaw people",
+      "Osage": "Osage Nation",
+      "Omaha": "Omaha people",
+      "Pawnee": "Pawnee people",
+      "Ute": "Ute people",
+      "Zuni": "Zuni people",
+      "Natchez": "Natchez people",
+      "Catawba": "Catawba people",
+      "Tunica": "Tunica people",
+      "Biloxi": "Biloxi people",
+      "Chumash": "Chumash people",
+      "Pomo": "Pomo people",
+      "Modoc": "Modoc people",
+      "Spokane": "Spokane people",
+      "Yakima": "Yakama",
+      "Umatilla": "Umatilla people",
+      "Lipan": "Lipan Apache",
+      "Jicarilla": "Jicarilla Apache",
+      "Karankawa": "Karankawa people",
+      "Wichita": "Wichita people",
+      "Houma": "Houma people",
+      "Inupiaq": "Iñupiat",
+      "Yup'ik & Cup'ik": "Yupik peoples",
+      "Suspiaq": "Alutiiq",
+      "Eyaq": "Eyak people",
+      "Florida": "Spanish Florida",
+      "Virginia": "Colony of Virginia",
+      "Massachusetts Bay": "Massachusetts Bay Colony",
+      "Quebec": "Province of Quebec (1763–1791)",
+      "Spanish Louisiana": "Louisiana (New Spain)",
+      "French Louisiana": "Louisiana (New France)"
+    },
+    "peopleKeywords": [
+      "hunter",
+      "gatherer",
+      "farmers",
+      "culture",
+      "complex",
+      "peoples",
+      "fishers",
+      "foraging",
+      "focus"
+    ],
+    "peoples": [
+      "Paleo-Inuit",
+      "Thule",
+      "Dorset",
+      "Athabaskan",
+      "Innu",
+      "Beothuk",
+      "Arawaks",
+      "Tupis",
+      "Ciboney",
+      "Guanahatabeyes",
+      "Valdivia",
+      "El Paraiso",
+      "Chorrera",
+      "Wankarani",
+      "Paracas",
+      "Miller",
+      "Copena",
+      "Porter",
+      "Point Peninsula",
+      "Norte Chico",
+      "Shuar",
+      "Naskapi Innu",
+      "Montagnais Innu",
+      "Yup'ik & Cup'ik",
+      "Suspiaq",
+      "Inupiaq",
+      "Eyaq",
+      "T'atsaot'ine",
+      "Sahtu"
+    ],
+    "notes": {
+      "Haudenosaunee": "The Haudenosaunee (Iroquois) Confederacy of the Mohawk, Oneida, Onondaga, Cayuga and Seneca (joined by the Tuscarora c. 1722) was governed by the Great Law of Peace. Its wars in the 17th century reshaped the whole Great Lakes region.",
+      "Cherokee": "The largest nation of the southern Appalachians, organised in towns of the Overhill, Valley, Middle and Lower settlements.",
+      "Comanche": "Comanche bands moved onto the southern Plains around 1700 and, with horses, built a dominant position over trade and raiding across the region.",
+      "Lakota": "The western (Teton) division of the Oceti Sakowin, who moved west onto the Plains and became the dominant power of the northern Plains in the 18th and 19th centuries.",
+      "Natchez": "The Natchez kept a Mississippian-style paramount chiefdom under the Great Sun until wars with the French destroyed it in 1729–1731.",
+      "Taino": "The Taíno of the Greater Antilles lived in chiefdoms (cacicazgos) ruled by caciques; they were the first Americans to meet Columbus in 1492."
+    }
+  },
+  "boxes": {
+    "hispaniola": [
+      -74.5,
+      17.5,
+      -68.3,
+      20.1
+    ],
+    "puerto_rico": [
+      -67.3,
+      17.9,
+      -65.2,
+      18.6
+    ],
+    "jamaica": [
+      -78.4,
+      17.7,
+      -76.1,
+      18.6
+    ],
+    "dominica": [
+      -61.5,
+      15.2,
+      -61.2,
+      15.65
+    ],
+    "st_vincent": [
+      -61.3,
+      13.1,
+      -61.1,
+      13.4
+    ],
+    "guadeloupe": [
+      -61.85,
+      15.85,
+      -61.0,
+      16.55
+    ],
+    "martinique": [
+      -61.25,
+      14.38,
+      -60.8,
+      14.9
+    ],
+    "st_lucia": [
+      -61.1,
+      13.7,
+      -60.85,
+      14.12
+    ],
+    "grenada": [
+      -61.8,
+      11.98,
+      -61.6,
+      12.25
+    ]
+  },
+  "polities": [
+    {
+      "name": "Cahokia",
+      "from": 1050,
+      "to": 1350,
+      "blob": [
+        -90.06,
+        38.66,
+        1.0
+      ],
+      "wikipedia": "Cahokia",
+      "description": "The largest city north of Mexico before European contact, centred on Monks Mound near modern St. Louis. At its peak in the 12th century it may have held 10,000–20,000 people and anchored the Mississippian world; it was largely abandoned by c. 1350."
+    },
+    {
+      "name": "Moundville",
+      "from": 1120,
+      "to": 1450,
+      "blob": [
+        -87.63,
+        33.0,
+        0.6
+      ],
+      "wikipedia": "Moundville Archaeological Site",
+      "description": "A Mississippian political and ceremonial centre on the Black Warrior River with some 29 platform mounds around a plaza, at its height c. 1200–1300."
+    },
+    {
+      "name": "Etowah",
+      "from": 1000,
+      "to": 1550,
+      "blob": [
+        -84.8,
+        34.13,
+        0.6
+      ],
+      "wikipedia": "Etowah Indian Mounds",
+      "description": "A Mississippian chiefdom centre in northern Georgia, occupied on and off from c. 1000; it may have been the town of Itaba visited by Hernando de Soto's expedition in 1540."
+    },
+    {
+      "name": "Spiro",
+      "from": 900,
+      "to": 1450,
+      "blob": [
+        -94.57,
+        35.31,
+        0.6
+      ],
+      "wikipedia": "Spiro Mounds",
+      "description": "A Caddoan Mississippian centre on the Arkansas River whose Craig Mound held some of the richest burial goods found in North America, traded from the Great Lakes to the Gulf."
+    },
+    {
+      "name": "Hohokam",
+      "from": 450,
+      "to": 1450,
+      "blob": [
+        -111.9,
+        33.35,
+        1.2
+      ],
+      "certainty": "uncertain",
+      "kind": "people",
+      "wikipedia": "Hohokam",
+      "description": "Desert farmers of the Gila and Salt river valleys who dug hundreds of kilometres of irrigation canals, some still followed by Phoenix's canals today. Their society broke apart in the 15th century."
+    },
+    {
+      "name": "Mogollon",
+      "from": 200,
+      "to": 1450,
+      "blob": [
+        -108.5,
+        33.2,
+        1.3
+      ],
+      "certainty": "uncertain",
+      "kind": "people",
+      "wikipedia": "Mogollon culture",
+      "description": "Farmers of the uplands of New Mexico and Arizona, known for pit houses, cliff dwellings and the painted Mimbres pottery."
+    },
+    {
+      "name": "Wendat Confederacy",
+      "from": 1400,
+      "to": 1649,
+      "blob": [
+        -79.6,
+        44.6,
+        0.7
+      ],
+      "wikipedia": "Wyandot people",
+      "description": "A confederacy of four (later five) Wendat (Huron) nations between Georgian Bay and Lake Simcoe, allied with New France in the fur trade. Epidemics and Haudenosaunee attacks dispersed it in 1649."
+    },
+    {
+      "name": "Powhatan Confederacy",
+      "from": 1570,
+      "to": 1646,
+      "blob": [
+        -76.9,
+        37.45,
+        0.9
+      ],
+      "wikipedia": "Powhatan",
+      "description": "A paramount chiefdom of some thirty Algonquian-speaking peoples of tidewater Virginia, built by Wahunsenacawh (Powhatan) in the late 16th century. It fought three wars with the Jamestown colony and was broken by the treaty of 1646."
+    },
+    {
+      "name": "Wabanaki Confederacy",
+      "from": 1680,
+      "to": 1782,
+      "blob": [
+        -68.8,
+        45.4,
+        1.6
+      ],
+      "contested": true,
+      "wikipedia": "Wabanaki Confederacy",
+      "description": "An alliance of the Abenaki, Penobscot, Passamaquoddy, Maliseet and Mi'kmaq, formed in the later 17th century and allied with New France against English expansion into Maine and Acadia. Drawn over the colonial claims to its land."
+    },
+    {
+      "name": "Cherokee Nation",
+      "from": 1783,
+      "to": 1838,
+      "blob": [
+        -84.4,
+        34.9,
+        1.2
+      ],
+      "contested": true,
+      "wikipedia": "Cherokee Nation (1794–1907)",
+      "description": "After the American Revolution the Cherokee reorganised as a nation with a written constitution (1827), Sequoyah's syllabary and the Cherokee Phoenix newspaper. Despite winning Worcester v. Georgia (1832), they were forced west on the Trail of Tears in 1838–1839. Within land claimed by the United States."
+    },
+    {
+      "name": "Muscogee Confederacy",
+      "from": 1783,
+      "to": 1836,
+      "blob": [
+        -85.6,
+        32.5,
+        1.3
+      ],
+      "contested": true,
+      "wikipedia": "Muscogee",
+      "description": "A confederacy of Upper and Lower Creek towns in Alabama and Georgia. The Red Stick War (1813–1814) and the Treaty of Fort Jackson stripped much of its land; removal to Indian Territory followed in 1836. Within land claimed by the United States."
+    },
+    {
+      "name": "Choctaw",
+      "from": 1783,
+      "to": 1831,
+      "blob": [
+        -89.0,
+        32.7,
+        1.2
+      ],
+      "contested": true,
+      "wikipedia": "Choctaw",
+      "description": "The Choctaw of central Mississippi ceded their remaining homeland in the Treaty of Dancing Rabbit Creek (1830) and were the first nation removed west, from 1831. Within land claimed by the United States."
+    },
+    {
+      "name": "Chickasaw",
+      "from": 1783,
+      "to": 1837,
+      "blob": [
+        -88.7,
+        34.4,
+        0.9
+      ],
+      "contested": true,
+      "wikipedia": "Chickasaw",
+      "description": "A formidable military nation of northern Mississippi, allied with the British in the colonial wars; removed to Indian Territory from 1837. Within land claimed by the United States."
+    },
+    {
+      "name": "Seminole",
+      "from": 1783,
+      "to": 1858,
+      "blob": [
+        -81.6,
+        28.0,
+        1.4
+      ],
+      "contested": true,
+      "wikipedia": "Seminole",
+      "description": "Formed in 18th-century Florida from Creek migrants, earlier Florida peoples and people who escaped slavery. The Seminole fought three wars against the United States (1816–1858); a few hundred were never removed. Within land claimed by Spain and then the United States."
+    },
+    {
+      "name": "Tecumseh's Confederacy",
+      "from": 1808,
+      "to": 1813,
+      "blob": [
+        -86.3,
+        40.6,
+        2.0
+      ],
+      "contested": true,
+      "certainty": "uncertain",
+      "wikipedia": "Tecumseh's confederacy",
+      "description": "A pan-tribal alliance led by the Shawnee Tecumseh and his brother Tenskwatawa from Prophetstown, resisting land cessions in the Northwest. It collapsed after Tecumseh was killed at the Battle of the Thames in 1813."
+    },
+    {
+      "name": "Comanchería",
+      "from": 1783,
+      "to": 1875,
+      "blob": [
+        -100.5,
+        33.5,
+        4.0
+      ],
+      "contested": true,
+      "wikipedia": "Comancheria",
+      "description": "The Comanche dominated the southern Plains from the early 18th century, raiding deep into northern Mexico and controlling trade in horses and captives. Their power ended with the Red River War; Quanah Parker's band surrendered in 1875. Within land claimed by Spain, Mexico, Texas and the United States."
+    },
+    {
+      "name": "Apachería",
+      "from": 1783,
+      "to": 1886,
+      "blob": [
+        -108.0,
+        31.6,
+        3.0
+      ],
+      "contested": true,
+      "certainty": "uncertain",
+      "wikipedia": "Apacheria",
+      "description": "The lands of the Apache peoples across the Southwest and northern Mexico, which neither Spain nor Mexico controlled. The Apache Wars ended with Geronimo's surrender in 1886. Within land claimed by Spain, Mexico and the United States."
+    },
+    {
+      "name": "Diné Bikéyah (Navajo)",
+      "from": 1783,
+      "to": 1863,
+      "blob": [
+        -109.6,
+        36.2,
+        1.7
+      ],
+      "contested": true,
+      "wikipedia": "Navajo",
+      "description": "The Navajo homeland between the four sacred mountains. In 1864 the US Army forced the Long Walk to Bosque Redondo; the 1868 treaty let the Diné return to part of their land. Within land claimed by Spain, Mexico and the United States."
+    },
+    {
+      "name": "Lakota (Oceti Sakowin)",
+      "from": 1783,
+      "to": 1877,
+      "blob": [
+        -102.4,
+        44.6,
+        3.0
+      ],
+      "contested": true,
+      "wikipedia": "Lakota people",
+      "description": "The dominant power of the northern Plains in the 19th century. The Lakota defeated the US Army at the Little Bighorn in 1876, but the government seized the Black Hills in 1877. Within land claimed by the United States."
+    },
+    {
+      "name": "Blackfoot Confederacy",
+      "from": 1783,
+      "to": 1877,
+      "blob": [
+        -112.5,
+        49.0,
+        2.5
+      ],
+      "contested": true,
+      "wikipedia": "Blackfoot Confederacy",
+      "description": "The Siksika, Kainai, Piikani and their allies held the northwestern Plains on both sides of the later US–Canada border until the buffalo collapsed; Treaty 7 was signed in 1877. Within land claimed by Britain and the United States."
+    },
+    {
+      "name": "Osage",
+      "from": 1783,
+      "to": 1825,
+      "blob": [
+        -94.6,
+        37.6,
+        1.3
+      ],
+      "contested": true,
+      "wikipedia": "Osage Nation",
+      "description": "The Osage dominated the region between the Missouri and Arkansas rivers through the 18th century, controlling trade with the French and Spanish. Treaties in 1808, 1818 and 1825 ceded almost all of their land. Within land claimed by Spain and then the United States."
+    },
+    {
+      "name": "Pawnee",
+      "from": 1783,
+      "to": 1857,
+      "blob": [
+        -98.6,
+        41.4,
+        1.2
+      ],
+      "contested": true,
+      "wikipedia": "Pawnee people",
+      "description": "Farming and bison-hunting villages along the Platte and Loup rivers, at times numbering over 10,000 people. Epidemics, Lakota attacks and the 1857 Treaty of Table Creek confined them to a reservation. Within land claimed by the United States."
+    },
+    {
+      "name": "Cheyenne and Arapaho",
+      "from": 1783,
+      "to": 1867,
+      "blob": [
+        -104.0,
+        39.8,
+        1.9
+      ],
+      "contested": true,
+      "certainty": "uncertain",
+      "wikipedia": "Cheyenne",
+      "description": "Allied nations of the central Plains between the Platte and Arkansas rivers. After the Sand Creek massacre (1864) the Medicine Lodge Treaty of 1867 assigned them to a reservation in Indian Territory. Within land claimed by the United States."
+    },
+    {
+      "name": "Crow (Apsáalooke)",
+      "from": 1783,
+      "to": 1868,
+      "blob": [
+        -107.8,
+        45.6,
+        1.6
+      ],
+      "contested": true,
+      "wikipedia": "Crow people",
+      "description": "The Apsáalooke held the Yellowstone country against the Lakota and Blackfoot. The second Fort Laramie Treaty (1868) reduced their land to a reservation. Within land claimed by the United States."
+    },
+    {
+      "name": "Shoshone",
+      "from": 1783,
+      "to": 1868,
+      "blob": [
+        -112.0,
+        42.6,
+        2.2
+      ],
+      "contested": true,
+      "certainty": "uncertain",
+      "wikipedia": "Shoshone",
+      "description": "Eastern and Northern Shoshone bands across the Great Basin and the Snake River plain; Sacagawea was Lemhi Shoshone. The Fort Bridger Treaty of 1868 created the Wind River reservation. Within land claimed by Spain, Britain and the United States."
+    },
+    {
+      "name": "Ute",
+      "from": 1783,
+      "to": 1880,
+      "blob": [
+        -107.4,
+        39.2,
+        1.6
+      ],
+      "contested": true,
+      "wikipedia": "Ute people",
+      "description": "Mountain and plateau bands of Colorado and Utah, long trading partners and rivals of New Mexico. After the 1879 White River conflict they were forced from most of Colorado in 1880–1881. Within land claimed by Spain, Mexico and the United States."
+    },
+    {
+      "name": "Nez Perce (Nimiipuu)",
+      "from": 1783,
+      "to": 1877,
+      "blob": [
+        -116.6,
+        45.8,
+        1.2
+      ],
+      "contested": true,
+      "wikipedia": "Nez Perce",
+      "description": "The Nimiipuu of the Columbia Plateau guided Lewis and Clark in 1805. When the US shrank their reservation, Chief Joseph's bands fled some 1,900 km toward Canada in the Nez Perce War of 1877 before surrendering. Within land claimed by Britain and the United States."
+    },
+    {
+      "name": "Tlaxcala",
+      "from": 1348,
+      "to": 1519,
+      "blob": [
+        -98.2,
+        19.35,
+        0.35
+      ],
+      "contested": true,
+      "wikipedia": "Tlaxcala (Nahua state)",
+      "description": "A confederation of four Nahua altepetl that the Aztec Triple Alliance encircled but never conquered, fighting it in ritual 'flower wars'. In 1519 Tlaxcala allied with Cortés, decisively helping the fall of Tenochtitlan."
+    },
+    {
+      "name": "Kʼicheʼ Kingdom of Qʼumarkaj",
+      "from": 1225,
+      "to": 1524,
+      "blob": [
+        -91.2,
+        15.0,
+        0.6
+      ],
+      "contested": true,
+      "wikipedia": "Kʼicheʼ kingdom of Qʼumarkaj",
+      "description": "The most powerful Maya kingdom of the Guatemalan highlands, ruled from Qʼumarkaj; the Popol Vuh comes from its tradition. Pedro de Alvarado's conquest destroyed it in 1524."
+    },
+    {
+      "name": "Kaqchikel kingdom (Iximche)",
+      "from": 1470,
+      "to": 1524,
+      "blob": [
+        -90.95,
+        14.65,
+        0.35
+      ],
+      "contested": true,
+      "wikipedia": "Iximche",
+      "description": "The Kaqchikel broke away from the Kʼicheʼ around 1470 and ruled from Iximche. They first allied with the Spanish against the Kʼicheʼ in 1524, then rebelled against them."
+    },
+    {
+      "name": "Muisca Confederation",
+      "from": 600,
+      "to": 1540,
+      "blob": [
+        -73.6,
+        5.25,
+        0.8
+      ],
+      "wikipedia": "Muisca Confederation",
+      "description": "Chiefdoms of the Altiplano Cundiboyacense ruled by the zipa of Bacatá and the zaque of Hunza, famed for goldwork; the ritual at Lake Guatavita inspired the legend of El Dorado. The Spanish conquered them in 1537–1540."
+    },
+    {
+      "name": "Tairona",
+      "from": 200,
+      "to": 1600,
+      "blob": [
+        -73.9,
+        10.9,
+        0.45
+      ],
+      "contested": true,
+      "certainty": "uncertain",
+      "wikipedia": "Tairona",
+      "description": "Chiefdoms of the Sierra Nevada de Santa Marta, builders of stone-terraced towns such as Ciudad Perdida. They resisted Spanish conquest until about 1600; the Kogi and Arhuaco are their descendants."
+    },
+    {
+      "name": "Chachapoya",
+      "from": 750,
+      "to": 1470,
+      "blob": [
+        -77.9,
+        -6.2,
+        0.7
+      ],
+      "certainty": "uncertain",
+      "wikipedia": "Chachapoya culture",
+      "description": "The 'Warriors of the Clouds' of the Andean cloud forests, builders of the fortress of Kuélap. The Inca conquered them around 1470."
+    },
+    {
+      "name": "Neo-Inca State (Vilcabamba)",
+      "from": 1537,
+      "to": 1572,
+      "blob": [
+        -73.2,
+        -13.1,
+        0.8
+      ],
+      "contested": true,
+      "wikipedia": "Neo-Inca State",
+      "description": "After the Spanish conquest, Manco Inca withdrew to Vilcabamba and kept an independent Inca state alive until the capture and execution of Túpac Amaru in 1572."
+    },
+    {
+      "name": "Mapuche (Araucanía)",
+      "from": 1550,
+      "to": 1883,
+      "blob": [
+        -72.6,
+        -38.6,
+        1.6
+      ],
+      "contested": true,
+      "wikipedia": "Mapuche",
+      "description": "The Mapuche held the Spanish at the Biobío River through the long Arauco War, and Spain recognised the frontier in parliaments such as Quilín (1641). Chile and Argentina conquered the Araucanía only in 1861–1883."
+    },
+    {
+      "name": "Quilombo dos Palmares",
+      "from": 1605,
+      "to": 1694,
+      "blob": [
+        -36.1,
+        -9.2,
+        0.55
+      ],
+      "contested": true,
+      "wikipedia": "Palmares (quilombo)",
+      "description": "A self-governing community of people who escaped slavery in the hills of Alagoas, which grew to thousands of inhabitants and resisted Dutch and Portuguese expeditions for most of the 17th century. Its last leader, Zumbi, was killed in 1695 after Palmares fell."
+    },
+    {
+      "name": "Marajoara",
+      "from": 400,
+      "to": 1400,
+      "blob": [
+        -49.6,
+        -0.9,
+        0.8
+      ],
+      "kind": "people",
+      "certainty": "uncertain",
+      "wikipedia": "Marajoara culture",
+      "description": "Mound-building societies of Marajó Island at the mouth of the Amazon, known for elaborate painted ceramics; evidence that the Amazon supported complex societies."
+    },
+    {
+      "name": "Taíno cacicazgos of Hispaniola",
+      "from": 1000,
+      "to": 1503,
+      "islands": [
+        "hispaniola"
+      ],
+      "halo": 0.3,
+      "wikipedia": "Taíno",
+      "description": "Hispaniola was divided among five great cacicazgos (Marién, Maguá, Maguana, Xaraguá, Higüey) when Columbus arrived. Spanish forced labour and disease destroyed them; Anacaona, cacica of Xaraguá, was executed in 1503."
+    },
+    {
+      "name": "Taíno of Borikén",
+      "from": 1000,
+      "to": 1511,
+      "islands": [
+        "puerto_rico"
+      ],
+      "halo": 0.3,
+      "wikipedia": "Taíno",
+      "description": "Puerto Rico's Taíno chiefdoms, led by the cacique Agüeybaná, rose against Spanish rule in 1511 and were defeated."
+    },
+    {
+      "name": "Taíno of Xaymaca",
+      "from": 1000,
+      "to": 1509,
+      "islands": [
+        "jamaica"
+      ],
+      "halo": 0.3,
+      "wikipedia": "Taíno",
+      "description": "Jamaica's Taíno chiefdoms, colonised by Spain from 1509."
+    },
+    {
+      "name": "Kalinago",
+      "from": 1200,
+      "to": 1797,
+      "islands": [
+        "dominica",
+        "st_vincent",
+        "guadeloupe",
+        "martinique",
+        "st_lucia",
+        "grenada"
+      ],
+      "halo": 0.3,
+      "certainty": "uncertain",
+      "wikipedia": "Kalinago",
+      "description": "The Kalinago (Island Caribs) held the Lesser Antilles against Europeans for well over a century. Dominica and St Vincent remained theirs longest; the Garifuna of St Vincent were deported after the Second Carib War in 1797."
+    }
+  ]
+}

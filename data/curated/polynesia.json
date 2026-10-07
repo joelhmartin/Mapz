@@ -1,5 +1,41 @@
 {
   "about": "Curated Polynesian and wider Pacific polities. Geometry is real island coastline (Natural Earth 10m) inside the listed boxes, haloed to show the sea domain. Dates follow the archaeological and historical consensus summarised on the linked Wikipedia articles and are approximate, especially settlement dates.",
+  "historicalBasemaps": {
+    "region": {
+      "boxes": [
+        [
+          155,
+          -50,
+          180,
+          30
+        ],
+        [
+          -180,
+          -50,
+          -125,
+          30
+        ]
+      ]
+    },
+    "include": [
+      "Maori",
+      "Maoris",
+      "M?ori",
+      "Māori"
+    ],
+    "rename": {
+      "Maori": "Māori iwi",
+      "Maoris": "Māori iwi",
+      "M?ori": "Māori iwi",
+      "Māori": "Māori iwi"
+    },
+    "wikipedia": {
+      "Māori iwi": "Māori people"
+    },
+    "notes": {
+      "Māori iwi": "Polynesian voyagers settled Aotearoa around 1280 and formed iwi (tribes) and hapū led by rangatira. Inter-iwi warfare intensified with muskets in the Musket Wars (1807–1842)."
+    }
+  },
   "boxes": {
     "tonga": [
       -176.5,

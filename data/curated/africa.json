@@ -2,10 +2,22 @@
   "about": "Sub-Saharan Africa: how historical-basemaps snapshots are merged in, plus hand-placed approximate core areas for states neither dataset maps. 'blob' geometries mark an approximate heartland, not a surveyed border.",
   "historicalBasemaps": {
     "region": {
-      "minLon": -20,
-      "maxLon": 52,
-      "maxLat": 17,
-      "excludeArabia": true
+      "boxes": [
+        [
+          -20,
+          -40,
+          52,
+          17
+        ]
+      ],
+      "excludeBoxes": [
+        [
+          42,
+          11,
+          52,
+          17
+        ]
+      ]
     },
     "exclude": [
       "",

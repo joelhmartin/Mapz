@@ -21,9 +21,12 @@ npm run data        # fetch sources, merge supplements, build public/data/*
 
 `scripts/supplement.py` fills gaps in Cliopatria. Supplementary polygons are clipped against whatever is already mapped for their time range, with precedence Cliopatria > curated > historical-basemaps:
 
-- **historical-basemaps** snapshots for sub-Saharan Africa and Aotearoa, each valid until the next snapshot year. Names, Wikipedia links and short notes are configured in `data/curated/africa.json`.
+- **historical-basemaps** snapshots for sub-Saharan Africa, the Americas and Aotearoa, each valid until the next snapshot year. Names, Wikipedia links and short notes are configured in `data/curated/africa.json`.
 - **Curated Polynesia** (`data/curated/polynesia.json`): real island coastlines with a sea halo, and settlement and dynasty dates from the archaeological and historical record.
 - **Curated Africa**: rough heartlands for states neither dataset maps (Mapungubwe, Butua, Mthethwa, Ndwandwe, Ngwane, Ife).
+- **Curated Americas** (`data/curated/americas.json`): Mississippian centres, Southwest cultures, eastern confederacies, Mesoamerican and Andean states and island chiefdoms. Native nations after 1783 are marked `contested`, which draws them over the colonial claims to their land instead of clipping them away.
+
+Each `data/curated/*.json` file can also configure which historical-basemaps features to take for its region (names, Wikipedia titles, which entries are peoples).
 
 Borders that are approximations are drawn dashed and flagged in the hover card. Peoples and cultures, as opposed to states, get a lighter wash and italic labels.
 
