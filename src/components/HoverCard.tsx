@@ -1,13 +1,15 @@
 import type { HoverInfo } from '../map/MapView';
 import { displayName, type PolityIndex } from '../lib/polities';
 import { formatBattleDate, formatSpan } from '../lib/years';
+import { MOVEMENT_COLORS, MOVEMENT_KIND_LABELS, type MovementIndex } from '../map/movements';
 
 interface Props {
   hover: HoverInfo;
   index: PolityIndex | null;
+  movements: MovementIndex | null;
 }
 
-export function HoverCard({ hover, index }: Props) {
+export function HoverCard({ hover, index, movements }: Props) {
   const { target, x, y } = hover;
   // Keep the card on screen near the right and bottom edges.
   const left = x + 300 > window.innerWidth ? x - 296 : x + 16;
@@ -25,6 +27,30 @@ export function HoverCard({ hover, index }: Props) {
         {b.war && <div className="hover-line muted">Part of {b.war}</div>}
         {b.sides && <div className="hover-line muted">{b.sides.split('; ').join(' · ')}</div>}
         <div className="hover-hint">Click for more</div>
+      </div>
+    );
+  }
+
+  if (target.type === 'movement') {
+    const m = target.props;
+    const info = movements?.[m.id];
+    return (
+      <div className="hover-card panel" style={{ left, top }}>
+        <div className="hover-title">
+          <span className="swatch" style={{ background: MOVEMENT_COLORS[m.kind] }} />
+          {m.name}
+        </div>
+        {info && (
+          <div className="hover-line">
+            {formatSpan(info.from, info.to)} · {MOVEMENT_KIND_LABELS[m.kind]}
+          </div>
+        )}
+        {info && (
+          <div className="hover-line muted">
+            {info.itinerary[0].place} → {info.itinerary.at(-1)!.place}
+          </div>
+        )}
+        <div className="hover-hint">Click for the route</div>
       </div>
     );
   }

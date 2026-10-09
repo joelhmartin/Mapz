@@ -357,6 +357,31 @@ button {
   text-decoration: underline;
   font-size: inherit;
 }
+.itinerary {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  font-size: 14px;
+  border-left: 2px solid var(--paper-edge);
+}
+.itinerary li {
+  padding: 2px 0 2px 12px;
+  color: var(--ink-soft);
+  position: relative;
+}
+.itinerary li.reached {
+  color: var(--ink);
+}
+.itinerary li.reached::before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
 .links {
   display: flex;
   gap: 14px;

@@ -14,6 +14,7 @@ Interactive historical world map: territories of every power from 3400 BCE to to
 - `scripts/supplement.py` (Python + shapely) merges `historical-basemaps` snapshots and curated polities (`data/curated/*.json`) into `data/build/supplement.ndjson`, clipped so nothing overlaps. Precedence: Cliopatria > curated > historical-basemaps.
 - `scripts/build-data.mjs` writes `public/data/{basemap,polities,labels}.pmtiles` and `polities.json` (the index the UI reads). The built files are committed.
 - `scripts/fetch-battles.mjs` runs in GitHub Actions (`update-battles.yml`) because Wikidata is not reachable from the dev container. Use the same pattern (a workflow that fetches and commits data) for any other Wikidata/Wikipedia data.
+- `data/curated/migrations.json` holds movement routes (dated waypoints); `scripts/build-migrations.mjs` turns them into `public/data/migrations.{geojson,json}`, and `src/map/movements.ts` draws them.
 - `src/map/style.ts` is the map style. The selected year is the style's global state `year`.
 
 ## Performance rules

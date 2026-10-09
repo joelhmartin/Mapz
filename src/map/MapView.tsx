@@ -7,13 +7,22 @@ import 'maplibre-gl/dist/maplibre-gl.css';
 import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url';
 import { POLITIES, buildStyle } from './style';
 import { addBattleLayers, isBattleVisible, setBattlesVisible, type BattleProps } from './battles';
+import {
+  MOVEMENT_LAYERS,
+  addMovementLayers,
+  isMovementVisible,
+  type MovementSegmentProps,
+} from './movements';
 import type { PolityFeatureProps } from '../lib/polities';
 import { viewFromUrl, writeViewToUrl } from '../lib/years';
 
 setWorkerUrl(workerUrl);
 addProtocol('pmtiles', new Protocol().tile);
 
-export type MapTarget = { type: 'polity'; props: PolityFeatureProps } | { type: 'battle'; props: BattleProps };
+export type MapTarget =
+  | { type: 'polity'; props: PolityFeatureProps }
+  | { type: 'battle'; props: BattleProps }
+  | { type: 'movement'; props: MovementSegmentProps };
 
 export interface HoverInfo {
   target: MapTarget;
@@ -25,6 +34,7 @@ interface Props {
   year: number;
   selectedKey: string | null;
   showBattles: boolean;
+  showMovements: boolean;
   onHover: (info: HoverInfo | null) => void;
   onSelect: (target: MapTarget | null) => void;
 }
@@ -41,18 +51,26 @@ function pickPolity(features: MapGeoJSONFeature[], year: number): MapGeoJSONFeat
   return best;
 }
 
-// Battles sit on top of territories, so they take priority under the cursor.
+function setLayersVisible(map: MapLibreMap, ids: string[], visible: boolean) {
+  const visibility = visible ? 'visible' : 'none';
+  for (const id of ids) {
+    if (map.getLayer(id) && map.getLayoutProperty(id, 'visibility') !== visibility) {
+      map.setLayoutProperty(id, 'visibility', visibility);
+    }
+  }
+}
+
+// Battles, then movement routes, sit on top of territories, so they take priority under the cursor.
 function targetAt(
   map: MapLibreMap,
   e: MapMouseEvent,
-  year: number,
-  showBattles: boolean,
+  { year, showBattles, showMovements }: { year: number; showBattles: boolean; showMovements: boolean },
 ): { target: MapTarget; polityId?: number } | null {
+  const box: [[number, number], [number, number]] = [
+    [e.point.x - 6, e.point.y - 6],
+    [e.point.x + 6, e.point.y + 6],
+  ];
   if (showBattles && map.getLayer('battles')) {
-    const box: [[number, number], [number, number]] = [
-      [e.point.x - 6, e.point.y - 6],
-      [e.point.x + 6, e.point.y + 6],
-    ];
     const battles = map
       .queryRenderedFeatures(box, { layers: ['battles'] })
       .filter((f) => isBattleVisible(f.properties.year, year));
@@ -61,17 +79,23 @@ function targetAt(
       return { target: { type: 'battle', props: newest.properties as BattleProps } };
     }
   }
+  if (showMovements && map.getLayer('movements-head')) {
+    const routes = map
+      .queryRenderedFeatures(box, { layers: MOVEMENT_LAYERS })
+      .filter((f) => isMovementVisible(f.properties as MovementSegmentProps, year));
+    if (routes.length) return { target: { type: 'movement', props: routes[0].properties as MovementSegmentProps } };
+  }
   const f = pickPolity(map.queryRenderedFeatures(e.point, { layers: ['polities-fill'] }), year);
   if (!f) return null;
   return { target: { type: 'polity', props: f.properties as PolityFeatureProps }, polityId: f.id as number };
 }
 
-export function MapView({ year, selectedKey, showBattles, onHover, onSelect }: Props) {
+export function MapView({ year, selectedKey, showBattles, showMovements, onHover, onSelect }: Props) {
   const container = useRef<HTMLDivElement>(null);
   const mapRef = useRef<MapLibreMap | null>(null);
   const hoverId = useRef<number | null>(null);
-  const state = useRef({ year, selectedKey, showBattles });
-  state.current = { year, selectedKey, showBattles };
+  const state = useRef({ year, selectedKey, showBattles, showMovements });
+  state.current = { year, selectedKey, showBattles, showMovements };
   const callbacks = useRef({ onHover, onSelect });
   callbacks.current = { onHover, onSelect };
 
@@ -94,12 +118,23 @@ export function MapView({ year, selectedKey, showBattles, onHover, onSelect }: P
     map.addControl(new NavigationControl({ showCompass: false }), 'top-right');
     map.addControl(new AttributionControl({ compact: true }), 'bottom-right');
 
+    // Overlays load after the style, movements first so battles draw on top of them.
     map.on('load', async () => {
-      const url = `${import.meta.env.BASE_URL}data/battles.geojson`;
-      const res = await fetch(url, { method: 'HEAD' }).catch(() => null);
-      if (!res?.ok || !mapRef.current) return;
-      addBattleLayers(map, new URL(url, window.location.href).href);
-      setBattlesVisible(map, state.current.showBattles);
+      const dataUrl = async (file: string) => {
+        const url = `${import.meta.env.BASE_URL}data/${file}`;
+        const res = await fetch(url, { method: 'HEAD' }).catch(() => null);
+        return res?.ok && mapRef.current ? new URL(url, window.location.href).href : null;
+      };
+      const movements = await dataUrl('migrations.geojson');
+      if (movements) {
+        addMovementLayers(map, movements);
+        setLayersVisible(map, MOVEMENT_LAYERS, state.current.showMovements);
+      }
+      const battles = await dataUrl('battles.geojson');
+      if (battles) {
+        addBattleLayers(map, battles);
+        setBattlesVisible(map, state.current.showBattles);
+      }
     });
     // Catch up on any change made while the style was loading.
     map.once('load', () => {
@@ -116,7 +151,7 @@ export function MapView({ year, selectedKey, showBattles, onHover, onSelect }: P
       if (id !== null) map.setFeatureState({ source: POLITIES, sourceLayer: 'polities', id }, { hover: true });
     };
 
-    const at = (e: MapMouseEvent) => targetAt(map, e, state.current.year, state.current.showBattles);
+    const at = (e: MapMouseEvent) => targetAt(map, e, state.current);
     // Hit-testing polygons is costly, so do it at most once per frame for the latest position.
     let pendingMove: MapMouseEvent | null = null;
     const onMove = (e: MapMouseEvent) => {
@@ -162,16 +197,17 @@ export function MapView({ year, selectedKey, showBattles, onHover, onSelect }: P
     frame.current = null;
     const map = mapRef.current;
     if (!map || !ready.current) return;
-    const { year, selectedKey, showBattles } = state.current;
+    const { year, selectedKey, showBattles, showMovements } = state.current;
     if (applied.current.year !== year) map.setGlobalStateProperty('year', year);
     if (applied.current.selectedKey !== selectedKey) map.setGlobalStateProperty('selected', selectedKey ?? '');
     setBattlesVisible(map, showBattles);
+    setLayersVisible(map, MOVEMENT_LAYERS, showMovements);
     applied.current = { year, selectedKey };
   };
 
   useEffect(() => {
     if (frame.current === null) frame.current = requestAnimationFrame(() => sync.current());
-  }, [year, selectedKey, showBattles]);
+  }, [year, selectedKey, showBattles, showMovements]);
 
   return <div ref={container} className="map" />;
 }

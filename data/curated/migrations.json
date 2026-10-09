@@ -1,0 +1,361 @@
+{
+  "about": "Movements drawn as routes that unfold along the timeline: migrations, voyages, military campaigns and forced removals. Each waypoint is [lon, lat, year, place]; longitudes may run past ±180 so Pacific routes stay continuous. Routes reconstructed from linguistics or archaeology are schematic and flagged uncertain.",
+  "movements": [
+    {
+      "id": "bantu-west",
+      "name": "Bantu expansion (western stream)",
+      "kind": "migration",
+      "certainty": "uncertain",
+      "wikipedia": "Bantu expansion",
+      "description": "Bantu-speaking farmers spread from the Cameroon–Nigeria borderlands across most of central, eastern and southern Africa over some three thousand years, carrying farming and later iron-working. Routes and dates are reconstructed from linguistics and archaeology and are still debated; one stream moved south through the rainforest towards the lower Congo and Angola.",
+      "waypoints": [
+        [10.2, 6.2, -1500, "Cameroon–Nigeria borderlands"],
+        [11.5, 2.0, -1000, "Equatorial rainforest"],
+        [13.5, -4.5, -500, "Lower Congo"],
+        [15.5, -11.5, 1, "Angolan plateau"],
+        [17.5, -17.5, 500, "Cunene and Okavango"]
+      ]
+    },
+    {
+      "id": "bantu-east",
+      "name": "Bantu expansion (eastern stream)",
+      "kind": "migration",
+      "certainty": "uncertain",
+      "wikipedia": "Bantu expansion",
+      "description": "An eastern stream reached the Great Lakes by around 500 BCE, where the iron-working Urewe culture appears, then spread down the eastern side of the continent, reaching KwaZulu-Natal by about the 4th century CE. Schematic route.",
+      "waypoints": [
+        [10.2, 6.2, -1500, "Cameroon–Nigeria borderlands"],
+        [20.0, 3.0, -1000, "Ubangi and Uele rivers"],
+        [31.0, -1.5, -500, "Great Lakes (Urewe culture)"],
+        [37.5, -4.0, -100, "East African coast"],
+        [35.5, -14.0, 200, "Lake Malawi"],
+        [31.0, -22.0, 300, "Limpopo valley"],
+        [30.5, -28.5, 400, "KwaZulu-Natal"]
+      ]
+    },
+    {
+      "id": "austronesian",
+      "name": "Austronesian expansion",
+      "kind": "voyage",
+      "certainty": "uncertain",
+      "wikipedia": "Austronesian peoples",
+      "description": "Austronesian-speaking farmers and seafarers spread from Taiwan through the Philippines and Indonesia from about 3000 BCE in outrigger canoes. Their descendants include the Filipinos, Malays, Malagasy, Chamorro and Polynesians. Schematic route.",
+      "waypoints": [
+        [121.0, 23.7, -3000, "Taiwan"],
+        [121.5, 16.0, -2200, "Luzon"],
+        [124.5, 8.0, -2000, "Mindanao"],
+        [120.0, -1.5, -1800, "Sulawesi"],
+        [128.0, -3.5, -1600, "Maluku"],
+        [150.0, -4.0, -1350, "Bismarck Archipelago"]
+      ]
+    },
+    {
+      "id": "lapita",
+      "name": "Lapita voyages into Remote Oceania",
+      "kind": "voyage",
+      "wikipedia": "Lapita culture",
+      "description": "Makers of distinctive dentate-stamped Lapita pottery sailed from the Bismarck Archipelago into islands no human had reached, settling Vanuatu, New Caledonia and Fiji around 1100–1000 BCE and Tonga and Samoa by about 850–800 BCE — the founding of Polynesia.",
+      "waypoints": [
+        [150.0, -4.0, -1350, "Bismarck Archipelago"],
+        [166.0, -10.7, -1100, "Santa Cruz Islands"],
+        [167.5, -16.0, -1050, "Vanuatu"],
+        [178.0, -18.0, -1000, "Fiji"],
+        [184.8, -21.1, -850, "Tonga"],
+        [188.0, -13.8, -800, "Samoa"]
+      ]
+    },
+    {
+      "id": "east-polynesia",
+      "name": "Into East Polynesia",
+      "kind": "voyage",
+      "certainty": "uncertain",
+      "wikipedia": "Polynesian navigation",
+      "description": "After a 'long pause' of nearly two thousand years in Tonga and Samoa, voyagers pushed east around 900–1000 CE, reaching the Cook and Society Islands. Navigators steered by stars, swells and birds in double-hulled canoes.",
+      "waypoints": [
+        [188.0, -13.8, 900, "Samoa"],
+        [200.2, -21.2, 1000, "Cook Islands"],
+        [210.5, -17.5, 1025, "Society Islands"]
+      ]
+    },
+    {
+      "id": "hawaii",
+      "name": "Voyages to Hawaiʻi",
+      "kind": "voyage",
+      "certainty": "uncertain",
+      "wikipedia": "Polynesian navigation",
+      "description": "Hawaiʻi was settled from central East Polynesia, perhaps first via the Marquesas and later in two-way voyages with Tahiti, between about 1000 and 1200 CE — a crossing of over 4,000 km.",
+      "waypoints": [
+        [210.5, -17.5, 1000, "Society Islands"],
+        [220.0, -9.0, 1050, "Marquesas"],
+        [204.5, 19.6, 1150, "Hawaiʻi"]
+      ]
+    },
+    {
+      "id": "rapanui",
+      "name": "Voyage to Rapa Nui",
+      "kind": "voyage",
+      "certainty": "uncertain",
+      "wikipedia": "History of Easter Island",
+      "description": "Rapa Nui, the easternmost inhabited island of Polynesia, was settled around 1200 CE, probably via Mangareva.",
+      "waypoints": [
+        [220.0, -9.0, 1100, "Marquesas"],
+        [225.0, -23.1, 1150, "Mangareva"],
+        [250.6, -27.1, 1200, "Rapa Nui"]
+      ]
+    },
+    {
+      "id": "aotearoa",
+      "name": "Voyages to Aotearoa",
+      "kind": "voyage",
+      "certainty": "uncertain",
+      "wikipedia": "History of New Zealand",
+      "description": "Aotearoa (New Zealand), the last large land mass to be settled by humans, was reached from East Polynesia around 1250–1280 CE. Māori tradition remembers the founding canoes (waka) and Hawaiki as the homeland.",
+      "waypoints": [
+        [210.5, -17.5, 1200, "Society Islands"],
+        [200.2, -21.2, 1230, "Rarotonga"],
+        [182.0, -29.3, 1260, "Kermadec Islands"],
+        [174.8, -36.8, 1280, "Aotearoa"]
+      ]
+    },
+    {
+      "id": "moriori",
+      "name": "Settlement of Rēkohu",
+      "kind": "voyage",
+      "certainty": "uncertain",
+      "wikipedia": "Moriori",
+      "description": "Polynesians from Aotearoa settled Rēkohu (the Chatham Islands) around 1500, becoming the Moriori.",
+      "waypoints": [
+        [176.5, -39.5, 1450, "Aotearoa"],
+        [183.5, -43.9, 1500, "Rēkohu (Chatham Islands)"]
+      ]
+    },
+    {
+      "id": "madagascar",
+      "name": "Austronesian voyage to Madagascar",
+      "kind": "voyage",
+      "certainty": "uncertain",
+      "wikipedia": "Austronesian peoples",
+      "description": "The Malagasy language is closest to Maʼanyan of south Borneo: Austronesian voyagers reached Madagascar sometime in the mid-first millennium CE and mixed with Bantu-speaking Africans. The actual route is unknown; this line is schematic.",
+      "waypoints": [
+        [114.5, -2.5, 500, "South Borneo"],
+        [100.0, -7.0, 530, "Sunda Strait"],
+        [75.0, -10.0, 580, "Indian Ocean"],
+        [47.5, -17.0, 650, "Madagascar"]
+      ]
+    },
+    {
+      "id": "norse",
+      "name": "Norse voyages across the North Atlantic",
+      "kind": "voyage",
+      "wikipedia": "Norse colonization of North America",
+      "description": "Norse seafarers settled the Faroes (c. 825) and Iceland (from 874), Erik the Red founded the Greenland colonies in 985, and Leif Erikson reached North America around 1000. L'Anse aux Meadows in Newfoundland, dated to 1021 by tree rings, is the only confirmed Norse site in the Americas.",
+      "waypoints": [
+        [5.3, 60.4, 790, "Western Norway"],
+        [-7.0, 62.0, 825, "Faroe Islands"],
+        [-21.9, 64.1, 874, "Iceland"],
+        [-45.5, 61.2, 985, "Greenland (Eastern Settlement)"],
+        [-55.5, 51.6, 1021, "L'Anse aux Meadows"]
+      ]
+    },
+    {
+      "id": "alexander",
+      "name": "Campaigns of Alexander the Great",
+      "kind": "campaign",
+      "wikipedia": "Wars of Alexander the Great",
+      "description": "Alexander crossed into Asia in 334 BCE, defeated the Persian Empire at the Granicus, Issus and Gaugamela, and marched as far as the Indus before his army refused to go further. He died in Babylon in 323 BCE aged 32.",
+      "waypoints": [
+        [22.5, 40.75, -335, "Pella, Macedon"],
+        [27.3, 40.2, -334, "Granicus"],
+        [36.2, 36.8, -333, "Issus"],
+        [35.2, 33.27, -332, "Siege of Tyre"],
+        [29.9, 31.2, -331, "Alexandria, Egypt"],
+        [43.5, 36.5, -331, "Gaugamela"],
+        [52.9, 29.9, -330, "Persepolis"],
+        [66.9, 36.75, -329, "Bactra"],
+        [73.5, 32.9, -326, "Hydaspes"],
+        [44.4, 32.5, -323, "Babylon"]
+      ]
+    },
+    {
+      "id": "hannibal",
+      "name": "Hannibal's march on Italy",
+      "kind": "campaign",
+      "wikipedia": "Hannibal's crossing of the Alps",
+      "description": "In 218 BCE Hannibal led a Carthaginian army with war elephants from Spain over the Pyrenees and the Alps into Italy, destroying Roman armies at the Trebia, Lake Trasimene and, in 216 BCE, Cannae.",
+      "waypoints": [
+        [-0.98, 37.6, -218, "Carthago Nova"],
+        [2.0, 42.4, -218, "Pyrenees"],
+        [6.9, 45.2, -218, "Crossing of the Alps"],
+        [9.6, 45.0, -218, "Trebia"],
+        [12.1, 43.2, -217, "Lake Trasimene"],
+        [16.13, 41.3, -216, "Cannae"]
+      ]
+    },
+    {
+      "id": "genghis",
+      "name": "Campaigns of Genghis Khan",
+      "kind": "campaign",
+      "wikipedia": "Genghis Khan",
+      "description": "Proclaimed Genghis Khan in 1206, Temüjin attacked Western Xia, took the Jin capital Zhongdu (Beijing) in 1215 and destroyed the Khwarazmian Empire in 1219–1221. His generals Jebe and Subutai rode around the Caspian and beat the Rus' at the Kalka River in 1223.",
+      "waypoints": [
+        [108.0, 48.0, 1206, "Onon River, Mongolia"],
+        [106.2, 38.5, 1209, "Western Xia"],
+        [116.4, 39.9, 1215, "Zhongdu (Beijing)"],
+        [68.3, 42.85, 1219, "Otrar"],
+        [66.96, 39.65, 1220, "Samarkand"],
+        [37.6, 47.6, 1223, "Kalka River"]
+      ]
+    },
+    {
+      "id": "batu",
+      "name": "Mongol invasion of Europe",
+      "kind": "campaign",
+      "wikipedia": "Mongol invasion of Europe",
+      "description": "Batu Khan and Subutai conquered Volga Bulgaria and the Rus' principalities (1236–1240), sacked Kiev and in 1241 crushed armies at Legnica and Mohi before withdrawing in 1242, possibly on news of the Great Khan Ögedei's death.",
+      "waypoints": [
+        [49.1, 54.9, 1236, "Volga Bulgaria"],
+        [39.7, 54.6, 1237, "Ryazan"],
+        [40.4, 56.13, 1238, "Vladimir"],
+        [30.5, 50.45, 1240, "Kiev"],
+        [20.9, 47.95, 1241, "Mohi"]
+      ]
+    },
+    {
+      "id": "hulagu",
+      "name": "Hulagu's campaign in the Middle East",
+      "kind": "campaign",
+      "wikipedia": "Siege of Baghdad (1258)",
+      "description": "Hulagu destroyed the Nizari Ismaili fortresses including Alamut (1256) and sacked Baghdad in 1258, ending the Abbasid Caliphate. The Mamluks stopped the Mongol advance at Ain Jalut in 1260.",
+      "waypoints": [
+        [66.96, 39.65, 1255, "Samarkand"],
+        [50.58, 36.44, 1256, "Alamut"],
+        [44.4, 33.3, 1258, "Baghdad"],
+        [37.16, 36.2, 1260, "Aleppo"],
+        [35.4, 32.55, 1260, "Ain Jalut"]
+      ]
+    },
+    {
+      "id": "kublai",
+      "name": "Mongol conquest of the Song",
+      "kind": "campaign",
+      "wikipedia": "Mongol conquest of the Song dynasty",
+      "description": "Kublai Khan's armies took the fortress city of Xiangyang after a five-year siege (1268–1273), captured the Song capital Lin'an in 1276 and destroyed the last Song fleet at Yamen in 1279, uniting China under the Yuan.",
+      "waypoints": [
+        [112.15, 32.0, 1268, "Xiangyang"],
+        [120.15, 30.25, 1276, "Lin'an (Hangzhou)"],
+        [113.1, 22.1, 1279, "Yamen"]
+      ]
+    },
+    {
+      "id": "ndebele",
+      "name": "Mzilikazi's Ndebele migration",
+      "kind": "migration",
+      "wikipedia": "Mzilikazi",
+      "description": "Mzilikazi broke with Shaka around 1822 and led his followers onto the Highveld, raiding and absorbing Sotho-Tswana communities. Defeated by Voortrekkers and Griqua in 1837, the Ndebele crossed the Limpopo and conquered the remnants of the Rozvi, founding Mthwakazi around Bulawayo.",
+      "waypoints": [
+        [31.3, -28.3, 1822, "Zululand"],
+        [28.2, -25.75, 1827, "Highveld (Apies River)"],
+        [26.1, -25.4, 1832, "Mosega, Marico"],
+        [27.5, -22.2, 1838, "Limpopo crossing"],
+        [28.6, -20.15, 1840, "Bulawayo"]
+      ]
+    },
+    {
+      "id": "shangane",
+      "name": "Soshangane's Gaza migration",
+      "kind": "migration",
+      "wikipedia": "Soshangane",
+      "description": "After Shaka defeated the Ndwandwe in 1819, Soshangane led a following north into southern Mozambique and built the Gaza kingdom, dominating the Portuguese coastal posts.",
+      "waypoints": [
+        [31.8, -27.6, 1819, "Ndwandwe country"],
+        [32.6, -25.95, 1821, "Delagoa Bay"],
+        [33.4, -23.4, 1830, "Gaza heartland"]
+      ]
+    },
+    {
+      "id": "ngoni",
+      "name": "Zwangendaba's Ngoni migration",
+      "kind": "migration",
+      "wikipedia": "Zwangendaba",
+      "description": "Zwangendaba's Ngoni fled north after 1819, attacked the Rozvi on the Zimbabwe plateau, crossed the Zambezi in 1835 and settled near Lake Tanganyika at Mapupo, where Zwangendaba died around 1848. His successors founded Ngoni states across Malawi, Zambia and Tanzania. One of the longest migrations of the Mfecane.",
+      "waypoints": [
+        [31.8, -27.6, 1819, "Ndwandwe country"],
+        [33.0, -24.5, 1822, "Southern Mozambique"],
+        [31.0, -19.0, 1831, "Zimbabwe plateau"],
+        [32.6, -15.6, 1835, "Zambezi crossing"],
+        [33.5, -11.5, 1840, "Lake Malawi"],
+        [31.6, -8.0, 1845, "Mapupo, Ufipa"]
+      ]
+    },
+    {
+      "id": "kololo",
+      "name": "Sebetwane's Kololo migration",
+      "kind": "migration",
+      "certainty": "uncertain",
+      "wikipedia": "Sebetwane",
+      "description": "Sebetwane led the Sotho-speaking Kololo north from the Highveld through the Kalahari to the upper Zambezi, where around 1840 they conquered the Lozi kingdom of Barotseland and ruled it until 1864.",
+      "waypoints": [
+        [27.6, -28.3, 1822, "Highveld"],
+        [23.9, -27.1, 1823, "Dithakong"],
+        [25.5, -24.6, 1826, "Western Transvaal"],
+        [22.8, -20.4, 1832, "Lake Ngami"],
+        [24.5, -17.8, 1838, "Chobe"],
+        [23.2, -15.3, 1840, "Barotse floodplain"]
+      ]
+    },
+    {
+      "id": "great-trek-natal",
+      "name": "Great Trek to Natal",
+      "kind": "migration",
+      "wikipedia": "Great Trek",
+      "description": "Thousands of Dutch-speaking Boers left the Cape Colony from 1835. Piet Retief's party crossed the Drakensberg into Natal, where Retief was killed by Dingane in 1838; the Voortrekkers defeated the Zulu at Blood River that December and founded the Natalia Republic.",
+      "waypoints": [
+        [24.5, -32.25, 1835, "Graaff-Reinet"],
+        [26.8, -29.2, 1836, "Thaba Nchu"],
+        [29.5, -28.7, 1837, "Drakensberg passes"],
+        [30.53, -28.1, 1838, "Blood River"],
+        [30.4, -29.6, 1839, "Pietermaritzburg"]
+      ]
+    },
+    {
+      "id": "great-trek-transvaal",
+      "name": "Great Trek to the Transvaal",
+      "kind": "migration",
+      "wikipedia": "Great Trek",
+      "description": "Other trek parties under Hendrik Potgieter crossed the Vaal, fought the Ndebele at Vegkop (1836) and Mosega (1837) and founded Potchefstroom in 1838.",
+      "waypoints": [
+        [24.5, -32.25, 1835, "Graaff-Reinet"],
+        [26.8, -29.2, 1836, "Thaba Nchu"],
+        [27.65, -27.1, 1836, "Vegkop"],
+        [27.1, -26.7, 1838, "Potchefstroom"]
+      ]
+    },
+    {
+      "id": "trail-of-tears",
+      "name": "Trail of Tears (Cherokee removal)",
+      "kind": "removal",
+      "wikipedia": "Trail of Tears",
+      "description": "Under the Indian Removal Act, the US Army forced about 16,000 Cherokee from their homeland to Indian Territory in 1838–1839; thousands died on the way. Most travelled overland on routes like this one, through Tennessee, Kentucky, Illinois and Missouri.",
+      "waypoints": [
+        [-84.8, 35.3, 1838, "Fort Cass, Tennessee"],
+        [-86.8, 36.15, 1838, "Nashville"],
+        [-88.5, 37.36, 1838, "Golconda, Illinois"],
+        [-89.5, 37.3, 1839, "Cape Girardeau"],
+        [-93.3, 37.2, 1839, "Springfield, Missouri"],
+        [-94.97, 35.91, 1839, "Tahlequah, Indian Territory"]
+      ]
+    },
+    {
+      "id": "long-walk",
+      "name": "Long Walk of the Navajo",
+      "kind": "removal",
+      "wikipedia": "Long Walk of the Navajo",
+      "description": "In 1864 the US Army forced some 8,000–9,000 Diné to walk over 400 km from Fort Defiance to Bosque Redondo in eastern New Mexico, where many died. The 1868 treaty allowed them to return home.",
+      "waypoints": [
+        [-109.08, 35.75, 1864, "Fort Defiance"],
+        [-106.65, 35.08, 1864, "Albuquerque"],
+        [-104.2, 34.4, 1864, "Bosque Redondo (Fort Sumner)"]
+      ]
+    }
+  ]
+}

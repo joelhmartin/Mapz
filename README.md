@@ -52,6 +52,7 @@ Borders that are approximations are drawn dashed and flagged in the hover card. 
 ## Data & credits
 
 - Polity borders: [Cliopatria](https://github.com/Seshat-Global-History-Databank/cliopatria), Seshat Global History Databank — CC BY 4.0. Bracketed composite entities (colonial empires, alliances) are drawn as dashed outlines; colours are generated.
+- Movements (`data/curated/migrations.json`): routes curated from the linked Wikipedia articles; reconstructed routes are marked schematic.
 - Battles: [Wikidata](https://www.wikidata.org) — CC0. Fetched by `.github/workflows/update-battles.yml` (monthly, or when `scripts/fetch-battles.mjs` changes) and committed to `public/data/battles.geojson`.
 - Gap-filling borders: [historical-basemaps](https://github.com/aourednik/historical-basemaps) by André Ourednik — GPL-3.0.
 - Physical geography: [Natural Earth](https://www.naturalearthdata.com) — public domain.
