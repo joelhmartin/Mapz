@@ -33,7 +33,12 @@ const inYear = (...k: string[]): ExpressionSpecification => ['all', kinds(...k),
 
 export function buildStyle(initialYear: number, selectedKey: string | null): StyleSpecification {
   const abs = (p: string) => new URL(p, window.location.origin + import.meta.env.BASE_URL).href;
-  const pmtiles = (file: string) => ({ type: 'vector' as const, url: `pmtiles://${abs(`data/${file}`)}` });
+  // Credits are set here: MapLibre does not read the attribution stored in PMTiles metadata.
+  const pmtiles = (file: string, attribution?: string) => ({
+    type: 'vector' as const,
+    url: `pmtiles://${abs(`data/${file}`)}`,
+    ...(attribution ? { attribution } : {}),
+  });
 
   return {
     version: 8,
@@ -46,8 +51,13 @@ export function buildStyle(initialYear: number, selectedKey: string | null): Sty
       [PEOPLE_FONT]: abs('fonts/IMFeENit28P.ttf'),
     },
     sources: {
-      [BASE]: pmtiles('basemap.pmtiles'),
-      [POLITIES]: pmtiles('polities.pmtiles'),
+      [BASE]: pmtiles('basemap.pmtiles', '<a href="https://www.naturalearthdata.com">Natural Earth</a>'),
+      [POLITIES]: pmtiles(
+        'polities.pmtiles',
+        'Borders: <a href="https://github.com/Seshat-Global-History-Databank/cliopatria">Cliopatria</a> ' +
+          '(Seshat, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>), ' +
+          '<a href="https://github.com/aourednik/historical-basemaps">historical-basemaps</a> (GPL-3.0), Mapz',
+      ),
       [LABELS]: pmtiles('labels.pmtiles'),
     },
     layers: [

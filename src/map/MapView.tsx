@@ -135,6 +135,13 @@ export function MapView({ year, selectedKey, showBattles, showMovements, onHover
         addBattleLayers(map, battles);
         setBattlesVisible(map, state.current.showBattles);
       }
+      // The compact credits control opens expanded; on a phone that covers the map. Collapse it
+      // to its ⓘ button once every source's credit is in (tapping it shows them).
+      if (window.matchMedia('(max-width: 640px)').matches) {
+        map.once('idle', () =>
+          map.getContainer().querySelector('.maplibregl-ctrl-attrib')?.classList.remove('maplibregl-compact-show'),
+        );
+      }
     });
     // Catch up on any change made while the style was loading.
     map.once('load', () => {

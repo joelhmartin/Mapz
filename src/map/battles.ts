@@ -80,7 +80,11 @@ function drawSwords(size: number): ImageData {
 
 export function addBattleLayers(map: MapLibreMap, data: string) {
   map.addImage(BATTLE_ICON, drawSwords(64), { sdf: true, pixelRatio: 2 });
-  map.addSource(BATTLES_SOURCE, { type: 'geojson', data });
+  map.addSource(BATTLES_SOURCE, {
+    type: 'geojson',
+    data,
+    attribution: 'Battles: <a href="https://www.wikidata.org">Wikidata</a> (CC0)',
+  });
 
   // A ring that marks battles fought in exactly the selected year.
   map.addLayer({
