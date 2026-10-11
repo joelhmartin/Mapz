@@ -31,7 +31,7 @@ const approximate: ExpressionSpecification = ['in', ['get', 'certainty'], ['lite
 
 const inYear = (...k: string[]): ExpressionSpecification => ['all', kinds(...k), activeInYear];
 
-export function buildStyle(initialYear: number, selectedKey: string | null): StyleSpecification {
+export function buildStyle(initialYear: number, selectedKey: string | null, globe = false): StyleSpecification {
   const abs = (p: string) => new URL(p, window.location.origin + import.meta.env.BASE_URL).href;
   // Credits are set here: MapLibre does not read the attribution stored in PMTiles metadata.
   const pmtiles = (file: string, attribution?: string) => ({
@@ -42,6 +42,8 @@ export function buildStyle(initialYear: number, selectedKey: string | null): Sty
 
   return {
     version: 8,
+    // The globe switches to a flat map by itself once zoomed in close.
+    projection: { type: globe ? 'globe' : 'mercator' },
     state: {
       year: { default: initialYear },
       selected: { default: selectedKey ?? '' },

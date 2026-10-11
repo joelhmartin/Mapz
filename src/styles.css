@@ -47,6 +47,8 @@ body {
 .map {
   position: absolute;
   inset: 0;
+  /* Shows around the globe in globe view: aged paper rather than black space. */
+  background: radial-gradient(circle at center, #d8c9a3 0%, #b8a57c 70%, #9c8a63 100%);
 }
 
 /* Paper grain and darkened edges laid over the map for an aged-chart feel. */

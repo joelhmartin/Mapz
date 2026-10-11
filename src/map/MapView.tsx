@@ -1,5 +1,12 @@
 import { useEffect, useRef } from 'react';
-import { Map as MapLibreMap, NavigationControl, AttributionControl, addProtocol, setWorkerUrl } from 'maplibre-gl';
+import {
+  Map as MapLibreMap,
+  NavigationControl,
+  AttributionControl,
+  GlobeControl,
+  addProtocol,
+  setWorkerUrl,
+} from 'maplibre-gl';
 import type { MapGeoJSONFeature, MapMouseEvent } from 'maplibre-gl';
 import { Protocol } from 'pmtiles';
 import 'maplibre-gl/dist/maplibre-gl.css';
@@ -14,7 +21,7 @@ import {
   type MovementSegmentProps,
 } from './movements';
 import type { PolityFeatureProps } from '../lib/polities';
-import { viewFromUrl, writeViewToUrl } from '../lib/years';
+import { globeFromUrl, viewFromUrl, writeGlobeToUrl, writeViewToUrl } from '../lib/years';
 
 setWorkerUrl(workerUrl);
 addProtocol('pmtiles', new Protocol().tile);
@@ -103,12 +110,14 @@ export function MapView({ year, selectedKey, showBattles, showMovements, onHover
     const view = viewFromUrl();
     const map = new MapLibreMap({
       container: container.current!,
-      style: buildStyle(state.current.year, state.current.selectedKey),
+      style: buildStyle(state.current.year, state.current.selectedKey, globeFromUrl()),
       center: view?.center ?? [15, 8],
       zoom: view?.zoom ?? 2,
       minZoom: 1,
       maxZoom: 9,
-      renderWorldCopies: false,
+      // Endless east–west scrolling: the world repeats sideways. (It cannot repeat north–south;
+      // the globe view is the seamless way to roll over the poles.)
+      renderWorldCopies: true,
       attributionControl: false,
       // Label fade-in keeps the map repainting after every year change; snap instead.
       fadeDuration: 0,
@@ -116,6 +125,8 @@ export function MapView({ year, selectedKey, showBattles, showMovements, onHover
     mapRef.current = map;
     map.on('error', (e) => console.error('Map error:', e.error));
     map.addControl(new NavigationControl({ showCompass: false }), 'top-right');
+    map.addControl(new GlobeControl(), 'top-right');
+    map.on('projectiontransition', (e) => writeGlobeToUrl(e.newProjection !== 'mercator'));
     map.addControl(new AttributionControl({ compact: true }), 'bottom-right');
 
     // Overlays load after the style, movements first so battles draw on top of them.
@@ -178,7 +189,9 @@ export function MapView({ year, selectedKey, showBattles, showMovements, onHover
 
     map.on('moveend', () => {
       const c = map.getCenter();
-      writeViewToUrl({ center: [c.lng, c.lat], zoom: map.getZoom() });
+      // Wrap so a long scroll east or west keeps the URL in -180…180.
+      const w = c.wrap();
+      writeViewToUrl({ center: [w.lng, w.lat], zoom: map.getZoom() });
     });
     map.on('mousemove', onMove);
     map.on('click', (e) => callbacks.current.onSelect(at(e)?.target ?? null));

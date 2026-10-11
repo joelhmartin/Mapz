@@ -57,3 +57,15 @@ export function writeViewToUrl({ center, zoom }: MapView): void {
   url.searchParams.set('at', `${center[0].toFixed(2)},${center[1].toFixed(2)},${zoom.toFixed(1)}`);
   window.history.replaceState(null, '', url);
 }
+
+// ?globe=1 opens the map as a globe.
+export function globeFromUrl(): boolean {
+  return new URLSearchParams(window.location.search).get('globe') === '1';
+}
+
+export function writeGlobeToUrl(globe: boolean): void {
+  const url = new URL(window.location.href);
+  if (globe) url.searchParams.set('globe', '1');
+  else url.searchParams.delete('globe');
+  window.history.replaceState(null, '', url);
+}
