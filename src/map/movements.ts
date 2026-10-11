@@ -2,26 +2,30 @@ import type { ExpressionSpecification, FilterSpecification, Map as MapLibreMap }
 import { LABEL_FONT } from './style';
 
 export const MOVEMENTS_SOURCE = 'movements';
-export const MOVEMENT_LAYERS = ['movements-land', 'movements-sea', 'movements-head'];
+export const MOVEMENT_LAYERS = ['movements-land', 'movements-sea', 'movements-trade', 'movements-head'];
 const ARROW_ICON = 'movement-arrow';
 
 // How long a finished route stays on the map, fading, after it ends.
 export const MOVEMENT_TRAIL_YEARS = 40;
 
-export type MovementKind = 'migration' | 'voyage' | 'campaign' | 'removal';
+export type MovementKind = 'migration' | 'voyage' | 'exploration' | 'campaign' | 'removal' | 'trade';
 
 export const MOVEMENT_KIND_LABELS: Record<MovementKind, string> = {
   migration: 'migration',
   voyage: 'voyage',
+  exploration: 'expedition',
   campaign: 'military campaign',
   removal: 'forced removal',
+  trade: 'trade route',
 };
 
 export const MOVEMENT_COLORS: Record<MovementKind, string> = {
   migration: '#2f6f62',
   voyage: '#2d5d8a',
+  exploration: '#9a6a1f',
   campaign: '#8c2f1b',
   removal: '#5a3d7a',
+  trade: '#7a5c2e',
 };
 
 // Properties on each route segment (see scripts/build-migrations.mjs).
@@ -33,6 +37,8 @@ export interface MovementSegmentProps {
   y1: number;
   to: number;
   last: boolean;
+  // Recurring routes (trade networks, the slave trade) are drawn whole for their active span.
+  recurring?: boolean;
   head?: boolean;
   rotate?: number;
 }
@@ -45,6 +51,7 @@ export interface MovementInfo {
   certainty: string;
   wikipedia: string | null;
   description: string;
+  recurring?: boolean;
   itinerary: { year: number; place: string }[];
 }
 
@@ -66,10 +73,21 @@ const travelled: ExpressionSpecification = [
 ];
 const kindIs = (...k: MovementKind[]): ExpressionSpecification => ['in', ['get', 'kind'], ['literal', k]];
 // The arrowhead sits on the segment being travelled now, or on the final one once the route ends.
+// A recurring route shows its direction at the end throughout; trade routes run both ways, so
+// they get no arrowhead.
 const front: ExpressionSpecification = [
-  'any',
-  ['all', ['<=', ['get', 'y0'], year], ['<', year, ['get', 'y1']]],
-  ['all', ['get', 'last'], ['>=', year, ['get', 'to']], ['<=', year, ['+', ['get', 'to'], MOVEMENT_TRAIL_YEARS]]],
+  'all',
+  ['!=', ['get', 'kind'], 'trade'],
+  [
+    'any',
+    ['all', ['<=', ['get', 'y0'], year], ['<', year, ['get', 'y1']]],
+    [
+      'all',
+      ['get', 'last'],
+      ['>=', year, ['case', ['boolean', ['get', 'recurring'], false], ['get', 'y0'], ['get', 'to']]],
+      ['<=', year, ['+', ['get', 'to'], MOVEMENT_TRAIL_YEARS]],
+    ],
+  ],
 ];
 
 export function isMovementVisible(p: MovementSegmentProps, selectedYear: number): boolean {
@@ -80,7 +98,9 @@ const color: ExpressionSpecification = [
   'match',
   ['get', 'kind'],
   'voyage', MOVEMENT_COLORS.voyage,
+  'exploration', MOVEMENT_COLORS.exploration,
   'campaign', MOVEMENT_COLORS.campaign,
+  'trade', MOVEMENT_COLORS.trade,
   'removal', MOVEMENT_COLORS.removal,
   MOVEMENT_COLORS.migration,
 ];
@@ -114,7 +134,7 @@ export function addMovementLayers(map: MapLibreMap, data: string, beforeId?: str
   map.addImage(ARROW_ICON, drawArrow(48), { sdf: true, pixelRatio: 2 });
   map.addSource(MOVEMENTS_SOURCE, { type: 'geojson', data });
 
-  const line = (id: string, kinds: MovementKind[], dashed: boolean) =>
+  const line = (id: string, kinds: MovementKind[], dash?: number[]) =>
     map.addLayer(
       {
         id,
@@ -128,14 +148,16 @@ export function addMovementLayers(map: MapLibreMap, data: string, beforeId?: str
           'line-color': color,
           'line-width': width,
           'line-opacity': opacity,
-          // Sea crossings are drawn as a dotted course, like a sailing track on an old chart.
-          ...(dashed ? { 'line-dasharray': [2, 1.6] } : {}),
+          ...(dash ? { 'line-dasharray': dash } : {}),
         },
       },
       beforeId,
     );
-  line('movements-land', ['migration', 'campaign', 'removal'], false);
-  line('movements-sea', ['voyage'], true);
+  line('movements-land', ['migration', 'campaign', 'removal']);
+  // Sea crossings and expeditions are dashed, like a sailing track on an old chart; trade
+  // routes are a finer dotted line.
+  line('movements-sea', ['voyage', 'exploration'], [2, 1.6]);
+  line('movements-trade', ['trade'], [0.8, 1.6]);
 
   map.addLayer(
     {

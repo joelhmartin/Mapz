@@ -20,12 +20,13 @@ export function MovementPanel({ movement, year, onClose, onJumpToYear }: Props) 
         <h2>{movement.name}</h2>
       </header>
       <p className="span">
+        {movement.recurring ? 'Active ' : ''}
         {formatSpan(movement.from, movement.to)}
         <span className="kind"> · {MOVEMENT_KIND_LABELS[movement.kind]}</span>
       </p>
       <div className="jump-row">
-        <button onClick={() => onJumpToYear(movement.from)}>⇤ Start</button>
-        <button onClick={() => onJumpToYear(movement.to)}>End ⇥</button>
+        <button onClick={() => onJumpToYear(movement.from)}>⇤ {movement.recurring ? 'First' : 'Start'}</button>
+        <button onClick={() => onJumpToYear(movement.to)}>{movement.recurring ? 'Last' : 'End'} ⇥</button>
       </div>
       <p className="description">{movement.description}</p>
       {movement.certainty === 'uncertain' && (
@@ -37,14 +38,20 @@ export function MovementPanel({ movement, year, onClose, onJumpToYear }: Props) 
       <section>
         <h3>Route</h3>
         <ol className="itinerary">
-          {movement.itinerary.map((stop, i) => (
-            <li key={i} className={stop.year <= year ? 'reached' : undefined}>
-              <button className="link" onClick={() => onJumpToYear(stop.year)}>
-                {formatYear(stop.year)}
-              </button>{' '}
-              {stop.place}
-            </li>
-          ))}
+          {movement.itinerary.map((stop, i) =>
+            movement.recurring ? (
+              <li key={i} className={year >= movement.from && year <= movement.to ? 'reached' : undefined}>
+                {stop.place}
+              </li>
+            ) : (
+              <li key={i} className={stop.year <= year ? 'reached' : undefined}>
+                <button className="link" onClick={() => onJumpToYear(stop.year)}>
+                  {formatYear(stop.year)}
+                </button>{' '}
+                {stop.place}
+              </li>
+            ),
+          )}
         </ol>
       </section>
 

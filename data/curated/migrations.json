@@ -1,5 +1,5 @@
 {
-  "about": "Movements drawn as routes that unfold along the timeline: migrations, voyages, military campaigns and forced removals. Each waypoint is [lon, lat, year, place]; longitudes may run past ±180 so Pacific routes stay continuous. Routes reconstructed from linguistics or archaeology are schematic and flagged uncertain.",
+  "about": "Movements drawn as routes that unfold along the timeline: migrations, voyages, military campaigns and forced removals. Each waypoint is [lon, lat, year, place]; recurring routes (trade networks, the slave trade) instead have an `active` [from, to] span and [lon, lat, place] stops, and are drawn whole for that span; longitudes may run past ±180 so Pacific routes stay continuous. Routes reconstructed from linguistics or archaeology are schematic and flagged uncertain.",
   "movements": [
     {
       "id": "bantu-west",
@@ -9,11 +9,36 @@
       "wikipedia": "Bantu expansion",
       "description": "Bantu-speaking farmers spread from the Cameroon–Nigeria borderlands across most of central, eastern and southern Africa over some three thousand years, carrying farming and later iron-working. Routes and dates are reconstructed from linguistics and archaeology and are still debated; one stream moved south through the rainforest towards the lower Congo and Angola.",
       "waypoints": [
-        [10.2, 6.2, -1500, "Cameroon–Nigeria borderlands"],
-        [11.5, 2.0, -1000, "Equatorial rainforest"],
-        [13.5, -4.5, -500, "Lower Congo"],
-        [15.5, -11.5, 1, "Angolan plateau"],
-        [17.5, -17.5, 500, "Cunene and Okavango"]
+        [
+          10.2,
+          6.2,
+          -1500,
+          "Cameroon–Nigeria borderlands"
+        ],
+        [
+          11.5,
+          2.0,
+          -1000,
+          "Equatorial rainforest"
+        ],
+        [
+          13.5,
+          -4.5,
+          -500,
+          "Lower Congo"
+        ],
+        [
+          15.5,
+          -11.5,
+          1,
+          "Angolan plateau"
+        ],
+        [
+          17.5,
+          -17.5,
+          500,
+          "Cunene and Okavango"
+        ]
       ]
     },
     {
@@ -24,13 +49,48 @@
       "wikipedia": "Bantu expansion",
       "description": "An eastern stream reached the Great Lakes by around 500 BCE, where the iron-working Urewe culture appears, then spread down the eastern side of the continent, reaching KwaZulu-Natal by about the 4th century CE. Schematic route.",
       "waypoints": [
-        [10.2, 6.2, -1500, "Cameroon–Nigeria borderlands"],
-        [20.0, 3.0, -1000, "Ubangi and Uele rivers"],
-        [31.0, -1.5, -500, "Great Lakes (Urewe culture)"],
-        [37.5, -4.0, -100, "East African coast"],
-        [35.5, -14.0, 200, "Lake Malawi"],
-        [31.0, -22.0, 300, "Limpopo valley"],
-        [30.5, -28.5, 400, "KwaZulu-Natal"]
+        [
+          10.2,
+          6.2,
+          -1500,
+          "Cameroon–Nigeria borderlands"
+        ],
+        [
+          20.0,
+          3.0,
+          -1000,
+          "Ubangi and Uele rivers"
+        ],
+        [
+          31.0,
+          -1.5,
+          -500,
+          "Great Lakes (Urewe culture)"
+        ],
+        [
+          37.5,
+          -4.0,
+          -100,
+          "East African coast"
+        ],
+        [
+          35.5,
+          -14.0,
+          200,
+          "Lake Malawi"
+        ],
+        [
+          31.0,
+          -22.0,
+          300,
+          "Limpopo valley"
+        ],
+        [
+          30.5,
+          -28.5,
+          400,
+          "KwaZulu-Natal"
+        ]
       ]
     },
     {
@@ -41,12 +101,42 @@
       "wikipedia": "Austronesian peoples",
       "description": "Austronesian-speaking farmers and seafarers spread from Taiwan through the Philippines and Indonesia from about 3000 BCE in outrigger canoes. Their descendants include the Filipinos, Malays, Malagasy, Chamorro and Polynesians. Schematic route.",
       "waypoints": [
-        [121.0, 23.7, -3000, "Taiwan"],
-        [121.5, 16.0, -2200, "Luzon"],
-        [124.5, 8.0, -2000, "Mindanao"],
-        [120.0, -1.5, -1800, "Sulawesi"],
-        [128.0, -3.5, -1600, "Maluku"],
-        [150.0, -4.0, -1350, "Bismarck Archipelago"]
+        [
+          121.0,
+          23.7,
+          -3000,
+          "Taiwan"
+        ],
+        [
+          121.5,
+          16.0,
+          -2200,
+          "Luzon"
+        ],
+        [
+          124.5,
+          8.0,
+          -2000,
+          "Mindanao"
+        ],
+        [
+          120.0,
+          -1.5,
+          -1800,
+          "Sulawesi"
+        ],
+        [
+          128.0,
+          -3.5,
+          -1600,
+          "Maluku"
+        ],
+        [
+          150.0,
+          -4.0,
+          -1350,
+          "Bismarck Archipelago"
+        ]
       ]
     },
     {
@@ -56,12 +146,42 @@
       "wikipedia": "Lapita culture",
       "description": "Makers of distinctive dentate-stamped Lapita pottery sailed from the Bismarck Archipelago into islands no human had reached, settling Vanuatu, New Caledonia and Fiji around 1100–1000 BCE and Tonga and Samoa by about 850–800 BCE — the founding of Polynesia.",
       "waypoints": [
-        [150.0, -4.0, -1350, "Bismarck Archipelago"],
-        [166.0, -10.7, -1100, "Santa Cruz Islands"],
-        [167.5, -16.0, -1050, "Vanuatu"],
-        [178.0, -18.0, -1000, "Fiji"],
-        [184.8, -21.1, -850, "Tonga"],
-        [188.0, -13.8, -800, "Samoa"]
+        [
+          150.0,
+          -4.0,
+          -1350,
+          "Bismarck Archipelago"
+        ],
+        [
+          166.0,
+          -10.7,
+          -1100,
+          "Santa Cruz Islands"
+        ],
+        [
+          167.5,
+          -16.0,
+          -1050,
+          "Vanuatu"
+        ],
+        [
+          178.0,
+          -18.0,
+          -1000,
+          "Fiji"
+        ],
+        [
+          184.8,
+          -21.1,
+          -850,
+          "Tonga"
+        ],
+        [
+          188.0,
+          -13.8,
+          -800,
+          "Samoa"
+        ]
       ]
     },
     {
@@ -72,9 +192,24 @@
       "wikipedia": "Polynesian navigation",
       "description": "After a 'long pause' of nearly two thousand years in Tonga and Samoa, voyagers pushed east around 900–1000 CE, reaching the Cook and Society Islands. Navigators steered by stars, swells and birds in double-hulled canoes.",
       "waypoints": [
-        [188.0, -13.8, 900, "Samoa"],
-        [200.2, -21.2, 1000, "Cook Islands"],
-        [210.5, -17.5, 1025, "Society Islands"]
+        [
+          188.0,
+          -13.8,
+          900,
+          "Samoa"
+        ],
+        [
+          200.2,
+          -21.2,
+          1000,
+          "Cook Islands"
+        ],
+        [
+          210.5,
+          -17.5,
+          1025,
+          "Society Islands"
+        ]
       ]
     },
     {
@@ -85,9 +220,24 @@
       "wikipedia": "Polynesian navigation",
       "description": "Hawaiʻi was settled from central East Polynesia, perhaps first via the Marquesas and later in two-way voyages with Tahiti, between about 1000 and 1200 CE — a crossing of over 4,000 km.",
       "waypoints": [
-        [210.5, -17.5, 1000, "Society Islands"],
-        [220.0, -9.0, 1050, "Marquesas"],
-        [204.5, 19.6, 1150, "Hawaiʻi"]
+        [
+          210.5,
+          -17.5,
+          1000,
+          "Society Islands"
+        ],
+        [
+          220.0,
+          -9.0,
+          1050,
+          "Marquesas"
+        ],
+        [
+          204.5,
+          19.6,
+          1150,
+          "Hawaiʻi"
+        ]
       ]
     },
     {
@@ -98,9 +248,24 @@
       "wikipedia": "History of Easter Island",
       "description": "Rapa Nui, the easternmost inhabited island of Polynesia, was settled around 1200 CE, probably via Mangareva.",
       "waypoints": [
-        [220.0, -9.0, 1100, "Marquesas"],
-        [225.0, -23.1, 1150, "Mangareva"],
-        [250.6, -27.1, 1200, "Rapa Nui"]
+        [
+          220.0,
+          -9.0,
+          1100,
+          "Marquesas"
+        ],
+        [
+          225.0,
+          -23.1,
+          1150,
+          "Mangareva"
+        ],
+        [
+          250.6,
+          -27.1,
+          1200,
+          "Rapa Nui"
+        ]
       ]
     },
     {
@@ -111,10 +276,30 @@
       "wikipedia": "History of New Zealand",
       "description": "Aotearoa (New Zealand), the last large land mass to be settled by humans, was reached from East Polynesia around 1250–1280 CE. Māori tradition remembers the founding canoes (waka) and Hawaiki as the homeland.",
       "waypoints": [
-        [210.5, -17.5, 1200, "Society Islands"],
-        [200.2, -21.2, 1230, "Rarotonga"],
-        [182.0, -29.3, 1260, "Kermadec Islands"],
-        [174.8, -36.8, 1280, "Aotearoa"]
+        [
+          210.5,
+          -17.5,
+          1200,
+          "Society Islands"
+        ],
+        [
+          200.2,
+          -21.2,
+          1230,
+          "Rarotonga"
+        ],
+        [
+          182.0,
+          -29.3,
+          1260,
+          "Kermadec Islands"
+        ],
+        [
+          174.8,
+          -36.8,
+          1280,
+          "Aotearoa"
+        ]
       ]
     },
     {
@@ -125,8 +310,18 @@
       "wikipedia": "Moriori",
       "description": "Polynesians from Aotearoa settled Rēkohu (the Chatham Islands) around 1500, becoming the Moriori.",
       "waypoints": [
-        [176.5, -39.5, 1450, "Aotearoa"],
-        [183.5, -43.9, 1500, "Rēkohu (Chatham Islands)"]
+        [
+          176.5,
+          -39.5,
+          1450,
+          "Aotearoa"
+        ],
+        [
+          183.5,
+          -43.9,
+          1500,
+          "Rēkohu (Chatham Islands)"
+        ]
       ]
     },
     {
@@ -137,10 +332,30 @@
       "wikipedia": "Austronesian peoples",
       "description": "The Malagasy language is closest to Maʼanyan of south Borneo: Austronesian voyagers reached Madagascar sometime in the mid-first millennium CE and mixed with Bantu-speaking Africans. The actual route is unknown; this line is schematic.",
       "waypoints": [
-        [114.5, -2.5, 500, "South Borneo"],
-        [100.0, -7.0, 530, "Sunda Strait"],
-        [75.0, -10.0, 580, "Indian Ocean"],
-        [47.5, -17.0, 650, "Madagascar"]
+        [
+          114.5,
+          -2.5,
+          500,
+          "South Borneo"
+        ],
+        [
+          100.0,
+          -7.0,
+          530,
+          "Sunda Strait"
+        ],
+        [
+          75.0,
+          -10.0,
+          580,
+          "Indian Ocean"
+        ],
+        [
+          47.5,
+          -17.0,
+          650,
+          "Madagascar"
+        ]
       ]
     },
     {
@@ -150,11 +365,36 @@
       "wikipedia": "Norse colonization of North America",
       "description": "Norse seafarers settled the Faroes (c. 825) and Iceland (from 874), Erik the Red founded the Greenland colonies in 985, and Leif Erikson reached North America around 1000. L'Anse aux Meadows in Newfoundland, dated to 1021 by tree rings, is the only confirmed Norse site in the Americas.",
       "waypoints": [
-        [5.3, 60.4, 790, "Western Norway"],
-        [-7.0, 62.0, 825, "Faroe Islands"],
-        [-21.9, 64.1, 874, "Iceland"],
-        [-45.5, 61.2, 985, "Greenland (Eastern Settlement)"],
-        [-55.5, 51.6, 1021, "L'Anse aux Meadows"]
+        [
+          5.3,
+          60.4,
+          790,
+          "Western Norway"
+        ],
+        [
+          -7.0,
+          62.0,
+          825,
+          "Faroe Islands"
+        ],
+        [
+          -21.9,
+          64.1,
+          874,
+          "Iceland"
+        ],
+        [
+          -45.5,
+          61.2,
+          985,
+          "Greenland (Eastern Settlement)"
+        ],
+        [
+          -55.5,
+          51.6,
+          1021,
+          "L'Anse aux Meadows"
+        ]
       ]
     },
     {
@@ -164,16 +404,66 @@
       "wikipedia": "Wars of Alexander the Great",
       "description": "Alexander crossed into Asia in 334 BCE, defeated the Persian Empire at the Granicus, Issus and Gaugamela, and marched as far as the Indus before his army refused to go further. He died in Babylon in 323 BCE aged 32.",
       "waypoints": [
-        [22.5, 40.75, -335, "Pella, Macedon"],
-        [27.3, 40.2, -334, "Granicus"],
-        [36.2, 36.8, -333, "Issus"],
-        [35.2, 33.27, -332, "Siege of Tyre"],
-        [29.9, 31.2, -331, "Alexandria, Egypt"],
-        [43.5, 36.5, -331, "Gaugamela"],
-        [52.9, 29.9, -330, "Persepolis"],
-        [66.9, 36.75, -329, "Bactra"],
-        [73.5, 32.9, -326, "Hydaspes"],
-        [44.4, 32.5, -323, "Babylon"]
+        [
+          22.5,
+          40.75,
+          -335,
+          "Pella, Macedon"
+        ],
+        [
+          27.3,
+          40.2,
+          -334,
+          "Granicus"
+        ],
+        [
+          36.2,
+          36.8,
+          -333,
+          "Issus"
+        ],
+        [
+          35.2,
+          33.27,
+          -332,
+          "Siege of Tyre"
+        ],
+        [
+          29.9,
+          31.2,
+          -331,
+          "Alexandria, Egypt"
+        ],
+        [
+          43.5,
+          36.5,
+          -331,
+          "Gaugamela"
+        ],
+        [
+          52.9,
+          29.9,
+          -330,
+          "Persepolis"
+        ],
+        [
+          66.9,
+          36.75,
+          -329,
+          "Bactra"
+        ],
+        [
+          73.5,
+          32.9,
+          -326,
+          "Hydaspes"
+        ],
+        [
+          44.4,
+          32.5,
+          -323,
+          "Babylon"
+        ]
       ]
     },
     {
@@ -183,12 +473,42 @@
       "wikipedia": "Hannibal's crossing of the Alps",
       "description": "In 218 BCE Hannibal led a Carthaginian army with war elephants from Spain over the Pyrenees and the Alps into Italy, destroying Roman armies at the Trebia, Lake Trasimene and, in 216 BCE, Cannae.",
       "waypoints": [
-        [-0.98, 37.6, -218, "Carthago Nova"],
-        [2.0, 42.4, -218, "Pyrenees"],
-        [6.9, 45.2, -218, "Crossing of the Alps"],
-        [9.6, 45.0, -218, "Trebia"],
-        [12.1, 43.2, -217, "Lake Trasimene"],
-        [16.13, 41.3, -216, "Cannae"]
+        [
+          -0.98,
+          37.6,
+          -218,
+          "Carthago Nova"
+        ],
+        [
+          2.0,
+          42.4,
+          -218,
+          "Pyrenees"
+        ],
+        [
+          6.9,
+          45.2,
+          -218,
+          "Crossing of the Alps"
+        ],
+        [
+          9.6,
+          45.0,
+          -218,
+          "Trebia"
+        ],
+        [
+          12.1,
+          43.2,
+          -217,
+          "Lake Trasimene"
+        ],
+        [
+          16.13,
+          41.3,
+          -216,
+          "Cannae"
+        ]
       ]
     },
     {
@@ -198,12 +518,42 @@
       "wikipedia": "Genghis Khan",
       "description": "Proclaimed Genghis Khan in 1206, Temüjin attacked Western Xia, took the Jin capital Zhongdu (Beijing) in 1215 and destroyed the Khwarazmian Empire in 1219–1221. His generals Jebe and Subutai rode around the Caspian and beat the Rus' at the Kalka River in 1223.",
       "waypoints": [
-        [108.0, 48.0, 1206, "Onon River, Mongolia"],
-        [106.2, 38.5, 1209, "Western Xia"],
-        [116.4, 39.9, 1215, "Zhongdu (Beijing)"],
-        [68.3, 42.85, 1219, "Otrar"],
-        [66.96, 39.65, 1220, "Samarkand"],
-        [37.6, 47.6, 1223, "Kalka River"]
+        [
+          108.0,
+          48.0,
+          1206,
+          "Onon River, Mongolia"
+        ],
+        [
+          106.2,
+          38.5,
+          1209,
+          "Western Xia"
+        ],
+        [
+          116.4,
+          39.9,
+          1215,
+          "Zhongdu (Beijing)"
+        ],
+        [
+          68.3,
+          42.85,
+          1219,
+          "Otrar"
+        ],
+        [
+          66.96,
+          39.65,
+          1220,
+          "Samarkand"
+        ],
+        [
+          37.6,
+          47.6,
+          1223,
+          "Kalka River"
+        ]
       ]
     },
     {
@@ -213,11 +563,36 @@
       "wikipedia": "Mongol invasion of Europe",
       "description": "Batu Khan and Subutai conquered Volga Bulgaria and the Rus' principalities (1236–1240), sacked Kiev and in 1241 crushed armies at Legnica and Mohi before withdrawing in 1242, possibly on news of the Great Khan Ögedei's death.",
       "waypoints": [
-        [49.1, 54.9, 1236, "Volga Bulgaria"],
-        [39.7, 54.6, 1237, "Ryazan"],
-        [40.4, 56.13, 1238, "Vladimir"],
-        [30.5, 50.45, 1240, "Kiev"],
-        [20.9, 47.95, 1241, "Mohi"]
+        [
+          49.1,
+          54.9,
+          1236,
+          "Volga Bulgaria"
+        ],
+        [
+          39.7,
+          54.6,
+          1237,
+          "Ryazan"
+        ],
+        [
+          40.4,
+          56.13,
+          1238,
+          "Vladimir"
+        ],
+        [
+          30.5,
+          50.45,
+          1240,
+          "Kiev"
+        ],
+        [
+          20.9,
+          47.95,
+          1241,
+          "Mohi"
+        ]
       ]
     },
     {
@@ -227,11 +602,36 @@
       "wikipedia": "Siege of Baghdad (1258)",
       "description": "Hulagu destroyed the Nizari Ismaili fortresses including Alamut (1256) and sacked Baghdad in 1258, ending the Abbasid Caliphate. The Mamluks stopped the Mongol advance at Ain Jalut in 1260.",
       "waypoints": [
-        [66.96, 39.65, 1255, "Samarkand"],
-        [50.58, 36.44, 1256, "Alamut"],
-        [44.4, 33.3, 1258, "Baghdad"],
-        [37.16, 36.2, 1260, "Aleppo"],
-        [35.4, 32.55, 1260, "Ain Jalut"]
+        [
+          66.96,
+          39.65,
+          1255,
+          "Samarkand"
+        ],
+        [
+          50.58,
+          36.44,
+          1256,
+          "Alamut"
+        ],
+        [
+          44.4,
+          33.3,
+          1258,
+          "Baghdad"
+        ],
+        [
+          37.16,
+          36.2,
+          1260,
+          "Aleppo"
+        ],
+        [
+          35.4,
+          32.55,
+          1260,
+          "Ain Jalut"
+        ]
       ]
     },
     {
@@ -241,9 +641,24 @@
       "wikipedia": "Mongol conquest of the Song dynasty",
       "description": "Kublai Khan's armies took the fortress city of Xiangyang after a five-year siege (1268–1273), captured the Song capital Lin'an in 1276 and destroyed the last Song fleet at Yamen in 1279, uniting China under the Yuan.",
       "waypoints": [
-        [112.15, 32.0, 1268, "Xiangyang"],
-        [120.15, 30.25, 1276, "Lin'an (Hangzhou)"],
-        [113.1, 22.1, 1279, "Yamen"]
+        [
+          112.15,
+          32.0,
+          1268,
+          "Xiangyang"
+        ],
+        [
+          120.15,
+          30.25,
+          1276,
+          "Lin'an (Hangzhou)"
+        ],
+        [
+          113.1,
+          22.1,
+          1279,
+          "Yamen"
+        ]
       ]
     },
     {
@@ -253,11 +668,36 @@
       "wikipedia": "Mzilikazi",
       "description": "Mzilikazi broke with Shaka around 1822 and led his followers onto the Highveld, raiding and absorbing Sotho-Tswana communities. Defeated by Voortrekkers and Griqua in 1837, the Ndebele crossed the Limpopo and conquered the remnants of the Rozvi, founding Mthwakazi around Bulawayo.",
       "waypoints": [
-        [31.3, -28.3, 1822, "Zululand"],
-        [28.2, -25.75, 1827, "Highveld (Apies River)"],
-        [26.1, -25.4, 1832, "Mosega, Marico"],
-        [27.5, -22.2, 1838, "Limpopo crossing"],
-        [28.6, -20.15, 1840, "Bulawayo"]
+        [
+          31.3,
+          -28.3,
+          1822,
+          "Zululand"
+        ],
+        [
+          28.2,
+          -25.75,
+          1827,
+          "Highveld (Apies River)"
+        ],
+        [
+          26.1,
+          -25.4,
+          1832,
+          "Mosega, Marico"
+        ],
+        [
+          27.5,
+          -22.2,
+          1838,
+          "Limpopo crossing"
+        ],
+        [
+          28.6,
+          -20.15,
+          1840,
+          "Bulawayo"
+        ]
       ]
     },
     {
@@ -267,9 +707,24 @@
       "wikipedia": "Soshangane",
       "description": "After Shaka defeated the Ndwandwe in 1819, Soshangane led a following north into southern Mozambique and built the Gaza kingdom, dominating the Portuguese coastal posts.",
       "waypoints": [
-        [31.8, -27.6, 1819, "Ndwandwe country"],
-        [32.6, -25.95, 1821, "Delagoa Bay"],
-        [33.4, -23.4, 1830, "Gaza heartland"]
+        [
+          31.8,
+          -27.6,
+          1819,
+          "Ndwandwe country"
+        ],
+        [
+          32.6,
+          -25.95,
+          1821,
+          "Delagoa Bay"
+        ],
+        [
+          33.4,
+          -23.4,
+          1830,
+          "Gaza heartland"
+        ]
       ]
     },
     {
@@ -279,12 +734,42 @@
       "wikipedia": "Zwangendaba",
       "description": "Zwangendaba's Ngoni fled north after 1819, attacked the Rozvi on the Zimbabwe plateau, crossed the Zambezi in 1835 and settled near Lake Tanganyika at Mapupo, where Zwangendaba died around 1848. His successors founded Ngoni states across Malawi, Zambia and Tanzania. One of the longest migrations of the Mfecane.",
       "waypoints": [
-        [31.8, -27.6, 1819, "Ndwandwe country"],
-        [33.0, -24.5, 1822, "Southern Mozambique"],
-        [31.0, -19.0, 1831, "Zimbabwe plateau"],
-        [32.6, -15.6, 1835, "Zambezi crossing"],
-        [33.5, -11.5, 1840, "Lake Malawi"],
-        [31.6, -8.0, 1845, "Mapupo, Ufipa"]
+        [
+          31.8,
+          -27.6,
+          1819,
+          "Ndwandwe country"
+        ],
+        [
+          33.0,
+          -24.5,
+          1822,
+          "Southern Mozambique"
+        ],
+        [
+          31.0,
+          -19.0,
+          1831,
+          "Zimbabwe plateau"
+        ],
+        [
+          32.6,
+          -15.6,
+          1835,
+          "Zambezi crossing"
+        ],
+        [
+          33.5,
+          -11.5,
+          1840,
+          "Lake Malawi"
+        ],
+        [
+          31.6,
+          -8.0,
+          1845,
+          "Mapupo, Ufipa"
+        ]
       ]
     },
     {
@@ -295,12 +780,42 @@
       "wikipedia": "Sebetwane",
       "description": "Sebetwane led the Sotho-speaking Kololo north from the Highveld through the Kalahari to the upper Zambezi, where around 1840 they conquered the Lozi kingdom of Barotseland and ruled it until 1864.",
       "waypoints": [
-        [27.6, -28.3, 1822, "Highveld"],
-        [23.9, -27.1, 1823, "Dithakong"],
-        [25.5, -24.6, 1826, "Western Transvaal"],
-        [22.8, -20.4, 1832, "Lake Ngami"],
-        [24.5, -17.8, 1838, "Chobe"],
-        [23.2, -15.3, 1840, "Barotse floodplain"]
+        [
+          27.6,
+          -28.3,
+          1822,
+          "Highveld"
+        ],
+        [
+          23.9,
+          -27.1,
+          1823,
+          "Dithakong"
+        ],
+        [
+          25.5,
+          -24.6,
+          1826,
+          "Western Transvaal"
+        ],
+        [
+          22.8,
+          -20.4,
+          1832,
+          "Lake Ngami"
+        ],
+        [
+          24.5,
+          -17.8,
+          1838,
+          "Chobe"
+        ],
+        [
+          23.2,
+          -15.3,
+          1840,
+          "Barotse floodplain"
+        ]
       ]
     },
     {
@@ -310,11 +825,36 @@
       "wikipedia": "Great Trek",
       "description": "Thousands of Dutch-speaking Boers left the Cape Colony from 1835. Piet Retief's party crossed the Drakensberg into Natal, where Retief was killed by Dingane in 1838; the Voortrekkers defeated the Zulu at Blood River that December and founded the Natalia Republic.",
       "waypoints": [
-        [24.5, -32.25, 1835, "Graaff-Reinet"],
-        [26.8, -29.2, 1836, "Thaba Nchu"],
-        [29.5, -28.7, 1837, "Drakensberg passes"],
-        [30.53, -28.1, 1838, "Blood River"],
-        [30.4, -29.6, 1839, "Pietermaritzburg"]
+        [
+          24.5,
+          -32.25,
+          1835,
+          "Graaff-Reinet"
+        ],
+        [
+          26.8,
+          -29.2,
+          1836,
+          "Thaba Nchu"
+        ],
+        [
+          29.5,
+          -28.7,
+          1837,
+          "Drakensberg passes"
+        ],
+        [
+          30.53,
+          -28.1,
+          1838,
+          "Blood River"
+        ],
+        [
+          30.4,
+          -29.6,
+          1839,
+          "Pietermaritzburg"
+        ]
       ]
     },
     {
@@ -324,10 +864,30 @@
       "wikipedia": "Great Trek",
       "description": "Other trek parties under Hendrik Potgieter crossed the Vaal, fought the Ndebele at Vegkop (1836) and Mosega (1837) and founded Potchefstroom in 1838.",
       "waypoints": [
-        [24.5, -32.25, 1835, "Graaff-Reinet"],
-        [26.8, -29.2, 1836, "Thaba Nchu"],
-        [27.65, -27.1, 1836, "Vegkop"],
-        [27.1, -26.7, 1838, "Potchefstroom"]
+        [
+          24.5,
+          -32.25,
+          1835,
+          "Graaff-Reinet"
+        ],
+        [
+          26.8,
+          -29.2,
+          1836,
+          "Thaba Nchu"
+        ],
+        [
+          27.65,
+          -27.1,
+          1836,
+          "Vegkop"
+        ],
+        [
+          27.1,
+          -26.7,
+          1838,
+          "Potchefstroom"
+        ]
       ]
     },
     {
@@ -337,12 +897,42 @@
       "wikipedia": "Trail of Tears",
       "description": "Under the Indian Removal Act, the US Army forced about 16,000 Cherokee from their homeland to Indian Territory in 1838–1839; thousands died on the way. Most travelled overland on routes like this one, through Tennessee, Kentucky, Illinois and Missouri.",
       "waypoints": [
-        [-84.8, 35.3, 1838, "Fort Cass, Tennessee"],
-        [-86.8, 36.15, 1838, "Nashville"],
-        [-88.5, 37.36, 1838, "Golconda, Illinois"],
-        [-89.5, 37.3, 1839, "Cape Girardeau"],
-        [-93.3, 37.2, 1839, "Springfield, Missouri"],
-        [-94.97, 35.91, 1839, "Tahlequah, Indian Territory"]
+        [
+          -84.8,
+          35.3,
+          1838,
+          "Fort Cass, Tennessee"
+        ],
+        [
+          -86.8,
+          36.15,
+          1838,
+          "Nashville"
+        ],
+        [
+          -88.5,
+          37.36,
+          1838,
+          "Golconda, Illinois"
+        ],
+        [
+          -89.5,
+          37.3,
+          1839,
+          "Cape Girardeau"
+        ],
+        [
+          -93.3,
+          37.2,
+          1839,
+          "Springfield, Missouri"
+        ],
+        [
+          -94.97,
+          35.91,
+          1839,
+          "Tahlequah, Indian Territory"
+        ]
       ]
     },
     {
@@ -352,9 +942,1281 @@
       "wikipedia": "Long Walk of the Navajo",
       "description": "In 1864 the US Army forced some 8,000–9,000 Diné to walk over 400 km from Fort Defiance to Bosque Redondo in eastern New Mexico, where many died. The 1868 treaty allowed them to return home.",
       "waypoints": [
-        [-109.08, 35.75, 1864, "Fort Defiance"],
-        [-106.65, 35.08, 1864, "Albuquerque"],
-        [-104.2, 34.4, 1864, "Bosque Redondo (Fort Sumner)"]
+        [
+          -109.08,
+          35.75,
+          1864,
+          "Fort Defiance"
+        ],
+        [
+          -106.65,
+          35.08,
+          1864,
+          "Albuquerque"
+        ],
+        [
+          -104.2,
+          34.4,
+          1864,
+          "Bosque Redondo (Fort Sumner)"
+        ]
+      ]
+    },
+    {
+      "id": "ie-west",
+      "name": "Indo-European migrations (into Europe)",
+      "kind": "migration",
+      "certainty": "uncertain",
+      "wikipedia": "Indo-European migrations",
+      "description": "Under the steppe hypothesis, now strongly supported by ancient DNA, Yamnaya pastoralists from the Pontic–Caspian steppe spread west from about 3300 BCE; their descendants and the Corded Ware culture carried Indo-European languages across much of Europe. Schematic route.",
+      "waypoints": [
+        [
+          40.0,
+          48.0,
+          -3300,
+          "Pontic–Caspian steppe (Yamnaya)"
+        ],
+        [
+          28.0,
+          46.5,
+          -3000,
+          "Lower Danube"
+        ],
+        [
+          19.0,
+          48.0,
+          -2800,
+          "Carpathian Basin"
+        ],
+        [
+          14.0,
+          51.0,
+          -2700,
+          "Central Europe (Corded Ware)"
+        ],
+        [
+          10.0,
+          55.5,
+          -2500,
+          "Jutland and the Baltic"
+        ]
+      ]
+    },
+    {
+      "id": "ie-east",
+      "name": "Indo-European migrations (into Asia)",
+      "kind": "migration",
+      "certainty": "uncertain",
+      "wikipedia": "Indo-Aryan migrations",
+      "description": "Steppe peoples of the Sintashta and Andronovo cultures, ancestral to speakers of Indo-Iranian languages, moved east and south from about 2100 BCE; Indo-Aryan speakers reached the north-west of the Indian subcontinent by about 1500 BCE. Schematic route.",
+      "waypoints": [
+        [
+          40.0,
+          48.0,
+          -3300,
+          "Pontic–Caspian steppe"
+        ],
+        [
+          60.0,
+          52.5,
+          -2100,
+          "Sintashta (southern Urals)"
+        ],
+        [
+          68.0,
+          48.0,
+          -1800,
+          "Andronovo steppe"
+        ],
+        [
+          66.0,
+          37.0,
+          -1700,
+          "Bactria–Margiana"
+        ],
+        [
+          73.0,
+          31.0,
+          -1500,
+          "Punjab"
+        ]
+      ]
+    },
+    {
+      "id": "conquest-persia",
+      "name": "Early Muslim conquests: Persia",
+      "kind": "campaign",
+      "wikipedia": "Muslim conquest of Persia",
+      "description": "Arab armies of the Rashidun Caliphate defeated the Sasanian Empire at al-Qadisiyyah (c. 636), took the capital Ctesiphon and broke the last Sasanian field army at Nahavand (642). The last shah, Yazdegerd III, was killed near Merv in 651.",
+      "waypoints": [
+        [
+          39.6,
+          24.47,
+          633,
+          "Medina"
+        ],
+        [
+          44.3,
+          31.7,
+          636,
+          "al-Qadisiyyah"
+        ],
+        [
+          44.58,
+          33.09,
+          637,
+          "Ctesiphon"
+        ],
+        [
+          48.37,
+          34.19,
+          642,
+          "Nahavand"
+        ],
+        [
+          61.8,
+          37.6,
+          651,
+          "Merv"
+        ]
+      ]
+    },
+    {
+      "id": "conquest-levant",
+      "name": "Early Muslim conquests: Syria and Egypt",
+      "kind": "campaign",
+      "wikipedia": "Muslim conquest of the Levant",
+      "description": "The Rashidun armies defeated the Byzantines at the Yarmuk (636), took Jerusalem (637) and conquered Byzantine Egypt, entering Alexandria in 641–642.",
+      "waypoints": [
+        [
+          39.6,
+          24.47,
+          634,
+          "Medina"
+        ],
+        [
+          35.95,
+          32.8,
+          636,
+          "Yarmuk"
+        ],
+        [
+          35.23,
+          31.78,
+          637,
+          "Jerusalem"
+        ],
+        [
+          31.24,
+          30.04,
+          640,
+          "Babylon fortress (Cairo)"
+        ],
+        [
+          29.9,
+          31.2,
+          642,
+          "Alexandria"
+        ]
+      ]
+    },
+    {
+      "id": "conquest-west",
+      "name": "Umayyad conquests: North Africa and Iberia",
+      "kind": "campaign",
+      "wikipedia": "Umayyad conquest of Hispania",
+      "description": "Umayyad forces founded Kairouan (670), reached the Atlantic, and in 711 Tariq ibn Ziyad crossed into Iberia, defeating the Visigoths at Guadalete. Raids north of the Pyrenees ended at the Battle of Tours (732).",
+      "waypoints": [
+        [
+          29.9,
+          31.2,
+          647,
+          "Alexandria"
+        ],
+        [
+          10.1,
+          35.68,
+          670,
+          "Kairouan"
+        ],
+        [
+          -5.8,
+          35.77,
+          708,
+          "Tangier"
+        ],
+        [
+          -5.9,
+          36.6,
+          711,
+          "Guadalete"
+        ],
+        [
+          -4.02,
+          39.86,
+          712,
+          "Toledo"
+        ],
+        [
+          3.0,
+          43.18,
+          719,
+          "Narbonne"
+        ],
+        [
+          0.5,
+          46.8,
+          732,
+          "Tours"
+        ]
+      ]
+    },
+    {
+      "id": "first-crusade",
+      "name": "First Crusade",
+      "kind": "campaign",
+      "wikipedia": "First Crusade",
+      "description": "Preached by Pope Urban II at Clermont in 1095, the First Crusade marched through Constantinople, took Nicaea and, after a long siege, Antioch, and captured Jerusalem in July 1099, founding the crusader states.",
+      "waypoints": [
+        [
+          3.08,
+          45.78,
+          1095,
+          "Clermont"
+        ],
+        [
+          28.98,
+          41.01,
+          1097,
+          "Constantinople"
+        ],
+        [
+          29.72,
+          40.43,
+          1097,
+          "Nicaea"
+        ],
+        [
+          36.16,
+          36.2,
+          1098,
+          "Antioch"
+        ],
+        [
+          35.23,
+          31.78,
+          1099,
+          "Jerusalem"
+        ]
+      ]
+    },
+    {
+      "id": "third-crusade",
+      "name": "Third Crusade (Richard I)",
+      "kind": "campaign",
+      "wikipedia": "Third Crusade",
+      "description": "After Saladin took Jerusalem in 1187, Richard I of England sailed east by way of Sicily and Cyprus, took Acre (1191) and beat Saladin at Arsuf, but did not retake Jerusalem; a truce in 1192 left the coast to the crusaders.",
+      "waypoints": [
+        [
+          3.75,
+          47.47,
+          1190,
+          "Vézelay"
+        ],
+        [
+          15.55,
+          38.19,
+          1190,
+          "Messina"
+        ],
+        [
+          33.4,
+          35.0,
+          1191,
+          "Cyprus"
+        ],
+        [
+          35.07,
+          32.93,
+          1191,
+          "Acre"
+        ],
+        [
+          34.82,
+          32.2,
+          1191,
+          "Arsuf"
+        ],
+        [
+          34.75,
+          32.05,
+          1192,
+          "Jaffa"
+        ]
+      ]
+    },
+    {
+      "id": "vikings-west",
+      "name": "Viking raids and settlement in the West",
+      "kind": "campaign",
+      "wikipedia": "Viking expansion",
+      "description": "From the raid on Lindisfarne in 793, Norse raiders struck Britain, Ireland and Francia, founded Dublin (841), besieged Paris (845), and the Great Heathen Army conquered much of England from 865. Rollo's Normans received Normandy in 911.",
+      "waypoints": [
+        [
+          5.3,
+          60.4,
+          793,
+          "Western Norway"
+        ],
+        [
+          -1.8,
+          55.67,
+          793,
+          "Lindisfarne"
+        ],
+        [
+          -6.26,
+          53.35,
+          841,
+          "Dublin"
+        ],
+        [
+          2.35,
+          48.86,
+          845,
+          "Paris"
+        ],
+        [
+          -1.08,
+          53.96,
+          866,
+          "York"
+        ],
+        [
+          1.1,
+          49.44,
+          911,
+          "Rouen, Normandy"
+        ]
+      ]
+    },
+    {
+      "id": "varangians",
+      "name": "Route from the Varangians to the Greeks",
+      "kind": "trade",
+      "recurring": true,
+      "active": [
+        800,
+        1100
+      ],
+      "wikipedia": "Trade route from the Varangians to the Greeks",
+      "description": "A river route used by Scandinavian traders and warriors (Varangians) from the Baltic down the Volkhov and Dnieper to the Black Sea and Constantinople, carrying furs, slaves, silver and silk. It underpinned the rise of Kievan Rus'.",
+      "waypoints": [
+        [
+          17.55,
+          59.33,
+          "Birka"
+        ],
+        [
+          32.3,
+          60.0,
+          "Staraya Ladoga"
+        ],
+        [
+          31.27,
+          58.52,
+          "Novgorod"
+        ],
+        [
+          30.52,
+          50.45,
+          "Kiev"
+        ],
+        [
+          31.5,
+          46.6,
+          "Dnieper mouth"
+        ],
+        [
+          28.98,
+          41.01,
+          "Constantinople"
+        ]
+      ]
+    },
+    {
+      "id": "columbus",
+      "name": "Columbus's first voyage",
+      "kind": "exploration",
+      "wikipedia": "Voyages of Christopher Columbus",
+      "description": "Sailing for Castile, Columbus left Palos in August 1492, refitted in the Canaries and made landfall in the Bahamas on 12 October, then reached Cuba and Hispaniola, where the Santa María was wrecked. He was back in Spain in March 1493.",
+      "waypoints": [
+        [
+          -6.89,
+          37.23,
+          1492,
+          "Palos de la Frontera"
+        ],
+        [
+          -17.1,
+          28.1,
+          1492,
+          "Canary Islands"
+        ],
+        [
+          -74.5,
+          24.05,
+          1492,
+          "Guanahani (Bahamas)"
+        ],
+        [
+          -76.0,
+          21.0,
+          1492,
+          "Cuba"
+        ],
+        [
+          -71.5,
+          19.8,
+          1492,
+          "Hispaniola"
+        ],
+        [
+          -40.0,
+          35.0,
+          1493,
+          "Return across the Atlantic"
+        ],
+        [
+          -6.89,
+          37.23,
+          1493,
+          "Palos"
+        ]
+      ]
+    },
+    {
+      "id": "da-gama",
+      "name": "Vasco da Gama's voyage to India",
+      "kind": "exploration",
+      "wikipedia": "Vasco da Gama",
+      "description": "Da Gama's fleet sailed from Lisbon in 1497, rounded the Cape of Good Hope, picked up a pilot at Malindi and reached Calicut in May 1498 — the first direct sea voyage from Europe to India.",
+      "waypoints": [
+        [
+          -9.14,
+          38.72,
+          1497,
+          "Lisbon"
+        ],
+        [
+          -23.5,
+          15.0,
+          1497,
+          "Cape Verde"
+        ],
+        [
+          18.47,
+          -34.36,
+          1497,
+          "Cape of Good Hope"
+        ],
+        [
+          40.12,
+          -3.22,
+          1498,
+          "Malindi"
+        ],
+        [
+          75.78,
+          11.25,
+          1498,
+          "Calicut"
+        ]
+      ]
+    },
+    {
+      "id": "magellan",
+      "name": "Magellan–Elcano circumnavigation",
+      "kind": "exploration",
+      "wikipedia": "Magellan expedition",
+      "description": "Five ships left Spain in 1519 under Ferdinand Magellan, found the strait at the tip of South America in 1520 and crossed the Pacific. Magellan was killed at Mactan in 1521; Juan Sebastián Elcano brought the Victoria home in 1522 with 18 survivors — the first circumnavigation of the world.",
+      "waypoints": [
+        [
+          -6.35,
+          36.78,
+          1519,
+          "Sanlúcar de Barrameda"
+        ],
+        [
+          -43.2,
+          -22.9,
+          1519,
+          "Rio de Janeiro"
+        ],
+        [
+          -71.0,
+          -53.5,
+          1520,
+          "Strait of Magellan"
+        ],
+        [
+          -130.0,
+          -15.0,
+          1520,
+          "Pacific Ocean"
+        ],
+        [
+          -215.2,
+          13.4,
+          1521,
+          "Guam"
+        ],
+        [
+          -236.0,
+          10.3,
+          1521,
+          "Mactan"
+        ],
+        [
+          -232.6,
+          0.68,
+          1521,
+          "Tidore, Moluccas"
+        ],
+        [
+          -270.0,
+          -25.0,
+          1522,
+          "Indian Ocean"
+        ],
+        [
+          -341.5,
+          -34.6,
+          1522,
+          "Cape of Good Hope"
+        ],
+        [
+          -366.35,
+          36.78,
+          1522,
+          "Sanlúcar de Barrameda"
+        ]
+      ]
+    },
+    {
+      "id": "zheng-he",
+      "name": "Voyages of Zheng He",
+      "kind": "exploration",
+      "certainty": "uncertain",
+      "wikipedia": "Ming treasure voyages",
+      "description": "Between 1405 and 1433 the Ming admiral Zheng He led seven great treasure fleets through Southeast Asia and across the Indian Ocean to India, the Persian Gulf, Arabia and East Africa. This is a composite of the furthest legs, not a single voyage.",
+      "waypoints": [
+        [
+          118.8,
+          32.06,
+          1405,
+          "Nanjing"
+        ],
+        [
+          109.2,
+          13.8,
+          1406,
+          "Champa"
+        ],
+        [
+          102.25,
+          2.2,
+          1409,
+          "Malacca"
+        ],
+        [
+          80.2,
+          6.03,
+          1410,
+          "Galle, Ceylon"
+        ],
+        [
+          75.78,
+          11.25,
+          1411,
+          "Calicut"
+        ],
+        [
+          56.45,
+          27.1,
+          1414,
+          "Hormuz"
+        ],
+        [
+          45.0,
+          12.8,
+          1417,
+          "Aden"
+        ],
+        [
+          40.12,
+          -3.22,
+          1418,
+          "Malindi"
+        ]
+      ]
+    },
+    {
+      "id": "marco-polo",
+      "name": "Marco Polo's journey to China",
+      "kind": "exploration",
+      "wikipedia": "Marco Polo",
+      "description": "Marco Polo left Venice with his father and uncle in 1271 and travelled overland through Persia and Central Asia to Kublai Khan's court at Shangdu (c. 1275). He returned by sea in 1291–1295; his book made Asia known to Europeans.",
+      "waypoints": [
+        [
+          12.33,
+          45.44,
+          1271,
+          "Venice"
+        ],
+        [
+          35.07,
+          32.93,
+          1271,
+          "Acre"
+        ],
+        [
+          56.45,
+          27.1,
+          1272,
+          "Hormuz"
+        ],
+        [
+          75.99,
+          39.47,
+          1273,
+          "Kashgar"
+        ],
+        [
+          94.66,
+          40.14,
+          1274,
+          "Dunhuang"
+        ],
+        [
+          116.18,
+          42.36,
+          1275,
+          "Shangdu"
+        ]
+      ]
+    },
+    {
+      "id": "ibn-battuta",
+      "name": "Travels of Ibn Battuta",
+      "kind": "exploration",
+      "wikipedia": "Ibn Battuta",
+      "description": "The Moroccan scholar Ibn Battuta travelled for nearly thirty years (1325–1354) across the Islamic world and beyond — to Mecca, East Africa, Delhi, China and Mali — some 117,000 km, recorded in the Rihla.",
+      "waypoints": [
+        [
+          -5.8,
+          35.77,
+          1325,
+          "Tangier"
+        ],
+        [
+          31.24,
+          30.04,
+          1326,
+          "Cairo"
+        ],
+        [
+          39.83,
+          21.42,
+          1326,
+          "Mecca"
+        ],
+        [
+          44.4,
+          33.3,
+          1327,
+          "Baghdad"
+        ],
+        [
+          39.5,
+          -8.96,
+          1331,
+          "Kilwa"
+        ],
+        [
+          77.2,
+          28.6,
+          1334,
+          "Delhi"
+        ],
+        [
+          118.58,
+          24.9,
+          1345,
+          "Quanzhou"
+        ],
+        [
+          -4.98,
+          34.03,
+          1349,
+          "Fez"
+        ],
+        [
+          -3.0,
+          16.77,
+          1353,
+          "Timbuktu"
+        ],
+        [
+          -4.98,
+          34.03,
+          1354,
+          "Fez"
+        ]
+      ]
+    },
+    {
+      "id": "napoleon-egypt",
+      "name": "Napoleon's campaign in Egypt and Syria",
+      "kind": "campaign",
+      "wikipedia": "French campaign in Egypt and Syria",
+      "description": "Bonaparte sailed from Toulon in 1798, seized Malta, won the Battle of the Pyramids and took Cairo, but Nelson destroyed his fleet at the Nile. His advance into Syria failed at the siege of Acre in 1799.",
+      "waypoints": [
+        [
+          5.93,
+          43.12,
+          1798,
+          "Toulon"
+        ],
+        [
+          14.5,
+          35.9,
+          1798,
+          "Malta"
+        ],
+        [
+          29.9,
+          31.2,
+          1798,
+          "Alexandria"
+        ],
+        [
+          31.24,
+          30.04,
+          1798,
+          "Cairo"
+        ],
+        [
+          35.07,
+          32.93,
+          1799,
+          "Acre"
+        ],
+        [
+          29.9,
+          31.2,
+          1799,
+          "Alexandria"
+        ]
+      ]
+    },
+    {
+      "id": "napoleon-russia",
+      "name": "Napoleon's invasion of Russia",
+      "kind": "campaign",
+      "wikipedia": "French invasion of Russia",
+      "description": "The Grande Armée of some 450,000–600,000 crossed the Niemen in June 1812, fought at Smolensk and Borodino and entered a burning Moscow in September. The winter retreat, across the Berezina, destroyed it; only a fraction returned.",
+      "waypoints": [
+        [
+          23.9,
+          54.9,
+          1812,
+          "Niemen crossing"
+        ],
+        [
+          32.05,
+          54.78,
+          1812,
+          "Smolensk"
+        ],
+        [
+          35.82,
+          55.52,
+          1812,
+          "Borodino"
+        ],
+        [
+          37.62,
+          55.75,
+          1812,
+          "Moscow"
+        ],
+        [
+          28.5,
+          54.3,
+          1812,
+          "Berezina"
+        ],
+        [
+          25.28,
+          54.69,
+          1812,
+          "Vilnius"
+        ]
+      ]
+    },
+    {
+      "id": "silk-road",
+      "name": "Silk Road",
+      "kind": "trade",
+      "recurring": true,
+      "active": [
+        -130,
+        1453
+      ],
+      "wikipedia": "Silk Road",
+      "description": "Not one road but a network of caravan routes linking China with Central Asia, Persia and the Mediterranean from the Han dynasty's opening of the west (c. 130 BCE). Silk, spices, paper, religions and plague travelled along it. Shown here as a single main route.",
+      "waypoints": [
+        [
+          108.94,
+          34.34,
+          "Chang'an"
+        ],
+        [
+          94.66,
+          40.14,
+          "Dunhuang"
+        ],
+        [
+          75.99,
+          39.47,
+          "Kashgar"
+        ],
+        [
+          66.96,
+          39.65,
+          "Samarkand"
+        ],
+        [
+          61.84,
+          37.66,
+          "Merv"
+        ],
+        [
+          44.58,
+          33.09,
+          "Ctesiphon"
+        ],
+        [
+          38.27,
+          34.55,
+          "Palmyra"
+        ],
+        [
+          36.16,
+          36.2,
+          "Antioch"
+        ]
+      ]
+    },
+    {
+      "id": "trans-saharan-west",
+      "name": "Trans-Saharan gold and salt route",
+      "kind": "trade",
+      "recurring": true,
+      "active": [
+        700,
+        1600
+      ],
+      "wikipedia": "Trans-Saharan trade",
+      "description": "Camel caravans carried salt from Saharan mines such as Taghaza south and West African gold north, through Sijilmasa to the Maghreb. This trade built the wealth of Ghana, Mali and Songhai.",
+      "waypoints": [
+        [
+          -4.27,
+          31.28,
+          "Sijilmasa"
+        ],
+        [
+          -4.95,
+          23.6,
+          "Taghaza"
+        ],
+        [
+          -7.03,
+          17.28,
+          "Walata"
+        ],
+        [
+          -3.0,
+          16.77,
+          "Timbuktu"
+        ]
+      ]
+    },
+    {
+      "id": "trans-saharan-central",
+      "name": "Fezzan–Kanem caravan route",
+      "kind": "trade",
+      "recurring": true,
+      "active": [
+        700,
+        1800
+      ],
+      "certainty": "uncertain",
+      "wikipedia": "Trans-Saharan trade",
+      "description": "The central Saharan route linked Tripoli through the Fezzan and Bilma to Kanem–Bornu around Lake Chad.",
+      "waypoints": [
+        [
+          13.19,
+          32.89,
+          "Tripoli"
+        ],
+        [
+          13.92,
+          25.92,
+          "Murzuk, Fezzan"
+        ],
+        [
+          12.92,
+          18.69,
+          "Bilma"
+        ],
+        [
+          14.5,
+          14.3,
+          "Kanem"
+        ]
+      ]
+    },
+    {
+      "id": "incense-route",
+      "name": "Incense Route",
+      "kind": "trade",
+      "recurring": true,
+      "active": [
+        -700,
+        200
+      ],
+      "certainty": "uncertain",
+      "wikipedia": "Incense trade route",
+      "description": "Caravans carried frankincense and myrrh from southern Arabia north along the Red Sea coast to Petra and the Mediterranean, enriching the kingdoms of Saba and the Nabataeans.",
+      "waypoints": [
+        [
+          54.1,
+          17.0,
+          "Dhofar"
+        ],
+        [
+          47.0,
+          15.4,
+          "Shabwa"
+        ],
+        [
+          45.33,
+          15.47,
+          "Marib"
+        ],
+        [
+          39.83,
+          21.42,
+          "Mecca"
+        ],
+        [
+          35.44,
+          30.33,
+          "Petra"
+        ],
+        [
+          34.45,
+          31.5,
+          "Gaza"
+        ]
+      ]
+    },
+    {
+      "id": "indian-ocean",
+      "name": "Indian Ocean monsoon trade",
+      "kind": "trade",
+      "recurring": true,
+      "active": [
+        700,
+        1500
+      ],
+      "wikipedia": "Indian Ocean trade",
+      "description": "Sailing on the seasonal monsoon winds, dhows and junks linked the Swahili coast, Arabia, India, Southeast Asia and China, trading gold, ivory, textiles, spices and porcelain.",
+      "waypoints": [
+        [
+          39.5,
+          -8.96,
+          "Kilwa"
+        ],
+        [
+          45.34,
+          2.04,
+          "Mogadishu"
+        ],
+        [
+          45.0,
+          12.8,
+          "Aden"
+        ],
+        [
+          75.78,
+          11.25,
+          "Calicut"
+        ],
+        [
+          80.2,
+          6.03,
+          "Galle"
+        ],
+        [
+          102.25,
+          2.2,
+          "Malacca"
+        ],
+        [
+          113.26,
+          23.13,
+          "Guangzhou"
+        ]
+      ]
+    },
+    {
+      "id": "slave-trade-brazil",
+      "name": "Atlantic slave trade: West-Central Africa to Brazil",
+      "kind": "removal",
+      "recurring": true,
+      "active": [
+        1550,
+        1850
+      ],
+      "wikipedia": "Atlantic slave trade",
+      "description": "The largest single branch of the Atlantic slave trade carried captives from Luanda, Benguela and the Congo coast to Brazil. About 12.5 million Africans were embarked across the whole Atlantic trade (1501–1866) and about 10.7 million survived the Middle Passage. Brazil abolished the trade in 1850.",
+      "waypoints": [
+        [
+          13.23,
+          -8.84,
+          "Luanda"
+        ],
+        [
+          -10.0,
+          -14.0,
+          "South Atlantic"
+        ],
+        [
+          -43.2,
+          -22.9,
+          "Rio de Janeiro"
+        ]
+      ]
+    },
+    {
+      "id": "slave-trade-bahia",
+      "name": "Atlantic slave trade: Bight of Benin to Bahia",
+      "kind": "removal",
+      "recurring": true,
+      "active": [
+        1600,
+        1850
+      ],
+      "wikipedia": "Atlantic slave trade",
+      "description": "Captives from the Bight of Benin — sold through ports such as Ouidah, the main slave port of the Kingdom of Dahomey — were shipped in large numbers to Salvador da Bahia.",
+      "waypoints": [
+        [
+          2.08,
+          6.36,
+          "Ouidah"
+        ],
+        [
+          -15.0,
+          -3.0,
+          "Equatorial Atlantic"
+        ],
+        [
+          -38.5,
+          -12.97,
+          "Salvador da Bahia"
+        ]
+      ]
+    },
+    {
+      "id": "slave-trade-caribbean",
+      "name": "Atlantic slave trade: Gold Coast and Bight of Biafra to the Caribbean",
+      "kind": "removal",
+      "recurring": true,
+      "active": [
+        1650,
+        1807
+      ],
+      "wikipedia": "Atlantic slave trade",
+      "description": "British, Dutch and French ships carried captives from the Gold Coast forts and Bight of Biafra ports to the sugar plantations of Jamaica, Barbados, Saint-Domingue and other islands. Britain abolished its trade in 1807.",
+      "waypoints": [
+        [
+          -1.24,
+          5.1,
+          "Cape Coast"
+        ],
+        [
+          -25.0,
+          10.0,
+          "Middle Passage"
+        ],
+        [
+          -59.6,
+          13.1,
+          "Barbados"
+        ],
+        [
+          -76.8,
+          17.97,
+          "Jamaica"
+        ]
+      ]
+    },
+    {
+      "id": "slave-trade-north-america",
+      "name": "Atlantic slave trade: Senegambia to North America",
+      "kind": "removal",
+      "recurring": true,
+      "active": [
+        1700,
+        1808
+      ],
+      "wikipedia": "Atlantic slave trade",
+      "description": "A smaller share of the trade went to British North America and the United States, much of it through Charleston; Senegambia and the Bight of Biafra were major sources. The US banned the import of slaves from 1808.",
+      "waypoints": [
+        [
+          -17.4,
+          14.67,
+          "Gorée, Senegambia"
+        ],
+        [
+          -45.0,
+          22.0,
+          "Atlantic"
+        ],
+        [
+          -79.93,
+          32.78,
+          "Charleston"
+        ]
+      ]
+    },
+    {
+      "id": "slave-trade-cartagena",
+      "name": "Atlantic slave trade: Upper Guinea to Spanish America",
+      "kind": "removal",
+      "recurring": true,
+      "active": [
+        1560,
+        1640
+      ],
+      "wikipedia": "Atlantic slave trade",
+      "description": "In the early trade, captives from Upper Guinea ports such as Cacheu were carried to Cartagena de Indias, the main slave port of Spanish America, under the asiento contracts.",
+      "waypoints": [
+        [
+          -16.16,
+          12.27,
+          "Cacheu"
+        ],
+        [
+          -40.0,
+          12.0,
+          "Atlantic"
+        ],
+        [
+          -75.5,
+          10.4,
+          "Cartagena de Indias"
+        ]
+      ]
+    },
+    {
+      "id": "partition-to-india",
+      "name": "Partition of India: refugees to India",
+      "kind": "migration",
+      "wikipedia": "Partition of India",
+      "description": "Partition in August 1947 displaced between about 12 and 20 million people, in one of the largest mass migrations in history. Hindus and Sikhs fled West Punjab and East Bengal for India amid communal violence that killed hundreds of thousands.",
+      "waypoints": [
+        [
+          74.34,
+          31.55,
+          1947,
+          "Lahore"
+        ],
+        [
+          74.87,
+          31.63,
+          1947,
+          "Amritsar"
+        ],
+        [
+          77.2,
+          28.6,
+          1947,
+          "Delhi"
+        ]
+      ]
+    },
+    {
+      "id": "partition-to-pakistan",
+      "name": "Partition of India: refugees to Pakistan",
+      "kind": "migration",
+      "wikipedia": "Partition of India",
+      "description": "Muslims from East Punjab, Delhi and elsewhere in India moved to West Pakistan in the same months, many in refugee trains along the Delhi–Ambala–Ludhiana–Lahore line and in foot columns.",
+      "waypoints": [
+        [
+          77.2,
+          28.6,
+          1947,
+          "Delhi"
+        ],
+        [
+          76.78,
+          30.38,
+          1947,
+          "Ambala"
+        ],
+        [
+          75.86,
+          30.9,
+          1947,
+          "Ludhiana"
+        ],
+        [
+          74.87,
+          31.63,
+          1947,
+          "Amritsar"
+        ],
+        [
+          74.34,
+          31.55,
+          1947,
+          "Lahore"
+        ]
+      ]
+    },
+    {
+      "id": "partition-bengal",
+      "name": "Partition of Bengal: refugees to West Bengal",
+      "kind": "migration",
+      "wikipedia": "Partition of Bengal (1947)",
+      "description": "Bengal was divided between India and East Pakistan; millions of Hindus moved from East Bengal to West Bengal over the following years, many to Calcutta.",
+      "waypoints": [
+        [
+          90.41,
+          23.81,
+          1947,
+          "Dhaka"
+        ],
+        [
+          88.36,
+          22.57,
+          1950,
+          "Calcutta"
+        ]
       ]
     }
   ]

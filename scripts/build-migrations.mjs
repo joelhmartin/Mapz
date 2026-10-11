@@ -21,18 +21,21 @@ const bearing = ([lon0, lat0], [lon1, lat1]) =>
 const round = (c) => Math.round(c * 1e3) / 1e3;
 
 for (const m of movements) {
-  const wps = m.waypoints;
+  // A recurring route lists [lon, lat, place] stops and an `active` [from, to] span; it is drawn
+  // whole from `from`, so every stop gets that year.
+  const wps = m.recurring ? m.waypoints.map(([lon, lat, place]) => [lon, lat, m.active[0], place]) : m.waypoints;
   if (wps.length < 2) throw new Error(`${m.id}: needs at least two waypoints`);
   for (let i = 1; i < wps.length; i++) {
     if (wps[i][2] < wps[i - 1][2]) throw new Error(`${m.id}: waypoint years must not decrease`);
   }
   const from = wps[0][2];
-  const to = wps.at(-1)[2];
+  const to = m.recurring ? m.active[1] : wps.at(-1)[2];
 
   const legs = wps.length - 1;
   wps.slice(1).forEach(([lon1, lat1, y1], leg) => {
     const [lon0, lat0, y0] = wps[leg];
-    const n = Math.max(1, Math.ceil(Math.hypot(lon1 - lon0, lat1 - lat0) / STEP_DEG));
+    // Recurring routes are drawn whole, so they need no finer segments than their legs.
+    const n = m.recurring ? 1 : Math.max(1, Math.ceil(Math.hypot(lon1 - lon0, lat1 - lat0) / STEP_DEG));
     for (let k = 0; k < n; k++) {
       const a = k / n;
       const b = (k + 1) / n;
@@ -47,6 +50,7 @@ for (const m of movements) {
         y1: lerp(y0, y1, b),
         to,
         last: leg === legs - 1 && k === n - 1,
+        ...(m.recurring ? { recurring: true } : {}),
       };
       features.push({
         type: 'Feature',
@@ -70,6 +74,7 @@ for (const m of movements) {
     certainty: m.certainty ?? 'documented',
     wikipedia: m.wikipedia ?? null,
     description: m.description,
+    ...(m.recurring ? { recurring: true } : {}),
     itinerary: wps.map(([, , year, place]) => ({ year, place })),
   };
 }
