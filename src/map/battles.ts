@@ -15,6 +15,8 @@ export interface BattleProps {
   year: number;
   date: string;
   war?: string;
+  // Wikidata ids of the wars this battle is part of, ';'-separated.
+  warIds?: string;
   sides?: string;
   article?: string;
 }
@@ -111,6 +113,8 @@ export function addBattleLayers(map: MapLibreMap, data: string) {
       'icon-image': BATTLE_ICON,
       'icon-size': ['interpolate', ['linear'], age, 0, 0.85, 4, 0.6, BATTLE_TRAIL_YEARS, 0.5],
       'icon-allow-overlap': ['step', ['zoom'], false, 4, true],
+      // Battle icons may hide each other, but must not crowd out territory and war labels.
+      'icon-ignore-placement': true,
       'icon-padding': 0,
       // Newest battles win when icons collide.
       'symbol-sort-key': ['-', 0, ['get', 'year']],

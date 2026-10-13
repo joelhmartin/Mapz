@@ -55,6 +55,22 @@ export function HoverCard({ hover, index, movements }: Props) {
     );
   }
 
+  if (target.type === 'war') {
+    const w = target.props;
+    return (
+      <div className="hover-card panel" style={{ left, top }}>
+        <div className="hover-title">
+          <span className="battle-glyph">⚔&#xFE0E;</span>
+          {w.name}
+        </div>
+        <div className="hover-line">
+          {formatSpan(w.from, w.to)} · {w.n} {w.n === 1 ? 'battle' : 'battles'} mapped
+        </div>
+        <div className="hover-hint">Click for the war</div>
+      </div>
+    );
+  }
+
   const props = target.props;
   const info = index?.[props.key];
   const memberOf = info?.memberOf.map(displayName) ?? [];

@@ -8,6 +8,8 @@ interface Props {
   onToggleBattles: (show: boolean) => void;
   showMovements: boolean;
   onToggleMovements: (show: boolean) => void;
+  showWars: boolean;
+  onToggleWars: (show: boolean) => void;
   onChange: (year: number) => void;
 }
 
@@ -24,6 +26,8 @@ export function Timeline({
   onToggleBattles,
   showMovements,
   onToggleMovements,
+  showWars,
+  onToggleWars,
   onChange,
 }: Props) {
   const [playing, setPlaying] = useState(false);
@@ -99,6 +103,10 @@ export function Timeline({
           <label className="toggle">
             <input type="checkbox" checked={showMovements} onChange={(e) => onToggleMovements(e.target.checked)} />
             <span>➶&#xFE0E; movements</span>
+          </label>
+          <label className="toggle">
+            <input type="checkbox" checked={showWars} onChange={(e) => onToggleWars(e.target.checked)} />
+            <span>◌&#xFE0E; wars</span>
           </label>
         </div>
         <div className="options">

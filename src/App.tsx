@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { MapView, type HoverInfo, type MapTarget } from './map/MapView';
+import { MapView, type HoverInfo, type MapFocus, type MapTarget } from './map/MapView';
 import type { BattleProps } from './map/battles';
 import { loadMovementIndex, type MovementIndex } from './map/movements';
 import { Timeline } from './components/Timeline';
@@ -7,6 +7,7 @@ import { HoverCard } from './components/HoverCard';
 import { InfoPanel } from './components/InfoPanel';
 import { BattlePanel } from './components/BattlePanel';
 import { MovementPanel } from './components/MovementPanel';
+import { WarPanel } from './components/WarPanel';
 import { activeCount, loadPolityIndex, type PolityIndex } from './lib/polities';
 import { writeYearToUrl, yearFromUrl } from './lib/years';
 
@@ -14,6 +15,7 @@ type Selection =
   | { type: 'polity'; key: string }
   | { type: 'battle'; props: BattleProps }
   | { type: 'movement'; id: string }
+  | { type: 'war'; id: string }
   | null;
 
 export function App() {
@@ -23,6 +25,8 @@ export function App() {
   const [selection, setSelection] = useState<Selection>(null);
   const [showBattles, setShowBattles] = useState(true);
   const [showMovements, setShowMovements] = useState(true);
+  const [showWars, setShowWars] = useState(true);
+  const [focus, setFocus] = useState<MapFocus | null>(null);
   const [movements, setMovements] = useState<MovementIndex | null>(null);
 
   useEffect(() => {
@@ -42,6 +46,7 @@ export function App() {
     if (!target) setSelection(null);
     else if (target.type === 'polity') setSelection({ type: 'polity', key: target.props.key });
     else if (target.type === 'battle') setSelection({ type: 'battle', props: target.props });
+    else if (target.type === 'war') setSelection({ type: 'war', id: target.props.id });
     else setSelection({ type: 'movement', id: target.props.id });
   }, []);
 
@@ -50,7 +55,9 @@ export function App() {
     hover &&
     ((hover.target.type === 'polity' && hover.target.props.key === selectedKey) ||
       (hover.target.type === 'battle' && selection?.type === 'battle' && hover.target.props.qid === selection.props.qid) ||
-      (hover.target.type === 'movement' && selection?.type === 'movement' && hover.target.props.id === selection.id));
+      (hover.target.type === 'movement' && selection?.type === 'movement' && hover.target.props.id === selection.id) ||
+      (hover.target.type === 'war' && selection?.type === 'war' && hover.target.props.id === selection.id));
+  const openWar = useCallback((id: string) => setSelection({ type: 'war', id }), []);
   const selectedMovement = selection?.type === 'movement' ? movements?.[selection.id] : undefined;
 
   return (
@@ -60,6 +67,8 @@ export function App() {
         selectedKey={selectedKey}
         showBattles={showBattles}
         showMovements={showMovements}
+        showWars={showWars}
+        focus={focus}
         onHover={setHover}
         onSelect={onSelect}
       />
@@ -78,7 +87,21 @@ export function App() {
           onSelectKey={(key) => setSelection({ type: 'polity', key })}
         />
       )}
-      {selection?.type === 'battle' && <BattlePanel battle={selection.props} onClose={() => setSelection(null)} />}
+      {selection?.type === 'battle' && (
+        <BattlePanel battle={selection.props} onClose={() => setSelection(null)} onOpenWar={openWar} />
+      )}
+      {selection?.type === 'war' && (
+        <WarPanel
+          warId={selection.id}
+          year={year}
+          onClose={() => setSelection(null)}
+          onOpenWar={openWar}
+          onGoToBattle={(y, center) => {
+            setYear(y);
+            setFocus({ center, key: Date.now() });
+          }}
+        />
+      )}
       {selectedMovement && (
         <MovementPanel
           movement={selectedMovement}
@@ -94,6 +117,8 @@ export function App() {
         onToggleBattles={setShowBattles}
         showMovements={showMovements}
         onToggleMovements={setShowMovements}
+        showWars={showWars}
+        onToggleWars={setShowWars}
         onChange={setYear}
       />
     </div>

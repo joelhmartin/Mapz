@@ -20,6 +20,7 @@ import {
   isMovementVisible,
   type MovementSegmentProps,
 } from './movements';
+import { WAR_HIT_LAYERS, WAR_LAYERS, addWarLayers, isWarActive, type WarFeatureProps } from './wars';
 import type { PolityFeatureProps } from '../lib/polities';
 import { globeFromUrl, viewFromUrl, writeGlobeToUrl, writeViewToUrl } from '../lib/years';
 
@@ -29,7 +30,14 @@ addProtocol('pmtiles', new Protocol().tile);
 export type MapTarget =
   | { type: 'polity'; props: PolityFeatureProps }
   | { type: 'battle'; props: BattleProps }
-  | { type: 'movement'; props: MovementSegmentProps };
+  | { type: 'movement'; props: MovementSegmentProps }
+  | { type: 'war'; props: WarFeatureProps };
+
+// A place for the map to fly to; `key` makes repeat requests for the same spot still fire.
+export interface MapFocus {
+  center: [number, number];
+  key: number;
+}
 
 export interface HoverInfo {
   target: MapTarget;
@@ -42,6 +50,8 @@ interface Props {
   selectedKey: string | null;
   showBattles: boolean;
   showMovements: boolean;
+  showWars: boolean;
+  focus: MapFocus | null;
   onHover: (info: HoverInfo | null) => void;
   onSelect: (target: MapTarget | null) => void;
 }
@@ -71,7 +81,12 @@ function setLayersVisible(map: MapLibreMap, ids: string[], visible: boolean) {
 function targetAt(
   map: MapLibreMap,
   e: MapMouseEvent,
-  { year, showBattles, showMovements }: { year: number; showBattles: boolean; showMovements: boolean },
+  {
+    year,
+    showBattles,
+    showMovements,
+    showWars,
+  }: { year: number; showBattles: boolean; showMovements: boolean; showWars: boolean },
 ): { target: MapTarget; polityId?: number } | null {
   const box: [[number, number], [number, number]] = [
     [e.point.x - 6, e.point.y - 6],
@@ -92,17 +107,23 @@ function targetAt(
       .filter((f) => isMovementVisible(f.properties as MovementSegmentProps, year));
     if (routes.length) return { target: { type: 'movement', props: routes[0].properties as MovementSegmentProps } };
   }
+  if (showWars && map.getLayer('wars-label')) {
+    const wars = map
+      .queryRenderedFeatures(box, { layers: WAR_HIT_LAYERS })
+      .filter((f) => isWarActive(f.properties as WarFeatureProps, year));
+    if (wars.length) return { target: { type: 'war', props: wars[0].properties as WarFeatureProps } };
+  }
   const f = pickPolity(map.queryRenderedFeatures(e.point, { layers: ['polities-fill'] }), year);
   if (!f) return null;
   return { target: { type: 'polity', props: f.properties as PolityFeatureProps }, polityId: f.id as number };
 }
 
-export function MapView({ year, selectedKey, showBattles, showMovements, onHover, onSelect }: Props) {
+export function MapView({ year, selectedKey, showBattles, showMovements, showWars, focus, onHover, onSelect }: Props) {
   const container = useRef<HTMLDivElement>(null);
   const mapRef = useRef<MapLibreMap | null>(null);
   const hoverId = useRef<number | null>(null);
-  const state = useRef({ year, selectedKey, showBattles, showMovements });
-  state.current = { year, selectedKey, showBattles, showMovements };
+  const state = useRef({ year, selectedKey, showBattles, showMovements, showWars });
+  state.current = { year, selectedKey, showBattles, showMovements, showWars };
   const callbacks = useRef({ onHover, onSelect });
   callbacks.current = { onHover, onSelect };
 
@@ -129,13 +150,18 @@ export function MapView({ year, selectedKey, showBattles, showMovements, onHover
     map.on('projectiontransition', (e) => writeGlobeToUrl(e.newProjection !== 'mercator'));
     map.addControl(new AttributionControl({ compact: true }), 'bottom-right');
 
-    // Overlays load after the style, movements first so battles draw on top of them.
+    // Overlays load after the style: war theatres, then routes, then battles on top.
     map.on('load', async () => {
       const dataUrl = async (file: string) => {
         const url = `${import.meta.env.BASE_URL}data/${file}`;
         const res = await fetch(url, { method: 'HEAD' }).catch(() => null);
         return res?.ok && mapRef.current ? new URL(url, window.location.href).href : null;
       };
+      const wars = await dataUrl('wars.geojson');
+      if (wars) {
+        addWarLayers(map, wars);
+        setLayersVisible(map, WAR_LAYERS, state.current.showWars);
+      }
       const movements = await dataUrl('migrations.geojson');
       if (movements) {
         addMovementLayers(map, movements);
@@ -217,17 +243,24 @@ export function MapView({ year, selectedKey, showBattles, showMovements, onHover
     frame.current = null;
     const map = mapRef.current;
     if (!map || !ready.current) return;
-    const { year, selectedKey, showBattles, showMovements } = state.current;
+    const { year, selectedKey, showBattles, showMovements, showWars } = state.current;
     if (applied.current.year !== year) map.setGlobalStateProperty('year', year);
     if (applied.current.selectedKey !== selectedKey) map.setGlobalStateProperty('selected', selectedKey ?? '');
     setBattlesVisible(map, showBattles);
     setLayersVisible(map, MOVEMENT_LAYERS, showMovements);
+    setLayersVisible(map, WAR_LAYERS, showWars);
     applied.current = { year, selectedKey };
   };
 
   useEffect(() => {
     if (frame.current === null) frame.current = requestAnimationFrame(() => sync.current());
-  }, [year, selectedKey, showBattles, showMovements]);
+  }, [year, selectedKey, showBattles, showMovements, showWars]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !focus) return;
+    map.flyTo({ center: focus.center, zoom: Math.max(map.getZoom(), 4.5), duration: 1200 });
+  }, [focus]);
 
   return <div ref={container} className="map" />;
 }

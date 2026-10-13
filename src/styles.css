@@ -427,6 +427,24 @@ button {
   border-radius: 50%;
   background: var(--accent);
 }
+.itinerary li.current {
+  font-weight: bold;
+  color: var(--accent);
+}
+.war-battles {
+  max-height: 240px;
+  overflow-y: auto;
+  margin-top: 8px;
+}
+.sides {
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0;
+}
+.jump-row button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
 .links {
   display: flex;
   gap: 14px;
@@ -512,7 +530,7 @@ button {
   }
   /* The timeline covers the bottom edge, so the (required) data credits move up under the zoom buttons. */
   .maplibregl-ctrl-bottom-right {
-    top: 88px;
+    top: 136px;
     bottom: auto;
   }
 }

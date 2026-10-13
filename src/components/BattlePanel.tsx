@@ -1,13 +1,22 @@
+import { useEffect, useState } from 'react';
 import type { BattleProps } from '../map/battles';
+import { loadWarIndex, type WarIndex } from '../map/wars';
 import { formatBattleDate } from '../lib/years';
 import { WikiSummary } from './WikiSummary';
 
 interface Props {
   battle: BattleProps;
   onClose: () => void;
+  onOpenWar: (id: string) => void;
 }
 
-export function BattlePanel({ battle, onClose }: Props) {
+export function BattlePanel({ battle, onClose, onOpenWar }: Props) {
+  const [wars, setWars] = useState<WarIndex | null>(null);
+  useEffect(() => {
+    if (battle.warIds) loadWarIndex().then(setWars, () => setWars(null));
+  }, [battle.warIds]);
+  const linked = (battle.warIds?.split(';') ?? []).filter((id) => wars?.[id]);
+
   return (
     <aside className="info-panel panel" aria-label={`About ${battle.name}`}>
       <button className="close" onClick={onClose} aria-label="Close">
@@ -18,10 +27,24 @@ export function BattlePanel({ battle, onClose }: Props) {
         <h2>{battle.name}</h2>
       </header>
       <p className="span">{formatBattleDate(battle.date, battle.year)}</p>
-      {battle.war && (
+      {linked.length > 0 ? (
         <p>
-          <span className="muted">Part of</span> {battle.war}
+          <span className="muted">Part of</span>{' '}
+          {linked.map((id, i) => (
+            <span key={id}>
+              {i > 0 && '; '}
+              <button className="link" onClick={() => onOpenWar(id)}>
+                {wars![id].name}
+              </button>
+            </span>
+          ))}
         </p>
+      ) : (
+        battle.war && (
+          <p>
+            <span className="muted">Part of</span> {battle.war}
+          </p>
+        )
       )}
       {battle.sides && (
         <section>

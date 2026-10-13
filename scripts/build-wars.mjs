@@ -7,7 +7,9 @@
 
 import fs from 'node:fs';
 
-const CLUSTER_DEG = 12; // battles closer than this (in degrees, longitude scaled) share a theatre
+const CLUSTER_DEG = 7; // battles closer than this (in degrees, longitude scaled) share a theatre
+const LONG_WAR_YEARS = 20; // longer wars get theatres per decade, following the fighting
+const ERA_YEARS = 10;
 const PAD_DEG = 0.9; // how far the hull extends beyond its outermost battles
 
 const battles = JSON.parse(fs.readFileSync('public/data/battles.geojson', 'utf8')).features;
@@ -109,12 +111,29 @@ const features = [];
 const index = {};
 let drawn = 0;
 
+// Some battles are linked to the wrong war in Wikidata (World War II would otherwise start in
+// 1825). Where the war has its own dates, battles more than a couple of years outside them are
+// dropped; otherwise battles far from the median year are.
+const SLACK_YEARS = 2;
+const OUTLIER_YEARS = 60;
+function plausible(w, list) {
+  if (w.start !== null && w.end !== null) {
+    return list.filter((b) => b.year >= w.start - SLACK_YEARS && b.year <= w.end + SLACK_YEARS);
+  }
+  const years = list.map((b) => b.year).sort((a, b) => a - b);
+  const median = years[Math.floor(years.length / 2)];
+  return list.filter((b) => Math.abs(b.year - median) <= OUTLIER_YEARS);
+}
+
+let dropped = 0;
 for (const [id, w] of Object.entries(wars)) {
-  const list = battlesOf(id);
+  const all = battlesOf(id);
+  const list = plausible(w, all);
+  dropped += all.length - list.length;
   if (!list.length) continue;
   const years = list.map((b) => b.year);
-  const from = Math.min(w.start ?? Infinity, ...years);
-  const to = Math.max(w.end ?? -Infinity, ...years);
+  const from = w.start !== null && w.end !== null ? w.start : Math.min(w.start ?? Infinity, ...years);
+  const to = w.start !== null && w.end !== null ? w.end : Math.max(w.end ?? -Infinity, ...years);
   const top = topWar(id) === id;
 
   index[id] = {
@@ -131,24 +150,39 @@ for (const [id, w] of Object.entries(wars)) {
   // Only top-level wars get theatres, so a war and its own campaigns are not drawn twice.
   if (!top || list.length < 2) continue;
   drawn++;
-  const groups = clusters(list.map((b) => b.at));
-  groups.sort((a, b) => b.length - a.length);
-  for (const g of groups) {
-    if (g.length < 2 && groups.length > 1) continue; // stray single battles stay as icons only
+
+  // A long war (the Crusades, the Wars of Religion) is drawn era by era, so its theatre follows
+  // the fighting instead of covering everywhere it ever reached for its whole span.
+  const eras = [];
+  if (to - from > LONG_WAR_YEARS) {
+    for (let y = from; y <= to; y += ERA_YEARS) {
+      const inEra = list.filter((b) => b.year >= y && b.year < y + ERA_YEARS);
+      if (inEra.length) eras.push({ from: y, to: Math.min(to, y + ERA_YEARS - 1), battles: inEra });
+    }
+  } else {
+    eras.push({ from, to, battles: list });
+  }
+
+  for (const era of eras) {
+    const groups = clusters(era.battles.map((b) => b.at));
+    groups.sort((a, b) => b.length - a.length);
+    const props = { id, name: w.name, from: era.from, to: era.to, n: list.length };
+    for (const g of groups) {
+      if (g.length < 2 && groups.length > 1) continue; // stray single battles stay as icons only
+      features.push({ type: 'Feature', properties: props, geometry: { type: 'Polygon', coordinates: [theatre(g)] } });
+    }
+    // One label per war (per era), at the centre of its largest theatre.
     features.push({
       type: 'Feature',
-      properties: { id, name: w.name, from, to, n: list.length },
-      geometry: { type: 'Polygon', coordinates: [theatre(g)] },
+      properties: { ...props, label: true },
+      geometry: { type: 'Point', coordinates: centroid(groups[0]).map((c) => Math.round(c * 100) / 100) },
     });
   }
-  // One label per war, at the centre of its largest theatre.
-  features.push({
-    type: 'Feature',
-    properties: { id, name: w.name, from, to, n: list.length, label: true },
-    geometry: { type: 'Point', coordinates: centroid(groups[0]).map((c) => Math.round(c * 100) / 100) },
-  });
 }
 
 fs.writeFileSync('public/data/wars.geojson', JSON.stringify({ type: 'FeatureCollection', features }));
 fs.writeFileSync('public/data/wars.json', JSON.stringify(index));
-console.log(`${Object.keys(index).length} wars indexed, ${drawn} with theatres (${features.length} features)`);
+console.log(
+  `${Object.keys(index).length} wars indexed, ${drawn} with theatres (${features.length} features); ` +
+    `${dropped} implausible battle links dropped`,
+);
