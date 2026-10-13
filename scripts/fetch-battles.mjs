@@ -5,9 +5,7 @@
 // or locally where query.wikidata.org is reachable.
 
 import fs from 'node:fs';
-
-const ENDPOINT = 'https://query.wikidata.org/sparql';
-const USER_AGENT = 'Mapz/0.1 (https://github.com/joelhmartin/Mapz) historical map';
+import { articleTitle, isQid, parseYear, qid, sparql } from './lib/wikidata.mjs';
 
 // battle, siege, naval battle, military engagement(s)
 const TYPES = 'wd:Q178561 wd:Q188055 wd:Q1261499 wd:Q831663 wd:Q11512';
@@ -34,39 +32,6 @@ SELECT ?b ?pLabel WHERE {
      wdt:P710 ?p .
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en,fr,de,es". }
 }`;
-
-async function sparql(query, attempt = 1) {
-  const res = await fetch(ENDPOINT, {
-    method: 'POST',
-    headers: {
-      'User-Agent': USER_AGENT,
-      Accept: 'application/sparql-results+json',
-      'Content-Type': 'application/x-www-form-urlencoded',
-    },
-    body: new URLSearchParams({ query }),
-  });
-  if (!res.ok) {
-    if (attempt < 4) {
-      console.warn(`SPARQL ${res.status}, retrying…`);
-      await new Promise((r) => setTimeout(r, 5000 * attempt));
-      return sparql(query, attempt + 1);
-    }
-    throw new Error(`SPARQL failed: ${res.status} ${(await res.text()).slice(0, 500)}`);
-  }
-  return (await res.json()).results.bindings;
-}
-
-const qid = (uri) => uri.slice(uri.lastIndexOf('/') + 1);
-const isQid = (s) => /^Q\d+$/.test(s); // unlabelled items fall back to their QID
-
-function parseYear(date) {
-  // xsd:dateTime, e.g. "1879-01-22T00:00:00Z" or "-0490-09-12T00:00:00Z"
-  const m = /^(-?)(\d+)-/.exec(date);
-  if (!m) return null;
-  const y = Number(m[2]);
-  // The query service uses astronomical numbering for BCE: "-0489" is 490 BCE.
-  return m[1] ? -(y + 1) : y;
-}
 
 function parsePoint(wkt) {
   const m = /Point\(([-\d.eE]+) ([-\d.eE]+)\)/.exec(wkt);
@@ -112,7 +77,8 @@ for (const r of rows) {
       date: r.date.value.slice(0, r.date.value.indexOf('T')),
       coords,
       wars: new Set(),
-      article: r.article ? decodeURIComponent(r.article.value.split('/wiki/')[1]).replace(/_/g, ' ') : null,
+      warIds: new Set(),
+      article: r.article ? articleTitle(r.article.value) : null,
     };
     battles.set(id, b);
   }
@@ -120,6 +86,7 @@ for (const r of rows) {
   if (year < b.year) b.year = year;
   const war = r.warLabel?.value;
   if (war && !isQid(war)) b.wars.add(war);
+  if (r.war) b.warIds.add(qid(r.war.value));
 }
 
 const features = [...battles.values()]
@@ -134,6 +101,8 @@ const features = [...battles.values()]
       year: b.year,
       date: b.date,
       war: [...b.wars].slice(0, 2).join('; ') || undefined,
+      // Wikidata ids of the wars or campaigns this battle is part of (see scripts/fetch-wars.mjs).
+      warIds: [...b.warIds].slice(0, 3).join(';') || undefined,
       sides: [...(participants.get(b.id) ?? [])].slice(0, 6).join('; ') || undefined,
       article: b.article ?? undefined,
     },
