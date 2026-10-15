@@ -27,6 +27,7 @@ OUT = "data/build/supplement.ndjson"
 MIN_YEAR, MAX_YEAR = -3400, 2024
 WORLD = box(-180, -90, 180, 90)
 SLIVER_DEG2 = 0.01  # parts smaller than ~100 km² left over after clipping are dropped
+MIN_KEPT = 0.2  # a curated era is dropped when clipping leaves less than this share of its shape
 
 def area_km2(geom):
     if geom.is_empty:
@@ -79,6 +80,32 @@ def subtract(geom, start, end, coverages):
     return clean(geom)
 
 
+def eras(geom, start, end, coverage):
+    """Split [start, end] wherever a polity in coverage that overlaps geom begins or ends, and
+    clip geom by what is mapped in each era, so a long-lived curated polity gives way to an
+    empire for exactly the years that empire held its land. Returns [(from, to, clipped geom)]."""
+    hits = [coverage.items[i] for i in coverage.tree.query(geom)]
+    hits = [(s, e, g) for s, e, g in hits if s <= end and start <= e and g.intersects(geom)]
+    cuts = sorted({start} | {s for s, _, _ in hits if start < s <= end} | {e + 1 for _, e, _ in hits if start <= e < end})
+    pieces = []
+    for i, a in enumerate(cuts):
+        b = cuts[i + 1] - 1 if i + 1 < len(cuts) else end
+        covered = [g for s, e, g in hits if s <= a and b <= e]
+        g = clean(geom.difference(unary_union(covered))) if covered else geom
+        # Consecutive eras that leave the same land free are one piece.
+        if pieces and same_shape(pieces[-1][2], g):
+            pieces[-1] = (pieces[-1][0], b, pieces[-1][2])
+        else:
+            pieces.append((a, b, g))
+    return pieces
+
+
+def same_shape(a, b):
+    if a.is_empty or b.is_empty:
+        return a.is_empty and b.is_empty
+    return a.symmetric_difference(b).area < 0.02 * max(a.area, b.area)
+
+
 def feature(name, start, end, geom, **extra):
     props = {
         "Name": name,
@@ -128,6 +155,12 @@ def islands(boxes, halo):
     return domain, area_km2(core)
 
 
+def on_land(geom):
+    """Trim a shape to the coastline, so a coastal heartland does not spill into the sea."""
+    parts = [land[i].intersection(geom) for i in land_tree.query(geom) if land[i].intersects(geom)]
+    return clean(unary_union(parts)) if parts else geom
+
+
 def blob(lon, lat, radius, seed):
     """An irregular rounded shape marking an approximate heartland."""
     h = zlib.crc32(seed.encode())
@@ -143,11 +176,13 @@ def blob(lon, lat, radius, seed):
 # --- region configs ------------------------------------------------------------------------
 #
 # Every data/curated/*.json file may carry:
-#   historicalBasemaps: which snapshot features to take for a region, and how to name them
+#   historicalBasemaps: which snapshot features to take for a region, and how to name them;
+#                       exclude and rename keys may be "Name@year" to target a single snapshot
 #   boxes:              named lon/lat boxes for island polities
 #   polities:           curated polities, as "islands" (box names) or a "blob" [lon, lat, radius°];
 #                       "contested": true draws one over Cliopatria's colonial claims instead of
-#                       clipping it by them
+#                       clipping it by them. Others are clipped era by era by Cliopatria, and blobs
+#                       are trimmed to the coastline
 #   backfill:           historical-basemaps geometry reused for years before it first appears
 # Curated entries earlier in a file take precedence over later ones where they overlap.
 
@@ -182,12 +217,15 @@ class Region:
         self.peoples = set(cfg.get("peoples", []))
         self.people_keywords = [k.lower() for k in cfg.get("peopleKeywords", [])]
         self.notes = cfg.get("notes", {})
+        self.certainty = cfg.get("certainty", {})
 
     def contains(self, c):
         return in_boxes(c, self.boxes) and not in_boxes(c, self.exclude_boxes)
 
-    def accepts(self, raw, seen_years):
-        if raw in self.exclude or (self.include is not None and raw not in self.include):
+    def accepts(self, raw, seen_years, year):
+        if raw in self.exclude or f"{raw}@{year}" in self.exclude:
+            return False
+        if self.include is not None and raw not in self.include:
             return False
         # Single-snapshot layers (e.g. the 1492 map of ~1,000 contemporary nations) are left out.
         return not (self.drop_if_only_in and seen_years <= self.drop_if_only_in)
@@ -224,16 +262,19 @@ for i, feats in enumerate(features_by_snapshot):
         hb_geoms[(raw, years[i])] = geom
         c = geom.representative_point()
         region = next((r for r in regions if r.contains(c)), None)
-        if region is None or not region.accepts(raw, seen[raw]):
+        if region is None or not region.accepts(raw, seen[raw], years[i]):
             continue
-        name = region.rename.get(raw, raw)
+        # A rename keyed "Name@year" applies to that snapshot only (the same label can mean
+        # different states in different centuries).
+        name = region.rename.get(f"{raw}@{years[i]}", region.rename.get(raw, raw))
         precision = f["properties"].get("BORDERPRECISION") or 1
         hb_rows.append(
             dict(
                 name=name, start=start, end=end, geom=geom,
                 wikipedia=region.wikipedia.get(name) or f["properties"].get("wikipedia") or name,
                 description=region.notes.get(name), kind=region.kind(name),
-                certainty={1: "approximate", 2: "moderate", 3: "precise"}.get(precision, "approximate"),
+                certainty=region.certainty.get(name)
+                or {1: "approximate", 2: "moderate", 3: "precise"}.get(precision, "approximate"),
             )
         )
 
@@ -250,23 +291,27 @@ def overlaps_curated(geom, start, end):
 
 def add_curated(p, geom, source="curated", **extra):
     composite = p["name"].startswith("(")
-    if not composite:
-        # A contested polity is drawn over colonial claims to its land rather than clipped by them.
-        if not p.get("contested"):
-            geom = subtract(geom, p["from"], p["to"], [clio])
-        earlier = overlaps_curated(geom, p["from"], p["to"])
-        if earlier:
-            geom = clean(geom.difference(unary_union(earlier)))
-        if geom.is_empty:
-            return
-        curated.add(p["from"], p["to"], geom)
-    out.append(
-        feature(
-            p["name"], p["from"], p["to"], geom,
-            wikipedia=p.get("wikipedia"), Description=p.get("description"),
-            Certainty=p.get("certainty", "approximate"), Source=source, Kind=p.get("kind"), **extra,
+    # A contested polity is drawn over colonial claims to its land rather than clipped by them.
+    if composite or p.get("contested"):
+        pieces = [(p["from"], p["to"], geom)]
+    else:
+        pieces = eras(geom, p["from"], p["to"], clio)
+    for start, end, g in pieces:
+        if not composite:
+            earlier = overlaps_curated(g, start, end)
+            if earlier:
+                g = clean(g.difference(unary_union(earlier)))
+            # A heartland clipped down to a sliver says nothing true about the polity: leave it out.
+            if g.is_empty or g.area < MIN_KEPT * geom.area:
+                continue
+            curated.add(start, end, g)
+        out.append(
+            feature(
+                p["name"], start, end, g,
+                wikipedia=p.get("wikipedia"), Description=p.get("description"),
+                Certainty=p.get("certainty", "approximate"), Source=source, Kind=p.get("kind"), **extra,
+            )
         )
-    )
 
 
 for path, cfg in configs:
@@ -276,7 +321,7 @@ for path, cfg in configs:
             add_curated(p, geom, LandArea=land_area)
         elif "blob" in p:
             lon, lat, r = p["blob"]
-            add_curated(p, blob(lon, lat, r, p["name"]))
+            add_curated(p, on_land(blob(lon, lat, r, p["name"])))
         else:
             raise ValueError(f"{path}: {p['name']} has neither islands nor blob")
     for p in cfg.get("backfill", []):

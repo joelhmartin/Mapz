@@ -1,0 +1,905 @@
+{
+  "about": "Asia gap-filling: historical-basemaps snapshots for Asia where Cliopatria leaves land unmapped (renamed to match Cliopatria where they are the same state), and curated heartlands for named gaps — the Tarim city-states, the steppe before Genghis Khan, Abu'l-Khayr's Uzbeks, Korean, Japanese and Okinawan gaps, Southeast Asian kingdoms, Rajput states, the 14th–16th century sultanates and the Vijayanagara successors. Blobs mark approximate heartlands, not borders.",
+  "historicalBasemaps": {
+    "region": {
+      "boxes": [
+        [
+          56,
+          -11,
+          155,
+          56
+        ],
+        [
+          30,
+          40,
+          140,
+          62
+        ]
+      ],
+      "excludeBoxes": [
+        [
+          30,
+          40,
+          56,
+          44
+        ]
+      ]
+    },
+    "include": [
+      "Aceh",
+      "Afanasevo",
+      "Ahmadnagar",
+      "Ainu",
+      "Ainus",
+      "Andronovo",
+      "Arakan",
+      "Avanti",
+      "Bactria",
+      "Bagan",
+      "Bashkirs",
+      "Bengal",
+      "Berar",
+      "Bijapur",
+      "Catacomb culture",
+      "Chauhans",
+      "Cheras",
+      "Chola",
+      "Cochin",
+      "Crimean Khanate",
+      "Cuman-Kipchak confederation",
+      "Dakapeng culture",
+      "Dapenkeng culture",
+      "Donghu tribes",
+      "Dvaravati",
+      "East Java",
+      "Funan",
+      "Gandhara grave culture",
+      "Gandhāra",
+      "Gojoseon",
+      "Golkonda",
+      "Gujarat",
+      "Gupta Empire",
+      "Gurjara Pratihara",
+      "Göktürks",
+      "Han Zhao",
+      "Hindu Shahis",
+      "Hunnic Empire",
+      "Indus valley civilization",
+      "Jōmon",
+      "Kadambas",
+      "Kalinga",
+      "Kamarupa",
+      "Kanauj",
+      "Karasuk culture",
+      "Kasi",
+      "Khazars",
+      "Khitans",
+      "Kimek-Kipchak khaganate",
+      "Kingdom of Kapisa",
+      "Kingdom of Pagan",
+      "Kingdom of Sind",
+      "Klachuris",
+      "Kosala",
+      "Kuru",
+      "Kurykans",
+      "Late Jomon culture",
+      "Lavo",
+      "Magadha",
+      "Maitraka Kingdom",
+      "Malacca",
+      "Malla",
+      "Mataram",
+      "Mon States",
+      "Mon state",
+      "Mongols",
+      "Mughal Empire",
+      "Nan-Zhao",
+      "Nepal",
+      "Oghuz Turks",
+      "Orissa",
+      "Oxus",
+      "Pagan",
+      "Palas",
+      "Pallava state",
+      "Pancala",
+      "Pandya state",
+      "Peshemegs",
+      "Pratiharas",
+      "Qin",
+      "Rajastan",
+      "Rajput kingdoms",
+      "Rajputana",
+      "Saces",
+      "Sarmates",
+      "Satavahanihara",
+      "Scythians",
+      "Shan states",
+      "Shaskanka",
+      "Sikkim (Indian princely state)",
+      "Simhala",
+      "Sintashta",
+      "Somvamsis",
+      "Southern Xiongnu",
+      "Surasena",
+      "Taiwan",
+      "Taiwanese Tribes",
+      "Travancore",
+      "Tungus",
+      "Vatsa",
+      "Vedic Aryans",
+      "Vengi",
+      "Vijayanagara",
+      "Vishnu-Kundins",
+      "Volga Bulgars",
+      "Western Gangas",
+      "Western Gokturk Khaganate",
+      "Xia",
+      "Xiongnu",
+      "Yamnaya culture",
+      "Yayoi",
+      "Yueban",
+      "Yuezhi",
+      "Zhangzhung Kingdom"
+    ],
+    "exclude": [
+      "Magadha@200",
+      "Kalinga@900",
+      "Kalinga@1000",
+      "Kamarupa@1200",
+      "Khazars@1000",
+      "Kingdom of Pagan@1000",
+      "Golden Horde@1500"
+    ],
+    "rename": {
+      "Indus valley civilization": "Indus Valley Civilisation",
+      "Vedic Aryans": "Vedic Indo-Aryans",
+      "Oxus": "Bactria–Margiana Archaeological Complex",
+      "Afanasevo": "Afanasievo culture",
+      "Andronovo": "Andronovo culture",
+      "Sintashta": "Sintashta culture",
+      "Jōmon": "Jōmon culture",
+      "Late Jomon culture": "Jōmon culture",
+      "Yayoi": "Yayoi culture",
+      "Ainus": "Ainu",
+      "Dakapeng culture": "Dapenkeng culture",
+      "Taiwanese Tribes": "Taiwanese indigenous peoples",
+      "Taiwan": "Taiwanese indigenous peoples",
+      "Xia": "Xia dynasty",
+      "Donghu tribes": "Donghu",
+      "Han Zhao": "Han-Zhao",
+      "Saces": "Saka",
+      "Sarmates": "Sarmatians",
+      "Tungus": "Tungusic peoples",
+      "Göktürks@600": "Eastern Göktürks",
+      "Göktürks@700": "Second Turkic Khaganate",
+      "Western Gokturk Khaganate": "Türgesh",
+      "Khazars": "Khazaria",
+      "Volga Bulgars": "Volga Bulgaria",
+      "Peshemegs": "Pechenegs",
+      "Kimek-Kipchak khaganate": "Kimek-Kipchak confederation",
+      "Mongols": "Mongol tribes",
+      "Zhangzhung Kingdom": "Zhangzhung",
+      "Lavo": "Lavo Kingdom",
+      "Mataram": "Mataram Kingdom",
+      "Mon state": "Mon city-states",
+      "Mon States": "Mon city-states",
+      "Nan-Zhao": "Nanzhao",
+      "Pagan": "Pagan Kingdom",
+      "Bagan": "Pagan Kingdom",
+      "East Java@1000": "Kahuripan",
+      "East Java@1100": "Kediri Kingdom",
+      "East Java@1200": "Kediri Kingdom",
+      "Aceh@1279": "Samudera Pasai Sultanate",
+      "Aceh@1300": "Samudera Pasai Sultanate",
+      "Aceh@1492": "Sultanate of Aceh",
+      "Aceh@1500": "Sultanate of Aceh",
+      "Malacca": "Sultanate of Malacca",
+      "Shan states": "Shan States",
+      "Arakan@-200": "Dhanyawadi",
+      "Arakan@-100": "Dhanyawadi",
+      "Arakan@-1": "Dhanyawadi",
+      "Arakan@100": "Dhanyawadi",
+      "Arakan@600": "Waithali",
+      "Arakan@900": "Arakan",
+      "Arakan@1492": "Kingdom of Mrauk U",
+      "Arakan@1500": "Kingdom of Mrauk U",
+      "Rajput kingdoms": "Rajput states",
+      "Rajastan": "Rajput states",
+      "Rajputana": "Rajput states",
+      "Chauhans": "Chauhan Dynasty",
+      "Palas": "Pala Empire",
+      "Gurjara Pratihara": "Gurjara-Pratihara Dynasty",
+      "Pratiharas": "Gurjara-Pratihara Dynasty",
+      "Pallava state": "Late Pallava Empire",
+      "Pandya state": "Pandya Dynasty",
+      "Chola": "Early Cholas",
+      "Cheras": "Chera dynasty",
+      "Western Gangas": "Western Ganga dynasty",
+      "Kadambas": "Kadamba Empire",
+      "Vishnu-Kundins": "Vishnukundina dynasty",
+      "Satavahanihara": "Satavahana Dynasty",
+      "Maitraka Kingdom": "Maitraka Dynasty",
+      "Kanauj@600": "Harsha's Empire",
+      "Kanauj@700": "Kannauj-Varman Dynasty",
+      "Kamarupa": "Kamarupa Kingdom",
+      "Shaskanka": "Gauda Kingdom",
+      "Kingdom of Sind": "Brahmin dynasty of Sindh",
+      "Kingdom of Kapisa": "Turk Shahis",
+      "Vengi": "Eastern Chalukyas",
+      "Somvamsis": "Somavamshi dynasty",
+      "Klachuris": "Kalachuris of Tripuri",
+      "Simhala": "Anurādhapura",
+      "Gandhāra": "Gandhara",
+      "Avanti": "Janapada of Avanti",
+      "Kuru": "Kuru Kingdom",
+      "Kasi": "Kashi",
+      "Pancala": "Panchala",
+      "Malla": "Malla (Mahajanapada)",
+      "Bactria": "Greco-Bactrian Kingdom",
+      "Orissa@1000": "Somavamshi dynasty",
+      "Orissa@1300": "Eastern Ganga Kingdom",
+      "Orissa@1400": "Gajapati Kingdom",
+      "Orissa@1492": "Gajapati Kingdom",
+      "Orissa@1500": "Gajapati Kingdom",
+      "Orissa@1530": "Gajapati Kingdom",
+      "Nepal": "Malla Nepal",
+      "Bengal": "Sultanate of Bengal",
+      "Gujarat": "Gujarat Sultanate",
+      "Ahmadnagar": "Ahmadnagar Sultanate",
+      "Berar": "Berar Sultanate",
+      "Bijapur": "Bijapur Sultanate",
+      "Golkonda": "Golconda Sultanate",
+      "Vijayanagara": "Vijayanagara Empire",
+      "Cochin": "Kingdom of Cochin",
+      "Sikkim (Indian princely state)": "Kingdom of Sikkim",
+      "Kingdom of Pagan": "Pagan Kingdom"
+    },
+    "wikipedia": {
+      "Indus Valley Civilisation": "Indus Valley Civilisation",
+      "Vedic Indo-Aryans": "Vedic period",
+      "Bactria–Margiana Archaeological Complex": "Bactria–Margiana Archaeological Complex",
+      "Jōmon culture": "Jōmon period",
+      "Yayoi culture": "Yayoi period",
+      "Ainu": "Ainu people",
+      "Taiwanese indigenous peoples": "Taiwanese indigenous peoples",
+      "Xia dynasty": "Xia dynasty",
+      "Donghu": "Donghu people",
+      "Saka": "Saka",
+      "Sarmatians": "Sarmatians",
+      "Scythians": "Scythians",
+      "Tungusic peoples": "Tungusic peoples",
+      "Second Turkic Khaganate": "Second Turkic Khaganate",
+      "Türgesh": "Türgesh",
+      "Pechenegs": "Pechenegs",
+      "Mongol tribes": "Mongols",
+      "Zhangzhung": "Zhangzhung",
+      "Mon city-states": "Mon people",
+      "Dhanyawadi": "Dhanyawadi",
+      "Waithali": "Waithali",
+      "Arakan": "Arakan",
+      "Rajput states": "Rajputana",
+      "Chauhan Dynasty": "Chahamanas of Shakambhari",
+      "Chera dynasty": "Chera dynasty",
+      "Western Ganga dynasty": "Western Ganga dynasty",
+      "Vishnukundina dynasty": "Vishnukundina dynasty",
+      "Gauda Kingdom": "Gauda Kingdom",
+      "Brahmin dynasty of Sindh": "Brahmin dynasty of Sindh",
+      "Eastern Chalukyas": "Eastern Chalukyas",
+      "Somavamshi dynasty": "Somavamshi dynasty",
+      "Kalachuris of Tripuri": "Kalachuris of Tripuri",
+      "Anurādhapura": "Anuradhapura Kingdom",
+      "Gandhara": "Gandhara",
+      "Kuru Kingdom": "Kuru Kingdom",
+      "Kashi": "Mahajanapadas",
+      "Panchala": "Panchala",
+      "Malla (Mahajanapada)": "Mahajanapadas",
+      "Kosala": "Kosala",
+      "Vatsa": "Vatsa",
+      "Surasena": "Surasena",
+      "Magadha": "Magadha",
+      "Kalinga": "Kalinga (historical region)",
+      "Gajapati Kingdom": "Gajapati Kingdom",
+      "Malla Nepal": "Malla (Nepal)",
+      "Gujarat Sultanate": "Gujarat Sultanate",
+      "Kingdom of Cochin": "Kingdom of Cochin",
+      "Travancore": "Travancore",
+      "Kingdom of Sikkim": "Kingdom of Sikkim",
+      "Kahuripan": "Kahuripan",
+      "Yueban": "Yueban",
+      "Kurykans": "Kurykans",
+      "Khitans": "Khitan people",
+      "Bashkirs": "Bashkirs",
+      "Hunnic Empire": "Huns",
+      "Han-Zhao": "Han-Zhao",
+      "Dapenkeng culture": "Dapenkeng culture",
+      "Afanasievo culture": "Afanasievo culture",
+      "Andronovo culture": "Andronovo culture",
+      "Sintashta culture": "Sintashta culture",
+      "Karasuk culture": "Karasuk culture",
+      "Yamnaya culture": "Yamnaya culture",
+      "Catacomb culture": "Catacomb culture",
+      "Gandhara grave culture": "Gandhara grave culture",
+      "Hindu Shahis": "Hindu Shahis"
+    },
+    "peoples": [
+      "Vedic Indo-Aryans",
+      "Ainu",
+      "Taiwanese indigenous peoples",
+      "Donghu",
+      "Saka",
+      "Sarmatians",
+      "Scythians",
+      "Tungusic peoples",
+      "Pechenegs",
+      "Mongol tribes",
+      "Kurykans",
+      "Khitans",
+      "Bashkirs",
+      "Mon city-states"
+    ],
+    "peopleKeywords": [
+      "culture",
+      "civilisation",
+      "complex"
+    ],
+    "certainty": {
+      "Xia dynasty": "uncertain",
+      "Dhanyawadi": "uncertain",
+      "Waithali": "uncertain",
+      "Mon city-states": "uncertain",
+      "Mongol tribes": "uncertain",
+      "Zhangzhung": "uncertain",
+      "Donghu": "uncertain"
+    },
+    "notes": {
+      "Indus Valley Civilisation": "A Bronze Age urban civilisation of the Indus basin and its neighbours, at its height c. 2600–1900 BCE, with planned cities such as Harappa and Mohenjo-daro. Its script is undeciphered.",
+      "Bactria–Margiana Archaeological Complex": "A Bronze Age civilisation of fortified settlements on the Amu Darya and Murghab, c. 2300–1700 BCE, also called the Oxus civilisation.",
+      "Xia dynasty": "The first dynasty in traditional Chinese history (c. 2070–1600 BCE by the traditional chronology). Whether it existed is debated; some archaeologists link it to the Erlitou culture. Drawn as uncertain.",
+      "Jōmon culture": "The hunter-gatherer and fishing cultures of prehistoric Japan, known for some of the world's oldest pottery.",
+      "Yayoi culture": "The period of wet-rice farming and metalworking that followed the Jōmon in Japan, from c. the 1st millennium BCE.",
+      "Second Turkic Khaganate": "The Göktürk state restored by Ilterish Qaghan in 682 after half a century of Tang rule; its Orkhon inscriptions are the oldest known Turkic texts. Fell to the Uyghurs in 744.",
+      "Türgesh": "A Turkic tribal confederation that took over the western lands of the Western Turkic Khaganate c. 699 and fought the Umayyad advance into Transoxiana; it broke up c. 766. The source map labels this area the Western Göktürk khaganate.",
+      "Zhangzhung": "A kingdom of western Tibet, associated with the Bon religion, conquered by the Tibetan Empire in the 7th century.",
+      "Mon city-states": "Mon-speaking kingdoms of Lower Burma before the Pagan conquest of c. 1057. Borders and names are uncertain.",
+      "Dhanyawadi": "The earliest Arakanese kingdom in Rakhine tradition; its dates rest largely on later chronicles.",
+      "Waithali": "An Arakanese kingdom of c. the 4th to 10th centuries, with a capital near Mrauk U.",
+      "Rajput states": "The Rajput clan kingdoms of Rajputana (Mewar, Marwar, Amber and others). Many acknowledged Delhi or Mughal overlordship at times while keeping their own rulers.",
+      "Gajapati Kingdom": "Founded by Kapilendra Deva c. 1434 in Odisha; at its height it reached from the Ganges to the Kaveri. Lost its southern lands to Vijayanagara and fell in 1568.",
+      "Vijayanagara Empire": "After defeat at Talikota in 1565 the Aravidu dynasty ruled a shrinking Vijayanagara state from Penukonda and Chandragiri until the mid-17th century, while its former governors, the Nayaks, became independent.",
+      "Malla Nepal": "The Malla kings ruled the Kathmandu valley from c. 1201; their realm split into the kingdoms of Kathmandu, Patan and Bhaktapur before the Gorkha conquest of 1768–69.",
+      "Kahuripan": "The East Javanese kingdom of Airlangga (r. c. 1019–1042), later divided into Janggala and Kediri.",
+      "Mongol tribes": "The Mongolic and Turkic tribes of the eastern steppe before Temüjin united them as Genghis Khan in 1206."
+    }
+  },
+  "boxes": {
+    "ternate": [
+      127.25,
+      0.72,
+      127.42,
+      0.9
+    ]
+  },
+  "polities": [
+    {
+      "name": "Kingdom of Khotan",
+      "from": -50,
+      "to": 887,
+      "blob": [
+        79.9,
+        37.1,
+        1.0
+      ],
+      "wikipedia": "Kingdom of Khotan",
+      "description": "A Saka Buddhist kingdom on the southern rim of the Tarim Basin, famed for jade and as a staging post of the Silk Road. Conquered by the Kara-Khanids c. 1006.",
+      "certainty": "approximate"
+    },
+    {
+      "name": "Kucha",
+      "from": -100,
+      "to": 840,
+      "blob": [
+        82.9,
+        41.7,
+        0.9
+      ],
+      "wikipedia": "Kucha",
+      "description": "An oasis kingdom on the northern Silk Road whose people spoke the Tocharian B language; a centre of Buddhism and home of the translator Kumārajīva.",
+      "certainty": "uncertain"
+    },
+    {
+      "name": "Karasahr",
+      "from": -100,
+      "to": 840,
+      "blob": [
+        86.6,
+        42.0,
+        0.7
+      ],
+      "wikipedia": "Karasahr",
+      "description": "An oasis kingdom (Chinese Yanqi) on the northern Silk Road, whose people spoke a Tocharian language.",
+      "certainty": "uncertain"
+    },
+    {
+      "name": "Shule Kingdom",
+      "from": -100,
+      "to": 790,
+      "blob": [
+        76.0,
+        39.5,
+        0.8
+      ],
+      "wikipedia": "Shule Kingdom",
+      "description": "An oasis kingdom centred on Kashgar at the western end of the Tarim Basin.",
+      "certainty": "uncertain"
+    },
+    {
+      "name": "Loulan Kingdom",
+      "from": -176,
+      "to": 448,
+      "blob": [
+        89.9,
+        40.4,
+        1.0
+      ],
+      "wikipedia": "Loulan Kingdom",
+      "description": "A kingdom at Lop Nur on the edge of the Taklamakan, renamed Shanshan by the Han in 77 BCE; it came under Northern Wei control in the 5th century.",
+      "certainty": "uncertain"
+    },
+    {
+      "name": "Kangju",
+      "from": -200,
+      "to": 400,
+      "blob": [
+        68.0,
+        43.5,
+        2.6
+      ],
+      "wikipedia": "Kangju",
+      "description": "A nomadic state of the middle Syr Darya known from Chinese sources from c. the 2nd century BCE. Its extent is poorly known.",
+      "certainty": "uncertain"
+    },
+    {
+      "name": "Afrighid dynasty",
+      "from": 305,
+      "to": 995,
+      "blob": [
+        60.5,
+        41.8,
+        1.2
+      ],
+      "wikipedia": "Afrighid dynasty",
+      "description": "Native shahs of Khwarazm on the lower Amu Darya, by tradition from 305 until 995, ruling under Sasanian, Turkic and Arab overlords at various times.",
+      "certainty": "uncertain"
+    },
+    {
+      "name": "Alchon Huns",
+      "from": 400,
+      "to": 560,
+      "blob": [
+        72.4,
+        33.6,
+        1.7
+      ],
+      "wikipedia": "Alchon Huns",
+      "description": "A Hunnic people who ruled Kabulistan and Gandhara from c. 400 and raided deep into the Gupta Empire under Toramana and Mihirakula.",
+      "certainty": "uncertain"
+    },
+    {
+      "name": "Dingling",
+      "from": -300,
+      "to": 100,
+      "blob": [
+        101.0,
+        52.0,
+        2.6
+      ],
+      "wikipedia": "Dingling",
+      "description": "A people of southern Siberia known from Chinese sources, often counted among the ancestors of the Turkic Tiele.",
+      "certainty": "uncertain",
+      "kind": "people"
+    },
+    {
+      "name": "Khamag Mongol",
+      "from": 1130,
+      "to": 1206,
+      "blob": [
+        110.5,
+        48.3,
+        1.5
+      ],
+      "wikipedia": "Khamag Mongol",
+      "description": "A Mongol tribal confederation on the Onon and Kherlen rivers, led by Khabul Khan and later the clan of Temüjin, who united the steppe as Genghis Khan in 1206.",
+      "certainty": "uncertain"
+    },
+    {
+      "name": "Keraites",
+      "from": 1000,
+      "to": 1203,
+      "blob": [
+        104.5,
+        47.5,
+        1.9
+      ],
+      "wikipedia": "Keraites",
+      "description": "A powerful Turco-Mongol confederation on the Tuul and Orkhon, many of them Nestorian Christians; their khan Toghrul was Temüjin's patron and then rival until his defeat in 1203.",
+      "certainty": "uncertain"
+    },
+    {
+      "name": "Naimans",
+      "from": 1000,
+      "to": 1204,
+      "blob": [
+        92.0,
+        48.0,
+        2.1
+      ],
+      "wikipedia": "Naimans",
+      "description": "A confederation of the Altai and western Mongolia, defeated by Temüjin in 1204; their prince Kuchlug fled to the Kara-Khitai.",
+      "certainty": "uncertain"
+    },
+    {
+      "name": "Merkits",
+      "from": 1000,
+      "to": 1205,
+      "blob": [
+        106.5,
+        50.8,
+        1.4
+      ],
+      "wikipedia": "Merkits",
+      "description": "A Mongolic confederation of the lower Selenga, enemies of the young Temüjin, who abducted his wife Börte; destroyed by the Mongols in the early 13th century.",
+      "certainty": "uncertain"
+    },
+    {
+      "name": "Tatar confederation",
+      "from": 1000,
+      "to": 1202,
+      "blob": [
+        116.5,
+        48.5,
+        1.7
+      ],
+      "wikipedia": "Tatar confederation",
+      "description": "A confederation around Lake Hulun and the Khalkha River, allied at times with the Jin; Temüjin destroyed it in 1202.",
+      "certainty": "uncertain"
+    },
+    {
+      "name": "Uzbek Khanate (Abu'l-Khayr)",
+      "from": 1428,
+      "to": 1468,
+      "blob": [
+        64.0,
+        47.0,
+        3.5
+      ],
+      "wikipedia": "Abu'l-Khayr Khan",
+      "description": "The nomadic Uzbek realm of Abu'l-Khayr Khan between the Ural River and the Syr Darya; dissatisfied clans broke away from it to found the Kazakh Khanate, and his grandson Muhammad Shaybani later conquered Transoxiana.",
+      "certainty": "uncertain"
+    },
+    {
+      "name": "Buyeo",
+      "from": -200,
+      "to": 494,
+      "blob": [
+        126.0,
+        44.5,
+        2.0
+      ],
+      "wikipedia": "Buyeo kingdom",
+      "description": "A kingdom in the Songhua basin of Manchuria, regarded in Korean tradition as an ancestor state of Goguryeo and Baekje; absorbed by Goguryeo in 494.",
+      "certainty": "uncertain"
+    },
+    {
+      "name": "Yamato (Kofun period)",
+      "from": 250,
+      "to": 539,
+      "blob": [
+        135.6,
+        34.6,
+        2.4
+      ],
+      "wikipedia": "Kofun period",
+      "description": "The Kofun period of Japan, named for its great keyhole-shaped burial mounds, when the Yamato court in the Kinai region extended its influence. The extent shown is a rough heartland.",
+      "certainty": "uncertain"
+    },
+    {
+      "name": "Langkasuka",
+      "from": 200,
+      "to": 1300,
+      "blob": [
+        101.3,
+        6.8,
+        0.7
+      ],
+      "wikipedia": "Langkasuka",
+      "description": "An early Malay kingdom on the isthmus near Pattani, known from Chinese and later Malay sources. Its dates and extent are uncertain.",
+      "certainty": "uncertain"
+    },
+    {
+      "name": "Tambralinga",
+      "from": 900,
+      "to": 1250,
+      "blob": [
+        99.9,
+        8.4,
+        0.7
+      ],
+      "wikipedia": "Tambralinga",
+      "description": "A kingdom around Nakhon Si Thammarat on the Malay Peninsula; under King Chandrabhanu it raided Sri Lanka in the mid-13th century.",
+      "certainty": "uncertain"
+    },
+    {
+      "name": "Kalingga Kingdom",
+      "from": 550,
+      "to": 700,
+      "blob": [
+        110.7,
+        -6.6,
+        0.5
+      ],
+      "wikipedia": "Kalingga Kingdom",
+      "description": "A 6th–7th century kingdom on the north coast of Central Java, known chiefly from Chinese records and its queen Shima.",
+      "certainty": "uncertain"
+    },
+    {
+      "name": "Rajahnate of Butuan",
+      "from": 1001,
+      "to": 1521,
+      "blob": [
+        125.5,
+        8.95,
+        0.5
+      ],
+      "wikipedia": "Rajahnate of Butuan",
+      "description": "A trading polity in northeastern Mindanao, first recorded in Chinese annals in 1001 and known for its balangay boats and gold work.",
+      "certainty": "uncertain"
+    },
+    {
+      "name": "Sultanate of Ternate",
+      "from": 1257,
+      "to": 1683,
+      "islands": [
+        "ternate"
+      ],
+      "halo": 0.12,
+      "wikipedia": "Sultanate of Ternate",
+      "certainty": "uncertain",
+      "description": "A clove-trading sultanate in the Moluccas whose founding is traditionally dated 1257; it expelled the Portuguese in 1575 and became a Dutch vassal in 1683. Only its home island is drawn."
+    },
+    {
+      "name": "Ahom kingdom",
+      "from": 1228,
+      "to": 1826,
+      "blob": [
+        94.2,
+        26.8,
+        1.3
+      ],
+      "wikipedia": "Ahom kingdom",
+      "description": "Founded by Sukaphaa in 1228 in the Brahmaputra valley, it resisted Mughal invasions (Saraighat, 1671) for six centuries until Burmese invasions and British annexation in 1826.",
+      "certainty": "approximate"
+    },
+    {
+      "name": "Kamata Kingdom",
+      "from": 1250,
+      "to": 1498,
+      "blob": [
+        89.5,
+        26.3,
+        0.8
+      ],
+      "wikipedia": "Kamata Kingdom",
+      "description": "A kingdom of western Kamarupa that emerged in the 13th century and fell to Alauddin Husain Shah of Bengal in 1498.",
+      "certainty": "uncertain"
+    },
+    {
+      "name": "Kingdom of Manipur",
+      "from": 1500,
+      "to": 1891,
+      "blob": [
+        93.9,
+        24.7,
+        0.6
+      ],
+      "wikipedia": "Kingdom of Manipur",
+      "description": "The Meitei kingdom of the Imphal valley; its royal chronicle traces its kings back many centuries. Annexed by the British after the Anglo-Manipur War of 1891.",
+      "certainty": "approximate"
+    },
+    {
+      "name": "Kingdom of Sikkim",
+      "from": 1642,
+      "to": 1975,
+      "blob": [
+        88.45,
+        27.5,
+        0.45
+      ],
+      "wikipedia": "Kingdom of Sikkim",
+      "description": "A Himalayan Buddhist kingdom founded in 1642 under the Namgyal dynasty; a British protectorate from 1861 and an Indian protectorate from 1950, it merged into India in 1975.",
+      "certainty": "approximate"
+    },
+    {
+      "name": "Kingdom of Mewar",
+      "from": 728,
+      "to": 1818,
+      "blob": [
+        74.1,
+        24.9,
+        1.2
+      ],
+      "wikipedia": "Mewar",
+      "description": "The Guhila and later Sisodia kingdom of Chittor and Udaipur, famed for resisting the Delhi Sultanate and the Mughals (Rana Sanga, Maharana Pratap). The early dates are traditional.",
+      "certainty": "approximate"
+    },
+    {
+      "name": "Kingdom of Marwar",
+      "from": 1395,
+      "to": 1818,
+      "blob": [
+        72.8,
+        26.3,
+        1.6
+      ],
+      "wikipedia": "Marwar",
+      "description": "The Rathore kingdom of Marwar, ruled from Mandore and, after Rao Jodha founded it in 1459, from Jodhpur.",
+      "certainty": "approximate"
+    },
+    {
+      "name": "Kingdom of Amber",
+      "from": 1150,
+      "to": 1818,
+      "blob": [
+        75.9,
+        26.9,
+        0.9
+      ],
+      "wikipedia": "Jaipur State",
+      "description": "The Kachhwaha kingdom of Amber, later Jaipur (founded 1727), close allies of the Mughals from Akbar's reign. Its early dates are uncertain.",
+      "certainty": "approximate"
+    },
+    {
+      "name": "Bikaner State",
+      "from": 1465,
+      "to": 1818,
+      "blob": [
+        73.3,
+        28.2,
+        1.3
+      ],
+      "wikipedia": "Bikaner State",
+      "description": "A Rathore kingdom in the Thar Desert founded by Rao Bika, a son of Rao Jodha of Marwar, in 1465.",
+      "certainty": "approximate"
+    },
+    {
+      "name": "Jaisalmer State",
+      "from": 1156,
+      "to": 1818,
+      "blob": [
+        70.9,
+        27.0,
+        1.3
+      ],
+      "wikipedia": "Jaisalmer State",
+      "description": "A Bhati Rajput kingdom of the western Thar Desert, rich from caravan trade; its fort dates from 1156.",
+      "certainty": "approximate"
+    },
+    {
+      "name": "Bundi State",
+      "from": 1342,
+      "to": 1818,
+      "blob": [
+        75.6,
+        25.4,
+        0.5
+      ],
+      "wikipedia": "Bundi State",
+      "description": "A Hada Chauhan Rajput kingdom in Hadoti, founded by Rao Deva in 1342.",
+      "certainty": "approximate"
+    },
+    {
+      "name": "Gujarat Sultanate",
+      "from": 1407,
+      "to": 1573,
+      "blob": [
+        72.0,
+        22.6,
+        1.8
+      ],
+      "wikipedia": "Gujarat Sultanate",
+      "description": "An independent sultanate founded by Zafar Khan (Muzaffar Shah I) in 1407, rich from the trade of Cambay and Surat; annexed by Akbar in 1573.",
+      "certainty": "approximate"
+    },
+    {
+      "name": "Malwa Sultanate",
+      "from": 1392,
+      "to": 1562,
+      "blob": [
+        75.8,
+        23.2,
+        1.5
+      ],
+      "wikipedia": "Malwa Sultanate",
+      "description": "A sultanate of central India with its capital at Mandu, independent of Delhi from c. 1392 until Akbar's conquest in 1561–62.",
+      "certainty": "approximate"
+    },
+    {
+      "name": "Khandesh Sultanate",
+      "from": 1382,
+      "to": 1601,
+      "blob": [
+        75.6,
+        21.1,
+        0.7
+      ],
+      "wikipedia": "Khandesh Sultanate",
+      "description": "The small Farooqui sultanate of the Tapti valley, ruled from Burhanpur and the fortress of Asirgarh, which Akbar took in 1601.",
+      "certainty": "uncertain"
+    },
+    {
+      "name": "Madurai Sultanate",
+      "from": 1335,
+      "to": 1378,
+      "blob": [
+        78.1,
+        9.9,
+        0.9
+      ],
+      "wikipedia": "Madurai Sultanate",
+      "description": "A short-lived sultanate in the far south, founded by a governor of the Delhi Sultanate and conquered by Vijayanagara in 1378.",
+      "certainty": "approximate"
+    },
+    {
+      "name": "Reddy Kingdom",
+      "from": 1325,
+      "to": 1448,
+      "blob": [
+        80.2,
+        16.2,
+        1.0
+      ],
+      "wikipedia": "Reddy dynasty",
+      "description": "The Reddy kingdom of coastal Andhra, which arose after the fall of the Kakatiyas and was absorbed by the Gajapatis and Vijayanagara in the 15th century.",
+      "certainty": "uncertain"
+    },
+    {
+      "name": "Keladi Nayaka",
+      "from": 1499,
+      "to": 1763,
+      "blob": [
+        75.1,
+        14.0,
+        0.9
+      ],
+      "wikipedia": "Keladi Nayaka",
+      "description": "Nayaks of the Malnad region of Karnataka, Vijayanagara feudatories who became independent after 1565 and were conquered by Hyder Ali of Mysore in 1763.",
+      "certainty": "approximate"
+    },
+    {
+      "name": "Nayaks of Gingee",
+      "from": 1509,
+      "to": 1649,
+      "blob": [
+        79.4,
+        12.25,
+        0.8
+      ],
+      "wikipedia": "Nayaks of Gingee",
+      "description": "Rulers of the Gingee country in Tamil Nadu, Vijayanagara governors who became independent; their fortress fell to Bijapur in 1649.",
+      "certainty": "uncertain"
+    },
+    {
+      "name": "Kingdom of Kandy",
+      "from": 1592,
+      "to": 1815,
+      "blob": [
+        80.75,
+        7.35,
+        0.65
+      ],
+      "wikipedia": "Kingdom of Kandy",
+      "description": "The highland kingdom of Sri Lanka, founded c. 1469 under Kotte and independent from the 1590s. It was never conquered by the Portuguese or the Dutch, who held the coasts, and was ceded to the British by the Kandyan Convention of 1815. Drawn over the colonial claim to the whole island.",
+      "certainty": "approximate",
+      "contested": true
+    }
+  ]
+}
