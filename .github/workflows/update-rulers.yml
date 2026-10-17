@@ -1,0 +1,45 @@
+name: Update rulers
+
+# Wikidata isn't reachable from every dev environment, so heads of state are fetched here and
+# committed to the repo with the per-polity files the info panel reads.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - scripts/fetch-rulers.mjs
+      - scripts/build-rulers.mjs
+      - scripts/lib/wikidata.mjs
+      - public/data/polities.json
+      - .github/workflows/update-rulers.yml
+  schedule:
+    - cron: '41 4 15 * *' # monthly
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-rulers
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/fetch-rulers.mjs
+      - run: node scripts/build-rulers.mjs
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
+          git add data/wikidata/rulers.json public/data/rulers
+          git diff --cached --quiet && exit 0
+          git commit -m "Update rulers from Wikidata"
+          # Another workflow may have pushed meanwhile; the rulers files are only written here.
+          git pull --rebase origin main
+          git push

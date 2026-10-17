@@ -4,9 +4,9 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
-  # Commits made by the battles workflow don't trigger push events, so redeploy after it.
+  # Commits made by the data workflows don't trigger push events, so redeploy after them.
   workflow_run:
-    workflows: [Update battles]
+    workflows: [Update battles, Update rulers]
     types: [completed]
 
 permissions:
