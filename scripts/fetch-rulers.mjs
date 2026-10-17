@@ -105,28 +105,57 @@ await batched(items, 150, 'offices (P1906)', async (batch) => {
 SELECT ?polity ?office WHERE { VALUES ?polity { ${values(batch)} } ?polity wdt:P1906 ?office . }`);
   for (const r of rows) link(qid(r.office.value), qid(r.polity.value));
 });
-// Every kind of head-of-state office ("King of France" ⊂ king ⊂ monarch ⊂ head of state), fetched
-// once so the per-polity lookups below stay cheap.
-const headOfState = new Set();
-try {
-  const rows = await sparql(`SELECT ?c WHERE { ?c wdt:P279* wd:Q48352 . }`);
-  for (const r of rows) headOfState.add(qid(r.c.value));
-} catch (e) {
-  console.warn(`Head-of-state classes query failed (${e.message.slice(0, 200)}); skipping jurisdiction lookups`);
+// Every kind of head-of-state office ("King of France" ⊂ king ⊂ monarch), fetched once so the
+// per-polity lookups below stay cheap. Wikidata files rulers under several roots.
+const ROOTS = {
+  Q48352: 'head of state',
+  Q116: 'monarch',
+  Q1097498: 'ruler',
+  Q2304859: 'sovereign',
+  Q39018: 'emperor',
+  Q12097: 'king',
+  Q30461: 'president',
+};
+const headOfState = new Set(Object.keys(ROOTS));
+for (const root of Object.keys(ROOTS)) {
+  try {
+    const rows = await sparql(`SELECT ?c WHERE { ?c wdt:P279* wd:${root} . }`);
+    for (const r of rows) headOfState.add(qid(r.c.value));
+  } catch (e) {
+    console.warn(`Subclasses of ${ROOTS[root]} failed (${e.message.slice(0, 200)})`);
+  }
 }
 console.log(`${headOfState.size} head-of-state office classes`);
-if (headOfState.size) {
-  await batched(items, 100, 'offices (P1001)', async (batch) => {
-    const rows = await sparql(`
-SELECT ?polity ?office WHERE { VALUES ?polity { ${values(batch)} } ?office wdt:P1001 ?polity . }`);
-    for (const r of rows) {
-      const office = qid(r.office.value);
-      if (!headOfState.has(office)) continue;
-      link(office, qid(r.polity.value));
-      (jurisdiction[office] ??= new Set()).add(qid(r.polity.value));
-    }
-  });
-}
+// An office counts if it is one of those classes or an instance of one ("Mansa of Mali" is an
+// instance of "monarch" in some items, a subclass in others).
+await batched(items, 100, 'offices (P1001)', async (batch) => {
+  const rows = await sparql(`
+SELECT ?polity ?office ?cls WHERE {
+  VALUES ?polity { ${values(batch)} }
+  ?office wdt:P1001 ?polity .
+  OPTIONAL { ?office wdt:P31|wdt:P279 ?cls . }
+}`);
+  for (const r of rows) {
+    const office = qid(r.office.value);
+    if (!headOfState.has(office) && !(r.cls && headOfState.has(qid(r.cls.value)))) continue;
+    link(office, qid(r.polity.value));
+    (jurisdiction[office] ??= new Set()).add(qid(r.polity.value));
+  }
+});
+
+// 2c. terms of a generic office ("king", "khan", "mansa") whose statement names the polity
+await batched(items, 60, 'qualified terms', async (batch) => {
+  const rows = await sparql(`
+SELECT ?polity ?office ?person ?personLabel ?start ?end ?familyLabel ?article WHERE {
+  VALUES ?polity { ${values(batch)} }
+  ?st pq:P642|pq:P1001 ?polity .
+  ?person p:P39 ?st . ?st ps:P39 ?office .
+  OPTIONAL { ?st pq:P580 ?start . }
+  OPTIONAL { ?st pq:P582 ?end . }
+  ${personFields}
+}`);
+  for (const r of rows) if (headOfState.has(qid(r.office.value))) addTerm(qid(r.polity.value), r);
+});
 const offices = Object.keys(officesOf);
 console.log(`${offices.length} head-of-state offices`);
 
