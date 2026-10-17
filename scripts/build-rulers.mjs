@@ -28,7 +28,13 @@ let kept = 0;
 for (const [key, { terms }] of Object.entries(raw)) {
   const p = index[key];
   if (!p) continue;
-  const sorted = [...terms].sort((a, b) => a.from - b.from);
+  // The same person's overlapping terms (one per source, often a year apart) become one.
+  const sorted = [];
+  for (const t of [...terms].sort((a, b) => a.from - b.from)) {
+    const same = sorted.find((u) => u.q === t.q && t.from <= (u.to ?? u.from) + 1);
+    if (!same) sorted.push({ ...t });
+    else if (t.to !== null && (same.to === null || t.to > same.to)) same.to = t.to;
+  }
   const rows = [];
   sorted.forEach((t, i) => {
     // The next term by someone else bounds a term with no recorded end.

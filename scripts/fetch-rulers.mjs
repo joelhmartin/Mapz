@@ -106,15 +106,13 @@ SELECT ?polity ?office WHERE { VALUES ?polity { ${values(batch)} } ?polity wdt:P
   for (const r of rows) link(qid(r.office.value), qid(r.polity.value));
 });
 // Every kind of head-of-state office ("King of France" ⊂ king ⊂ monarch), fetched once so the
-// per-polity lookups below stay cheap. Wikidata files rulers under several roots.
+// per-polity lookups below stay cheap. Wikidata files rulers under several roots; broader ones
+// ("ruler", "president") also take in prince-bishops, electors and company presidents.
 const ROOTS = {
   Q48352: 'head of state',
   Q116: 'monarch',
-  Q1097498: 'ruler',
-  Q2304859: 'sovereign',
   Q39018: 'emperor',
   Q12097: 'king',
-  Q30461: 'president',
 };
 const headOfState = new Set(Object.keys(ROOTS));
 for (const root of Object.keys(ROOTS)) {
