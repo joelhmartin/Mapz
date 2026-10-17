@@ -21,6 +21,7 @@ const values = (ids) => ids.map((id) => `wd:${id}`).join(' ');
 const literal = (s) => `"${s.replace(/\\/g, '\\\\').replace(/"/g, '\\"')}"@en`;
 
 async function batched(items, size, label, fn) {
+  const t0 = Date.now();
   for (let i = 0; i < items.length; i += size) {
     try {
       await fn(items.slice(i, i + size));
@@ -29,6 +30,7 @@ async function batched(items, size, label, fn) {
     }
     if ((i / size) % 10 === 0) console.log(`  ${label}: ${Math.min(i + size, items.length)} / ${items.length}`);
   }
+  console.log(`  ${label}: done in ${Math.round((Date.now() - t0) / 1000)} s`);
 }
 
 // --- 1. polity → Wikidata item ------------------------------------------------------------------
@@ -103,18 +105,28 @@ await batched(items, 150, 'offices (P1906)', async (batch) => {
 SELECT ?polity ?office WHERE { VALUES ?polity { ${values(batch)} } ?polity wdt:P1906 ?office . }`);
   for (const r of rows) link(qid(r.office.value), qid(r.polity.value));
 });
-await batched(items, 60, 'offices (P1001)', async (batch) => {
-  const rows = await sparql(`
-SELECT DISTINCT ?polity ?office WHERE {
-  VALUES ?polity { ${values(batch)} }
-  ?office wdt:P1001 ?polity ; wdt:P279+ wd:Q48352 .
-}`);
-  for (const r of rows) {
-    const office = qid(r.office.value);
-    link(office, qid(r.polity.value));
-    (jurisdiction[office] ??= new Set()).add(qid(r.polity.value));
-  }
-});
+// Every kind of head-of-state office ("King of France" ⊂ king ⊂ monarch ⊂ head of state), fetched
+// once so the per-polity lookups below stay cheap.
+const headOfState = new Set();
+try {
+  const rows = await sparql(`SELECT ?c WHERE { ?c wdt:P279* wd:Q48352 . }`);
+  for (const r of rows) headOfState.add(qid(r.c.value));
+} catch (e) {
+  console.warn(`Head-of-state classes query failed (${e.message.slice(0, 200)}); skipping jurisdiction lookups`);
+}
+console.log(`${headOfState.size} head-of-state office classes`);
+if (headOfState.size) {
+  await batched(items, 100, 'offices (P1001)', async (batch) => {
+    const rows = await sparql(`
+SELECT ?polity ?office WHERE { VALUES ?polity { ${values(batch)} } ?office wdt:P1001 ?polity . }`);
+    for (const r of rows) {
+      const office = qid(r.office.value);
+      if (!headOfState.has(office)) continue;
+      link(office, qid(r.polity.value));
+      (jurisdiction[office] ??= new Set()).add(qid(r.polity.value));
+    }
+  });
+}
 const offices = Object.keys(officesOf);
 console.log(`${offices.length} head-of-state offices`);
 
