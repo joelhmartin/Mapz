@@ -1,10 +1,11 @@
 // Fetch heads of state from Wikidata for every polity on the map → data/wikidata/rulers.json
 //
-// Each polity is matched to a Wikidata item: Cliopatria supplies ids, and the rest are found
-// through their English Wikipedia article. Rulers come from three places:
+// Each polity is matched to Wikidata items through its English Wikipedia article and, where
+// Cliopatria supplies one, its id. Rulers come from these places:
 //   1. the polity's "head of state" statements (P35), with start/end qualifiers;
 //   2. holders of the office the polity names as its head of state (P1906), e.g. "King of France";
-//   3. holders of head-of-state offices whose jurisdiction (P1001) is the polity, e.g. "Mansa of Mali".
+//   3. holders of head-of-state offices whose jurisdiction (P1001) is the polity, e.g. "Mansa of Mali";
+//   4. terms of a generic office ("king", "khan") whose statement names the polity.
 // Only terms with a start date are kept. scripts/build-rulers.mjs filters them to each polity's
 // span and writes the files the map reads. Runs in GitHub Actions (update-rulers.yml).
 
@@ -35,15 +36,18 @@ async function batched(items, size, label, fn) {
 
 // --- 1. polity → Wikidata item ------------------------------------------------------------------
 
-const itemOf = {}; // polity key → QID
+// Both the article's item and Cliopatria's id are used: Cliopatria's ids sometimes point at a
+// related item (a dynasty, or one phase of the state) rather than the state itself.
+const itemsOf = {}; // polity key → Set(QID)
+const addItem = (key, id) => (itemsOf[key] ??= new Set()).add(id);
 const byTitle = {};
 for (const [key, p] of Object.entries(index)) {
   if (p.kind === 'relation' || p.kind === 'people') continue;
   const id = (p.wikidata || '').split(/[;,\s]/).find(isQid);
-  if (id) itemOf[key] = id;
-  else if (p.wikipedia) (byTitle[p.wikipedia] ??= []).push(key);
+  if (id) addItem(key, id);
+  if (p.wikipedia) (byTitle[p.wikipedia] ??= []).push(key);
 }
-console.log(`${Object.keys(itemOf).length} polities with Wikidata ids; resolving ${Object.keys(byTitle).length} articles`);
+console.log(`${Object.keys(itemsOf).length} polities with Wikidata ids; resolving ${Object.keys(byTitle).length} articles`);
 
 await batched(Object.keys(byTitle), 150, 'articles', async (titles) => {
   const rows = await sparql(`
@@ -51,16 +55,19 @@ SELECT ?title ?item WHERE {
   VALUES ?title { ${titles.map(literal).join(' ')} }
   ?article schema:name ?title ; schema:isPartOf <https://en.wikipedia.org/> ; schema:about ?item .
 }`);
-  for (const r of rows) for (const key of byTitle[r.title.value] ?? []) itemOf[key] ??= qid(r.item.value);
+  for (const r of rows) for (const key of byTitle[r.title.value] ?? []) addItem(key, qid(r.item.value));
 });
 
-const items = [...new Set(Object.values(itemOf))];
+const items = [...new Set(Object.values(itemsOf).flatMap((s) => [...s]))];
 console.log(`${items.length} distinct items`);
 
 // --- 2. terms ------------------------------------------------------------------------------------
 
 const terms = {}; // item → [{q, name, from, to, article, dynasty}]
+// Offices that come with a throne but are not rule: consorts, heirs, electors, prelates.
+const NOT_RULE = /consort|heir|crown prince|elector|bishop|abbot|dowager|queen mother|titular|pretender|claimant/i;
 function addTerm(item, r) {
+  if (r.officeLabel && NOT_RULE.test(r.officeLabel.value)) return;
   const name = r.personLabel?.value;
   const from = r.start ? parseYear(r.start.value) : null;
   if (!name || isQid(name) || from === null) return;
@@ -144,7 +151,7 @@ SELECT ?polity ?office ?cls WHERE {
 // 2c. terms of a generic office ("king", "khan", "mansa") whose statement names the polity
 await batched(items, 60, 'qualified terms', async (batch) => {
   const rows = await sparql(`
-SELECT ?polity ?office ?person ?personLabel ?start ?end ?familyLabel ?article WHERE {
+SELECT ?polity ?office ?officeLabel ?person ?personLabel ?start ?end ?familyLabel ?article WHERE {
   VALUES ?polity { ${values(batch)} }
   ?st pq:P642|pq:P1001 ?polity .
   ?person p:P39 ?st . ?st ps:P39 ?office .
@@ -180,7 +187,7 @@ console.log(`${usable.length} offices with holders (${offices.filter((o) => hold
 // its holders only count for a polity when the term itself names that polity.
 await batched(usable, 25, 'holders', async (batch) => {
   const rows = await sparql(`
-SELECT ?office ?person ?personLabel ?start ?end ?of ?familyLabel ?article WHERE {
+SELECT ?office ?officeLabel ?person ?personLabel ?start ?end ?of ?familyLabel ?article WHERE {
   VALUES ?office { ${values(batch)} }
   ?person p:P39 ?st . ?st ps:P39 ?office .
   OPTIONAL { ?st pq:P580 ?start . }
@@ -203,10 +210,11 @@ SELECT ?office ?person ?personLabel ?start ?end ?of ?familyLabel ?article WHERE 
 
 const out = {};
 let n = 0;
-for (const [key, item] of Object.entries(itemOf)) {
-  if (!terms[item]?.length) continue;
-  out[key] = { item, terms: terms[item].sort((a, b) => a.from - b.from) };
-  n += terms[item].length;
+for (const [key, ids] of Object.entries(itemsOf)) {
+  const all = [...ids].flatMap((id) => terms[id] ?? []);
+  if (!all.length) continue;
+  out[key] = { items: [...ids], terms: all.sort((a, b) => a.from - b.from) };
+  n += all.length;
 }
 fs.mkdirSync('data/wikidata', { recursive: true });
 fs.writeFileSync('data/wikidata/rulers.json', JSON.stringify(out, null, 1));
