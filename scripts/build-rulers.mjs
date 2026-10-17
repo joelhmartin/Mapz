@@ -37,7 +37,7 @@ for (const [key, { terms }] of Object.entries(raw)) {
     const to = endKnown ? t.to : next ? Math.max(t.from, next.from) : t.from;
     if (to - t.from > MAX_REIGN_YEARS) return;
     if (to < p.from || t.from > p.to) return;
-    // [name, from, to, end known (1/0), article (omitted when it equals the name), dynasty]
+    // [name, from, to, end known (1/0), article (0 when it equals the name, null if none), dynasty]
     const row = [t.name, t.from, to, endKnown ? 1 : 0];
     if (t.article !== t.name || t.dynasty) row.push(t.article === t.name ? 0 : t.article);
     if (t.dynasty) row.push(t.dynasty);

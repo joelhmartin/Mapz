@@ -139,9 +139,13 @@ SELECT ?office ?jur WHERE { VALUES ?office { ${values(batch)} } ?office wdt:P100
 const holders = {};
 await batched(offices, 150, 'holder counts', async (batch) => {
   const rows = await sparql(`
-SELECT ?office (COUNT(?st) AS ?n) WHERE { VALUES ?office { ${values(batch)} } ?st ps:P39 ?office . } GROUP BY ?office`);
-  for (const r of rows) holders[qid(r.office.value)] = Number(r.n.value);
+SELECT ?office (COUNT(?st) AS ?n) WHERE {
+  VALUES ?office { ${values(batch)} }
+  ?person p:P39 ?st . ?st ps:P39 ?office .
+} GROUP BY ?office`);
+  for (const r of rows) if (r.office) holders[qid(r.office.value)] = Number(r.n.value);
 });
+if (!Object.keys(holders).length) console.warn(`No holders counted; sample offices: ${offices.slice(0, 8).join(' ')}`);
 const usable = offices.filter((o) => holders[o] > 0 && holders[o] <= MAX_HOLDERS);
 console.log(`${usable.length} offices with holders (${offices.filter((o) => holders[o] > MAX_HOLDERS).length} generic ones skipped)`);
 
