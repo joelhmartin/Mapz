@@ -159,7 +159,11 @@ SELECT ?polity ?office ?officeLabel ?person ?personLabel ?start ?end ?familyLabe
   OPTIONAL { ?st pq:P582 ?end . }
   ${personFields}
 }`);
-  for (const r of rows) if (headOfState.has(qid(r.office.value))) addTerm(qid(r.polity.value), r);
+  for (const r of rows) {
+    // The generic "empress" and "queen" are mostly held by consorts; queens regnant have their own office.
+    if (/^(empress|queen)$/i.test(r.officeLabel?.value ?? '')) continue;
+    if (headOfState.has(qid(r.office.value))) addTerm(qid(r.polity.value), r);
+  }
 });
 const offices = Object.keys(officesOf);
 console.log(`${offices.length} head-of-state offices`);
