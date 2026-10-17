@@ -1,5 +1,6 @@
 import { displayName, type PolityIndex } from '../lib/polities';
 import { formatSpan } from '../lib/years';
+import { Rulers } from './Rulers';
 import { WikiSummary } from './WikiSummary';
 
 const KIND_LABELS = {
@@ -18,12 +19,13 @@ const SOURCE_LABELS: Record<string, string> = {
 interface Props {
   polityKey: string;
   index: PolityIndex | null;
+  year: number;
   onClose: () => void;
   onJumpToYear: (year: number) => void;
   onSelectKey: (key: string) => void;
 }
 
-export function InfoPanel({ polityKey, index, onClose, onJumpToYear, onSelectKey }: Props) {
+export function InfoPanel({ polityKey, index, year, onClose, onJumpToYear, onSelectKey }: Props) {
   const info = index?.[polityKey];
   const name = info?.name ?? displayName(polityKey);
   const related = [
@@ -55,6 +57,9 @@ export function InfoPanel({ polityKey, index, onClose, onJumpToYear, onSelectKey
 
       {info?.description && <p className="description">{info.description}</p>}
       <WikiSummary title={info?.wikipedia} />
+      {info && info.kind !== 'people' && info.kind !== 'relation' && (
+        <Rulers polityKey={polityKey} year={year} color={info.color} onJumpToYear={onJumpToYear} />
+      )}
 
       {related.length > 0 && (
         <section>

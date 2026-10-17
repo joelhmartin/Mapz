@@ -65,7 +65,7 @@ console.log(`${items.length} distinct items`);
 
 const terms = {}; // item → [{q, name, from, to, article, dynasty}]
 // Offices that come with a throne but are not rule: consorts, heirs, electors, prelates.
-const NOT_RULE = /consort|heir|crown prince|elector|bishop|abbot|dowager|queen mother|titular|pretender|claimant/i;
+const NOT_RULE = /consort|heir|crown prince|elector|bishop|abbot|dowager|queen mother|haseki|valide|spouse|wife|first lady|titular|pretender|claimant/i;
 function addTerm(item, r) {
   if (r.officeLabel && NOT_RULE.test(r.officeLabel.value)) return;
   const name = r.personLabel?.value;
@@ -220,6 +220,15 @@ for (const [key, ids] of Object.entries(itemsOf)) {
   out[key] = { items: [...ids], terms: all.sort((a, b) => a.from - b.from) };
   n += all.length;
 }
+// The query service drops batches now and then; never replace good data with a much thinner run.
+const OUT = 'data/wikidata/rulers.json';
+if (fs.existsSync(OUT)) {
+  const before = Object.values(JSON.parse(fs.readFileSync(OUT, 'utf8'))).reduce((k, p) => k + p.terms.length, 0);
+  if (n < 0.8 * before) {
+    console.error(`Only ${n} terms against ${before} last time; keeping the old data`);
+    process.exit(1);
+  }
+}
 fs.mkdirSync('data/wikidata', { recursive: true });
-fs.writeFileSync('data/wikidata/rulers.json', JSON.stringify(out, null, 1));
+fs.writeFileSync(OUT, JSON.stringify(out, null, 1));
 console.log(`Wrote ${n} terms for ${Object.keys(out).length} polities to data/wikidata/rulers.json`);

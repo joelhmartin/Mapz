@@ -15,6 +15,7 @@ Interactive historical world map: territories of every power from 3400 BCE to to
 - `scripts/build-data.mjs` writes `public/data/{basemap,polities,labels}.pmtiles` and `polities.json` (the index the UI reads). The built files are committed.
 - `scripts/fetch-battles.mjs` and `scripts/fetch-wars.mjs` run in GitHub Actions (`update-battles.yml`) because Wikidata is not reachable from the dev container; shared query helpers are in `scripts/lib/wikidata.mjs`. Use the same pattern (a workflow that fetches and commits data) for any other Wikidata/Wikipedia data.
 - `scripts/build-wars.mjs` turns battles plus `data/wikidata/wars.json` into `public/data/wars.{geojson,json}` (theatres and the war index). It runs in the workflow and can be re-run locally.
+- `scripts/fetch-rulers.mjs` (workflow `update-rulers.yml`, which also runs when `polities.json` changes) fetches heads of state for every polity from Wikidata into `data/wikidata/rulers.json`; `scripts/build-rulers.mjs` filters them to each polity's span and writes `public/data/rulers/<shard>.json`, which `src/lib/rulers.ts` loads lazily for the info panel. A run that returns far fewer terms than the last fails instead of committing.
 - `data/curated/migrations.json` holds movement routes (dated waypoints); `scripts/build-migrations.mjs` turns them into `public/data/migrations.{geojson,json}`, and `src/map/movements.ts` draws them.
 - `src/map/style.ts` is the map style. The selected year is the style's global state `year`.
 

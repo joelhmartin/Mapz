@@ -82,6 +82,7 @@ export function App() {
         <InfoPanel
           polityKey={selection.key}
           index={index}
+          year={year}
           onClose={() => setSelection(null)}
           onJumpToYear={setYear}
           onSelectKey={(key) => setSelection({ type: 'polity', key })}

@@ -455,6 +455,93 @@ button {
   color: var(--accent);
 }
 
+/* Rulers: who ruled in the selected year, and a scrollable reign timeline */
+.ruling {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 8px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.ruling a {
+  color: var(--accent);
+}
+.reign-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  border: 1px solid var(--paper-edge);
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.25);
+  scrollbar-width: thin;
+}
+.reign-track {
+  position: relative;
+  margin: 4px 4px 0;
+}
+.dynasty {
+  position: absolute;
+  height: 15px;
+  /* clip, not hidden: hidden would make the band its own scroller and break the sticky name */
+  overflow: clip;
+  white-space: nowrap;
+  font-family: var(--serif-sc);
+  font-size: 11px;
+  line-height: 15px;
+  color: var(--ink-soft);
+  border-bottom: 2px solid var(--ink-soft);
+}
+/* The name stays at the visible left edge while its band scrolls. */
+.dynasty span {
+  position: sticky;
+  left: 0;
+  padding: 0 4px;
+}
+.reign {
+  position: absolute;
+  height: 18px;
+  padding: 0 3px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 11px;
+  line-height: 16px;
+  text-align: left;
+  color: var(--ink);
+  background: color-mix(in srgb, var(--c) 45%, var(--paper));
+  border: 1px solid color-mix(in srgb, var(--c) 70%, var(--ink));
+  border-radius: 2px;
+}
+.reign.open {
+  border-right-style: dashed;
+}
+.reign:hover {
+  background: color-mix(in srgb, var(--c) 70%, var(--paper));
+}
+.reign.now {
+  background: var(--c);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent);
+  font-weight: bold;
+}
+.reign-tick {
+  position: absolute;
+  bottom: 0;
+  font-size: 10px;
+  color: var(--ink-soft);
+  white-space: nowrap;
+  border-left: 1px solid var(--paper-edge);
+  padding-left: 2px;
+  line-height: 14px;
+}
+.reign-now {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  border-left: 2px solid var(--accent);
+  pointer-events: none;
+}
+
 /* MapLibre controls in the parchment theme */
 .maplibregl-ctrl-group {
   background: var(--paper) !important;
