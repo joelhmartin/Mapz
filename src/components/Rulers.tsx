@@ -36,7 +36,7 @@ export function Rulers({ polityKey, year, color, onJumpToYear }: Props) {
     // Scale so a typical reign is wide enough to label.
     const lengths = reigns.map((r) => r.to - r.from + 1).sort((a, b) => a - b);
     const median = lengths[Math.floor(lengths.length / 2)];
-    const pxPerYear = Math.min(16, Math.max(0.6, 64 / median));
+    const pxPerYear = Math.min(6, Math.max(0.6, 64 / median));
     const step = TICK_STEPS.find((s) => s * pxPerYear >= 70) ?? 1000;
     const ticks = [];
     for (let t = Math.ceil(start / step) * step; t <= end; t += step) ticks.push(t);

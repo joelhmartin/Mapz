@@ -468,7 +468,9 @@ button {
 }
 .reign-scroll {
   overflow-x: auto;
-  overflow-y: hidden;
+  overflow-y: auto;
+  /* Crowded periods (co-rulers, usurpers) scroll vertically instead of growing the panel. */
+  max-height: 150px;
   border: 1px solid var(--paper-edge);
   border-radius: 2px;
   background: rgba(255, 255, 255, 0.25);
