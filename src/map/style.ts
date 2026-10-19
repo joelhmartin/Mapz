@@ -1,4 +1,5 @@
-import type { ExpressionSpecification, StyleSpecification } from 'maplibre-gl';
+import type { ExpressionSpecification, LayerSpecification, StyleSpecification } from 'maplibre-gl';
+import { SEA_HATCH, WASH } from './textures';
 
 // One source per tile file, so changing one never makes the map re-process the others.
 export const BASE = 'base';
@@ -8,7 +9,7 @@ export const LABELS = 'labels';
 // Old-map palette.
 export const INK = '#3b2a1a';
 export const PAPER = '#f1e6c8';
-const SEA = '#c9d3c4';
+export const SEA = '#c9d3c4';
 const COAST = '#8a7357';
 const RIVER = '#9fb3ad';
 
@@ -63,7 +64,9 @@ export function buildStyle(initialYear: number, selectedKey: string | null, glob
       [LABELS]: pmtiles('labels.pmtiles'),
     },
     layers: [
-      { id: 'sea', type: 'background', paint: { 'background-color': SEA } },
+      { id: 'sea', type: 'background', paint: { 'background-color': SEA, 'background-pattern': SEA_HATCH } },
+      // Water-lining: the parallel strokes engravers ran along coasts on old charts.
+      ...waterLines(),
       {
         id: 'land',
         type: 'fill',
@@ -90,11 +93,36 @@ export function buildStyle(initialYear: number, selectedKey: string | null, glob
         },
       },
       {
+        // Watercolour: a mottled wash over the land and every state's colour. It is drawn from the
+        // basemap, which never reloads, so it costs nothing as the year changes (a pattern fill on
+        // the polities source would be laid out again on every year step).
+        id: 'land-wash',
+        type: 'fill',
+        source: BASE,
+        'source-layer': 'land',
+        paint: { 'fill-pattern': WASH, 'fill-opacity': 0.6 },
+      },
+      {
+        // Pigment pooling darker just inside each state's edges, where a brush stroke dries.
+        id: 'polities-pool',
+        type: 'line',
+        source: POLITIES,
+        'source-layer': 'polities',
+        filter: inYear('polity', 'people'),
+        paint: {
+          'line-color': ['get', 'color'],
+          'line-width': ['interpolate', ['linear'], ['zoom'], 1, 3, 6, 9],
+          'line-offset': ['interpolate', ['linear'], ['zoom'], 1, 1.5, 6, 4.5],
+          'line-blur': ['interpolate', ['linear'], ['zoom'], 1, 2, 6, 6],
+          'line-opacity': ['case', ['==', ['get', 'kind'], 'people'], 0.25, 0.55],
+        },
+      },
+      {
         id: 'lakes',
         type: 'fill',
         source: BASE,
         'source-layer': 'lakes',
-        paint: { 'fill-color': SEA },
+        paint: { 'fill-pattern': SEA_HATCH },
       },
       {
         id: 'rivers',
@@ -124,10 +152,13 @@ export function buildStyle(initialYear: number, selectedKey: string | null, glob
         source: POLITIES,
         'source-layer': 'polities',
         filter: ['all', inYear('polity', 'people'), ['!', approximate]],
+        layout: { 'line-join': 'round', 'line-cap': 'round' },
         paint: {
           'line-color': INK,
-          'line-opacity': 0.55,
-          'line-width': ['interpolate', ['linear'], ['zoom'], 0, 0.4, 6, 1.2],
+          'line-opacity': 0.7,
+          // A soft edge, like ink bleeding slightly into the paper.
+          'line-blur': 0.4,
+          'line-width': ['interpolate', ['linear'], ['zoom'], 0, 0.5, 6, 1.4],
         },
       },
       {
@@ -198,4 +229,23 @@ export function buildStyle(initialYear: number, selectedKey: string | null, glob
       },
     ],
   };
+}
+
+// Two strokes following the coast out to sea. They start at zoom 3: zoomed further out, the
+// strokes around archipelagos run together into scribble.
+function waterLines(): LayerSpecification[] {
+  return [5, 11].map((offset, i) => ({
+    id: `water-line-${i}`,
+    type: 'line',
+    source: BASE,
+    'source-layer': 'land',
+    minzoom: 3,
+    paint: {
+      'line-color': COAST,
+      'line-width': 0.7,
+      'line-opacity': ['interpolate', ['linear'], ['zoom'], 3, 0, 4, [0.4, 0.22][i]],
+      // Land rings run clockwise, so a negative offset moves the stroke out to sea.
+      'line-offset': ['interpolate', ['linear'], ['zoom'], 3, -offset / 2, 6, -offset],
+    },
+  }));
 }

@@ -18,12 +18,14 @@ Interactive historical world map: territories of every power from 3400 BCE to to
 - `scripts/fetch-rulers.mjs` (workflow `update-rulers.yml`, which also runs when `polities.json` changes) fetches heads of state for every polity from Wikidata into `data/wikidata/rulers.json`; `scripts/build-rulers.mjs` filters them to each polity's span and writes `public/data/rulers/<shard>.json`, which `src/lib/rulers.ts` loads lazily for the info panel. A run that returns far fewer terms than the last fails instead of committing.
 - `data/curated/migrations.json` holds movement routes (dated waypoints); `scripts/build-migrations.mjs` turns them into `public/data/migrations.{geojson,json}`, and `src/map/movements.ts` draws them.
 - `src/map/style.ts` is the map style. The selected year is the style's global state `year`.
+- The hand-drawn look: `scripts/lib/wobble.mjs` moves every coordinate of polities, land, lakes and rivers by one shared noise field at build time (so borders and coasts still meet); `src/map/textures.ts` draws the watercolour wash and sea hatching at runtime; `src/components/Ornaments.tsx` holds the cartouche and compass rose. Map rotation is off so north stays up.
 
 ## Performance rules
 
 - Never call `setFilter`/`setLayoutProperty` per year step. Year-dependent filters use `['global-state', 'year']` so only the affected source reloads.
 - Keep the basemap, polities, labels and battles in separate sources so a change to one never reloads the others.
 - Keep per-feature properties in the polity tiles minimal; the worker decodes them on every year change.
+- Pattern fills (`fill-pattern`) are expensive to lay out; only put them on the static basemap, never on the polities source.
 
 ## Validating a change
 

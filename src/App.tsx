@@ -8,6 +8,7 @@ import { InfoPanel } from './components/InfoPanel';
 import { BattlePanel } from './components/BattlePanel';
 import { MovementPanel } from './components/MovementPanel';
 import { WarPanel } from './components/WarPanel';
+import { Cartouche, CompassRose } from './components/Ornaments';
 import { activeCount, loadPolityIndex, type PolityIndex } from './lib/polities';
 import { writeYearToUrl, yearFromUrl } from './lib/years';
 
@@ -73,10 +74,8 @@ export function App() {
         onSelect={onSelect}
       />
       <div className="vignette" aria-hidden />
-      <header className="title panel">
-        <h1>Mapz</h1>
-        <p>Powers of the world through time</p>
-      </header>
+      <Cartouche />
+      <CompassRose />
       {hover && !hoverIsSelected && <HoverCard hover={hover} index={index} movements={movements} />}
       {selection?.type === 'polity' && (
         <InfoPanel

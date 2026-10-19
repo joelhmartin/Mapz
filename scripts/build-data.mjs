@@ -8,6 +8,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import polylabel from 'polylabel';
+import { wobbleCollection, wobbleGeometry } from './lib/wobble.mjs';
 
 const RAW = 'data/raw';
 const BUILD = 'data/build';
@@ -31,6 +32,11 @@ if (fs.existsSync(supplementFile)) {
 } else {
   console.warn(`No ${supplementFile}; building from Cliopatria only`);
 }
+
+// The hand-drawn look: borders, coasts, lakes and rivers all wobble by the same noise field, so
+// they still meet exactly (see scripts/lib/wobble.mjs).
+console.log('Wobbling borders…');
+for (const f of clio.features) f.geometry = wobbleGeometry(f.geometry);
 
 // Stable, muted colour per polity name so an empire keeps its colour through time.
 function hash(str) {
@@ -206,11 +212,16 @@ ZOOM_CLASSES.forEach((c, i) => {
 });
 
 const basemap = path.join(BUILD, 'basemap.pmtiles');
+const wobbled = (name) => {
+  const out = path.join(BUILD, `${name}.wobbled.geojson`);
+  fs.writeFileSync(out, JSON.stringify(wobbleCollection(JSON.parse(fs.readFileSync(path.join(RAW, `${name}.geojson`), 'utf8')))));
+  return out;
+};
 tippecanoe(basemap, 0, [
-  ['land', path.join(RAW, 'ne_10m_land.geojson')],
-  ['land', path.join(RAW, 'ne_10m_minor_islands.geojson')],
-  ['lakes', path.join(RAW, 'ne_50m_lakes.geojson')],
-  ['rivers', path.join(RAW, 'ne_50m_rivers_lake_centerlines.geojson')],
+  ['land', wobbled('ne_10m_land')],
+  ['land', wobbled('ne_10m_minor_islands')],
+  ['lakes', wobbled('ne_50m_lakes')],
+  ['rivers', wobbled('ne_50m_rivers_lake_centerlines')],
 ]);
 
 const POLITY_CREDIT =

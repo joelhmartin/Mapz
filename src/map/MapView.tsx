@@ -12,7 +12,8 @@ import { Protocol } from 'pmtiles';
 import 'maplibre-gl/dist/maplibre-gl.css';
 // MapLibre locates its worker next to its own module by default, which breaks once bundled.
 import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url';
-import { POLITIES, buildStyle } from './style';
+import { POLITIES, SEA, buildStyle } from './style';
+import { registerTextures } from './textures';
 import { addBattleLayers, isBattleVisible, setBattlesVisible, type BattleProps } from './battles';
 import {
   MOVEMENT_LAYERS,
@@ -142,8 +143,14 @@ export function MapView({ year, selectedKey, showBattles, showMovements, showWar
       attributionControl: false,
       // Label fade-in keeps the map repainting after every year change; snap instead.
       fadeDuration: 0,
+      // North stays up, as the compass rose says.
+      dragRotate: false,
+      pitchWithRotate: false,
     });
     mapRef.current = map;
+    map.touchZoomRotate.disableRotation();
+    map.keyboard.disableRotation();
+    registerTextures(map, SEA);
     map.on('error', (e) => console.error('Map error:', e.error));
     map.addControl(new NavigationControl({ showCompass: false }), 'top-right');
     map.addControl(new GlobeControl(), 'top-right');
