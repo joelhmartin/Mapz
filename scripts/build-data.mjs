@@ -124,8 +124,8 @@ clio.features.forEach((f, i) => {
   const { name: _name, id: _id, ...polyProps } = props;
   polyLines[zc].push(JSON.stringify({ type: 'Feature', id: i + 1, properties: polyProps, geometry: f.geometry }));
 
+  const [x, y] = polylabel(largestPolygon(f.geometry), 0.05);
   if (!isComposite) {
-    const [x, y] = polylabel(largestPolygon(f.geometry), 0.05);
     labelLines[zc].push(
       JSON.stringify({ type: 'Feature', id: i + 1, properties: props, geometry: { type: 'Point', coordinates: [x, y] } }),
     );
@@ -142,7 +142,9 @@ clio.features.forEach((f, i) => {
     memberOf: new Set(),
     components: new Set(),
     color: props.color,
-    maxArea: 0,
+    maxArea: -1,
+    at: null,
+    peak: p.FromYear,
     description: null,
     sources: new Set(),
   });
@@ -151,6 +153,11 @@ clio.features.forEach((f, i) => {
   if (!entry.wikipedia && p.Wikipedia) entry.wikipedia = p.Wikipedia;
   entry.from = Math.min(entry.from, p.FromYear);
   entry.to = Math.max(entry.to, p.ToYear);
+  // Where and when the polity was largest: search and tours fly there.
+  if (props.area > entry.maxArea) {
+    entry.at = [Math.round(x * 100) / 100, Math.round(y * 100) / 100];
+    entry.peak = p.FromYear;
+  }
   entry.maxArea = Math.max(entry.maxArea, props.area);
   for (const [field, set] of [
     ['SeshatID', entry.seshat],

@@ -34,7 +34,18 @@ function loadShard(n: number) {
 }
 
 export async function loadReigns(key: string): Promise<Reign[]> {
-  const rows = (await loadShard(shardOf(key)))[key] ?? [];
+  return toReigns((await loadShard(shardOf(key)))[key] ?? []);
+}
+
+// Every polity's reigns, for search.
+export async function loadAllReigns(): Promise<Record<string, Reign[]>> {
+  const all = await Promise.all(Array.from({ length: SHARDS }, (_, i) => loadShard(i)));
+  const out: Record<string, Reign[]> = {};
+  for (const shard of all) for (const [key, rows] of Object.entries(shard)) out[key] = toReigns(rows);
+  return out;
+}
+
+function toReigns(rows: Row[]): Reign[] {
   return rows.map(([name, from, to, endKnown, article, dynasty]) => ({
     name,
     from,

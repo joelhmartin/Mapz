@@ -37,6 +37,10 @@ export type MapTarget =
 // A place for the map to fly to; `key` makes repeat requests for the same spot still fire.
 export interface MapFocus {
   center: [number, number];
+  // Leave out to keep the current zoom (but at least close enough to see the place).
+  zoom?: number;
+  // Screen space covered by a panel, so the place is centred in what remains visible.
+  padding?: { left?: number; bottom?: number };
   key: number;
 }
 
@@ -265,8 +269,16 @@ export function MapView({ year, selectedKey, showBattles, showMovements, showWar
 
   useEffect(() => {
     const map = mapRef.current;
-    if (!map || !focus) return;
-    map.flyTo({ center: focus.center, zoom: Math.max(map.getZoom(), 4.5), duration: 1200 });
+    if (!map) return;
+    // No focus (a tour just ended): drop any padding it left on the camera.
+    if (!focus) return void map.setPadding({ top: 0, right: 0, bottom: 0, left: 0 });
+    map.flyTo({
+      center: focus.center,
+      zoom: focus.zoom ?? Math.max(map.getZoom(), 4.5),
+      padding: { top: 0, right: 0, left: focus.padding?.left ?? 0, bottom: focus.padding?.bottom ?? 0 },
+      duration: 1600,
+      essential: true,
+    });
   }, [focus]);
 
   return <div ref={container} className="map" />;

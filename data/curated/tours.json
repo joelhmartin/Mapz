@@ -1,0 +1,504 @@
+{
+  "about": "Guided tours: each step moves the timeline and the map, highlights a state (a key in public/data/polities.json) and narrates. Text only states what the linked Wikipedia article supports; uncertain dates are hedged with c.",
+  "tours": [
+    {
+      "id": "zulu",
+      "title": "The rise of the Zulu",
+      "summary": "From Nguni chiefdoms to Shaka's kingdom, the Mfecane and the Anglo-Zulu War, c. 1790–1879.",
+      "steps": [
+        {
+          "year": 1790,
+          "at": [
+            31.3,
+            -27.6,
+            6
+          ],
+          "title": "Nguni chiefdoms",
+          "text": "In the late 18th century the land between the Drakensberg and the Indian Ocean was divided among Nguni chiefdoms. The Mthethwa under Dingiswayo and the Ndwandwe under Zwide became the strongest of them.",
+          "wikipedia": "Mthethwa Paramountcy",
+          "highlight": "Mthethwa Paramountcy"
+        },
+        {
+          "year": 1816,
+          "at": [
+            31.3,
+            -28.2,
+            6.5
+          ],
+          "title": "Shaka takes power",
+          "text": "Shaka, who had risen as a commander in Dingiswayo's army, took over the small Zulu chiefdom c. 1816 with Mthethwa backing and reorganised its fighting men.",
+          "wikipedia": "Shaka",
+          "highlight": "Zulu Kingdom"
+        },
+        {
+          "year": 1819,
+          "at": [
+            31.3,
+            -27.9,
+            6
+          ],
+          "title": "War with the Ndwandwe",
+          "text": "After Zwide's Ndwandwe killed Dingiswayo (c. 1817–18), Shaka fought them at Gqokli Hill and defeated them at the Mhlatuze River c. 1819, absorbing the Mthethwa and much of the region.",
+          "wikipedia": "Zulu Kingdom",
+          "highlight": "Zulu Kingdom"
+        },
+        {
+          "year": 1823,
+          "at": [
+            29,
+            -25.5,
+            4.4
+          ],
+          "title": "The Mfecane",
+          "text": "The wars of these years, remembered as the Mfecane, uprooted peoples across southern Africa. Mzilikazi, one of Shaka's commanders, broke away c. 1822–23 and led his followers north; they went on to found the Ndebele kingdom.",
+          "wikipedia": "Mfecane",
+          "highlight": "Zulu Kingdom"
+        },
+        {
+          "year": 1828,
+          "at": [
+            31.3,
+            -28.2,
+            6
+          ],
+          "title": "Shaka's death",
+          "text": "Shaka was assassinated in 1828 by his half-brothers Dingane and Mhlangana, and Dingane became king.",
+          "wikipedia": "Dingane kaSenzangakhona",
+          "highlight": "Zulu Kingdom"
+        },
+        {
+          "year": 1838,
+          "at": [
+            30.6,
+            -28.1,
+            6.5
+          ],
+          "title": "Blood River",
+          "text": "Voortrekkers who had crossed the Drakensberg came into conflict with Dingane. On 16 December 1838 his army was defeated at the Ncome, or Blood River.",
+          "wikipedia": "Battle of Blood River",
+          "highlight": "Zulu Kingdom"
+        },
+        {
+          "year": 1840,
+          "at": [
+            30.8,
+            -29,
+            5.8
+          ],
+          "title": "Mpande and Natal",
+          "text": "Dingane's half-brother Mpande, allied with the Boers, overthrew him in 1840 and reigned until 1872. To the south the Boer republic of Natalia was annexed by Britain in 1843.",
+          "wikipedia": "Mpande kaSenzangakhona",
+          "highlight": "Zulu Kingdom"
+        },
+        {
+          "year": 1879,
+          "at": [
+            31.1,
+            -28.3,
+            6.5
+          ],
+          "title": "The Anglo-Zulu War",
+          "text": "British forces invaded in January 1879. King Cetshwayo's army won at Isandlwana but was defeated at Ulundi in July, and the kingdom was broken up into thirteen chiefdoms.",
+          "wikipedia": "Anglo-Zulu War",
+          "highlight": "Zululand"
+        }
+      ]
+    },
+    {
+      "id": "polynesia",
+      "title": "Polynesian voyaging",
+      "summary": "How seafarers settled the Pacific, from the Lapita culture to Aotearoa and Rēkohu, c. 1500 BCE–1778 CE.",
+      "steps": [
+        {
+          "year": -1500,
+          "at": [
+            151,
+            -4.5,
+            4.6
+          ],
+          "title": "The Lapita culture",
+          "text": "Around 1500 BCE a pottery-making culture now called Lapita appeared in the Bismarck Archipelago, carried by descendants of Austronesian seafarers from Island Southeast Asia.",
+          "wikipedia": "Lapita culture"
+        },
+        {
+          "year": -800,
+          "at": [
+            178,
+            -17,
+            4.2
+          ],
+          "title": "Into Remote Oceania",
+          "text": "Within a few centuries Lapita voyagers crossed open sea to Vanuatu, New Caledonia and Fiji, and by c. 800 BCE reached Tonga and Samoa, where Polynesian culture took shape.",
+          "wikipedia": "Lapita culture",
+          "highlight": "Early Tongan chiefdoms"
+        },
+        {
+          "year": 1000,
+          "at": [
+            -150,
+            -17,
+            4.6
+          ],
+          "title": "East Polynesia",
+          "text": "After a long pause, voyagers pushed east to the Society and Cook Islands. Recent radiocarbon studies place the settlement of East Polynesia c. 1000–1200 CE.",
+          "wikipedia": "Polynesian navigation"
+        },
+        {
+          "year": 1100,
+          "at": [
+            -156.5,
+            20.2,
+            5.6
+          ],
+          "title": "Hawaiʻi",
+          "text": "Hawaiʻi was settled from East Polynesia, probably between c. 1000 and 1200 CE.",
+          "wikipedia": "History of Hawaii",
+          "highlight": "Hawaiʻi Island chiefdom"
+        },
+        {
+          "year": 1200,
+          "at": [
+            -109.4,
+            -27.1,
+            8
+          ],
+          "title": "Rapa Nui",
+          "text": "Rapa Nui, one of the most remote inhabited islands on Earth, was settled c. 1200 CE.",
+          "wikipedia": "Easter Island",
+          "highlight": "Rapa Nui"
+        },
+        {
+          "year": 1250,
+          "at": [
+            -175,
+            -19,
+            5
+          ],
+          "title": "The Tuʻi Tonga",
+          "text": "In western Polynesia the Tuʻi Tonga line led a maritime chiefdom whose influence reached Samoa, ʻUvea and beyond, at its height c. 13th century.",
+          "wikipedia": "Tuʻi Tonga Empire",
+          "highlight": "Tuʻi Tonga Empire"
+        },
+        {
+          "year": 1300,
+          "at": [
+            173,
+            -41,
+            4.6
+          ],
+          "title": "Aotearoa",
+          "text": "New Zealand, the last large land mass to be settled, was reached by Polynesian voyagers c. 1250–1300. Their descendants are the Māori.",
+          "wikipedia": "Māori people"
+        },
+        {
+          "year": 1500,
+          "at": [
+            -176.5,
+            -44,
+            7
+          ],
+          "title": "Rēkohu",
+          "text": "The Chatham Islands, Rēkohu, were settled from New Zealand c. 1500; their people became the Moriori.",
+          "wikipedia": "Moriori",
+          "highlight": "Moriori"
+        },
+        {
+          "year": 1778,
+          "at": [
+            -157,
+            20.5,
+            5.6
+          ],
+          "title": "Contact",
+          "text": "European ships crossed the Pacific in the 18th century; James Cook, who had sailed with the Raiatean navigator Tupaia in 1769, reached Hawaiʻi in 1778.",
+          "wikipedia": "Tupaia",
+          "highlight": "Hawaiʻi Island chiefdom"
+        }
+      ]
+    },
+    {
+      "id": "mali-songhai",
+      "title": "Mali and Songhai",
+      "summary": "The great empires of the western Sahel, from Ghana to Mali's golden age and Songhai's fall at Tondibi, c. 1000–1591.",
+      "steps": [
+        {
+          "year": 1000,
+          "at": [
+            -8,
+            15.5,
+            4.6
+          ],
+          "title": "The Ghana Empire",
+          "text": "Before Mali, the Ghana Empire (Wagadu), with its capital at Koumbi Saleh, controlled the trade between the West African goldfields and the trans-Saharan routes.",
+          "wikipedia": "Ghana Empire",
+          "highlight": "Ghana Empire"
+        },
+        {
+          "year": 1235,
+          "at": [
+            -8.5,
+            12.5,
+            5.5
+          ],
+          "title": "Sundiata and Kirina",
+          "text": "According to the oral epic of Sundiata, Sundiata Keita defeated the Sosso king Sumanguru at Kirina c. 1235 and founded the Mali Empire.",
+          "wikipedia": "Sundiata Keita",
+          "highlight": "Mali Empire"
+        },
+        {
+          "year": 1324,
+          "at": [
+            -4,
+            15,
+            4.4
+          ],
+          "title": "Mansa Musa's pilgrimage",
+          "text": "Mansa Musa's pilgrimage to Mecca in 1324–25, with a famous display of gold in Cairo, made Mali known across the Mediterranean world.",
+          "wikipedia": "Musa I of Mali",
+          "highlight": "Mali Empire"
+        },
+        {
+          "year": 1350,
+          "at": [
+            -3,
+            16.8,
+            6.5
+          ],
+          "title": "Timbuktu",
+          "text": "Timbuktu and Djenné grew into centres of trade and Islamic scholarship; Timbuktu's Djinguereber Mosque dates from c. 1327.",
+          "wikipedia": "Timbuktu",
+          "highlight": "Mali Empire"
+        },
+        {
+          "year": 1468,
+          "at": [
+            -0.5,
+            16,
+            4.8
+          ],
+          "title": "Sonni Ali",
+          "text": "As Mali weakened, Songhai, centred on Gao, expanded under Sonni Ali (r. c. 1464–1492), who took Timbuktu in 1468.",
+          "wikipedia": "Sonni Ali",
+          "highlight": "Songhai Empire"
+        },
+        {
+          "year": 1500,
+          "at": [
+            -1,
+            15.5,
+            4.2
+          ],
+          "title": "The Askias",
+          "text": "Askia Muhammad seized power in 1493. Under the Askia dynasty Songhai became one of the largest states in African history.",
+          "wikipedia": "Songhai Empire",
+          "highlight": "Songhai Empire"
+        },
+        {
+          "year": 1591,
+          "at": [
+            0.1,
+            16.4,
+            6
+          ],
+          "title": "Tondibi",
+          "text": "A Moroccan army sent by the Saadi sultan Ahmad al-Mansur crossed the Sahara with firearms and defeated Songhai at Tondibi in 1591; the empire broke apart.",
+          "wikipedia": "Battle of Tondibi",
+          "highlight": "Songhai Empire"
+        }
+      ]
+    },
+    {
+      "id": "mongols",
+      "title": "The Mongol Empire",
+      "summary": "From rival steppe tribes to the largest contiguous land empire in history and its division, c. 1190–1300.",
+      "steps": [
+        {
+          "year": 1190,
+          "at": [
+            106,
+            47.5,
+            4.4
+          ],
+          "title": "The steppe before Genghis",
+          "text": "Around 1190 the eastern steppe was divided among rival confederations: the Keraites, Naimans, Merkits, Tatars and the Khamag Mongol of the young Temüjin.",
+          "wikipedia": "Khamag Mongol",
+          "highlight": "Khamag Mongol"
+        },
+        {
+          "year": 1206,
+          "at": [
+            106,
+            46,
+            3.6
+          ],
+          "title": "Genghis Khan",
+          "text": "In 1206 an assembly of the united tribes proclaimed Temüjin Genghis Khan.",
+          "wikipedia": "Genghis Khan",
+          "highlight": "Mongol Empire"
+        },
+        {
+          "year": 1220,
+          "at": [
+            64,
+            40,
+            4
+          ],
+          "title": "Khwarazm",
+          "text": "After a Mongol trade caravan was massacred at Otrar, Genghis Khan invaded the Khwarazmian Empire (1219–1221), sacking Bukhara, Samarkand and Urgench.",
+          "wikipedia": "Mongol invasion of the Khwarazmian Empire",
+          "highlight": "Mongol Empire"
+        },
+        {
+          "year": 1241,
+          "at": [
+            22,
+            49,
+            4
+          ],
+          "title": "Into Europe",
+          "text": "Under Batu and Subutai the Mongols conquered the Rus' principalities (1237–1240) and in 1241 defeated Polish and Hungarian armies at Legnica and Mohi.",
+          "wikipedia": "Mongol invasion of Europe",
+          "highlight": "Mongol Empire"
+        },
+        {
+          "year": 1258,
+          "at": [
+            44.4,
+            33.3,
+            5
+          ],
+          "title": "Baghdad",
+          "text": "Hülegü's army sacked Baghdad in 1258, ending the Abbasid Caliphate there. In 1260 the Mamluks halted the Mongol advance at Ain Jalut.",
+          "wikipedia": "Siege of Baghdad (1258)",
+          "highlight": "Mongol Empire"
+        },
+        {
+          "year": 1279,
+          "at": [
+            112,
+            32,
+            3.8
+          ],
+          "title": "Kublai and the Yuan",
+          "text": "Kublai Khan proclaimed the Yuan dynasty in 1271 and completed the conquest of the Southern Song in 1279.",
+          "wikipedia": "Yuan dynasty",
+          "highlight": "Mongol Empire"
+        },
+        {
+          "year": 1300,
+          "at": [
+            80,
+            45,
+            2.6
+          ],
+          "title": "Four khanates",
+          "text": "By c. 1300 the empire had divided into the Golden Horde, the Chagatai Khanate, the Ilkhanate and the Yuan, which acknowledged the great khan only loosely.",
+          "wikipedia": "Division of the Mongol Empire"
+        }
+      ]
+    },
+    {
+      "id": "rome",
+      "title": "Rome: republic, empire and Byzantium",
+      "summary": "From the Republic to Augustus, the empire's greatest extent, the fall of the West and of Constantinople, 509 BCE–1453 CE.",
+      "steps": [
+        {
+          "year": -500,
+          "at": [
+            12.5,
+            41.9,
+            6.2
+          ],
+          "title": "The Republic",
+          "text": "By tradition Rome expelled its last king in 509 BCE and became a republic, governed by elected magistrates and the Senate.",
+          "wikipedia": "Roman Republic",
+          "highlight": "Roman Republic"
+        },
+        {
+          "year": -200,
+          "at": [
+            12,
+            39,
+            4.4
+          ],
+          "title": "The Punic Wars",
+          "text": "Rome's wars with Carthage (264–146 BCE) made it the dominant power of the western Mediterranean.",
+          "wikipedia": "Punic Wars",
+          "highlight": "Roman Republic"
+        },
+        {
+          "year": -27,
+          "at": [
+            13,
+            42,
+            4
+          ],
+          "title": "Augustus",
+          "text": "After decades of civil war, Octavian became the first emperor and took the name Augustus in 27 BCE.",
+          "wikipedia": "Augustus",
+          "highlight": "Roman Empire"
+        },
+        {
+          "year": 117,
+          "at": [
+            16,
+            41,
+            3.4
+          ],
+          "title": "Greatest extent",
+          "text": "Under Trajan, who died in 117, the empire reached its greatest extent, from Britain to Mesopotamia.",
+          "wikipedia": "Trajan",
+          "highlight": "Roman Empire"
+        },
+        {
+          "year": 395,
+          "at": [
+            20,
+            40,
+            3.6
+          ],
+          "title": "East and West",
+          "text": "When Theodosius I died in 395 the empire was divided for good between his sons, into eastern and western halves.",
+          "wikipedia": "Theodosius I",
+          "highlight": "Western Roman Empire"
+        },
+        {
+          "year": 475,
+          "at": [
+            12,
+            44,
+            4.6
+          ],
+          "title": "The end in the West",
+          "text": "In 476 Odoacer deposed Romulus Augustulus, the last western emperor; the year is traditionally taken as the fall of the Western Roman Empire. The map shows the West in its final year.",
+          "wikipedia": "Fall of the Western Roman Empire",
+          "highlight": "Western Roman Empire"
+        },
+        {
+          "year": 555,
+          "at": [
+            20,
+            38,
+            3.6
+          ],
+          "title": "Justinian",
+          "text": "The eastern empire endured. Justinian I (r. 527–565) reconquered Italy, North Africa and part of Spain.",
+          "wikipedia": "Justinian I",
+          "highlight": "Eastern Roman Empire"
+        },
+        {
+          "year": 1453,
+          "at": [
+            28.97,
+            41.01,
+            6.5
+          ],
+          "title": "Constantinople falls",
+          "text": "The eastern empire, now called Byzantine, shrank over the following centuries; Constantinople fell to the Ottomans in 1453.",
+          "wikipedia": "Fall of Constantinople",
+          "highlight": "Byzantine Empire"
+        }
+      ]
+    }
+  ]
+}

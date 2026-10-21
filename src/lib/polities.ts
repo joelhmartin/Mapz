@@ -14,6 +14,9 @@ export interface PolityInfo {
   components: string[];
   color: string;
   maxArea: number;
+  // Label point and first year of the polity's largest extent.
+  at: [number, number] | null;
+  peak: number;
   description: string | null;
   sources: string[];
 }
