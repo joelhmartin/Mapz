@@ -273,6 +273,12 @@
       11.98,
       -61.6,
       12.25
+    ],
+    "haida_gwaii": [
+      -133.2,
+      51.9,
+      -131.0,
+      54.3
     ]
   },
   "polities": [
@@ -807,6 +813,681 @@
       "certainty": "uncertain",
       "wikipedia": "Kalinago",
       "description": "The Kalinago (Island Caribs) held the Lesser Antilles against Europeans for well over a century. Dominica and St Vincent remained theirs longest; the Garifuna of St Vincent were deported after the Second Carib War in 1797."
+    },
+    {
+      "name": "Northwestern Confederacy",
+      "from": 1785,
+      "to": 1795,
+      "blob": [
+        -84.3,
+        40.9,
+        1.9
+      ],
+      "contested": true,
+      "certainty": "uncertain",
+      "wikipedia": "Northwestern Confederacy",
+      "description": "An alliance of Shawnee, Miami, Lenape, Wyandot, Council of Three Fires and other nations that resisted American settlement north of the Ohio River, defeating US armies in 1790 and 1791 before its defeat at Fallen Timbers (1794) and the Treaty of Greenville (1795)."
+    },
+    {
+      "name": "Council of Three Fires",
+      "from": 1783,
+      "to": 1836,
+      "blob": [
+        -85.2,
+        44.6,
+        1.9
+      ],
+      "contested": true,
+      "certainty": "approximate",
+      "wikipedia": "Council of Three Fires",
+      "description": "The long-standing alliance of the Ojibwe, Odawa and Potawatomi around the upper Great Lakes. Much of their land in Michigan was ceded in the Treaty of Washington (1836), and many Potawatomi were removed west in 1838."
+    },
+    {
+      "name": "Ojibwe",
+      "from": 1783,
+      "to": 1854,
+      "blob": [
+        -91.5,
+        47.3,
+        2.0
+      ],
+      "contested": true,
+      "certainty": "approximate",
+      "wikipedia": "Ojibwe",
+      "description": "Ojibwe bands held the country around Lake Superior and the upper Mississippi; the Treaty of La Pointe (1854) set out reservations and ceded much of the rest."
+    },
+    {
+      "name": "Menominee",
+      "from": 1783,
+      "to": 1854,
+      "blob": [
+        -88.4,
+        44.9,
+        0.6
+      ],
+      "contested": true,
+      "certainty": "approximate",
+      "wikipedia": "Menominee",
+      "description": "The Menominee of what is now Wisconsin ceded most of their land in treaties of 1831–1848; a reservation on the Wolf River was set out in 1854."
+    },
+    {
+      "name": "Ho-Chunk",
+      "from": 1783,
+      "to": 1837,
+      "blob": [
+        -89.8,
+        43.4,
+        0.8
+      ],
+      "contested": true,
+      "certainty": "approximate",
+      "wikipedia": "Ho-Chunk",
+      "description": "The Ho-Chunk (Winnebago) of southern Wisconsin were pressed into treaty cessions culminating in 1837, followed by repeated forced removals."
+    },
+    {
+      "name": "Sauk and Meskwaki",
+      "from": 1783,
+      "to": 1832,
+      "blob": [
+        -90.8,
+        41.8,
+        1.0
+      ],
+      "contested": true,
+      "certainty": "approximate",
+      "wikipedia": "Sauk people",
+      "description": "The Sauk and Meskwaki (Fox) of the upper Mississippi; resistance to the 1804 land cession led to the Black Hawk War of 1832, after which their lands east of the Mississippi were lost."
+    },
+    {
+      "name": "Haudenosaunee",
+      "from": 1783,
+      "to": 1797,
+      "blob": [
+        -76.4,
+        42.8,
+        1.0
+      ],
+      "contested": true,
+      "certainty": "approximate",
+      "wikipedia": "Iroquois",
+      "description": "After the American Revolution most Haudenosaunee land in New York was lost through treaties ending with the Treaty of Big Tree (1797); many Mohawk and others moved to the Grand River in British Canada (1784)."
+    },
+    {
+      "name": "Tlingit",
+      "from": 1783,
+      "to": 1867,
+      "blob": [
+        -134.6,
+        58.0,
+        1.3
+      ],
+      "contested": true,
+      "certainty": "approximate",
+      "wikipedia": "Tlingit",
+      "description": "The Tlingit of the Alaskan panhandle resisted Russian traders, destroying the Russian post at Sitka in 1802 before the Battle of Sitka (1804). Russia sold its claim to the United States in 1867."
+    },
+    {
+      "name": "Haida",
+      "from": 1783,
+      "to": 1871,
+      "contested": true,
+      "certainty": "approximate",
+      "wikipedia": "Haida people",
+      "description": "The Haida of Haida Gwaii, seafarers and traders; smallpox in 1862 killed most of the population. British Columbia joined Canada in 1871.",
+      "islands": [
+        "haida_gwaii"
+      ],
+      "halo": 0.3
+    },
+    {
+      "name": "Tsimshian",
+      "from": 1783,
+      "to": 1871,
+      "blob": [
+        -129.6,
+        54.4,
+        0.9
+      ],
+      "contested": true,
+      "certainty": "approximate",
+      "wikipedia": "Tsimshian",
+      "description": "The Tsimshian of the Skeena and Nass rivers and the nearby coast, at the centre of the coastal fur trade around Fort Simpson (founded 1831)."
+    },
+    {
+      "name": "Kwakwaka'wakw",
+      "from": 1783,
+      "to": 1871,
+      "blob": [
+        -127.0,
+        50.6,
+        0.8
+      ],
+      "contested": true,
+      "certainty": "approximate",
+      "wikipedia": "Kwakwakaʼwakw",
+      "description": "The Kwakwaka'wakw of northern Vancouver Island and the facing mainland, known for the potlatch, which Canada banned in 1884."
+    },
+    {
+      "name": "Nuu-chah-nulth",
+      "from": 1783,
+      "to": 1871,
+      "blob": [
+        -126.3,
+        49.4,
+        0.9
+      ],
+      "contested": true,
+      "certainty": "approximate",
+      "wikipedia": "Nuu-chah-nulth",
+      "description": "The Nuu-chah-nulth (Nootka) of western Vancouver Island, whose harbour at Nootka Sound was at the centre of the Nootka Crisis between Spain and Britain (1789–1790)."
+    },
+    {
+      "name": "Coast Salish",
+      "from": 1783,
+      "to": 1855,
+      "blob": [
+        -122.6,
+        48.3,
+        1.1
+      ],
+      "contested": true,
+      "certainty": "approximate",
+      "wikipedia": "Coast Salish",
+      "description": "Coast Salish peoples around the Salish Sea and Puget Sound; the Point Elliott and Medicine Creek treaties (1854–1855) ceded most of their land in Washington Territory."
+    },
+    {
+      "name": "Chinookan peoples",
+      "from": 1783,
+      "to": 1855,
+      "blob": [
+        -123.4,
+        46.0,
+        0.7
+      ],
+      "contested": true,
+      "certainty": "approximate",
+      "wikipedia": "Chinookan peoples",
+      "description": "Chinookan peoples of the lower Columbia River, traders whose Chinook Jargon became the region's trade language; Lewis and Clark wintered among them in 1805–06."
+    },
+    {
+      "name": "Yakama",
+      "from": 1783,
+      "to": 1855,
+      "blob": [
+        -120.6,
+        46.5,
+        1.0
+      ],
+      "contested": true,
+      "certainty": "approximate",
+      "wikipedia": "Yakama",
+      "description": "The Yakama of the Columbia Plateau ceded most of their land in the Treaty of 1855, which led to the Yakima War (1855–1858)."
+    },
+    {
+      "name": "Modoc",
+      "from": 1783,
+      "to": 1873,
+      "blob": [
+        -121.4,
+        41.8,
+        0.6
+      ],
+      "contested": true,
+      "certainty": "approximate",
+      "wikipedia": "Modoc people",
+      "description": "The Modoc of the Klamath Basin; resistance to their placement on the Klamath reservation ended with the Modoc War of 1872–1873."
+    },
+    {
+      "name": "Yurok",
+      "from": 1783,
+      "to": 1855,
+      "blob": [
+        -123.8,
+        41.4,
+        0.5
+      ],
+      "contested": true,
+      "certainty": "approximate",
+      "wikipedia": "Yurok",
+      "description": "The Yurok of the lower Klamath River; the Gold Rush of the 1850s brought violence and the loss of most of their land."
+    },
+    {
+      "name": "Pomo",
+      "from": 1783,
+      "to": 1850,
+      "blob": [
+        -123.1,
+        39.1,
+        0.5
+      ],
+      "contested": true,
+      "certainty": "approximate",
+      "wikipedia": "Pomo",
+      "description": "Pomo peoples of the coast ranges north of San Francisco Bay; the Bloody Island Massacre at Clear Lake (1850) was among the killings that followed the Gold Rush."
+    },
+    {
+      "name": "Maidu",
+      "from": 1783,
+      "to": 1850,
+      "blob": [
+        -121.2,
+        39.8,
+        0.7
+      ],
+      "contested": true,
+      "certainty": "approximate",
+      "wikipedia": "Maidu",
+      "description": "Maidu peoples of the northern Sierra Nevada foothills, whose homeland became the heart of the Gold Rush from 1848."
+    },
+    {
+      "name": "Miwok",
+      "from": 1783,
+      "to": 1850,
+      "blob": [
+        -120.6,
+        38.0,
+        0.8
+      ],
+      "contested": true,
+      "certainty": "approximate",
+      "wikipedia": "Miwok",
+      "description": "Miwok peoples of the central Sierra Nevada and the Bay Area; coastal Miwok were drawn into the missions, interior groups held out until the Gold Rush."
+    },
+    {
+      "name": "Yokuts",
+      "from": 1783,
+      "to": 1851,
+      "blob": [
+        -119.5,
+        36.4,
+        1.1
+      ],
+      "contested": true,
+      "certainty": "approximate",
+      "wikipedia": "Yokuts",
+      "description": "Yokuts peoples of the San Joaquin Valley, the most numerous in pre-contact California; many resisted the missions from the interior until the 1850s."
+    },
+    {
+      "name": "Mohave",
+      "from": 1783,
+      "to": 1859,
+      "blob": [
+        -114.6,
+        34.9,
+        0.6
+      ],
+      "contested": true,
+      "certainty": "approximate",
+      "wikipedia": "Mohave people",
+      "description": "The Mohave of the lower Colorado River, who controlled a key crossing; the US Army established Fort Mojave in 1859."
+    },
+    {
+      "name": "Plains Cree",
+      "from": 1783,
+      "to": 1876,
+      "blob": [
+        -108.0,
+        53.0,
+        2.4
+      ],
+      "contested": true,
+      "certainty": "approximate",
+      "wikipedia": "Plains Cree",
+      "description": "The Plains Cree (Nēhiyawak) of the northern plains, allies of the Assiniboine in the Iron Confederacy; most signed Treaty 6 in 1876, and Big Bear held out until the North-West Rebellion of 1885."
+    },
+    {
+      "name": "Cree",
+      "from": 1783,
+      "to": 1906,
+      "blob": [
+        -91.0,
+        54.0,
+        3.0
+      ],
+      "contested": true,
+      "certainty": "uncertain",
+      "wikipedia": "Cree",
+      "description": "Woodland and Swampy Cree of the boreal forest and the Hudson Bay lowlands, partners in the fur trade of the Hudson's Bay Company; Treaties 5 (1875) and 9 (1905–06) covered their lands.",
+      "kind": "people"
+    },
+    {
+      "name": "Assiniboine",
+      "from": 1783,
+      "to": 1877,
+      "blob": [
+        -104.5,
+        50.3,
+        1.6
+      ],
+      "contested": true,
+      "certainty": "approximate",
+      "wikipedia": "Assiniboine",
+      "description": "The Assiniboine (Nakoda), allies of the Plains Cree on the northern plains, signed Treaties 4 and 6 in Canada (1874–76) and were placed on reservations in the United States."
+    },
+    {
+      "name": "Red River Métis",
+      "from": 1816,
+      "to": 1870,
+      "blob": [
+        -97.2,
+        49.8,
+        0.9
+      ],
+      "contested": true,
+      "certainty": "uncertain",
+      "wikipedia": "Métis",
+      "description": "The Métis nation of the Red River, who asserted themselves at the Battle of Seven Oaks (1816) and formed the provisional government of Louis Riel in 1869–70, which led to the creation of Manitoba."
+    },
+    {
+      "name": "Dene",
+      "from": 1783,
+      "to": 1921,
+      "blob": [
+        -118.0,
+        61.5,
+        4.0
+      ],
+      "contested": true,
+      "certainty": "uncertain",
+      "wikipedia": "Dene",
+      "description": "Dene (northern Athabaskan) peoples of the Mackenzie basin and the western Subarctic; Treaties 8 (1899) and 11 (1921) covered their lands.",
+      "kind": "people"
+    },
+    {
+      "name": "Innu",
+      "from": 1783,
+      "to": 1900,
+      "blob": [
+        -64.0,
+        53.0,
+        2.6
+      ],
+      "contested": true,
+      "certainty": "uncertain",
+      "wikipedia": "Innu",
+      "description": "The Innu of the Quebec–Labrador peninsula, hunters of the interior who never signed a land treaty; shown here to c. 1900.",
+      "kind": "people"
+    },
+    {
+      "name": "Inuit",
+      "from": 1783,
+      "to": 1900,
+      "blob": [
+        -112.0,
+        68.5,
+        3.6
+      ],
+      "contested": true,
+      "certainty": "uncertain",
+      "wikipedia": "Inuit",
+      "description": "Inuit of the Canadian Arctic, from the Mackenzie delta to Hudson Bay; contact with whalers grew through the 19th century. Shown to c. 1900.",
+      "kind": "people"
+    },
+    {
+      "name": "Inuit",
+      "from": 1783,
+      "to": 1900,
+      "blob": [
+        -82.0,
+        66.5,
+        3.6
+      ],
+      "contested": true,
+      "certainty": "uncertain",
+      "wikipedia": "Inuit",
+      "description": "Inuit of the Canadian Arctic, from the Mackenzie delta to Hudson Bay; contact with whalers grew through the 19th century. Shown to c. 1900.",
+      "kind": "people"
+    },
+    {
+      "name": "Inuit",
+      "from": 1783,
+      "to": 1900,
+      "blob": [
+        -70.0,
+        58.5,
+        2.6
+      ],
+      "contested": true,
+      "certainty": "uncertain",
+      "wikipedia": "Inuit",
+      "description": "Inuit of Nunavik and Labrador, where Moravian missions were founded from 1771. Shown to c. 1900.",
+      "kind": "people"
+    },
+    {
+      "name": "Iñupiat",
+      "from": 1783,
+      "to": 1900,
+      "blob": [
+        -156.0,
+        69.0,
+        2.6
+      ],
+      "contested": true,
+      "certainty": "uncertain",
+      "wikipedia": "Iñupiat",
+      "description": "The Iñupiat of northern Alaska; the Russian and later American claims barely reached them until commercial whaling and the gold rushes of the 1890s. Shown to c. 1900.",
+      "kind": "people"
+    },
+    {
+      "name": "Yup'ik",
+      "from": 1783,
+      "to": 1900,
+      "blob": [
+        -161.0,
+        61.0,
+        2.2
+      ],
+      "contested": true,
+      "certainty": "uncertain",
+      "wikipedia": "Yupik peoples",
+      "description": "Yup'ik peoples of western and southwestern Alaska, around the Yukon–Kuskokwim delta. Shown to c. 1900.",
+      "kind": "people"
+    },
+    {
+      "name": "Athabaskan",
+      "from": 1783,
+      "to": 1900,
+      "blob": [
+        -150.0,
+        64.5,
+        3.0
+      ],
+      "contested": true,
+      "certainty": "uncertain",
+      "wikipedia": "Alaskan Athabaskans",
+      "description": "Athabaskan peoples of interior Alaska and the Yukon, beyond the reach of the Russian posts on the coast. Shown to c. 1900.",
+      "kind": "people"
+    },
+    {
+      "name": "Chiriguano",
+      "from": 1783,
+      "to": 1892,
+      "blob": [
+        -63.3,
+        -20.0,
+        1.1
+      ],
+      "contested": true,
+      "certainty": "approximate",
+      "wikipedia": "Chiriguanos",
+      "description": "Guaraní-speaking peoples of the Andean foothills who resisted Inca, Spanish and Bolivian expansion for centuries; their last great rising ended at Kuruyuki in 1892."
+    },
+    {
+      "name": "Qom",
+      "from": 1783,
+      "to": 1884,
+      "blob": [
+        -60.0,
+        -25.5,
+        1.8
+      ],
+      "contested": true,
+      "certainty": "approximate",
+      "wikipedia": "Qom people",
+      "description": "The Qom (Toba) of the central Chaco, independent until Argentina's military campaigns into the Chaco from 1884."
+    },
+    {
+      "name": "Wichí",
+      "from": 1783,
+      "to": 1884,
+      "blob": [
+        -62.6,
+        -23.4,
+        1.4
+      ],
+      "contested": true,
+      "certainty": "uncertain",
+      "wikipedia": "Wichí people",
+      "description": "The Wichí of the western Chaco along the Pilcomayo and Bermejo rivers, outside state control until the Chaco campaigns of the 1880s."
+    },
+    {
+      "name": "Mbayá",
+      "from": 1783,
+      "to": 1865,
+      "blob": [
+        -57.5,
+        -20.5,
+        1.3
+      ],
+      "contested": true,
+      "certainty": "uncertain",
+      "wikipedia": "Mbayá",
+      "description": "The Mbayá (Guaycuru) horsemen of the northern Chaco and the Paraguay river, whose descendants are the Kadiwéu of Brazil; shown until the Paraguayan War (1864–1870)."
+    },
+    {
+      "name": "Shuar",
+      "from": 1783,
+      "to": 1900,
+      "blob": [
+        -77.9,
+        -2.8,
+        1.1
+      ],
+      "contested": true,
+      "certainty": "uncertain",
+      "wikipedia": "Shuar",
+      "description": "The Shuar of the eastern Andean foothills, never conquered by Spain after a rising destroyed the Spanish settlement of Logroño in 1599. Shown to c. 1900.",
+      "kind": "people"
+    },
+    {
+      "name": "Waorani",
+      "from": 1783,
+      "to": 1900,
+      "blob": [
+        -76.5,
+        -1.0,
+        0.8
+      ],
+      "contested": true,
+      "certainty": "uncertain",
+      "wikipedia": "Waorani people",
+      "description": "The Waorani of the Ecuadorian Amazon, who kept outsiders from their territory well into the 20th century. Shown to c. 1900.",
+      "kind": "people"
+    },
+    {
+      "name": "Asháninka",
+      "from": 1783,
+      "to": 1900,
+      "blob": [
+        -74.5,
+        -11.3,
+        1.4
+      ],
+      "contested": true,
+      "certainty": "uncertain",
+      "wikipedia": "Asháninka",
+      "description": "The Asháninka of the Peruvian montaña; after Juan Santos Atahualpa's rising of 1742 their lands stayed outside colonial control for about a century. Shown to c. 1900.",
+      "kind": "people"
+    },
+    {
+      "name": "Tikuna",
+      "from": 1783,
+      "to": 1900,
+      "blob": [
+        -69.5,
+        -3.6,
+        1.1
+      ],
+      "contested": true,
+      "certainty": "uncertain",
+      "wikipedia": "Tikuna people",
+      "description": "The Tikuna of the upper Amazon (Solimões), one of the most numerous Amazonian peoples. Shown to c. 1900.",
+      "kind": "people"
+    },
+    {
+      "name": "Yanomami",
+      "from": 1783,
+      "to": 1900,
+      "blob": [
+        -64.0,
+        3.0,
+        2.0
+      ],
+      "contested": true,
+      "certainty": "uncertain",
+      "wikipedia": "Yanomami",
+      "description": "The Yanomami of the highlands between Brazil and Venezuela, among the last Amazonian peoples to come into sustained contact with outsiders. Shown to c. 1900.",
+      "kind": "people"
+    },
+    {
+      "name": "Munduruku",
+      "from": 1783,
+      "to": 1900,
+      "blob": [
+        -57.0,
+        -6.5,
+        1.8
+      ],
+      "contested": true,
+      "certainty": "uncertain",
+      "wikipedia": "Munduruku",
+      "description": "The Munduruku of the Tapajós basin, feared warriors who made peace with the Portuguese in the 1790s. Shown to c. 1900.",
+      "kind": "people"
+    },
+    {
+      "name": "Kayapo",
+      "from": 1783,
+      "to": 1900,
+      "blob": [
+        -52.0,
+        -8.0,
+        1.9
+      ],
+      "contested": true,
+      "certainty": "uncertain",
+      "wikipedia": "Kayapo",
+      "description": "The Kayapo of the Xingu basin and the central Brazilian plateau. Shown to c. 1900.",
+      "kind": "people"
+    },
+    {
+      "name": "Xavante",
+      "from": 1783,
+      "to": 1900,
+      "blob": [
+        -52.0,
+        -13.5,
+        1.4
+      ],
+      "contested": true,
+      "certainty": "uncertain",
+      "wikipedia": "Xavante",
+      "description": "The Xavante of the Mato Grosso plateau, who withdrew westward from Goiás in the 19th century and resisted contact until the 1940s. Shown to c. 1900.",
+      "kind": "people"
+    },
+    {
+      "name": "Bororo",
+      "from": 1783,
+      "to": 1900,
+      "blob": [
+        -55.5,
+        -16.0,
+        1.2
+      ],
+      "contested": true,
+      "certainty": "uncertain",
+      "wikipedia": "Bororo",
+      "description": "The Bororo of the Mato Grosso, around the upper Paraguay and São Lourenço rivers. Shown to c. 1900.",
+      "kind": "people"
     }
   ]
 }
