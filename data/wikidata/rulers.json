@@ -2831,20 +2831,20 @@
     "dynasty": "Livii Ocellae"
    },
    {
-    "q": "Q1419",
-    "name": "Vespasian",
-    "from": 69,
-    "to": 79,
-    "article": "Vespasian",
-    "dynasty": "Flavii Sabini"
-   },
-   {
     "q": "Q1416",
     "name": "Otho",
     "from": 69,
     "to": 69,
     "article": "Otho",
     "dynasty": "Salvii Othones"
+   },
+   {
+    "q": "Q1419",
+    "name": "Vespasian",
+    "from": 69,
+    "to": 79,
+    "article": "Vespasian",
+    "dynasty": "Flavii Sabini"
    },
    {
     "q": "Q1417",
@@ -3007,22 +3007,6 @@
     "dynasty": null
    },
    {
-    "q": "Q1782",
-    "name": "Gordian I",
-    "from": 238,
-    "to": 238,
-    "article": "Gordian I",
-    "dynasty": "Gordian dynasty"
-   },
-   {
-    "q": "Q1797",
-    "name": "Pupienus",
-    "from": 238,
-    "to": 238,
-    "article": "Pupienus",
-    "dynasty": null
-   },
-   {
     "q": "Q1803",
     "name": "Gordian II",
     "from": 238,
@@ -3045,6 +3029,22 @@
     "to": 244,
     "article": "Gordian III",
     "dynasty": "Gordian dynasty"
+   },
+   {
+    "q": "Q1782",
+    "name": "Gordian I",
+    "from": 238,
+    "to": 238,
+    "article": "Gordian I",
+    "dynasty": "Gordian dynasty"
+   },
+   {
+    "q": "Q1797",
+    "name": "Pupienus",
+    "from": 238,
+    "to": 238,
+    "article": "Pupienus",
+    "dynasty": null
    },
    {
     "q": "Q1817",
@@ -3343,19 +3343,19 @@
     "dynasty": "Constantinian dynasty"
    },
    {
-    "q": "Q46734",
-    "name": "Constantine II",
-    "from": 337,
-    "to": 340,
-    "article": "Constantine II (emperor)",
-    "dynasty": "Constantinian dynasty"
-   },
-   {
     "q": "Q46418",
     "name": "Constantius II",
     "from": 337,
     "to": 361,
     "article": "Constantius II",
+    "dynasty": "Constantinian dynasty"
+   },
+   {
+    "q": "Q46734",
+    "name": "Constantine II",
+    "from": 337,
+    "to": 340,
+    "article": "Constantine II (emperor)",
     "dynasty": "Constantinian dynasty"
    },
    {
@@ -3455,19 +3455,19 @@
     "dynasty": null
    },
    {
-    "q": "Q232981",
-    "name": "Aelia Eudoxia",
-    "from": 395,
-    "to": 404,
-    "article": "Aelia Eudoxia",
-    "dynasty": "Theodosian dynasty"
-   },
-   {
     "q": "Q159369",
     "name": "Arcadius",
     "from": 395,
     "to": 408,
     "article": "Arcadius",
+    "dynasty": "Theodosian dynasty"
+   },
+   {
+    "q": "Q232981",
+    "name": "Aelia Eudoxia",
+    "from": 395,
+    "to": 404,
+    "article": "Aelia Eudoxia",
     "dynasty": "Theodosian dynasty"
    },
    {
@@ -3495,19 +3495,19 @@
     "dynasty": "Theodosian dynasty"
    },
    {
-    "q": "Q231919",
-    "name": "Pulcheria",
-    "from": 450,
-    "to": 453,
-    "article": "Pulcheria",
-    "dynasty": "Theodosian dynasty"
-   },
-   {
     "q": "Q178004",
     "name": "Marcian",
     "from": 450,
     "to": 457,
     "article": "Marcian",
+    "dynasty": "Theodosian dynasty"
+   },
+   {
+    "q": "Q231919",
+    "name": "Pulcheria",
+    "from": 450,
+    "to": 453,
+    "article": "Pulcheria",
     "dynasty": "Theodosian dynasty"
    },
    {
@@ -3535,14 +3535,6 @@
     "dynasty": "House of Leo"
    },
    {
-    "q": "Q191707",
-    "name": "Leo II",
-    "from": 474,
-    "to": 474,
-    "article": "Leo II (emperor)",
-    "dynasty": "House of Leo"
-   },
-   {
     "q": "Q183452",
     "name": "Zeno",
     "from": 474,
@@ -3551,11 +3543,11 @@
     "dynasty": "House of Leo"
    },
    {
-    "q": "Q193056",
-    "name": "Basiliscus",
-    "from": 475,
-    "to": 476,
-    "article": "Basiliscus",
+    "q": "Q191707",
+    "name": "Leo II",
+    "from": 474,
+    "to": 474,
+    "article": "Leo II (emperor)",
     "dynasty": "House of Leo"
    },
    {
@@ -3564,6 +3556,14 @@
     "from": 475,
     "to": 476,
     "article": "Zenonis",
+    "dynasty": "House of Leo"
+   },
+   {
+    "q": "Q193056",
+    "name": "Basiliscus",
+    "from": 475,
+    "to": 476,
+    "article": "Basiliscus",
     "dynasty": "House of Leo"
    },
    {
@@ -3871,19 +3871,19 @@
     "dynasty": null
    },
    {
-    "q": "Q4766775",
-    "name": "Anna, wife of Artabasdos",
-    "from": 741,
-    "to": 743,
-    "article": "Anna (wife of Artabasdos)",
-    "dynasty": "Isaurian dynasty"
-   },
-   {
     "q": "Q41635",
     "name": "Konstantinos V",
     "from": 741,
     "to": 775,
     "article": "Constantine V",
+    "dynasty": "Isaurian dynasty"
+   },
+   {
+    "q": "Q4766775",
+    "name": "Anna, wife of Artabasdos",
+    "from": 741,
+    "to": 743,
+    "article": "Anna (wife of Artabasdos)",
     "dynasty": "Isaurian dynasty"
    },
    {
@@ -3927,14 +3927,6 @@
     "dynasty": null
    },
    {
-    "q": "Q206737",
-    "name": "Irene of Athens",
-    "from": 797,
-    "to": 802,
-    "article": "Irene of Athens",
-    "dynasty": "Isaurian dynasty"
-   },
-   {
     "q": "Q2883232",
     "name": "Theodote",
     "from": 797,
@@ -3943,19 +3935,19 @@
     "dynasty": null
    },
    {
+    "q": "Q206737",
+    "name": "Irene of Athens",
+    "from": 797,
+    "to": 802,
+    "article": "Irene of Athens",
+    "dynasty": "Isaurian dynasty"
+   },
+   {
     "q": "Q208754",
     "name": "Nikephoros I",
     "from": 802,
     "to": 811,
     "article": "Nikephoros I",
-    "dynasty": "Nikephorian dynasty"
-   },
-   {
-    "q": "Q237587",
-    "name": "Stauracius",
-    "from": 811,
-    "to": 811,
-    "article": "Staurakios",
     "dynasty": "Nikephorian dynasty"
    },
    {
@@ -3980,6 +3972,14 @@
     "from": 811,
     "to": 813,
     "article": "Michael I Rangabe",
+    "dynasty": "Nikephorian dynasty"
+   },
+   {
+    "q": "Q237587",
+    "name": "Stauracius",
+    "from": 811,
+    "to": 811,
+    "article": "Staurakios",
     "dynasty": "Nikephorian dynasty"
    },
    {
@@ -6817,19 +6817,19 @@
     "dynasty": null
    },
    {
-    "q": "Q1074798",
-    "name": "Emperor Wencheng of Northern Wei",
-    "from": 452,
-    "to": 465,
-    "article": "Emperor Wencheng of Northern Wei",
-    "dynasty": null
-   },
-   {
     "q": "Q3275322",
     "name": "Tuoba Yu",
     "from": 452,
     "to": 452,
     "article": "Tuoba Yu",
+    "dynasty": null
+   },
+   {
+    "q": "Q1074798",
+    "name": "Emperor Wencheng of Northern Wei",
+    "from": 452,
+    "to": 465,
+    "article": "Emperor Wencheng of Northern Wei",
     "dynasty": null
    },
    {
@@ -6865,14 +6865,6 @@
     "dynasty": "Yuan clan of Henan"
    },
    {
-    "q": "Q1074789",
-    "name": "Emperor Xiaozhuang of Northern Wei",
-    "from": 528,
-    "to": 531,
-    "article": "Emperor Xiaozhuang of Northern Wei",
-    "dynasty": "Yuan clan of Henan"
-   },
-   {
     "q": "Q3268609",
     "name": "Yuan Zhao",
     "from": 528,
@@ -6889,6 +6881,14 @@
     "dynasty": null
    },
    {
+    "q": "Q1074789",
+    "name": "Emperor Xiaozhuang of Northern Wei",
+    "from": 528,
+    "to": 531,
+    "article": "Emperor Xiaozhuang of Northern Wei",
+    "dynasty": "Yuan clan of Henan"
+   },
+   {
     "q": "Q3276215",
     "name": "Yuan Ye",
     "from": 530,
@@ -6897,19 +6897,19 @@
     "dynasty": "Yuan clan of Henan"
    },
    {
-    "q": "Q1074737",
-    "name": "Emperor Jiemin of Northern Wei",
-    "from": 531,
-    "to": 532,
-    "article": "Emperor Jiemin of Northern Wei",
-    "dynasty": "Yuan clan of Henan"
-   },
-   {
     "q": "Q3276194",
     "name": "Yuan Lang",
     "from": 531,
     "to": 532,
     "article": "Yuan Lang",
+    "dynasty": "Yuan clan of Henan"
+   },
+   {
+    "q": "Q1074737",
+    "name": "Emperor Jiemin of Northern Wei",
+    "from": 531,
+    "to": 532,
+    "article": "Emperor Jiemin of Northern Wei",
     "dynasty": "Yuan clan of Henan"
    },
    {
@@ -6936,22 +6936,6 @@
     "dynasty": null
    },
    {
-    "q": "Q1078581",
-    "name": "Murong Yong",
-    "from": 386,
-    "to": 394,
-    "article": "Murong Yong",
-    "dynasty": null
-   },
-   {
-    "q": "Q1078592",
-    "name": "Murong Zhong",
-    "from": 386,
-    "to": 386,
-    "article": "Murong Zhong",
-    "dynasty": null
-   },
-   {
     "q": "Q1155379",
     "name": "Duan Sui",
     "from": 386,
@@ -6973,6 +6957,22 @@
     "from": 386,
     "to": 386,
     "article": "Murong Yi",
+    "dynasty": null
+   },
+   {
+    "q": "Q1078581",
+    "name": "Murong Yong",
+    "from": 386,
+    "to": 394,
+    "article": "Murong Yong",
+    "dynasty": null
+   },
+   {
+    "q": "Q1078592",
+    "name": "Murong Zhong",
+    "from": 386,
+    "to": 386,
+    "article": "Murong Zhong",
     "dynasty": null
    }
   ]
@@ -7132,19 +7132,19 @@
     "dynasty": "Valentinianic dynasty"
    },
    {
-    "q": "Q232981",
-    "name": "Aelia Eudoxia",
-    "from": 395,
-    "to": 404,
-    "article": "Aelia Eudoxia",
-    "dynasty": "Theodosian dynasty"
-   },
-   {
     "q": "Q159369",
     "name": "Arcadius",
     "from": 395,
     "to": 408,
     "article": "Arcadius",
+    "dynasty": "Theodosian dynasty"
+   },
+   {
+    "q": "Q232981",
+    "name": "Aelia Eudoxia",
+    "from": 395,
+    "to": 404,
+    "article": "Aelia Eudoxia",
     "dynasty": "Theodosian dynasty"
    },
    {
@@ -7164,19 +7164,19 @@
     "dynasty": "Theodosian dynasty"
    },
    {
-    "q": "Q231919",
-    "name": "Pulcheria",
-    "from": 450,
-    "to": 453,
-    "article": "Pulcheria",
-    "dynasty": "Theodosian dynasty"
-   },
-   {
     "q": "Q178004",
     "name": "Marcian",
     "from": 450,
     "to": 457,
     "article": "Marcian",
+    "dynasty": "Theodosian dynasty"
+   },
+   {
+    "q": "Q231919",
+    "name": "Pulcheria",
+    "from": 450,
+    "to": 453,
+    "article": "Pulcheria",
     "dynasty": "Theodosian dynasty"
    },
    {
@@ -7204,14 +7204,6 @@
     "dynasty": "House of Leo"
    },
    {
-    "q": "Q191707",
-    "name": "Leo II",
-    "from": 474,
-    "to": 474,
-    "article": "Leo II (emperor)",
-    "dynasty": "House of Leo"
-   },
-   {
     "q": "Q183452",
     "name": "Zeno",
     "from": 474,
@@ -7220,11 +7212,11 @@
     "dynasty": "House of Leo"
    },
    {
-    "q": "Q193056",
-    "name": "Basiliscus",
-    "from": 475,
-    "to": 476,
-    "article": "Basiliscus",
+    "q": "Q191707",
+    "name": "Leo II",
+    "from": 474,
+    "to": 474,
+    "article": "Leo II (emperor)",
     "dynasty": "House of Leo"
    },
    {
@@ -7233,6 +7225,14 @@
     "from": 475,
     "to": 476,
     "article": "Zenonis",
+    "dynasty": "House of Leo"
+   },
+   {
+    "q": "Q193056",
+    "name": "Basiliscus",
+    "from": 475,
+    "to": 476,
+    "article": "Basiliscus",
     "dynasty": "House of Leo"
    },
    {
@@ -7540,19 +7540,19 @@
     "dynasty": null
    },
    {
-    "q": "Q4766775",
-    "name": "Anna, wife of Artabasdos",
-    "from": 741,
-    "to": 743,
-    "article": "Anna (wife of Artabasdos)",
-    "dynasty": "Isaurian dynasty"
-   },
-   {
     "q": "Q41635",
     "name": "Konstantinos V",
     "from": 741,
     "to": 775,
     "article": "Constantine V",
+    "dynasty": "Isaurian dynasty"
+   },
+   {
+    "q": "Q4766775",
+    "name": "Anna, wife of Artabasdos",
+    "from": 741,
+    "to": 743,
+    "article": "Anna (wife of Artabasdos)",
     "dynasty": "Isaurian dynasty"
    },
    {
@@ -7596,14 +7596,6 @@
     "dynasty": null
    },
    {
-    "q": "Q206737",
-    "name": "Irene of Athens",
-    "from": 797,
-    "to": 802,
-    "article": "Irene of Athens",
-    "dynasty": "Isaurian dynasty"
-   },
-   {
     "q": "Q2883232",
     "name": "Theodote",
     "from": 797,
@@ -7612,19 +7604,19 @@
     "dynasty": null
    },
    {
+    "q": "Q206737",
+    "name": "Irene of Athens",
+    "from": 797,
+    "to": 802,
+    "article": "Irene of Athens",
+    "dynasty": "Isaurian dynasty"
+   },
+   {
     "q": "Q208754",
     "name": "Nikephoros I",
     "from": 802,
     "to": 811,
     "article": "Nikephoros I",
-    "dynasty": "Nikephorian dynasty"
-   },
-   {
-    "q": "Q237587",
-    "name": "Stauracius",
-    "from": 811,
-    "to": 811,
-    "article": "Staurakios",
     "dynasty": "Nikephorian dynasty"
    },
    {
@@ -7649,6 +7641,14 @@
     "from": 811,
     "to": 813,
     "article": "Michael I Rangabe",
+    "dynasty": "Nikephorian dynasty"
+   },
+   {
+    "q": "Q237587",
+    "name": "Stauracius",
+    "from": 811,
+    "to": 811,
+    "article": "Staurakios",
     "dynasty": "Nikephorian dynasty"
    },
    {
@@ -8490,19 +8490,19 @@
     "dynasty": "Clan Xiao of Lanling"
    },
    {
-    "q": "Q1149114",
-    "name": "Emperor Yuan of Liang",
-    "from": 552,
-    "to": 555,
-    "article": "Emperor Yuan of Liang",
-    "dynasty": "Clan Xiao of Lanling"
-   },
-   {
     "q": "Q837912",
     "name": "Xiao Ji",
     "from": 552,
     "to": 553,
     "article": "Xiao Ji",
+    "dynasty": "Clan Xiao of Lanling"
+   },
+   {
+    "q": "Q1149114",
+    "name": "Emperor Yuan of Liang",
+    "from": 552,
+    "to": 555,
+    "article": "Emperor Yuan of Liang",
     "dynasty": "Clan Xiao of Lanling"
    },
    {
@@ -9108,19 +9108,19 @@
     "dynasty": null
    },
    {
-    "q": "Q334770",
-    "name": "Reccared II",
-    "from": 621,
-    "to": 621,
-    "article": "Reccared II",
-    "dynasty": null
-   },
-   {
     "q": "Q312913",
     "name": "Suintila",
     "from": 621,
     "to": 631,
     "article": "Suintila",
+    "dynasty": null
+   },
+   {
+    "q": "Q334770",
+    "name": "Reccared II",
+    "from": 621,
+    "to": 621,
+    "article": "Reccared II",
     "dynasty": null
    },
    {
@@ -9204,19 +9204,19 @@
     "dynasty": null
    },
    {
-    "q": "Q243573",
-    "name": "Roderic",
-    "from": 710,
-    "to": 711,
-    "article": "Roderic",
-    "dynasty": null
-   },
-   {
     "q": "Q393730",
     "name": "Achila II",
     "from": 710,
     "to": 713,
     "article": "Achila II",
+    "dynasty": null
+   },
+   {
+    "q": "Q243573",
+    "name": "Roderic",
+    "from": 710,
+    "to": 711,
+    "article": "Roderic",
     "dynasty": null
    },
    {
@@ -9307,19 +9307,19 @@
     "dynasty": "Merovingian dynasty"
    },
    {
-    "q": "Q309909",
-    "name": "Childeric II",
-    "from": 673,
-    "to": 675,
-    "article": "Childeric II",
-    "dynasty": "Merovingian dynasty"
-   },
-   {
     "q": "Q295175",
     "name": "Theuderic III",
     "from": 673,
     "to": 673,
     "article": "Theuderic III",
+    "dynasty": "Merovingian dynasty"
+   },
+   {
+    "q": "Q309909",
+    "name": "Childeric II",
+    "from": 673,
+    "to": 675,
+    "article": "Childeric II",
     "dynasty": "Merovingian dynasty"
    },
    {
@@ -9419,19 +9419,19 @@
     "dynasty": "Carolingian dynasty"
    },
    {
-    "q": "Q191003",
-    "name": "Carloman I",
-    "from": 768,
-    "to": 771,
-    "article": "Carloman I",
-    "dynasty": "Carolingian dynasty"
-   },
-   {
     "q": "Q3044",
     "name": "Charlemagne",
     "from": 768,
     "to": 814,
     "article": "Charlemagne",
+    "dynasty": "Carolingian dynasty"
+   },
+   {
+    "q": "Q191003",
+    "name": "Carloman I",
+    "from": 768,
+    "to": 771,
+    "article": "Carloman I",
     "dynasty": "Carolingian dynasty"
    },
    {
@@ -9586,19 +9586,19 @@
     "dynasty": "Merovingian dynasty"
    },
    {
-    "q": "Q309909",
-    "name": "Childeric II",
-    "from": 673,
-    "to": 675,
-    "article": "Childeric II",
-    "dynasty": "Merovingian dynasty"
-   },
-   {
     "q": "Q295175",
     "name": "Theuderic III",
     "from": 673,
     "to": 673,
     "article": "Theuderic III",
+    "dynasty": "Merovingian dynasty"
+   },
+   {
+    "q": "Q309909",
+    "name": "Childeric II",
+    "from": 673,
+    "to": 675,
+    "article": "Childeric II",
     "dynasty": "Merovingian dynasty"
    },
    {
@@ -9698,19 +9698,19 @@
     "dynasty": "Carolingian dynasty"
    },
    {
-    "q": "Q191003",
-    "name": "Carloman I",
-    "from": 768,
-    "to": 771,
-    "article": "Carloman I",
-    "dynasty": "Carolingian dynasty"
-   },
-   {
     "q": "Q3044",
     "name": "Charlemagne",
     "from": 768,
     "to": 814,
     "article": "Charlemagne",
+    "dynasty": "Carolingian dynasty"
+   },
+   {
+    "q": "Q191003",
+    "name": "Carloman I",
+    "from": 768,
+    "to": 771,
+    "article": "Carloman I",
     "dynasty": "Carolingian dynasty"
    },
    {
@@ -9865,19 +9865,19 @@
     "dynasty": "Merovingian dynasty"
    },
    {
-    "q": "Q309909",
-    "name": "Childeric II",
-    "from": 673,
-    "to": 675,
-    "article": "Childeric II",
-    "dynasty": "Merovingian dynasty"
-   },
-   {
     "q": "Q295175",
     "name": "Theuderic III",
     "from": 673,
     "to": 673,
     "article": "Theuderic III",
+    "dynasty": "Merovingian dynasty"
+   },
+   {
+    "q": "Q309909",
+    "name": "Childeric II",
+    "from": 673,
+    "to": 675,
+    "article": "Childeric II",
     "dynasty": "Merovingian dynasty"
    },
    {
@@ -9977,19 +9977,19 @@
     "dynasty": "Carolingian dynasty"
    },
    {
-    "q": "Q191003",
-    "name": "Carloman I",
-    "from": 768,
-    "to": 771,
-    "article": "Carloman I",
-    "dynasty": "Carolingian dynasty"
-   },
-   {
     "q": "Q3044",
     "name": "Charlemagne",
     "from": 768,
     "to": 814,
     "article": "Charlemagne",
+    "dynasty": "Carolingian dynasty"
+   },
+   {
+    "q": "Q191003",
+    "name": "Carloman I",
+    "from": 768,
+    "to": 771,
+    "article": "Carloman I",
     "dynasty": "Carolingian dynasty"
    },
    {
@@ -10104,19 +10104,19 @@
     "dynasty": "Clan Xiao of Lanling"
    },
    {
-    "q": "Q1149132",
-    "name": "Emperor Ming of Southern Qi",
-    "from": 494,
-    "to": 498,
-    "article": "Emperor Ming of Southern Qi",
-    "dynasty": "Clan Xiao of Lanling"
-   },
-   {
     "q": "Q1190405",
     "name": "Xiao Zhaowen",
     "from": 494,
     "to": 494,
     "article": "Xiao Zhaowen",
+    "dynasty": "Clan Xiao of Lanling"
+   },
+   {
+    "q": "Q1149132",
+    "name": "Emperor Ming of Southern Qi",
+    "from": 494,
+    "to": 498,
+    "article": "Emperor Ming of Southern Qi",
     "dynasty": "Clan Xiao of Lanling"
    },
    {
@@ -10350,19 +10350,19 @@
     "dynasty": "Clan Xiao of Lanling"
    },
    {
-    "q": "Q1149114",
-    "name": "Emperor Yuan of Liang",
-    "from": 552,
-    "to": 555,
-    "article": "Emperor Yuan of Liang",
-    "dynasty": "Clan Xiao of Lanling"
-   },
-   {
     "q": "Q837912",
     "name": "Xiao Ji",
     "from": 552,
     "to": 553,
     "article": "Xiao Ji",
+    "dynasty": "Clan Xiao of Lanling"
+   },
+   {
+    "q": "Q1149114",
+    "name": "Emperor Yuan of Liang",
+    "from": 552,
+    "to": 555,
+    "article": "Emperor Yuan of Liang",
     "dynasty": "Clan Xiao of Lanling"
    },
    {
@@ -11694,19 +11694,19 @@
     "dynasty": "House of Wessex"
    },
    {
-    "q": "Q19870616",
-    "name": "Airdeconut",
-    "from": 900,
-    "to": 902,
-    "article": "Airdeconut",
-    "dynasty": null
-   },
-   {
     "q": "Q3198086",
     "name": "Cnut of Northumbria",
     "from": 900,
     "to": 905,
     "article": "Cnut of Northumbria",
+    "dynasty": null
+   },
+   {
+    "q": "Q19870616",
+    "name": "Airdeconut",
+    "from": 900,
+    "to": 902,
+    "article": "Airdeconut",
     "dynasty": null
    },
    {
@@ -12106,19 +12106,19 @@
     "dynasty": "Valentinianic dynasty"
    },
    {
-    "q": "Q232981",
-    "name": "Aelia Eudoxia",
-    "from": 395,
-    "to": 404,
-    "article": "Aelia Eudoxia",
-    "dynasty": "Theodosian dynasty"
-   },
-   {
     "q": "Q159369",
     "name": "Arcadius",
     "from": 395,
     "to": 408,
     "article": "Arcadius",
+    "dynasty": "Theodosian dynasty"
+   },
+   {
+    "q": "Q232981",
+    "name": "Aelia Eudoxia",
+    "from": 395,
+    "to": 404,
+    "article": "Aelia Eudoxia",
     "dynasty": "Theodosian dynasty"
    },
    {
@@ -12138,19 +12138,19 @@
     "dynasty": "Theodosian dynasty"
    },
    {
-    "q": "Q231919",
-    "name": "Pulcheria",
-    "from": 450,
-    "to": 453,
-    "article": "Pulcheria",
-    "dynasty": "Theodosian dynasty"
-   },
-   {
     "q": "Q178004",
     "name": "Marcian",
     "from": 450,
     "to": 457,
     "article": "Marcian",
+    "dynasty": "Theodosian dynasty"
+   },
+   {
+    "q": "Q231919",
+    "name": "Pulcheria",
+    "from": 450,
+    "to": 453,
+    "article": "Pulcheria",
     "dynasty": "Theodosian dynasty"
    },
    {
@@ -12178,14 +12178,6 @@
     "dynasty": "House of Leo"
    },
    {
-    "q": "Q191707",
-    "name": "Leo II",
-    "from": 474,
-    "to": 474,
-    "article": "Leo II (emperor)",
-    "dynasty": "House of Leo"
-   },
-   {
     "q": "Q183452",
     "name": "Zeno",
     "from": 474,
@@ -12194,11 +12186,11 @@
     "dynasty": "House of Leo"
    },
    {
-    "q": "Q193056",
-    "name": "Basiliscus",
-    "from": 475,
-    "to": 476,
-    "article": "Basiliscus",
+    "q": "Q191707",
+    "name": "Leo II",
+    "from": 474,
+    "to": 474,
+    "article": "Leo II (emperor)",
     "dynasty": "House of Leo"
    },
    {
@@ -12207,6 +12199,14 @@
     "from": 475,
     "to": 476,
     "article": "Zenonis",
+    "dynasty": "House of Leo"
+   },
+   {
+    "q": "Q193056",
+    "name": "Basiliscus",
+    "from": 475,
+    "to": 476,
+    "article": "Basiliscus",
     "dynasty": "House of Leo"
    },
    {
@@ -12514,19 +12514,19 @@
     "dynasty": null
    },
    {
-    "q": "Q4766775",
-    "name": "Anna, wife of Artabasdos",
-    "from": 741,
-    "to": 743,
-    "article": "Anna (wife of Artabasdos)",
-    "dynasty": "Isaurian dynasty"
-   },
-   {
     "q": "Q41635",
     "name": "Konstantinos V",
     "from": 741,
     "to": 775,
     "article": "Constantine V",
+    "dynasty": "Isaurian dynasty"
+   },
+   {
+    "q": "Q4766775",
+    "name": "Anna, wife of Artabasdos",
+    "from": 741,
+    "to": 743,
+    "article": "Anna (wife of Artabasdos)",
     "dynasty": "Isaurian dynasty"
    },
    {
@@ -12570,14 +12570,6 @@
     "dynasty": null
    },
    {
-    "q": "Q206737",
-    "name": "Irene of Athens",
-    "from": 797,
-    "to": 802,
-    "article": "Irene of Athens",
-    "dynasty": "Isaurian dynasty"
-   },
-   {
     "q": "Q2883232",
     "name": "Theodote",
     "from": 797,
@@ -12586,19 +12578,19 @@
     "dynasty": null
    },
    {
+    "q": "Q206737",
+    "name": "Irene of Athens",
+    "from": 797,
+    "to": 802,
+    "article": "Irene of Athens",
+    "dynasty": "Isaurian dynasty"
+   },
+   {
     "q": "Q208754",
     "name": "Nikephoros I",
     "from": 802,
     "to": 811,
     "article": "Nikephoros I",
-    "dynasty": "Nikephorian dynasty"
-   },
-   {
-    "q": "Q237587",
-    "name": "Stauracius",
-    "from": 811,
-    "to": 811,
-    "article": "Staurakios",
     "dynasty": "Nikephorian dynasty"
    },
    {
@@ -12623,6 +12615,14 @@
     "from": 811,
     "to": 813,
     "article": "Michael I Rangabe",
+    "dynasty": "Nikephorian dynasty"
+   },
+   {
+    "q": "Q237587",
+    "name": "Stauracius",
+    "from": 811,
+    "to": 811,
+    "article": "Staurakios",
     "dynasty": "Nikephorian dynasty"
    },
    {
@@ -13413,7 +13413,7 @@
     "name": "Narai I",
     "from": 1080,
     "to": 1087,
-    "article": "Narai I",
+    "article": null,
     "dynasty": null
    },
    {
@@ -13421,7 +13421,7 @@
     "name": "Phra Chao Luang",
     "from": 1089,
     "to": 1111,
-    "article": "Phra Chao Luang",
+    "article": null,
     "dynasty": null
    },
    {
@@ -13429,7 +13429,7 @@
     "name": "Sai Nam Peung",
     "from": 1111,
     "to": 1165,
-    "article": "Sai Nam Peung",
+    "article": null,
     "dynasty": null
    },
    {
@@ -13437,7 +13437,7 @@
     "name": "Dhammikaraja",
     "from": 1165,
     "to": 1225,
-    "article": "Dhammikaraja",
+    "article": null,
     "dynasty": null
    },
    {
@@ -13445,7 +13445,7 @@
     "name": "Uthong II",
     "from": 1205,
     "to": 1253,
-    "article": "Uthong II",
+    "article": null,
     "dynasty": null
    },
    {
@@ -13453,7 +13453,7 @@
     "name": "Suvarnaraja",
     "from": 1289,
     "to": 1301,
-    "article": "Suvarnaraja",
+    "article": null,
     "dynasty": null
    },
    {
@@ -13461,7 +13461,7 @@
     "name": "Dhammaraja",
     "from": 1301,
     "to": 1310,
-    "article": "Dhammaraja",
+    "article": null,
     "dynasty": null
    },
    {
@@ -13469,7 +13469,7 @@
     "name": "Baramaraja",
     "from": 1310,
     "to": 1344,
-    "article": "Baramaraja",
+    "article": null,
     "dynasty": null
    },
    {
@@ -13584,6 +13584,14 @@
     "dynasty": "Umayyad dynasty"
    },
    {
+    "q": "Q128416",
+    "name": "Ibrahim ibn al-Walid",
+    "from": 744,
+    "to": 744,
+    "article": "Ibrahim ibn al-Walid",
+    "dynasty": "Umayyad dynasty"
+   },
+   {
     "q": "Q128371",
     "name": "Marwan II",
     "from": 744,
@@ -13597,14 +13605,6 @@
     "from": 744,
     "to": 744,
     "article": "Yazid III",
-    "dynasty": "Umayyad dynasty"
-   },
-   {
-    "q": "Q128416",
-    "name": "Ibrahim ibn al-Walid",
-    "from": 744,
-    "to": 744,
-    "article": "Ibrahim ibn al-Walid",
     "dynasty": "Umayyad dynasty"
    }
   ]
@@ -14198,20 +14198,20 @@
     "dynasty": null
    },
    {
-    "q": "Q605625",
-    "name": "Antonio Venier",
-    "from": 1382,
-    "to": 1400,
-    "article": "Antonio Venier",
-    "dynasty": null
-   },
-   {
     "q": "Q1931114",
     "name": "Michele Morosini",
     "from": 1382,
     "to": 1382,
     "article": "Michele Morosini",
     "dynasty": "House of Morosini"
+   },
+   {
+    "q": "Q605625",
+    "name": "Antonio Venier",
+    "from": 1382,
+    "to": 1400,
+    "article": "Antonio Venier",
+    "dynasty": null
    },
    {
     "q": "Q541090",
@@ -14462,20 +14462,20 @@
     "dynasty": "House of Bembo"
    },
    {
-    "q": "Q604434",
-    "name": "Antonio Priuli",
-    "from": 1618,
-    "to": 1623,
-    "article": "Antonio Priuli (doge)",
-    "dynasty": "Priuli"
-   },
-   {
     "q": "Q633501",
     "name": "Nicolò Donato",
     "from": 1618,
     "to": 1618,
     "article": "Nicolò Donato",
     "dynasty": "House of Donà della Trezza"
+   },
+   {
+    "q": "Q604434",
+    "name": "Antonio Priuli",
+    "from": 1618,
+    "to": 1623,
+    "article": "Antonio Priuli (doge)",
+    "dynasty": "Priuli"
    },
    {
     "q": "Q185348",
@@ -14526,20 +14526,20 @@
     "dynasty": "Contarini"
    },
    {
-    "q": "Q647104",
-    "name": "Bertuccio Valiero",
-    "from": 1656,
-    "to": 1658,
-    "article": "Bertuccio Valier",
-    "dynasty": "Valier"
-   },
-   {
     "q": "Q1150113",
     "name": "Francesco Cornaro",
     "from": 1656,
     "to": 1656,
     "article": "Francesco Cornaro (doge)",
     "dynasty": "House of Cornaro"
+   },
+   {
+    "q": "Q647104",
+    "name": "Bertuccio Valiero",
+    "from": 1656,
+    "to": 1658,
+    "article": "Bertuccio Valier",
+    "dynasty": "Valier"
    },
    {
     "q": "Q645781",
@@ -14773,19 +14773,19 @@
     "dynasty": "Merovingian dynasty"
    },
    {
-    "q": "Q309909",
-    "name": "Childeric II",
-    "from": 673,
-    "to": 675,
-    "article": "Childeric II",
-    "dynasty": "Merovingian dynasty"
-   },
-   {
     "q": "Q295175",
     "name": "Theuderic III",
     "from": 673,
     "to": 673,
     "article": "Theuderic III",
+    "dynasty": "Merovingian dynasty"
+   },
+   {
+    "q": "Q309909",
+    "name": "Childeric II",
+    "from": 673,
+    "to": 675,
+    "article": "Childeric II",
     "dynasty": "Merovingian dynasty"
    },
    {
@@ -14885,19 +14885,19 @@
     "dynasty": "Carolingian dynasty"
    },
    {
-    "q": "Q191003",
-    "name": "Carloman I",
-    "from": 768,
-    "to": 771,
-    "article": "Carloman I",
-    "dynasty": "Carolingian dynasty"
-   },
-   {
     "q": "Q3044",
     "name": "Charlemagne",
     "from": 768,
     "to": 814,
     "article": "Charlemagne",
+    "dynasty": "Carolingian dynasty"
+   },
+   {
+    "q": "Q191003",
+    "name": "Carloman I",
+    "from": 768,
+    "to": 771,
+    "article": "Carloman I",
     "dynasty": "Carolingian dynasty"
    },
    {
@@ -15052,19 +15052,19 @@
     "dynasty": "Merovingian dynasty"
    },
    {
-    "q": "Q309909",
-    "name": "Childeric II",
-    "from": 673,
-    "to": 675,
-    "article": "Childeric II",
-    "dynasty": "Merovingian dynasty"
-   },
-   {
     "q": "Q295175",
     "name": "Theuderic III",
     "from": 673,
     "to": 673,
     "article": "Theuderic III",
+    "dynasty": "Merovingian dynasty"
+   },
+   {
+    "q": "Q309909",
+    "name": "Childeric II",
+    "from": 673,
+    "to": 675,
+    "article": "Childeric II",
     "dynasty": "Merovingian dynasty"
    },
    {
@@ -15164,19 +15164,19 @@
     "dynasty": "Carolingian dynasty"
    },
    {
-    "q": "Q191003",
-    "name": "Carloman I",
-    "from": 768,
-    "to": 771,
-    "article": "Carloman I",
-    "dynasty": "Carolingian dynasty"
-   },
-   {
     "q": "Q3044",
     "name": "Charlemagne",
     "from": 768,
     "to": 814,
     "article": "Charlemagne",
+    "dynasty": "Carolingian dynasty"
+   },
+   {
+    "q": "Q191003",
+    "name": "Carloman I",
+    "from": 768,
+    "to": 771,
+    "article": "Carloman I",
     "dynasty": "Carolingian dynasty"
    },
    {
@@ -15331,19 +15331,19 @@
     "dynasty": "Merovingian dynasty"
    },
    {
-    "q": "Q309909",
-    "name": "Childeric II",
-    "from": 673,
-    "to": 675,
-    "article": "Childeric II",
-    "dynasty": "Merovingian dynasty"
-   },
-   {
     "q": "Q295175",
     "name": "Theuderic III",
     "from": 673,
     "to": 673,
     "article": "Theuderic III",
+    "dynasty": "Merovingian dynasty"
+   },
+   {
+    "q": "Q309909",
+    "name": "Childeric II",
+    "from": 673,
+    "to": 675,
+    "article": "Childeric II",
     "dynasty": "Merovingian dynasty"
    },
    {
@@ -15443,19 +15443,19 @@
     "dynasty": "Carolingian dynasty"
    },
    {
-    "q": "Q191003",
-    "name": "Carloman I",
-    "from": 768,
-    "to": 771,
-    "article": "Carloman I",
-    "dynasty": "Carolingian dynasty"
-   },
-   {
     "q": "Q3044",
     "name": "Charlemagne",
     "from": 768,
     "to": 814,
     "article": "Charlemagne",
+    "dynasty": "Carolingian dynasty"
+   },
+   {
+    "q": "Q191003",
+    "name": "Carloman I",
+    "from": 768,
+    "to": 771,
+    "article": "Carloman I",
     "dynasty": "Carolingian dynasty"
    },
    {
@@ -16295,7 +16295,7 @@
     "name": "Ali ibn Muhammad",
     "from": 836,
     "to": 848,
-    "article": "Ali ibn Muhammad",
+    "article": "Ali ibn Muhammad bin Idris",
     "dynasty": "Idrisid dynasty"
    },
    {
@@ -16553,20 +16553,20 @@
     "dynasty": "royal house of Aragon"
    },
    {
-    "q": "Q236889",
-    "name": "Leonor I of Navarre",
-    "from": 1479,
-    "to": 1479,
-    "article": "Eleanor of Navarre",
-    "dynasty": "House of Trastámara"
-   },
-   {
     "q": "Q363572",
     "name": "Francis Phoebus of Navarre",
     "from": 1479,
     "to": 1483,
     "article": "Francis Phoebus",
     "dynasty": "House of Grailly"
+   },
+   {
+    "q": "Q236889",
+    "name": "Leonor I of Navarre",
+    "from": 1479,
+    "to": 1479,
+    "article": "Eleanor of Navarre",
+    "dynasty": "House of Trastámara"
    },
    {
     "q": "Q236896",
@@ -17059,19 +17059,19 @@
     "dynasty": "Carolingian dynasty"
    },
    {
-    "q": "Q193112",
-    "name": "Louis III of France",
-    "from": 879,
-    "to": 882,
-    "article": "Louis III of France",
-    "dynasty": "Carolingian dynasty"
-   },
-   {
     "q": "Q192846",
     "name": "Carloman II of France",
     "from": 879,
     "to": 884,
     "article": "Carloman II",
+    "dynasty": "Carolingian dynasty"
+   },
+   {
+    "q": "Q193112",
+    "name": "Louis III of France",
+    "from": 879,
+    "to": 882,
+    "article": "Louis III of France",
     "dynasty": "Carolingian dynasty"
    },
    {
@@ -17305,19 +17305,19 @@
     "dynasty": "Kalbids"
    },
    {
-    "q": "Q13195326",
-    "name": "Abd Allah ibn Muhammad",
-    "from": 986,
-    "to": 986,
-    "article": null,
-    "dynasty": "Kalbids"
-   },
-   {
     "q": "Q13195336",
     "name": "Yusuf al-Kalbi",
     "from": 986,
     "to": 998,
     "article": "Thiqat al-Dawla",
+    "dynasty": "Kalbids"
+   },
+   {
+    "q": "Q13195326",
+    "name": "Abd Allah ibn Muhammad",
+    "from": 986,
+    "to": 986,
+    "article": null,
     "dynasty": "Kalbids"
    },
    {
@@ -18802,20 +18802,20 @@
     "dynasty": null
    },
    {
-    "q": "Q796443",
-    "name": "Sunyer I de Pallars",
-    "from": 948,
-    "to": 995,
-    "article": "Sunyer I of Pallars",
-    "dynasty": "Casal de Pallars"
-   },
-   {
     "q": "Q5483414",
     "name": "Borrell I de Pallars",
     "from": 948,
     "to": 995,
     "article": "Borrell I of Pallars",
     "dynasty": null
+   },
+   {
+    "q": "Q796443",
+    "name": "Sunyer I de Pallars",
+    "from": 948,
+    "to": 995,
+    "article": "Sunyer I of Pallars",
+    "dynasty": "Casal de Pallars"
    },
    {
     "q": "Q4389778",
@@ -21048,20 +21048,20 @@
     "dynasty": "House of Wessex"
    },
    {
-    "q": "Q134128",
-    "name": "Cnut the Great",
-    "from": 1016,
-    "to": 1035,
-    "article": "Cnut",
-    "dynasty": "House of Knýtlinga"
-   },
-   {
     "q": "Q188684",
     "name": "Edmund II of England",
     "from": 1016,
     "to": 1016,
     "article": "Edmund Ironside",
     "dynasty": "House of Wessex"
+   },
+   {
+    "q": "Q134128",
+    "name": "Cnut the Great",
+    "from": 1016,
+    "to": 1035,
+    "article": "Cnut",
+    "dynasty": "House of Knýtlinga"
    },
    {
     "q": "Q188627",
@@ -21288,19 +21288,19 @@
     "dynasty": "House of York"
    },
    {
-    "q": "Q133028",
-    "name": "Richard III of England",
-    "from": 1483,
-    "to": 1485,
-    "article": "Richard III of England",
-    "dynasty": "House of York"
-   },
-   {
     "q": "Q170470",
     "name": "Edward V of England",
     "from": 1483,
     "to": 1483,
     "article": "Edward V",
+    "dynasty": "House of York"
+   },
+   {
+    "q": "Q133028",
+    "name": "Richard III of England",
+    "from": 1483,
+    "to": 1485,
+    "article": "Richard III of England",
     "dynasty": "House of York"
    },
    {
@@ -21392,20 +21392,20 @@
     "dynasty": "House of Stewart di Darnley"
    },
    {
-    "q": "Q130812",
-    "name": "Mary II of England",
-    "from": 1689,
-    "to": 1694,
-    "article": "Mary II",
-    "dynasty": "House of Stewart di Darnley"
-   },
-   {
     "q": "Q129987",
     "name": "William III of England",
     "from": 1689,
     "to": 1694,
     "article": "William III of England",
     "dynasty": "House of Orange-Nassau"
+   },
+   {
+    "q": "Q130812",
+    "name": "Mary II of England",
+    "from": 1689,
+    "to": 1694,
+    "article": "Mary II",
+    "dynasty": "House of Stewart di Darnley"
    },
    {
     "q": "Q129987",
@@ -21519,20 +21519,20 @@
     "dynasty": "House of Wessex"
    },
    {
-    "q": "Q134128",
-    "name": "Cnut the Great",
-    "from": 1016,
-    "to": 1035,
-    "article": "Cnut",
-    "dynasty": "House of Knýtlinga"
-   },
-   {
     "q": "Q188684",
     "name": "Edmund II of England",
     "from": 1016,
     "to": 1016,
     "article": "Edmund Ironside",
     "dynasty": "House of Wessex"
+   },
+   {
+    "q": "Q134128",
+    "name": "Cnut the Great",
+    "from": 1016,
+    "to": 1035,
+    "article": "Cnut",
+    "dynasty": "House of Knýtlinga"
    },
    {
     "q": "Q188627",
@@ -21759,19 +21759,19 @@
     "dynasty": "House of York"
    },
    {
-    "q": "Q133028",
-    "name": "Richard III of England",
-    "from": 1483,
-    "to": 1485,
-    "article": "Richard III of England",
-    "dynasty": "House of York"
-   },
-   {
     "q": "Q170470",
     "name": "Edward V of England",
     "from": 1483,
     "to": 1483,
     "article": "Edward V",
+    "dynasty": "House of York"
+   },
+   {
+    "q": "Q133028",
+    "name": "Richard III of England",
+    "from": 1483,
+    "to": 1485,
+    "article": "Richard III of England",
     "dynasty": "House of York"
    },
    {
@@ -21863,20 +21863,20 @@
     "dynasty": "House of Stewart di Darnley"
    },
    {
-    "q": "Q130812",
-    "name": "Mary II of England",
-    "from": 1689,
-    "to": 1694,
-    "article": "Mary II",
-    "dynasty": "House of Stewart di Darnley"
-   },
-   {
     "q": "Q129987",
     "name": "William III of England",
     "from": 1689,
     "to": 1694,
     "article": "William III of England",
     "dynasty": "House of Orange-Nassau"
+   },
+   {
+    "q": "Q130812",
+    "name": "Mary II of England",
+    "from": 1689,
+    "to": 1694,
+    "article": "Mary II",
+    "dynasty": "House of Stewart di Darnley"
    },
    {
     "q": "Q129987",
@@ -24014,19 +24014,19 @@
     "dynasty": null
    },
    {
-    "q": "Q10900291",
-    "name": "Liu Ji'en",
-    "from": 968,
-    "to": 968,
-    "article": "Liu Ji'en",
-    "dynasty": null
-   },
-   {
     "q": "Q842954",
     "name": "Liu Jiyuan",
     "from": 968,
     "to": 979,
     "article": "Liu Jiyuan",
+    "dynasty": null
+   },
+   {
+    "q": "Q10900291",
+    "name": "Liu Ji'en",
+    "from": 968,
+    "to": 968,
+    "article": "Liu Ji'en",
     "dynasty": null
    }
   ]
@@ -25138,20 +25138,20 @@
     "dynasty": null
    },
    {
-    "q": "Q958817",
-    "name": "Eric Trolle",
-    "from": 1512,
-    "to": 1512,
-    "article": "Erik Trolle",
-    "dynasty": "Trolle"
-   },
-   {
     "q": "Q541674",
     "name": "Sten Sture the Younger",
     "from": 1512,
     "to": 1520,
     "article": "Sten Sture the Younger",
     "dynasty": null
+   },
+   {
+    "q": "Q958817",
+    "name": "Eric Trolle",
+    "from": 1512,
+    "to": 1512,
+    "article": "Erik Trolle",
+    "dynasty": "Trolle"
    },
    {
     "q": "Q154460",
@@ -25734,20 +25734,20 @@
     "dynasty": null
    },
    {
-    "q": "Q829350",
-    "name": "Bera",
-    "from": 820,
-    "to": 820,
-    "article": "Bera, Count of Barcelona",
-    "dynasty": "Guilhelmids"
-   },
-   {
     "q": "Q1397550",
     "name": "Rampon, Count of Barcelona",
     "from": 820,
     "to": 825,
     "article": "Rampon, Count of Barcelona",
     "dynasty": null
+   },
+   {
+    "q": "Q829350",
+    "name": "Bera",
+    "from": 820,
+    "to": 820,
+    "article": "Bera, Count of Barcelona",
+    "dynasty": "Guilhelmids"
    },
    {
     "q": "Q826380",
@@ -27135,14 +27135,6 @@
     "dynasty": "House of Montaldo"
    },
    {
-    "q": "Q3620406",
-    "name": "Antoniotto di Montaldo",
-    "from": 1393,
-    "to": 1394,
-    "article": "Antoniotto di Montaldo",
-    "dynasty": "House of Montaldo"
-   },
-   {
     "q": "Q3680478",
     "name": "Clemente Promontorio",
     "from": 1393,
@@ -27167,6 +27159,22 @@
     "dynasty": "Fregoso"
    },
    {
+    "q": "Q3620406",
+    "name": "Antoniotto di Montaldo",
+    "from": 1393,
+    "to": 1394,
+    "article": "Antoniotto di Montaldo",
+    "dynasty": "House of Montaldo"
+   },
+   {
+    "q": "Q3619693",
+    "name": "Antonio Guarco",
+    "from": 1394,
+    "to": 1394,
+    "article": "Antonio Guarco",
+    "dynasty": "House of Guarco"
+   },
+   {
     "q": "Q3876596",
     "name": "Niccolo Zoagli",
     "from": 1394,
@@ -27181,14 +27189,6 @@
     "to": 1396,
     "article": "Antoniotto I Adorno",
     "dynasty": "Adorno family"
-   },
-   {
-    "q": "Q3619693",
-    "name": "Antonio Guarco",
-    "from": 1394,
-    "to": 1394,
-    "article": "Antonio Guarco",
-    "dynasty": "House of Guarco"
    },
    {
     "q": "Q3765242",
@@ -27255,20 +27255,20 @@
     "dynasty": "Adorno family"
    },
    {
-    "q": "Q3635049",
-    "name": "Barnaba Adorno",
-    "from": 1447,
-    "to": 1447,
-    "article": "Barnaba Adorno",
-    "dynasty": "Adorno family"
-   },
-   {
     "q": "Q3763713",
     "name": "Giano Fregoso",
     "from": 1447,
     "to": 1448,
     "article": "Giano I di Campofregoso",
     "dynasty": "Fregoso"
+   },
+   {
+    "q": "Q3635049",
+    "name": "Barnaba Adorno",
+    "from": 1447,
+    "to": 1447,
+    "article": "Barnaba Adorno",
+    "dynasty": "Adorno family"
    },
    {
     "q": "Q3836398",
@@ -27287,12 +27287,12 @@
     "dynasty": "Fregoso"
    },
    {
-    "q": "Q3836398",
-    "name": "Lodovico di Campofregoso",
+    "q": "Q3924122",
+    "name": "Prospero Adorno",
     "from": 1461,
-    "to": 1462,
-    "article": "Lodovico di Campofregoso",
-    "dynasty": "Fregoso"
+    "to": 1461,
+    "article": "Prospero Adorno",
+    "dynasty": "Adorno family"
    },
    {
     "q": "Q3966767",
@@ -27303,18 +27303,10 @@
     "dynasty": "Fregoso"
    },
    {
-    "q": "Q3924122",
-    "name": "Prospero Adorno",
-    "from": 1461,
-    "to": 1461,
-    "article": "Prospero Adorno",
-    "dynasty": "Adorno family"
-   },
-   {
     "q": "Q3836398",
     "name": "Lodovico di Campofregoso",
-    "from": 1462,
-    "to": 1463,
+    "from": 1461,
+    "to": 1462,
     "article": "Lodovico di Campofregoso",
     "dynasty": "Fregoso"
    },
@@ -27324,6 +27316,14 @@
     "from": 1462,
     "to": 1462,
     "article": "Paolo di Campofregoso",
+    "dynasty": "Fregoso"
+   },
+   {
+    "q": "Q3836398",
+    "name": "Lodovico di Campofregoso",
+    "from": 1462,
+    "to": 1463,
+    "article": "Lodovico di Campofregoso",
     "dynasty": "Fregoso"
    },
    {
@@ -27511,20 +27511,20 @@
     "dynasty": "House of Vivaldi"
    },
    {
-    "q": "Q3893755",
-    "name": "Paolo Battista Giudice Calvi",
-    "from": 1561,
-    "to": 1561,
-    "article": "Paolo Battista Giudice Calvi",
-    "dynasty": null
-   },
-   {
     "q": "Q3766627",
     "name": "Giovanni Battista Cicala Zoagli",
     "from": 1561,
     "to": 1563,
     "article": "Giovanni Battista Cicala Zoagli",
     "dynasty": "House of Zoagli"
+   },
+   {
+    "q": "Q3893755",
+    "name": "Paolo Battista Giudice Calvi",
+    "from": 1561,
+    "to": 1561,
+    "article": "Paolo Battista Giudice Calvi",
+    "dynasty": null
    },
    {
     "q": "Q3766684",
@@ -28391,20 +28391,20 @@
     "dynasty": "House of Cambiaso"
    },
    {
-    "q": "Q9258985",
-    "name": "Ferdinando Spinola",
-    "from": 1773,
-    "to": 1773,
-    "article": "Ferdinando Spinola",
-    "dynasty": "House of Spinola"
-   },
-   {
     "q": "Q3902874",
     "name": "Pier Francesco Grimaldi",
     "from": 1773,
     "to": 1775,
     "article": "Pier Francesco Grimaldi",
     "dynasty": "House of Grimaldi"
+   },
+   {
+    "q": "Q9258985",
+    "name": "Ferdinando Spinola",
+    "from": 1773,
+    "to": 1773,
+    "article": "Ferdinando Spinola",
+    "dynasty": "House of Spinola"
    },
    {
     "q": "Q9179444",
@@ -28836,20 +28836,20 @@
     "dynasty": "Seljuk dynasty"
    },
    {
-    "q": "Q1252100",
-    "name": "Mahmud I of Great Seljuk",
-    "from": 1092,
-    "to": 1094,
-    "article": "Mahmud I (Seljuk sultan)",
-    "dynasty": null
-   },
-   {
     "q": "Q387011",
     "name": "Barkiyaruq",
     "from": 1092,
     "to": 1104,
     "article": "Berkyaruq",
     "dynasty": "Seljuk dynasty"
+   },
+   {
+    "q": "Q1252100",
+    "name": "Mahmud I of Great Seljuk",
+    "from": 1092,
+    "to": 1094,
+    "article": "Mahmud I (Seljuk sultan)",
+    "dynasty": null
    },
    {
     "q": "Q1296751",
@@ -28868,19 +28868,19 @@
     "dynasty": "Seljuk dynasty"
    },
    {
-    "q": "Q1658770",
-    "name": "Mahmud II of Great Seljuq",
-    "from": 1118,
-    "to": 1131,
-    "article": "Mahmud II (Seljuk sultan)",
-    "dynasty": "Seljuk dynasty"
-   },
-   {
     "q": "Q337506",
     "name": "Ahmad Sanjar",
     "from": 1118,
     "to": 1157,
     "article": "Ahmad Sanjar",
+    "dynasty": "Seljuk dynasty"
+   },
+   {
+    "q": "Q1658770",
+    "name": "Mahmud II of Great Seljuq",
+    "from": 1118,
+    "to": 1131,
+    "article": "Mahmud II (Seljuk sultan)",
     "dynasty": "Seljuk dynasty"
    },
    {
@@ -30335,20 +30335,20 @@
     "dynasty": "royal house of Aragon"
    },
    {
-    "q": "Q236889",
-    "name": "Leonor I of Navarre",
-    "from": 1479,
-    "to": 1479,
-    "article": "Eleanor of Navarre",
-    "dynasty": "House of Trastámara"
-   },
-   {
     "q": "Q363572",
     "name": "Francis Phoebus of Navarre",
     "from": 1479,
     "to": 1483,
     "article": "Francis Phoebus",
     "dynasty": "House of Grailly"
+   },
+   {
+    "q": "Q236889",
+    "name": "Leonor I of Navarre",
+    "from": 1479,
+    "to": 1479,
+    "article": "Eleanor of Navarre",
+    "dynasty": "House of Trastámara"
    },
    {
     "q": "Q236896",
@@ -30811,19 +30811,19 @@
     "dynasty": "House of Burgundy - Portugal"
    },
    {
-    "q": "Q1058544",
-    "name": "Sancho I of Portugal",
-    "from": 1169,
-    "to": 1185,
-    "article": "Sancho I of Portugal",
-    "dynasty": "House of Burgundy - Portugal"
-   },
-   {
     "q": "Q1703679",
     "name": "Theresa of Portugal",
     "from": 1169,
     "to": 1184,
     "article": "Theresa of Portugal, Countess of Flanders",
+    "dynasty": "House of Burgundy - Portugal"
+   },
+   {
+    "q": "Q1058544",
+    "name": "Sancho I of Portugal",
+    "from": 1169,
+    "to": 1185,
+    "article": "Sancho I of Portugal",
     "dynasty": "House of Burgundy - Portugal"
    },
    {
@@ -31728,19 +31728,19 @@
     "dynasty": "Bahri dynasty"
    },
    {
-    "q": "Q482338",
-    "name": "Shihab ad-Din Ahmad",
-    "from": 1342,
-    "to": 1342,
-    "article": "Al-Nasir Ahmad, Sultan of Egypt",
-    "dynasty": "Bahri dynasty"
-   },
-   {
     "q": "Q280412",
     "name": "Al-Salih Ismail",
     "from": 1342,
     "to": 1345,
     "article": "Al-Salih Ismail, Sultan of Egypt",
+    "dynasty": "Bahri dynasty"
+   },
+   {
+    "q": "Q482338",
+    "name": "Shihab ad-Din Ahmad",
+    "from": 1342,
+    "to": 1342,
+    "article": "Al-Nasir Ahmad, Sultan of Egypt",
     "dynasty": "Bahri dynasty"
    },
    {
@@ -33660,19 +33660,19 @@
     "dynasty": "Mamluk Sultanate"
    },
    {
-    "q": "Q2360374",
-    "name": "Rukn ud din Firuz",
-    "from": 1236,
-    "to": 1236,
-    "article": "Ruknuddin Firuz",
-    "dynasty": "Mamluk Sultanate"
-   },
-   {
     "q": "Q465076",
     "name": "Razia Sultana",
     "from": 1236,
     "to": 1240,
     "article": "Razia Sultan",
+    "dynasty": "Mamluk Sultanate"
+   },
+   {
+    "q": "Q2360374",
+    "name": "Rukn ud din Firuz",
+    "from": 1236,
+    "to": 1236,
+    "article": "Ruknuddin Firuz",
     "dynasty": "Mamluk Sultanate"
    },
    {
@@ -33986,14 +33986,6 @@
     "dynasty": null
    },
    {
-    "q": "Q14919646",
-    "name": "Charles Edmund Wilkinson",
-    "from": 1860,
-    "to": 1860,
-    "article": "Charles Edmund Wilkinson",
-    "dynasty": null
-   },
-   {
     "q": "Q16826323",
     "name": "Charles Justin MacCarthy",
     "from": 1860,
@@ -34007,6 +33999,14 @@
     "from": 1860,
     "to": 1860,
     "article": "Henry Frederick Lockyer",
+    "dynasty": null
+   },
+   {
+    "q": "Q14919646",
+    "name": "Charles Edmund Wilkinson",
+    "from": 1860,
+    "to": 1860,
+    "article": "Charles Edmund Wilkinson",
     "dynasty": null
    },
    {
@@ -34154,19 +34154,19 @@
     "dynasty": null
    },
    {
-    "q": "Q15072961",
-    "name": "William Manning",
-    "from": 1918,
-    "to": 1925,
-    "article": "William Manning (colonial administrator)",
-    "dynasty": null
-   },
-   {
     "q": "Q2607987",
     "name": "Reginald Edward Stubbs",
     "from": 1918,
     "to": 1918,
     "article": "Edward Stubbs",
+    "dynasty": null
+   },
+   {
+    "q": "Q15072961",
+    "name": "William Manning",
+    "from": 1918,
+    "to": 1925,
+    "article": "William Manning (colonial administrator)",
     "dynasty": null
    },
    {
@@ -34226,19 +34226,19 @@
     "dynasty": null
    },
    {
-    "q": "Q16003769",
-    "name": "Francis Graeme Tyrrell",
-    "from": 1933,
-    "to": 1933,
-    "article": "Francis Graeme Tyrrell",
-    "dynasty": null
-   },
-   {
     "q": "Q2607987",
     "name": "Reginald Edward Stubbs",
     "from": 1933,
     "to": 1937,
     "article": "Edward Stubbs",
+    "dynasty": null
+   },
+   {
+    "q": "Q16003769",
+    "name": "Francis Graeme Tyrrell",
+    "from": 1933,
+    "to": 1933,
+    "article": "Francis Graeme Tyrrell",
     "dynasty": null
    },
    {
@@ -34728,20 +34728,20 @@
     "dynasty": "House of Trastámara"
    },
    {
-    "q": "Q171136",
-    "name": "Juana I of Castile",
-    "from": 1504,
-    "to": 1555,
-    "article": "Joanna of Castile",
-    "dynasty": "House of Trastámara"
-   },
-   {
     "q": "Q157098",
     "name": "Philip I of Castile",
     "from": 1504,
     "to": 1506,
     "article": "Philip the Handsome",
     "dynasty": "House of Habsburg"
+   },
+   {
+    "q": "Q171136",
+    "name": "Juana I of Castile",
+    "from": 1504,
+    "to": 1555,
+    "article": "Joanna of Castile",
+    "dynasty": "House of Trastámara"
    },
    {
     "q": "Q12860",
@@ -35375,19 +35375,19 @@
     "dynasty": "Bahri dynasty"
    },
    {
-    "q": "Q482338",
-    "name": "Shihab ad-Din Ahmad",
-    "from": 1342,
-    "to": 1342,
-    "article": "Al-Nasir Ahmad, Sultan of Egypt",
-    "dynasty": "Bahri dynasty"
-   },
-   {
     "q": "Q280412",
     "name": "Al-Salih Ismail",
     "from": 1342,
     "to": 1345,
     "article": "Al-Salih Ismail, Sultan of Egypt",
+    "dynasty": "Bahri dynasty"
+   },
+   {
+    "q": "Q482338",
+    "name": "Shihab ad-Din Ahmad",
+    "from": 1342,
+    "to": 1342,
+    "article": "Al-Nasir Ahmad, Sultan of Egypt",
     "dynasty": "Bahri dynasty"
    },
    {
@@ -37041,19 +37041,19 @@
     "dynasty": "House of Solomon"
    },
    {
-    "q": "Q343723",
-    "name": "Tekle Haymanot II",
-    "from": 1769,
-    "to": 1777,
-    "article": "Tekle Haymanot II",
-    "dynasty": "House of Solomon"
-   },
-   {
     "q": "Q881197",
     "name": "Yohannes II",
     "from": 1769,
     "to": 1769,
     "article": "Yohannes II",
+    "dynasty": "House of Solomon"
+   },
+   {
+    "q": "Q343723",
+    "name": "Tekle Haymanot II",
+    "from": 1769,
+    "to": 1777,
+    "article": "Tekle Haymanot II",
     "dynasty": "House of Solomon"
    },
    {
@@ -37169,20 +37169,20 @@
     "dynasty": "House of Solomon"
    },
    {
-    "q": "Q343733",
-    "name": "Demetros",
-    "from": 1800,
-    "to": 1801,
-    "article": "Demetros",
-    "dynasty": null
-   },
-   {
     "q": "Q888848",
     "name": "Tekle Giyorgis I",
     "from": 1800,
     "to": 1800,
     "article": "Tekle Giyorgis I",
     "dynasty": "House of Solomon"
+   },
+   {
+    "q": "Q343733",
+    "name": "Demetros",
+    "from": 1800,
+    "to": 1801,
+    "article": "Demetros",
+    "dynasty": null
    },
    {
     "q": "Q733750",
@@ -39235,19 +39235,19 @@
     "dynasty": "House of Dunkeld"
    },
    {
-    "q": "Q356602",
-    "name": "Donald III of Scotland",
-    "from": 1094,
-    "to": 1097,
-    "article": "Donald III of Scotland",
-    "dynasty": "House of Dunkeld"
-   },
-   {
     "q": "Q366745",
     "name": "Duncan II of Scotland",
     "from": 1094,
     "to": 1094,
     "article": "Duncan II of Scotland",
+    "dynasty": "House of Dunkeld"
+   },
+   {
+    "q": "Q356602",
+    "name": "Donald III of Scotland",
+    "from": 1094,
+    "to": 1097,
+    "article": "Donald III of Scotland",
     "dynasty": "House of Dunkeld"
    },
    {
@@ -40600,19 +40600,19 @@
     "dynasty": null
    },
    {
-    "q": "Q118266",
-    "name": "Johannes Baumann",
-    "from": 1934,
-    "to": 1940,
-    "article": "Johannes Baumann",
-    "dynasty": null
-   },
-   {
     "q": "Q532343",
     "name": "Philipp Etter",
     "from": 1934,
     "to": 1959,
     "article": "Philipp Etter",
+    "dynasty": null
+   },
+   {
+    "q": "Q118266",
+    "name": "Johannes Baumann",
+    "from": 1934,
+    "to": 1940,
+    "article": "Johannes Baumann",
     "dynasty": null
    },
    {
@@ -41216,19 +41216,19 @@
     "dynasty": null
    },
    {
-    "q": "Q115611",
-    "name": "René Felber",
-    "from": 1987,
-    "to": 1993,
-    "article": "René Felber",
-    "dynasty": null
-   },
-   {
     "q": "Q118199",
     "name": "Flavio Cotti",
     "from": 1987,
     "to": 1999,
     "article": "Flavio Cotti",
+    "dynasty": null
+   },
+   {
+    "q": "Q115611",
+    "name": "René Felber",
+    "from": 1987,
+    "to": 1993,
+    "article": "René Felber",
     "dynasty": null
    },
    {
@@ -42292,20 +42292,20 @@
     "dynasty": "Джучиды"
    },
    {
-    "q": "Q1374159",
-    "name": "Urus Khan",
-    "from": 1373,
-    "to": 1373,
-    "article": "Urus Khan",
-    "dynasty": "Genghisid"
-   },
-   {
     "q": "Q139916674",
     "name": "Hājjī Cherkes",
     "from": 1373,
     "to": 1374,
     "article": null,
     "dynasty": null
+   },
+   {
+    "q": "Q1374159",
+    "name": "Urus Khan",
+    "from": 1373,
+    "to": 1373,
+    "article": "Urus Khan",
+    "dynasty": "Genghisid"
    },
    {
     "q": "Q1374159",
@@ -42436,20 +42436,20 @@
     "dynasty": "Genghisid"
    },
    {
-    "q": "Q4219583",
-    "name": "Kerimberdi",
-    "from": 1414,
-    "to": 1414,
-    "article": "Karim Berdi",
-    "dynasty": "Джучиды"
-   },
-   {
     "q": "Q8052564",
     "name": "Yeremferden",
     "from": 1414,
     "to": 1415,
     "article": "Yeremferden",
     "dynasty": "Genghisid"
+   },
+   {
+    "q": "Q4219583",
+    "name": "Kerimberdi",
+    "from": 1414,
+    "to": 1414,
+    "article": "Karim Berdi",
+    "dynasty": "Джучиды"
    },
    {
     "q": "Q8052564",
@@ -42961,11 +42961,11 @@
     "dynasty": null
    },
    {
-    "q": "Q3154040",
-    "name": "Ioan Manu",
+    "q": "Q12730583",
+    "name": "Ioan Al. Filipescu",
     "from": 1858,
     "to": 1859,
-    "article": "Ioan Manu",
+    "article": null,
     "dynasty": null
    },
    {
@@ -42977,11 +42977,11 @@
     "dynasty": null
    },
    {
-    "q": "Q12730583",
-    "name": "Ioan Al. Filipescu",
+    "q": "Q3154040",
+    "name": "Ioan Manu",
     "from": 1858,
     "to": 1859,
-    "article": null,
+    "article": "Ioan Manu",
     "dynasty": null
    }
   ]
@@ -43063,20 +43063,20 @@
     "dynasty": null
    },
    {
-    "q": "Q7427801",
-    "name": "Savakanmaindan",
-    "from": 1262,
-    "to": 1277,
-    "article": "Savakanmaindan",
-    "dynasty": null
-   },
-   {
     "q": "Q6442820",
     "name": "Kulasekara Cinkaiariyan",
     "from": 1262,
     "to": 1284,
     "article": "Kulasekara Cinkaiariyan",
     "dynasty": "Aryacakravarti dynasty"
+   },
+   {
+    "q": "Q7427801",
+    "name": "Savakanmaindan",
+    "from": 1262,
+    "to": 1277,
+    "article": "Savakanmaindan",
+    "dynasty": null
    },
    {
     "q": "Q12980391",
@@ -43918,20 +43918,20 @@
     "dynasty": "House of Mușat"
    },
    {
-    "q": "Q2382759",
-    "name": "Ciubăr Vodă",
-    "from": 1448,
-    "to": 1449,
-    "article": "Ciubăr Vodă",
-    "dynasty": null
-   },
-   {
     "q": "Q1040364",
     "name": "Petru III of Moldavia",
     "from": 1448,
     "to": 1448,
     "article": "Peter III of Moldavia",
     "dynasty": "House of Mușat"
+   },
+   {
+    "q": "Q2382759",
+    "name": "Ciubăr Vodă",
+    "from": 1448,
+    "to": 1449,
+    "article": "Ciubăr Vodă",
+    "dynasty": null
    },
    {
     "q": "Q926509",
@@ -43974,20 +43974,20 @@
     "dynasty": "House of Mușat"
    },
    {
-    "q": "Q649065",
-    "name": "Peter Aaron",
-    "from": 1455,
-    "to": 1457,
-    "article": "Peter Aaron",
-    "dynasty": "House of Mușat"
-   },
-   {
     "q": "Q926509",
     "name": "Alexăndrel of Moldavia",
     "from": 1455,
     "to": 1455,
     "article": "Alexăndrel of Moldavia",
     "dynasty": null
+   },
+   {
+    "q": "Q649065",
+    "name": "Peter Aaron",
+    "from": 1455,
+    "to": 1457,
+    "article": "Peter Aaron",
+    "dynasty": "House of Mușat"
    },
    {
     "q": "Q218134",
@@ -44158,20 +44158,20 @@
     "dynasty": null
    },
    {
-    "q": "Q1064882",
-    "name": "Peter the Limp",
-    "from": 1578,
-    "to": 1579,
-    "article": "Peter the Lame",
-    "dynasty": "House of Drăculești"
-   },
-   {
     "q": "Q18547030",
     "name": "Alexandru Potcoavă",
     "from": 1578,
     "to": 1578,
     "article": null,
     "dynasty": null
+   },
+   {
+    "q": "Q1064882",
+    "name": "Peter the Limp",
+    "from": 1578,
+    "to": 1579,
+    "article": "Peter the Lame",
+    "dynasty": "House of Drăculești"
    },
    {
     "q": "Q1064517",
@@ -44198,11 +44198,11 @@
     "dynasty": "House of Mușat"
    },
    {
-    "q": "Q612872",
-    "name": "Alexander III the Bad",
+    "q": "Q220660",
+    "name": "Aaron the Tyrant",
     "from": 1592,
-    "to": 1592,
-    "article": "Alexander III the Bad",
+    "to": 1595,
+    "article": "Aaron the Tyrant",
     "dynasty": "House of Mușat"
    },
    {
@@ -44214,11 +44214,11 @@
     "dynasty": "House of Mușat"
    },
    {
-    "q": "Q220660",
-    "name": "Aaron the Tyrant",
+    "q": "Q612872",
+    "name": "Alexander III the Bad",
     "from": 1592,
-    "to": 1595,
-    "article": "Aaron the Tyrant",
+    "to": 1592,
+    "article": "Alexander III the Bad",
     "dynasty": "House of Mușat"
    },
    {
@@ -44246,20 +44246,20 @@
     "dynasty": "House of Drăculești"
    },
    {
-    "q": "Q666499",
-    "name": "Ieremia Movilă",
-    "from": 1600,
-    "to": 1606,
-    "article": "Ieremia Movilă",
-    "dynasty": "House of Mohyła"
-   },
-   {
     "q": "Q118755",
     "name": "Michael the Brave",
     "from": 1600,
     "to": 1600,
     "article": "Michael the Brave",
     "dynasty": "House of Drăculești"
+   },
+   {
+    "q": "Q666499",
+    "name": "Ieremia Movilă",
+    "from": 1600,
+    "to": 1606,
+    "article": "Ieremia Movilă",
+    "dynasty": "House of Mohyła"
    },
    {
     "q": "Q969007",
@@ -44374,20 +44374,20 @@
     "dynasty": "House of Mușat"
    },
    {
-    "q": "Q633648",
-    "name": "Miron Barnovschi-Movilă",
-    "from": 1633,
-    "to": 1633,
-    "article": "Miron Barnovschi-Movilă",
-    "dynasty": null
-   },
-   {
     "q": "Q2657012",
     "name": "Moise Movilă",
     "from": 1633,
     "to": 1634,
     "article": "Moise Movilă",
     "dynasty": "House of Mohyła"
+   },
+   {
+    "q": "Q633648",
+    "name": "Miron Barnovschi-Movilă",
+    "from": 1633,
+    "to": 1633,
+    "article": "Miron Barnovschi-Movilă",
+    "dynasty": null
    },
    {
     "q": "Q220653",
@@ -44398,19 +44398,19 @@
     "dynasty": null
    },
    {
-    "q": "Q1058297",
-    "name": "Gheorghe Ștefan",
-    "from": 1653,
-    "to": 1658,
-    "article": "Gheorghe Ștefan",
-    "dynasty": null
-   },
-   {
     "q": "Q220653",
     "name": "Vasile Lupu",
     "from": 1653,
     "to": 1653,
     "article": "Vasile Lupu",
+    "dynasty": null
+   },
+   {
+    "q": "Q1058297",
+    "name": "Gheorghe Ștefan",
+    "from": 1653,
+    "to": 1658,
+    "article": "Gheorghe Ștefan",
     "dynasty": null
    },
    {
@@ -44470,19 +44470,19 @@
     "dynasty": null
    },
    {
-    "q": "Q1163334",
-    "name": "Ștefan Petriceicu",
-    "from": 1673,
-    "to": 1674,
-    "article": "Ștefan Petriceicu",
-    "dynasty": null
-   },
-   {
     "q": "Q358562",
     "name": "Dumitrașcu Cantacuzino",
     "from": 1673,
     "to": 1673,
     "article": "Dumitrașcu Cantacuzino",
+    "dynasty": null
+   },
+   {
+    "q": "Q1163334",
+    "name": "Ștefan Petriceicu",
+    "from": 1673,
+    "to": 1674,
+    "article": "Ștefan Petriceicu",
     "dynasty": null
    },
    {
@@ -44846,14 +44846,6 @@
     "dynasty": null
    },
    {
-    "q": "Q2976924",
-    "name": "Scarlat Callimachi",
-    "from": 1806,
-    "to": 1806,
-    "article": "Scarlat Callimachi (hospodar)",
-    "dynasty": "Callimachi family"
-   },
-   {
     "q": "Q2833904",
     "name": "Alexander Mourousis",
     "from": 1806,
@@ -44870,11 +44862,27 @@
     "dynasty": "Rosetti family"
    },
    {
+    "q": "Q2976924",
+    "name": "Scarlat Callimachi",
+    "from": 1806,
+    "to": 1806,
+    "article": "Scarlat Callimachi (hospodar)",
+    "dynasty": "Callimachi family"
+   },
+   {
     "q": "Q2263877",
     "name": "Alexander Hangerli",
     "from": 1807,
     "to": 1807,
     "article": "Alexander Hangerli",
+    "dynasty": null
+   },
+   {
+    "q": "Q640117",
+    "name": "Veniamin Costache",
+    "from": 1807,
+    "to": 1812,
+    "article": null,
     "dynasty": null
    },
    {
@@ -44884,14 +44892,6 @@
     "to": 1810,
     "article": "Scarlat Callimachi (hospodar)",
     "dynasty": "Callimachi family"
-   },
-   {
-    "q": "Q640117",
-    "name": "Veniamin Costache",
-    "from": 1807,
-    "to": 1812,
-    "article": null,
-    "dynasty": null
    },
    {
     "q": "Q2976924",
@@ -44910,20 +44910,20 @@
     "dynasty": null
    },
    {
-    "q": "Q1250238",
-    "name": "Stefan Bogoridi",
-    "from": 1821,
-    "to": 1822,
-    "article": "Stefan Bogoridi",
-    "dynasty": null
-   },
-   {
     "q": "Q319700",
     "name": "Alexander Ypsilantis",
     "from": 1821,
     "to": 1821,
     "article": "Alexander Ypsilantis",
     "dynasty": "Ypsilantis family"
+   },
+   {
+    "q": "Q1250238",
+    "name": "Stefan Bogoridi",
+    "from": 1821,
+    "to": 1822,
+    "article": "Stefan Bogoridi",
+    "dynasty": null
    },
    {
     "q": "Q1051294",
@@ -45298,19 +45298,19 @@
     "dynasty": null
    },
    {
-    "q": "Q458168",
-    "name": "Khamtum",
-    "from": 1432,
-    "to": 1432,
-    "article": "Kham Tam Sa",
-    "dynasty": null
-   },
-   {
     "q": "Q889327",
     "name": "Lue Sai",
     "from": 1432,
     "to": 1433,
     "article": "Lusai",
+    "dynasty": null
+   },
+   {
+    "q": "Q458168",
+    "name": "Khamtum",
+    "from": 1432,
+    "to": 1432,
+    "article": "Kham Tam Sa",
     "dynasty": null
    },
    {
@@ -45545,19 +45545,19 @@
     "dynasty": null
    },
    {
-    "q": "Q3315520",
-    "name": "Minkhaung I",
-    "from": 1400,
-    "to": 1422,
-    "article": "Minkhaung I",
-    "dynasty": null
-   },
-   {
     "q": "Q3515575",
     "name": "Tarabya of Ava",
     "from": 1400,
     "to": 1400,
     "article": "Tarabya of Ava",
+    "dynasty": null
+   },
+   {
+    "q": "Q3315520",
+    "name": "Minkhaung I",
+    "from": 1400,
+    "to": 1422,
+    "article": "Minkhaung I",
     "dynasty": null
    },
    {
@@ -47558,19 +47558,19 @@
     "dynasty": null
    },
    {
-    "q": "Q6862588",
-    "name": "Min Saw O",
-    "from": 1515,
-    "to": 1515,
-    "article": "Min Saw O",
-    "dynasty": null
-   },
-   {
     "q": "Q7711579",
     "name": "Thazata",
     "from": 1515,
     "to": 1521,
     "article": "Thazata",
+    "dynasty": null
+   },
+   {
+    "q": "Q6862588",
+    "name": "Min Saw O",
+    "from": 1515,
+    "to": 1515,
+    "article": "Min Saw O",
     "dynasty": null
    },
    {
@@ -47846,19 +47846,19 @@
     "dynasty": null
    },
    {
-    "q": "Q7415923",
-    "name": "Sanda Thaditha",
-    "from": 1777,
-    "to": 1782,
-    "article": "Sanda Thaditha",
-    "dynasty": null
-   },
-   {
     "q": "Q7415932",
     "name": "Sanda Wimala II",
     "from": 1777,
     "to": 1777,
     "article": "Sanda Wimala II",
+    "dynasty": null
+   },
+   {
+    "q": "Q7415923",
+    "name": "Sanda Thaditha",
+    "from": 1777,
+    "to": 1782,
+    "article": "Sanda Thaditha",
     "dynasty": null
    },
    {
@@ -48178,19 +48178,19 @@
     "dynasty": null
    },
    {
-    "q": "Q2839850",
-    "name": "Afonso II of Kongo",
-    "from": 1561,
-    "to": 1561,
-    "article": "Afonso II of Kongo",
-    "dynasty": null
-   },
-   {
     "q": "Q2709636",
     "name": "Bernardo I of Kongo",
     "from": 1561,
     "to": 1566,
     "article": "Bernardo I of Kongo",
+    "dynasty": null
+   },
+   {
+    "q": "Q2839850",
+    "name": "Afonso II of Kongo",
+    "from": 1561,
+    "to": 1561,
+    "article": "Afonso II of Kongo",
     "dynasty": null
    },
    {
@@ -48322,20 +48322,20 @@
     "dynasty": "Kimpanzu"
    },
    {
-    "q": "Q2840565",
-    "name": "Álvaro IX of Kongo",
-    "from": 1669,
-    "to": 1670,
-    "article": "Álvaro IX of Kongo",
-    "dynasty": "Kimpanzu"
-   },
-   {
     "q": "Q641101",
     "name": "Peter III of Kongo",
     "from": 1669,
     "to": 1669,
     "article": "Pedro III of Kongo",
     "dynasty": "Kinlaza"
+   },
+   {
+    "q": "Q2840565",
+    "name": "Álvaro IX of Kongo",
+    "from": 1669,
+    "to": 1670,
+    "article": "Álvaro IX of Kongo",
+    "dynasty": "Kimpanzu"
    },
    {
     "q": "Q3510136",
@@ -48641,19 +48641,19 @@
     "dynasty": "Giray dynasty"
    },
    {
-    "q": "Q379724",
-    "name": "Meñli I Giray",
-    "from": 1467,
-    "to": 1467,
-    "article": "Meñli I Giray",
-    "dynasty": "Giray dynasty"
-   },
-   {
     "q": "Q2750629",
     "name": "Nur Devlet",
     "from": 1467,
     "to": 1469,
     "article": "Nur Devlet",
+    "dynasty": "Giray dynasty"
+   },
+   {
+    "q": "Q379724",
+    "name": "Meñli I Giray",
+    "from": 1467,
+    "to": 1467,
+    "article": "Meñli I Giray",
     "dynasty": "Giray dynasty"
    },
    {
@@ -48705,20 +48705,20 @@
     "dynasty": "Giray dynasty"
    },
    {
-    "q": "Q559150",
-    "name": "Sahib I Giray",
-    "from": 1532,
-    "to": 1551,
-    "article": "Sahib I Giray",
-    "dynasty": "Giray dynasty"
-   },
-   {
     "q": "Q2623643",
     "name": "İslâm I Giray",
     "from": 1532,
     "to": 1532,
     "article": "İslâm I Giray",
     "dynasty": null
+   },
+   {
+    "q": "Q559150",
+    "name": "Sahib I Giray",
+    "from": 1532,
+    "to": 1551,
+    "article": "Sahib I Giray",
+    "dynasty": "Giray dynasty"
    },
    {
     "q": "Q735719",
@@ -48737,19 +48737,19 @@
     "dynasty": "Giray dynasty"
    },
    {
-    "q": "Q2386294",
-    "name": "Saadet II Giray",
-    "from": 1584,
-    "to": 1584,
-    "article": "Saadet II Giray",
-    "dynasty": "Giray dynasty"
-   },
-   {
     "q": "Q2623661",
     "name": "İslâm II Giray",
     "from": 1584,
     "to": 1588,
     "article": "İslâm II Giray",
+    "dynasty": "Giray dynasty"
+   },
+   {
+    "q": "Q2386294",
+    "name": "Saadet II Giray",
+    "from": 1584,
+    "to": 1584,
+    "article": "Saadet II Giray",
     "dynasty": "Giray dynasty"
    },
    {
@@ -48761,19 +48761,19 @@
     "dynasty": "Giray dynasty"
    },
    {
-    "q": "Q2416256",
-    "name": "Ğazı II Giray",
-    "from": 1596,
-    "to": 1607,
-    "article": "Ğazı II Giray",
-    "dynasty": "Giray dynasty"
-   },
-   {
     "q": "Q2634791",
     "name": "Fetih I Giray",
     "from": 1596,
     "to": 1596,
     "article": "Fetih I Giray",
+    "dynasty": "Giray dynasty"
+   },
+   {
+    "q": "Q2416256",
+    "name": "Ğazı II Giray",
+    "from": 1596,
+    "to": 1607,
+    "article": "Ğazı II Giray",
     "dynasty": "Giray dynasty"
    },
    {
@@ -48985,19 +48985,19 @@
     "dynasty": "Giray dynasty"
    },
    {
-    "q": "Q2345724",
-    "name": "Devlet III Giray",
-    "from": 1717,
-    "to": 1717,
-    "article": "Devlet III Giray",
-    "dynasty": "Giray dynasty"
-   },
-   {
     "q": "Q2618355",
     "name": "Saadet IV Giray",
     "from": 1717,
     "to": 1724,
     "article": "Saadet IV Giray",
+    "dynasty": "Giray dynasty"
+   },
+   {
+    "q": "Q2345724",
+    "name": "Devlet III Giray",
+    "from": 1717,
+    "to": 1717,
+    "article": "Devlet III Giray",
     "dynasty": "Giray dynasty"
    },
    {
@@ -49113,19 +49113,19 @@
     "dynasty": "Giray dynasty"
    },
    {
-    "q": "Q610759",
-    "name": "Qaplan II Giray",
-    "from": 1770,
-    "to": 1770,
-    "article": "Qaplan II Giray",
-    "dynasty": "Giray dynasty"
-   },
-   {
     "q": "Q2618378",
     "name": "Selim III Giray",
     "from": 1770,
     "to": 1771,
     "article": "Selim III Giray",
+    "dynasty": "Giray dynasty"
+   },
+   {
+    "q": "Q610759",
+    "name": "Qaplan II Giray",
+    "from": 1770,
+    "to": 1770,
+    "article": "Qaplan II Giray",
     "dynasty": "Giray dynasty"
    },
    {
@@ -49439,19 +49439,19 @@
     "dynasty": "House of Mukhrani"
    },
    {
-    "q": "Q2702817",
-    "name": "Kaikhosro of Kartli",
-    "from": 1709,
-    "to": 1711,
-    "article": "Kaikhosro of Kartli",
-    "dynasty": null
-   },
-   {
     "q": "Q2350147",
     "name": "Levan of Kartli",
     "from": 1709,
     "to": 1709,
     "article": "Prince Levan of Kartli",
+    "dynasty": null
+   },
+   {
+    "q": "Q2702817",
+    "name": "Kaikhosro of Kartli",
+    "from": 1709,
+    "to": 1711,
+    "article": "Kaikhosro of Kartli",
     "dynasty": null
    },
    {
@@ -49589,19 +49589,19 @@
     "dynasty": "Bagrationi dynasty"
    },
    {
-    "q": "Q2660123",
-    "name": "Teimuraz I of Kakheti",
-    "from": 1605,
-    "to": 1614,
-    "article": "Teimuraz I",
-    "dynasty": "Bagrationi dynasty"
-   },
-   {
     "q": "Q2618194",
     "name": "Constantine I of Kakheti",
     "from": 1605,
     "to": 1605,
     "article": "Constantine I of Kakheti",
+    "dynasty": "Bagrationi dynasty"
+   },
+   {
+    "q": "Q2660123",
+    "name": "Teimuraz I of Kakheti",
+    "from": 1605,
+    "to": 1614,
+    "article": "Teimuraz I",
     "dynasty": "Bagrationi dynasty"
    },
    {
@@ -49716,19 +49716,19 @@
     "dynasty": "Wattasid dynasty"
    },
    {
-    "q": "Q335546",
-    "name": "Abu al-Abbas Ahmad ibn Muhammad",
-    "from": 1526,
-    "to": 1545,
-    "article": "Abu al-Abbas Ahmad ibn Muhammad",
-    "dynasty": "Wattasid dynasty"
-   },
-   {
     "q": "Q997320",
     "name": "Ali Abu Hassun",
     "from": 1526,
     "to": 1526,
     "article": "Ali Abu Hassun",
+    "dynasty": "Wattasid dynasty"
+   },
+   {
+    "q": "Q335546",
+    "name": "Abu al-Abbas Ahmad ibn Muhammad",
+    "from": 1526,
+    "to": 1545,
+    "article": "Abu al-Abbas Ahmad ibn Muhammad",
     "dynasty": "Wattasid dynasty"
    },
    {
@@ -50187,6 +50187,30 @@
     "to": 1855,
     "article": "Muhammad Amin Bahadur Khan",
     "dynasty": null
+   },
+   {
+    "q": "Q3827268",
+    "name": "Sayyid Muhammad Khan",
+    "from": 1856,
+    "to": 1864,
+    "article": "Sayyid Muhammad (Khan of Khiva)",
+    "dynasty": "Кунграты"
+   },
+   {
+    "q": "Q3827288",
+    "name": "Muhammad Rahim Bahadur Khan II",
+    "from": 1864,
+    "to": 1910,
+    "article": "Muhammad Rahim Khan II of Khiva",
+    "dynasty": null
+   },
+   {
+    "q": "Q3827276",
+    "name": "Isfandiyar Jurji Bahadur Khan",
+    "from": 1910,
+    "to": 1918,
+    "article": "Isfandiyar Khan",
+    "dynasty": null
    }
   ]
  },
@@ -50619,19 +50643,19 @@
     "dynasty": null
    },
    {
-    "q": "Q518982",
-    "name": "Diego Martínez Barrio",
-    "from": 1936,
-    "to": 1936,
-    "article": "Diego Martínez Barrio",
-    "dynasty": null
-   },
-   {
     "q": "Q203708",
     "name": "Manuel Azaña",
     "from": 1936,
     "to": 1939,
     "article": "Manuel Azaña",
+    "dynasty": null
+   },
+   {
+    "q": "Q518982",
+    "name": "Diego Martínez Barrio",
+    "from": 1936,
+    "to": 1936,
+    "article": "Diego Martínez Barrio",
     "dynasty": null
    },
    {
@@ -51222,19 +51246,19 @@
     "dynasty": "Mughal dynasty"
    },
    {
-    "q": "Q544228",
-    "name": "Bahadur Shah I",
-    "from": 1707,
-    "to": 1712,
-    "article": "Bahadur Shah I",
-    "dynasty": "Mughal dynasty"
-   },
-   {
     "q": "Q6932430",
     "name": "Azam Shah",
     "from": 1707,
     "to": 1707,
     "article": "Muhammad Azam Shah",
+    "dynasty": "Mughal dynasty"
+   },
+   {
+    "q": "Q544228",
+    "name": "Bahadur Shah I",
+    "from": 1707,
+    "to": 1712,
+    "article": "Bahadur Shah I",
     "dynasty": "Mughal dynasty"
    },
    {
@@ -51389,6 +51413,14 @@
     "dynasty": "Mạc dynasty"
    },
    {
+    "q": "Q1033816",
+    "name": "Mạc Toàn",
+    "from": 1592,
+    "to": 1593,
+    "article": "Mạc Toàn",
+    "dynasty": "Mạc dynasty"
+   },
+   {
     "q": "Q7212412",
     "name": "Mạc Kính Chỉ",
     "from": 1592,
@@ -51402,14 +51434,6 @@
     "from": 1592,
     "to": 1625,
     "article": "Mạc Kính Cung",
-    "dynasty": "Mạc dynasty"
-   },
-   {
-    "q": "Q1033816",
-    "name": "Mạc Toàn",
-    "from": 1592,
-    "to": 1593,
-    "article": "Mạc Toàn",
     "dynasty": "Mạc dynasty"
    },
    {
@@ -51801,19 +51825,19 @@
     "dynasty": null
    },
    {
-    "q": "Q15904973",
-    "name": "Chamaraja Wodeyar VII",
-    "from": 1734,
-    "to": 1766,
-    "article": "Chamaraja Wodeyar VII",
-    "dynasty": "Wadiyar dynasty"
-   },
-   {
     "q": "Q6437602",
     "name": "Krishnaraja Wadiyar II",
     "from": 1734,
     "to": 1766,
     "article": "Krishnaraja Wadiyar II",
+    "dynasty": "Wadiyar dynasty"
+   },
+   {
+    "q": "Q15904973",
+    "name": "Chamaraja Wodeyar VII",
+    "from": 1734,
+    "to": 1766,
+    "article": "Chamaraja Wodeyar VII",
     "dynasty": "Wadiyar dynasty"
    },
    {
@@ -51833,19 +51857,19 @@
     "dynasty": null
    },
    {
-    "q": "Q2429324",
-    "name": "Krishna Raja Wadiyar IV",
-    "from": 1894,
-    "to": 1940,
-    "article": "Krishna Raja Wadiyar IV",
-    "dynasty": null
-   },
-   {
     "q": "Q6387033",
     "name": "Kempa Nanjammani Vani Vilasa Sannidhana",
     "from": 1894,
     "to": 1902,
     "article": "Kempananjammanni Devi",
+    "dynasty": null
+   },
+   {
+    "q": "Q2429324",
+    "name": "Krishna Raja Wadiyar IV",
+    "from": 1894,
+    "to": 1940,
+    "article": "Krishna Raja Wadiyar IV",
     "dynasty": null
    },
    {
@@ -51864,19 +51888,19 @@
   ],
   "terms": [
    {
-    "q": "Q28468",
-    "name": "Mieszko II",
-    "from": 1025,
-    "to": 1031,
-    "article": "Mieszko II Lambert",
-    "dynasty": "Piast dynasty"
-   },
-   {
     "q": "Q53436",
     "name": "Bolesław I the Brave",
     "from": 1025,
     "to": 1025,
     "article": "Bolesław I the Brave",
+    "dynasty": "Piast dynasty"
+   },
+   {
+    "q": "Q28468",
+    "name": "Mieszko II",
+    "from": 1025,
+    "to": 1031,
+    "article": "Mieszko II Lambert",
     "dynasty": "Piast dynasty"
    },
    {
@@ -51920,20 +51944,20 @@
     "dynasty": "Přemyslid dynasty"
    },
    {
-    "q": "Q275408",
-    "name": "Henry of Bohemia",
-    "from": 1306,
-    "to": 1306,
-    "article": "Henry of Bohemia",
-    "dynasty": "House of Gorizia (House of Meinhardin)"
-   },
-   {
     "q": "Q168254",
     "name": "Rudolf I of Bohemia",
     "from": 1306,
     "to": 1307,
     "article": "Rudolf I of Bohemia",
     "dynasty": "House of Habsburg"
+   },
+   {
+    "q": "Q275408",
+    "name": "Henry of Bohemia",
+    "from": 1306,
+    "to": 1306,
+    "article": "Henry of Bohemia",
+    "dynasty": "House of Gorizia (House of Meinhardin)"
    },
    {
     "q": "Q275408",
@@ -52184,20 +52208,20 @@
     "dynasty": "Albertine branch"
    },
    {
-    "q": "Q54022",
-    "name": "Stanisław Leszczyński",
-    "from": 1733,
-    "to": 1736,
-    "article": "Stanisław Leszczyński",
-    "dynasty": "House of Leszczyński"
-   },
-   {
     "q": "Q53438",
     "name": "Augustus III of Poland",
     "from": 1733,
     "to": 1763,
     "article": "Augustus III of Poland",
     "dynasty": "House of Wettin"
+   },
+   {
+    "q": "Q54022",
+    "name": "Stanisław Leszczyński",
+    "from": 1733,
+    "to": 1736,
+    "article": "Stanisław Leszczyński",
+    "dynasty": "House of Leszczyński"
    },
    {
     "q": "Q54019",
@@ -52337,7 +52361,7 @@
     "name": "Ali ibn Muhammad",
     "from": 836,
     "to": 848,
-    "article": "Ali ibn Muhammad",
+    "article": "Ali ibn Muhammad bin Idris",
     "dynasty": "Idrisid dynasty"
    },
    {
@@ -52493,19 +52517,19 @@
     "dynasty": "Marinid dynasty"
    },
    {
-    "q": "Q16863366",
-    "name": "Shihab-ud-din Omar",
-    "from": 1316,
-    "to": 1316,
-    "article": "Shihabuddin Omar",
-    "dynasty": "Khalji dynasty"
-   },
-   {
     "q": "Q3179907",
     "name": "Qutb ud din Mubarak Shah",
     "from": 1316,
     "to": 1320,
     "article": "Qutbuddin Mubarak Shah",
+    "dynasty": "Khalji dynasty"
+   },
+   {
+    "q": "Q16863366",
+    "name": "Shihab-ud-din Omar",
+    "from": 1316,
+    "to": 1316,
+    "article": "Shihabuddin Omar",
     "dynasty": "Khalji dynasty"
    },
    {
@@ -52565,19 +52589,19 @@
     "dynasty": "Tughlaq dynasty"
    },
    {
-    "q": "Q953268",
-    "name": "Muhammad ben Yaqub",
-    "from": 1358,
-    "to": 1358,
-    "article": "Muhammad II ibn Faris",
-    "dynasty": "Marinid dynasty"
-   },
-   {
     "q": "Q16146095",
     "name": "Abu Bakr ibn Faris",
     "from": 1358,
     "to": 1359,
     "article": "Abu Bakr ibn Faris",
+    "dynasty": "Marinid dynasty"
+   },
+   {
+    "q": "Q953268",
+    "name": "Muhammad ben Yaqub",
+    "from": 1358,
+    "to": 1358,
+    "article": "Muhammad II ibn Faris",
     "dynasty": "Marinid dynasty"
    },
    {
@@ -54030,19 +54054,19 @@
     "dynasty": null
    },
    {
-    "q": "Q8963474",
-    "name": "Garcia Gil de Manrique y Maldonado",
-    "from": 1632,
-    "to": 1635,
-    "article": "García Gil Manrique",
-    "dynasty": null
-   },
-   {
     "q": "Q19290582",
     "name": "Esteve Salacruz",
     "from": 1632,
     "to": 1632,
     "article": null,
+    "dynasty": null
+   },
+   {
+    "q": "Q8963474",
+    "name": "Garcia Gil de Manrique y Maldonado",
+    "from": 1632,
+    "to": 1635,
+    "article": "García Gil Manrique",
     "dynasty": null
    },
    {
@@ -54342,19 +54366,19 @@
     "dynasty": null
    },
    {
-    "q": "Q19299686",
-    "name": "Jaume Garcia i Alsina",
-    "from": 1922,
-    "to": 1923,
-    "article": "Jaime Garcia Alsina",
-    "dynasty": null
-   },
-   {
     "q": "Q19300288",
     "name": "Josep Antoni Trabal i Sans",
     "from": 1922,
     "to": 1922,
     "article": null,
+    "dynasty": null
+   },
+   {
+    "q": "Q19299686",
+    "name": "Jaume Garcia i Alsina",
+    "from": 1922,
+    "to": 1923,
+    "article": "Jaime Garcia Alsina",
     "dynasty": null
    },
    {
@@ -54462,19 +54486,19 @@
     "dynasty": null
    },
    {
-    "q": "Q4740163",
-    "name": "Carles Puigdemont",
-    "from": 2018,
-    "to": null,
-    "article": "Carles Puigdemont",
-    "dynasty": null
-   },
-   {
     "q": "Q1945815",
     "name": "Quim Torra",
     "from": 2018,
     "to": 2020,
     "article": "Quim Torra",
+    "dynasty": null
+   },
+   {
+    "q": "Q4740163",
+    "name": "Carles Puigdemont",
+    "from": 2018,
+    "to": null,
+    "article": "Carles Puigdemont",
     "dynasty": null
    },
    {
@@ -54802,19 +54826,19 @@
     "dynasty": "Saadi dynasty"
    },
    {
-    "q": "Q3318907",
-    "name": "Mohammed esh Sheikh el Mamun",
-    "from": 1603,
-    "to": 1613,
-    "article": "Muhammad al-Shaykh al-Ma'mun",
-    "dynasty": "Saadi dynasty"
-   },
-   {
     "q": "Q2720253",
     "name": "Abu Faris Abdallah",
     "from": 1603,
     "to": 1608,
     "article": "Abu Faris Abdallah",
+    "dynasty": "Saadi dynasty"
+   },
+   {
+    "q": "Q3318907",
+    "name": "Mohammed esh Sheikh el Mamun",
+    "from": 1603,
+    "to": 1613,
+    "article": "Muhammad al-Shaykh al-Ma'mun",
     "dynasty": "Saadi dynasty"
    },
    {
@@ -55960,19 +55984,19 @@
     "dynasty": null
    },
    {
-    "q": "Q2963140",
-    "name": "Chey Chettha V",
-    "from": 1749,
-    "to": 1755,
-    "article": "Chey Chettha V",
-    "dynasty": null
-   },
-   {
     "q": "Q3473926",
     "name": "Satha II",
     "from": 1749,
     "to": 1749,
     "article": "Satha II",
+    "dynasty": null
+   },
+   {
+    "q": "Q2963140",
+    "name": "Chey Chettha V",
+    "from": 1749,
+    "to": 1755,
+    "article": "Chey Chettha V",
     "dynasty": null
    },
    {
@@ -56300,20 +56324,20 @@
     "dynasty": "House of Romanov"
    },
    {
-    "q": "Q36450",
-    "name": "Catherine II of Russia",
-    "from": 1762,
-    "to": 1796,
-    "article": "Catherine the Great",
-    "dynasty": "House of Ascania (younger Anhalt-Zerbst branch)"
-   },
-   {
     "q": "Q151789",
     "name": "Peter III of Russia",
     "from": 1762,
     "to": 1762,
     "article": "Peter III of Russia",
     "dynasty": "Holstein-Gottorp-Romanov"
+   },
+   {
+    "q": "Q36450",
+    "name": "Catherine II of Russia",
+    "from": 1762,
+    "to": 1796,
+    "article": "Catherine the Great",
+    "dynasty": "House of Ascania (younger Anhalt-Zerbst branch)"
    },
    {
     "q": "Q15189",
@@ -56513,19 +56537,19 @@
     "dynasty": "Konbaung dynasty"
    },
    {
-    "q": "Q796571",
-    "name": "Bodawpaya",
-    "from": 1782,
-    "to": 1819,
-    "article": "Bodawpaya",
-    "dynasty": "Konbaung dynasty"
-   },
-   {
     "q": "Q1401067",
     "name": "Phaungkaza Maung Maung",
     "from": 1782,
     "to": 1782,
     "article": "Phaungkaza Maung Maung",
+    "dynasty": "Konbaung dynasty"
+   },
+   {
+    "q": "Q796571",
+    "name": "Bodawpaya",
+    "from": 1782,
+    "to": 1819,
+    "article": "Bodawpaya",
     "dynasty": "Konbaung dynasty"
    },
    {
@@ -57351,7 +57375,7 @@
    },
    {
     "q": "Q15109506",
-    "name": "Prince Nadzaruddin of Negeri Sembilan",
+    "name": "Tunku Nadzaruddin of Negeri Sembilan",
     "from": 2026,
     "to": null,
     "article": "Tunku Nadzaruddin",
@@ -57460,20 +57484,20 @@
     "dynasty": null
    },
    {
-    "q": "Q11820",
-    "name": "Martin Van Buren",
-    "from": 1837,
-    "to": 1841,
-    "article": "Martin Van Buren",
-    "dynasty": "family of Martin Van Buren"
-   },
-   {
     "q": "Q113227667",
     "name": "Quentin Trembley",
     "from": 1837,
     "to": null,
     "article": null,
     "dynasty": null
+   },
+   {
+    "q": "Q11820",
+    "name": "Martin Van Buren",
+    "from": 1837,
+    "to": 1841,
+    "article": "Martin Van Buren",
+    "dynasty": "family of Martin Van Buren"
    },
    {
     "q": "Q11869",
@@ -58241,19 +58265,19 @@
     "dynasty": null
    },
    {
-    "q": "Q605467",
-    "name": "Antonio Thrasybule Kébreau",
-    "from": 1957,
-    "to": 1957,
-    "article": "Antonio Thrasybule Kébreau",
-    "dynasty": null
-   },
-   {
     "q": "Q187697",
     "name": "François Duvalier",
     "from": 1957,
     "to": 1971,
     "article": "François Duvalier",
+    "dynasty": null
+   },
+   {
+    "q": "Q605467",
+    "name": "Antonio Thrasybule Kébreau",
+    "from": 1957,
+    "to": 1957,
+    "article": "Antonio Thrasybule Kébreau",
     "dynasty": null
    },
    {
@@ -58273,6 +58297,14 @@
     "dynasty": null
    },
    {
+    "q": "Q653169",
+    "name": "Prosper Avril",
+    "from": 1988,
+    "to": 1990,
+    "article": "Prosper Avril",
+    "dynasty": null
+   },
+   {
     "q": "Q470492",
     "name": "Leslie Manigat",
     "from": 1988,
@@ -58289,12 +58321,12 @@
     "dynasty": null
    },
    {
-    "q": "Q653169",
-    "name": "Prosper Avril",
-    "from": 1988,
-    "to": 1990,
-    "article": "Prosper Avril",
-    "dynasty": null
+    "q": "Q461636",
+    "name": "Ertha Pascal-Trouillot",
+    "from": 1990,
+    "to": 1991,
+    "article": "Ertha Pascal-Trouillot",
+    "dynasty": "Category:Trouillot family"
    },
    {
     "q": "Q887405",
@@ -58303,14 +58335,6 @@
     "to": 1990,
     "article": "Hérard Abraham",
     "dynasty": null
-   },
-   {
-    "q": "Q461636",
-    "name": "Ertha Pascal-Trouillot",
-    "from": 1990,
-    "to": 1991,
-    "article": "Ertha Pascal-Trouillot",
-    "dynasty": "Category:Trouillot family"
    },
    {
     "q": "Q209617",
@@ -58647,14 +58671,6 @@
     "dynasty": null
    },
    {
-    "q": "Q14919646",
-    "name": "Charles Edmund Wilkinson",
-    "from": 1860,
-    "to": 1860,
-    "article": "Charles Edmund Wilkinson",
-    "dynasty": null
-   },
-   {
     "q": "Q16826323",
     "name": "Charles Justin MacCarthy",
     "from": 1860,
@@ -58668,6 +58684,14 @@
     "from": 1860,
     "to": 1860,
     "article": "Henry Frederick Lockyer",
+    "dynasty": null
+   },
+   {
+    "q": "Q14919646",
+    "name": "Charles Edmund Wilkinson",
+    "from": 1860,
+    "to": 1860,
+    "article": "Charles Edmund Wilkinson",
     "dynasty": null
    },
    {
@@ -58815,19 +58839,19 @@
     "dynasty": null
    },
    {
-    "q": "Q15072961",
-    "name": "William Manning",
-    "from": 1918,
-    "to": 1925,
-    "article": "William Manning (colonial administrator)",
-    "dynasty": null
-   },
-   {
     "q": "Q2607987",
     "name": "Reginald Edward Stubbs",
     "from": 1918,
     "to": 1918,
     "article": "Edward Stubbs",
+    "dynasty": null
+   },
+   {
+    "q": "Q15072961",
+    "name": "William Manning",
+    "from": 1918,
+    "to": 1925,
+    "article": "William Manning (colonial administrator)",
     "dynasty": null
    },
    {
@@ -58887,19 +58911,19 @@
     "dynasty": null
    },
    {
-    "q": "Q16003769",
-    "name": "Francis Graeme Tyrrell",
-    "from": 1933,
-    "to": 1933,
-    "article": "Francis Graeme Tyrrell",
-    "dynasty": null
-   },
-   {
     "q": "Q2607987",
     "name": "Reginald Edward Stubbs",
     "from": 1933,
     "to": 1937,
     "article": "Edward Stubbs",
+    "dynasty": null
+   },
+   {
+    "q": "Q16003769",
+    "name": "Francis Graeme Tyrrell",
+    "from": 1933,
+    "to": 1933,
+    "article": "Francis Graeme Tyrrell",
     "dynasty": null
    },
    {
@@ -58998,22 +59022,6 @@
     "dynasty": null
    },
    {
-    "q": "Q888508",
-    "name": "Alessandro Mancini",
-    "from": 2020,
-    "to": 2020,
-    "article": "Alessandro Mancini",
-    "dynasty": null
-   },
-   {
-    "q": "Q3609898",
-    "name": "Alessandro Cardelli",
-    "from": 2020,
-    "to": 2021,
-    "article": "Alessandro Cardelli",
-    "dynasty": null
-   },
-   {
     "q": "Q87974161",
     "name": "Grazia Zafferani",
     "from": 2020,
@@ -59027,6 +59035,22 @@
     "from": 2020,
     "to": 2021,
     "article": "Mirko Dolcini",
+    "dynasty": null
+   },
+   {
+    "q": "Q888508",
+    "name": "Alessandro Mancini",
+    "from": 2020,
+    "to": 2020,
+    "article": "Alessandro Mancini",
+    "dynasty": null
+   },
+   {
+    "q": "Q3609898",
+    "name": "Alessandro Cardelli",
+    "from": 2020,
+    "to": 2021,
+    "article": "Alessandro Cardelli",
     "dynasty": null
    },
    {
@@ -59117,20 +59141,20 @@
     "dynasty": null
    },
    {
-    "q": "Q290045",
-    "name": "Jean Jacques Régis de Cambacérès",
-    "from": 1799,
-    "to": 1804,
-    "article": "Jean-Jacques-Régis de Cambacérès",
-    "dynasty": "Cambacérès"
-   },
-   {
     "q": "Q1663883",
     "name": "Roger Ducos",
     "from": 1799,
     "to": 1799,
     "article": "Roger Ducos",
     "dynasty": null
+   },
+   {
+    "q": "Q290045",
+    "name": "Jean Jacques Régis de Cambacérès",
+    "from": 1799,
+    "to": 1804,
+    "article": "Jean-Jacques-Régis de Cambacérès",
+    "dynasty": "Cambacérès"
    }
   ]
  },
@@ -59195,20 +59219,20 @@
     "dynasty": null
    },
    {
-    "q": "Q290045",
-    "name": "Jean Jacques Régis de Cambacérès",
-    "from": 1799,
-    "to": 1804,
-    "article": "Jean-Jacques-Régis de Cambacérès",
-    "dynasty": "Cambacérès"
-   },
-   {
     "q": "Q1663883",
     "name": "Roger Ducos",
     "from": 1799,
     "to": 1799,
     "article": "Roger Ducos",
     "dynasty": null
+   },
+   {
+    "q": "Q290045",
+    "name": "Jean Jacques Régis de Cambacérès",
+    "from": 1799,
+    "to": 1804,
+    "article": "Jean-Jacques-Régis de Cambacérès",
+    "dynasty": "Cambacérès"
    }
   ]
  },
@@ -59280,19 +59304,19 @@
   ],
   "terms": [
    {
-    "q": "Q153832",
-    "name": "Alcide De Gasperi",
-    "from": 1946,
-    "to": 1946,
-    "article": "Alcide De Gasperi",
-    "dynasty": null
-   },
-   {
     "q": "Q1245",
     "name": "Enrico de Nicola",
     "from": 1946,
     "to": 1948,
     "article": "Enrico De Nicola",
+    "dynasty": null
+   },
+   {
+    "q": "Q153832",
+    "name": "Alcide De Gasperi",
+    "from": 1946,
+    "to": 1946,
+    "article": "Alcide De Gasperi",
     "dynasty": null
    },
    {
@@ -59680,22 +59704,6 @@
     "dynasty": null
    },
    {
-    "q": "Q2487449",
-    "name": "Andrés Narvarte",
-    "from": 1835,
-    "to": 1835,
-    "article": "Andrés Narvarte",
-    "dynasty": null
-   },
-   {
-    "q": "Q2497517",
-    "name": "José María Carreño",
-    "from": 1835,
-    "to": 1835,
-    "article": "José María Carreño",
-    "dynasty": null
-   },
-   {
     "q": "Q2256182",
     "name": "Santiago Mariño",
     "from": 1835,
@@ -59709,6 +59717,22 @@
     "from": 1835,
     "to": 1836,
     "article": "José María Vargas",
+    "dynasty": null
+   },
+   {
+    "q": "Q2487449",
+    "name": "Andrés Narvarte",
+    "from": 1835,
+    "to": 1835,
+    "article": "Andrés Narvarte",
+    "dynasty": null
+   },
+   {
+    "q": "Q2497517",
+    "name": "José María Carreño",
+    "from": 1835,
+    "to": 1835,
+    "article": "José María Carreño",
     "dynasty": null
    },
    {
@@ -60422,19 +60446,19 @@
     "dynasty": null
    },
    {
-    "q": "Q387044",
-    "name": "Pedro Peña",
-    "from": 1912,
-    "to": 1912,
-    "article": "Pedro Peña (politician)",
-    "dynasty": null
-   },
-   {
     "q": "Q861003",
     "name": "Eduardo Schaerer",
     "from": 1912,
     "to": 1916,
     "article": "Eduardo Schaerer",
+    "dynasty": null
+   },
+   {
+    "q": "Q387044",
+    "name": "Pedro Peña",
+    "from": 1912,
+    "to": 1912,
+    "article": "Pedro Peña (politician)",
     "dynasty": null
    },
    {
@@ -62816,7 +62840,7 @@
    },
    {
     "q": "Q3052772",
-    "name": "Эмманюэль Макрон",
+    "name": "Emmanuel Macron",
     "from": 2017,
     "to": null,
     "article": "Emmanuel Macron",
@@ -63761,19 +63785,19 @@
     "dynasty": null
    },
    {
-    "q": "Q541768",
-    "name": "Mariano Herencia Zevallos",
-    "from": 1872,
-    "to": 1872,
-    "article": "Mariano Herencia Zevallos",
-    "dynasty": null
-   },
-   {
     "q": "Q679788",
     "name": "Manuel Pardo",
     "from": 1872,
     "to": 1876,
     "article": "Manuel Pardo (politician)",
+    "dynasty": null
+   },
+   {
+    "q": "Q541768",
+    "name": "Mariano Herencia Zevallos",
+    "from": 1872,
+    "to": 1872,
+    "article": "Mariano Herencia Zevallos",
     "dynasty": null
    },
    {
@@ -63793,19 +63817,19 @@
     "dynasty": null
    },
    {
-    "q": "Q170057",
-    "name": "Nicolás de Piérola",
-    "from": 1879,
-    "to": 1881,
-    "article": "Nicolás de Piérola",
-    "dynasty": null
-   },
-   {
     "q": "Q2994421",
     "name": "Luis La Puerta",
     "from": 1879,
     "to": 1879,
     "article": "Luis La Puerta",
+    "dynasty": null
+   },
+   {
+    "q": "Q170057",
+    "name": "Nicolás de Piérola",
+    "from": 1879,
+    "to": 1881,
+    "article": "Nicolás de Piérola",
     "dynasty": null
    },
    {
@@ -63857,19 +63881,19 @@
     "dynasty": null
    },
    {
-    "q": "Q334715",
-    "name": "Andrés Avelino Cáceres",
-    "from": 1894,
-    "to": 1895,
-    "article": "Andrés Avelino Cáceres",
-    "dynasty": null
-   },
-   {
     "q": "Q734679",
     "name": "Justiniano Borgoño",
     "from": 1894,
     "to": 1894,
     "article": "Justiniano Borgoño",
+    "dynasty": null
+   },
+   {
+    "q": "Q334715",
+    "name": "Andrés Avelino Cáceres",
+    "from": 1894,
+    "to": 1895,
+    "article": "Andrés Avelino Cáceres",
     "dynasty": null
    },
    {
@@ -63897,19 +63921,19 @@
     "dynasty": null
    },
    {
-    "q": "Q136632",
-    "name": "José Pardo y Barreda",
-    "from": 1904,
-    "to": 1908,
-    "article": "José Pardo y Barreda",
-    "dynasty": null
-   },
-   {
     "q": "Q136589",
     "name": "Serapio Calderón",
     "from": 1904,
     "to": 1904,
     "article": "Serapio Calderón",
+    "dynasty": null
+   },
+   {
+    "q": "Q136632",
+    "name": "José Pardo y Barreda",
+    "from": 1904,
+    "to": 1908,
+    "article": "José Pardo y Barreda",
     "dynasty": null
    },
    {
@@ -63969,6 +63993,14 @@
     "dynasty": null
    },
    {
+    "q": "Q128998",
+    "name": "Luis Miguel Sánchez Cerro",
+    "from": 1931,
+    "to": 1933,
+    "article": "Luis Miguel Sánchez Cerro",
+    "dynasty": null
+   },
+   {
     "q": "Q130963",
     "name": "David Samanez Ocampo",
     "from": 1931,
@@ -63990,14 +64022,6 @@
     "from": 1931,
     "to": 1931,
     "article": "Gustavo Jiménez",
-    "dynasty": null
-   },
-   {
-    "q": "Q128998",
-    "name": "Luis Miguel Sánchez Cerro",
-    "from": 1931,
-    "to": 1933,
-    "article": "Luis Miguel Sánchez Cerro",
     "dynasty": null
    },
    {
@@ -64049,19 +64073,19 @@
     "dynasty": null
    },
    {
-    "q": "Q129001",
-    "name": "Zenón Noriega Agüero",
-    "from": 1950,
-    "to": 1950,
-    "article": "Zenón Noriega Agüero",
-    "dynasty": null
-   },
-   {
     "q": "Q129008",
     "name": "Manuel Odría",
     "from": 1950,
     "to": 1956,
     "article": "Manuel A. Odría",
+    "dynasty": null
+   },
+   {
+    "q": "Q129001",
+    "name": "Zenón Noriega Agüero",
+    "from": 1950,
+    "to": 1950,
+    "article": "Zenón Noriega Agüero",
     "dynasty": null
    },
    {
@@ -64081,19 +64105,19 @@
     "dynasty": null
    },
    {
-    "q": "Q116736",
-    "name": "Fernando Belaúnde",
-    "from": 1963,
-    "to": 1968,
-    "article": "Fernando Belaúnde",
-    "dynasty": null
-   },
-   {
     "q": "Q116620",
     "name": "Nicolás Lindley López",
     "from": 1963,
     "to": 1963,
     "article": "Nicolás Lindley López",
+    "dynasty": null
+   },
+   {
+    "q": "Q116736",
+    "name": "Fernando Belaúnde",
+    "from": 1963,
+    "to": 1968,
+    "article": "Fernando Belaúnde",
     "dynasty": null
    },
    {
@@ -64359,19 +64383,19 @@
     "dynasty": null
    },
    {
-    "q": "Q734654",
-    "name": "José María Pérez de Urdininea",
-    "from": 1828,
-    "to": 1828,
-    "article": "José María Pérez de Urdininea",
-    "dynasty": null
-   },
-   {
     "q": "Q373873",
     "name": "José Miguel de Velasco",
     "from": 1828,
     "to": 1828,
     "article": "José Miguel de Velasco",
+    "dynasty": null
+   },
+   {
+    "q": "Q734654",
+    "name": "José María Pérez de Urdininea",
+    "from": 1828,
+    "to": 1828,
+    "article": "José María Pérez de Urdininea",
     "dynasty": null
    },
    {
@@ -64855,14 +64879,6 @@
     "dynasty": null
    },
    {
-    "q": "Q2566177",
-    "name": "Juan Pereda",
-    "from": 1978,
-    "to": 1978,
-    "article": "Juan Pereda",
-    "dynasty": null
-   },
-   {
     "q": "Q7944630",
     "name": "Víctor González Fuentes",
     "from": 1978,
@@ -64871,11 +64887,11 @@
     "dynasty": null
    },
    {
-    "q": "Q466098",
-    "name": "Lidia Gueiler Tejada",
-    "from": 1979,
-    "to": 1980,
-    "article": "Lidia Gueiler",
+    "q": "Q2566177",
+    "name": "Juan Pereda",
+    "from": 1978,
+    "to": 1978,
+    "article": "Juan Pereda",
     "dynasty": null
    },
    {
@@ -64884,6 +64900,14 @@
     "from": 1979,
     "to": 1979,
     "article": "Wálter Guevara",
+    "dynasty": null
+   },
+   {
+    "q": "Q466098",
+    "name": "Lidia Gueiler Tejada",
+    "from": 1979,
+    "to": 1980,
+    "article": "Lidia Gueiler",
     "dynasty": null
    },
    {
@@ -64927,19 +64951,19 @@
     "dynasty": null
    },
    {
-    "q": "Q734593",
-    "name": "Guido Vildoso",
-    "from": 1982,
-    "to": 1982,
-    "article": "Guido Vildoso",
-    "dynasty": null
-   },
-   {
     "q": "Q471313",
     "name": "Hernán Siles Zuazo",
     "from": 1982,
     "to": 1985,
     "article": "Hernán Siles Zuazo",
+    "dynasty": null
+   },
+   {
+    "q": "Q734593",
+    "name": "Guido Vildoso",
+    "from": 1982,
+    "to": 1982,
+    "article": "Guido Vildoso",
     "dynasty": null
    },
    {
@@ -65470,19 +65494,19 @@
     "dynasty": null
    },
    {
-    "q": "Q455687",
-    "name": "Rafael Addiego Bruno",
-    "from": 1985,
-    "to": 1985,
-    "article": "Rafael Addiego Bruno",
-    "dynasty": null
-   },
-   {
     "q": "Q311428",
     "name": "Julio María Sanguinetti",
     "from": 1985,
     "to": 1990,
     "article": "Julio María Sanguinetti",
+    "dynasty": null
+   },
+   {
+    "q": "Q455687",
+    "name": "Rafael Addiego Bruno",
+    "from": 1985,
+    "to": 1985,
+    "article": "Rafael Addiego Bruno",
     "dynasty": null
    },
    {
@@ -65557,20 +65581,20 @@
   ],
   "terms": [
    {
-    "q": "Q12971",
-    "name": "Leopold I of Belgium",
-    "from": 1831,
-    "to": 1865,
-    "article": "Leopold I of Belgium",
-    "dynasty": "House of Saxe-Coburg and Gotha"
-   },
-   {
     "q": "Q1079522",
     "name": "Érasme-Louis Surlet de Chokier",
     "from": 1831,
     "to": 1831,
     "article": "Érasme-Louis Surlet de Chokier",
     "dynasty": null
+   },
+   {
+    "q": "Q12971",
+    "name": "Leopold I of Belgium",
+    "from": 1831,
+    "to": 1865,
+    "article": "Leopold I of Belgium",
+    "dynasty": "House of Saxe-Coburg and Gotha"
    },
    {
     "q": "Q12967",
@@ -65684,22 +65708,6 @@
     "dynasty": null
    },
    {
-    "q": "Q2487449",
-    "name": "Andrés Narvarte",
-    "from": 1835,
-    "to": 1835,
-    "article": "Andrés Narvarte",
-    "dynasty": null
-   },
-   {
-    "q": "Q2497517",
-    "name": "José María Carreño",
-    "from": 1835,
-    "to": 1835,
-    "article": "José María Carreño",
-    "dynasty": null
-   },
-   {
     "q": "Q2256182",
     "name": "Santiago Mariño",
     "from": 1835,
@@ -65713,6 +65721,22 @@
     "from": 1835,
     "to": 1836,
     "article": "José María Vargas",
+    "dynasty": null
+   },
+   {
+    "q": "Q2487449",
+    "name": "Andrés Narvarte",
+    "from": 1835,
+    "to": 1835,
+    "article": "Andrés Narvarte",
+    "dynasty": null
+   },
+   {
+    "q": "Q2497517",
+    "name": "José María Carreño",
+    "from": 1835,
+    "to": 1835,
+    "article": "José María Carreño",
     "dynasty": null
    },
    {
@@ -66363,19 +66387,19 @@
     "dynasty": null
    },
    {
-    "q": "Q888866",
-    "name": "Carlos Arroyo",
-    "from": 1939,
-    "to": 1939,
-    "article": "Carlos Alberto Arroyo del Río",
-    "dynasty": null
-   },
-   {
     "q": "Q434734",
     "name": "Andrés F. Córdova",
     "from": 1939,
     "to": 1940,
     "article": "Andrés Córdova",
+    "dynasty": null
+   },
+   {
+    "q": "Q888866",
+    "name": "Carlos Arroyo",
+    "from": 1939,
+    "to": 1939,
+    "article": "Carlos Alberto Arroyo del Río",
     "dynasty": null
    },
    {
@@ -66562,19 +66586,19 @@
   ],
   "terms": [
    {
-    "q": "Q216547",
-    "name": "Sam Houston",
-    "from": 1836,
-    "to": 1838,
-    "article": "Sam Houston",
-    "dynasty": null
-   },
-   {
     "q": "Q1780964",
     "name": "David G. Burnet",
     "from": 1836,
     "to": 1836,
     "article": "David G. Burnet",
+    "dynasty": null
+   },
+   {
+    "q": "Q216547",
+    "name": "Sam Houston",
+    "from": 1836,
+    "to": 1838,
+    "article": "Sam Houston",
     "dynasty": null
    },
    {
@@ -66633,6 +66657,22 @@
     "dynasty": null
    },
    {
+    "q": "Q887862",
+    "name": "Francisco Zelaya y Ayes",
+    "from": 1839,
+    "to": 1841,
+    "article": "Francisco Zelaya y Ayes",
+    "dynasty": null
+   },
+   {
+    "q": "Q887866",
+    "name": "José María Bustillo",
+    "from": 1839,
+    "to": 1839,
+    "article": "José María Bustillo (Honduran)",
+    "dynasty": null
+   },
+   {
     "q": "Q1265762",
     "name": "Juan José Alvarado",
     "from": 1839,
@@ -66654,22 +66694,6 @@
     "from": 1839,
     "to": 1839,
     "article": "Mariano Garrigó",
-    "dynasty": null
-   },
-   {
-    "q": "Q887862",
-    "name": "Francisco Zelaya y Ayes",
-    "from": 1839,
-    "to": 1841,
-    "article": "Francisco Zelaya y Ayes",
-    "dynasty": null
-   },
-   {
-    "q": "Q887866",
-    "name": "José María Bustillo",
-    "from": 1839,
-    "to": 1839,
-    "article": "José María Bustillo (Honduran)",
     "dynasty": null
    },
    {
@@ -66761,19 +66785,19 @@
     "dynasty": null
    },
    {
-    "q": "Q887800",
-    "name": "José María Medina",
-    "from": 1863,
-    "to": 1863,
-    "article": "José María Medina",
-    "dynasty": null
-   },
-   {
     "q": "Q887640",
     "name": "Francisco Inestroza",
     "from": 1863,
     "to": 1864,
     "article": "Francisco Inestroza",
+    "dynasty": null
+   },
+   {
+    "q": "Q887800",
+    "name": "José María Medina",
+    "from": 1863,
+    "to": 1863,
+    "article": "José María Medina",
     "dynasty": null
    },
    {
@@ -66809,19 +66833,19 @@
     "dynasty": null
    },
    {
-    "q": "Q887800",
-    "name": "José María Medina",
-    "from": 1876,
-    "to": 1876,
-    "article": "José María Medina",
-    "dynasty": null
-   },
-   {
     "q": "Q887664",
     "name": "Crescencio Gómez",
     "from": 1876,
     "to": 1876,
     "article": "Crescencio Gómez",
+    "dynasty": null
+   },
+   {
+    "q": "Q887800",
+    "name": "José María Medina",
+    "from": 1876,
+    "to": 1876,
+    "article": "José María Medina",
     "dynasty": null
    },
    {
@@ -66977,19 +67001,19 @@
     "dynasty": null
    },
    {
-    "q": "Q562044",
-    "name": "Tiburcio Carías",
-    "from": 1924,
-    "to": 1924,
-    "article": "Tiburcio Carías Andino",
-    "dynasty": null
-   },
-   {
     "q": "Q887587",
     "name": "Francisco Bueso",
     "from": 1924,
     "to": 1924,
     "article": "Francisco Bueso",
+    "dynasty": null
+   },
+   {
+    "q": "Q562044",
+    "name": "Tiburcio Carías",
+    "from": 1924,
+    "to": 1924,
+    "article": "Tiburcio Carías Andino",
     "dynasty": null
    },
    {
@@ -67743,19 +67767,19 @@
     "dynasty": null
    },
    {
-    "q": "Q881015",
-    "name": "Luis Arturo González López",
-    "from": 1957,
-    "to": 1957,
-    "article": "Luis Arturo González López",
-    "dynasty": null
-   },
-   {
     "q": "Q293391",
     "name": "Óscar Mendoza Azurdia",
     "from": 1957,
     "to": 1957,
     "article": "Óscar Mendoza Azurdia",
+    "dynasty": null
+   },
+   {
+    "q": "Q881015",
+    "name": "Luis Arturo González López",
+    "from": 1957,
+    "to": 1957,
+    "article": "Luis Arturo González López",
     "dynasty": null
    },
    {
@@ -67831,19 +67855,19 @@
     "dynasty": null
    },
    {
-    "q": "Q539891",
-    "name": "Ramiro de León Carpio",
-    "from": 1993,
-    "to": 1996,
-    "article": "Ramiro de León Carpio",
-    "dynasty": null
-   },
-   {
     "q": "Q887440",
     "name": "Gustavo Adolfo Espina Salguero",
     "from": 1993,
     "to": 1993,
     "article": "Gustavo Adolfo Espina Salguero",
+    "dynasty": null
+   },
+   {
+    "q": "Q539891",
+    "name": "Ramiro de León Carpio",
+    "from": 1993,
+    "to": 1996,
+    "article": "Ramiro de León Carpio",
     "dynasty": null
    },
    {
@@ -68046,19 +68070,19 @@
     "dynasty": null
    },
    {
-    "q": "Q569276",
-    "name": "Roberto Sacasa",
-    "from": 1889,
-    "to": 1891,
-    "article": "Roberto Sacasa",
-    "dynasty": null
-   },
-   {
     "q": "Q352555",
     "name": "Nicolás Osorno",
     "from": 1889,
     "to": 1889,
     "article": "Nicolás Osorno",
+    "dynasty": null
+   },
+   {
+    "q": "Q569276",
+    "name": "Roberto Sacasa",
+    "from": 1889,
+    "to": 1891,
+    "article": "Roberto Sacasa",
     "dynasty": null
    },
    {
@@ -68078,19 +68102,19 @@
     "dynasty": null
    },
    {
-    "q": "Q560938",
-    "name": "José Santos Zelayo",
-    "from": 1893,
-    "to": 1909,
-    "article": "José Santos Zelaya",
-    "dynasty": null
-   },
-   {
     "q": "Q578353",
     "name": "Joaquín Zavala",
     "from": 1893,
     "to": 1893,
     "article": "Joaquín Zavala",
+    "dynasty": null
+   },
+   {
+    "q": "Q560938",
+    "name": "José Santos Zelayo",
+    "from": 1893,
+    "to": 1909,
+    "article": "José Santos Zelaya",
     "dynasty": null
    },
    {
@@ -68182,19 +68206,19 @@
     "dynasty": null
    },
    {
-    "q": "Q142505",
-    "name": "Adolfo Díaz",
-    "from": 1926,
-    "to": 1929,
-    "article": "Adolfo Díaz",
-    "dynasty": null
-   },
-   {
     "q": "Q727025",
     "name": "Emiliano Chamorro Vargas",
     "from": 1926,
     "to": 1926,
     "article": "Emiliano Chamorro Vargas",
+    "dynasty": null
+   },
+   {
+    "q": "Q142505",
+    "name": "Adolfo Díaz",
+    "from": 1926,
+    "to": 1929,
+    "article": "Adolfo Díaz",
     "dynasty": null
    },
    {
@@ -68254,19 +68278,19 @@
     "dynasty": null
    },
    {
-    "q": "Q888739",
-    "name": "Leonardo Argüello Barreto",
-    "from": 1947,
-    "to": 1947,
-    "article": "Leonardo Argüello Barreto",
-    "dynasty": null
-   },
-   {
     "q": "Q435184",
     "name": "Benjamín Lacayo Sacasa",
     "from": 1947,
     "to": 1947,
     "article": "Benjamín Lacayo Sacasa",
+    "dynasty": null
+   },
+   {
+    "q": "Q888739",
+    "name": "Leonardo Argüello Barreto",
+    "from": 1947,
+    "to": 1947,
+    "article": "Leonardo Argüello Barreto",
     "dynasty": null
    },
    {
@@ -68413,19 +68437,19 @@
     "dynasty": null
    },
    {
-    "q": "Q433502",
-    "name": "Fermín Palacios",
-    "from": 1844,
-    "to": 1844,
-    "article": "Fermín Palacios",
-    "dynasty": null
-   },
-   {
     "q": "Q887495",
     "name": "Francisco Malespín",
     "from": 1844,
     "to": 1845,
     "article": "Francisco Malespín",
+    "dynasty": null
+   },
+   {
+    "q": "Q433502",
+    "name": "Fermín Palacios",
+    "from": 1844,
+    "to": 1844,
+    "article": "Fermín Palacios",
     "dynasty": null
    },
    {
@@ -68485,19 +68509,19 @@
     "dynasty": null
    },
    {
-    "q": "Q888882",
-    "name": "Francisco Dueñas Díaz",
-    "from": 1851,
-    "to": 1852,
-    "article": "Francisco Dueñas",
-    "dynasty": null
-   },
-   {
     "q": "Q887853",
     "name": "José Félix Quirós",
     "from": 1851,
     "to": 1851,
     "article": "José Félix Quirós",
+    "dynasty": null
+   },
+   {
+    "q": "Q888882",
+    "name": "Francisco Dueñas Díaz",
+    "from": 1851,
+    "to": 1852,
+    "article": "Francisco Dueñas",
     "dynasty": null
    },
    {
@@ -68573,19 +68597,19 @@
     "dynasty": null
    },
    {
-    "q": "Q880424",
-    "name": "Joaquín Eufrasio Guzmán",
-    "from": 1859,
-    "to": 1859,
-    "article": "Joaquín Eufrasio Guzmán",
-    "dynasty": null
-   },
-   {
     "q": "Q671414",
     "name": "Gerardo Barrios",
     "from": 1859,
     "to": 1863,
     "article": "Gerardo Barrios",
+    "dynasty": null
+   },
+   {
+    "q": "Q880424",
+    "name": "Joaquín Eufrasio Guzmán",
+    "from": 1859,
+    "to": 1859,
+    "article": "Joaquín Eufrasio Guzmán",
     "dynasty": null
    },
    {
@@ -68613,19 +68637,19 @@
     "dynasty": null
    },
    {
-    "q": "Q887758",
-    "name": "Rafael Zaldívar",
-    "from": 1876,
-    "to": 1885,
-    "article": "Rafael Zaldívar",
-    "dynasty": null
-   },
-   {
     "q": "Q525006",
     "name": "Andrés del Valle",
     "from": 1876,
     "to": 1876,
     "article": "Andrés del Valle",
+    "dynasty": null
+   },
+   {
+    "q": "Q887758",
+    "name": "Rafael Zaldívar",
+    "from": 1876,
+    "to": 1885,
+    "article": "Rafael Zaldívar",
     "dynasty": null
    },
    {
@@ -68757,19 +68781,19 @@
     "dynasty": null
    },
    {
-    "q": "Q715109",
-    "name": "Arturo Araujo",
-    "from": 1931,
-    "to": 1931,
-    "article": "Arturo Araujo",
-    "dynasty": null
-   },
-   {
     "q": "Q319419",
     "name": "Maximiliano Hernández Martínez",
     "from": 1931,
     "to": 1944,
     "article": "Maximiliano Hernández Martínez",
+    "dynasty": null
+   },
+   {
+    "q": "Q715109",
+    "name": "Arturo Araujo",
+    "from": 1931,
+    "to": 1931,
+    "article": "Arturo Araujo",
     "dynasty": null
    },
    {
@@ -68985,19 +69009,19 @@
     "dynasty": null
    },
    {
-    "q": "Q4887981",
-    "name": "Benigno Filomeno de Rojas",
-    "from": 1865,
-    "to": 1865,
-    "article": "Benigno Filomeno de Rojas",
-    "dynasty": null
-   },
-   {
     "q": "Q7159629",
     "name": "Pedro Guillermo",
     "from": 1865,
     "to": 1865,
     "article": "Pedro Guillermo",
+    "dynasty": null
+   },
+   {
+    "q": "Q4887981",
+    "name": "Benigno Filomeno de Rojas",
+    "from": 1865,
+    "to": 1865,
+    "article": "Benigno Filomeno de Rojas",
     "dynasty": null
    },
    {
@@ -69169,19 +69193,19 @@
     "dynasty": null
    },
    {
-    "q": "Q562002",
-    "name": "Salvador Jorge Blanco",
-    "from": 1982,
-    "to": 1986,
-    "article": "Salvador Jorge Blanco",
-    "dynasty": null
-   },
-   {
     "q": "Q5972763",
     "name": "Jacobo Majluta Azar",
     "from": 1982,
     "to": 1982,
     "article": "Jacobo Majluta",
+    "dynasty": null
+   },
+   {
+    "q": "Q562002",
+    "name": "Salvador Jorge Blanco",
+    "from": 1982,
+    "to": 1986,
+    "article": "Salvador Jorge Blanco",
     "dynasty": null
    },
    {
@@ -69527,20 +69551,20 @@
   ],
   "terms": [
    {
-    "q": "Q71604",
-    "name": "Robert Heinrich Wagner",
-    "from": 1933,
-    "to": 1945,
-    "article": "Robert Heinrich Wagner",
-    "dynasty": null
-   },
-   {
     "q": "Q352",
     "name": "Adolf Hitler",
     "from": 1933,
     "to": 1945,
     "article": "Adolf Hitler",
     "dynasty": "Hitler Family"
+   },
+   {
+    "q": "Q71604",
+    "name": "Robert Heinrich Wagner",
+    "from": 1933,
+    "to": 1945,
+    "article": "Robert Heinrich Wagner",
+    "dynasty": null
    },
    {
     "q": "Q47906",
@@ -72043,19 +72067,19 @@
     "dynasty": "Imperial House of Japan"
    },
    {
-    "q": "Q357253",
-    "name": "Emperor Chūkyō",
-    "from": 1221,
-    "to": 1221,
-    "article": "Emperor Chūkyō",
-    "dynasty": "Imperial House of Japan"
-   },
-   {
     "q": "Q357221",
     "name": "Go-Horikawa",
     "from": 1221,
     "to": 1232,
     "article": "Emperor Go-Horikawa",
+    "dynasty": "Imperial House of Japan"
+   },
+   {
+    "q": "Q357253",
+    "name": "Emperor Chūkyō",
+    "from": 1221,
+    "to": 1221,
+    "article": "Emperor Chūkyō",
     "dynasty": "Imperial House of Japan"
    },
    {
@@ -72546,19 +72570,19 @@
     "dynasty": null
    },
    {
-    "q": "Q189145",
-    "name": "Антонио Лопес де Санта-Анна",
-    "from": 1841,
-    "to": 1842,
-    "article": "Antonio López de Santa Anna",
-    "dynasty": null
-   },
-   {
     "q": "Q684616",
     "name": "Francisco Javier Echeverría",
     "from": 1841,
     "to": 1841,
     "article": "Francisco Javier Echeverría",
+    "dynasty": null
+   },
+   {
+    "q": "Q189145",
+    "name": "Антонио Лопес де Санта-Анна",
+    "from": 1841,
+    "to": 1842,
+    "article": "Antonio López de Santa Anna",
     "dynasty": null
    },
    {
@@ -72570,19 +72594,19 @@
     "dynasty": null
    },
    {
-    "q": "Q189145",
-    "name": "Антонио Лопес де Санта-Анна",
-    "from": 1843,
-    "to": 1843,
-    "article": "Antonio López de Santa Anna",
-    "dynasty": null
-   },
-   {
     "q": "Q667722",
     "name": "Valentín Canalizo",
     "from": 1843,
     "to": 1844,
     "article": "Valentín Canalizo",
+    "dynasty": null
+   },
+   {
+    "q": "Q189145",
+    "name": "Антонио Лопес де Санта-Анна",
+    "from": 1843,
+    "to": 1843,
+    "article": "Antonio López de Santa Anna",
     "dynasty": null
    },
    {
@@ -72594,19 +72618,19 @@
     "dynasty": null
    },
    {
-    "q": "Q189145",
-    "name": "Антонио Лопес де Санта-Анна",
-    "from": 1844,
-    "to": 1844,
-    "article": "Antonio López de Santa Anna",
-    "dynasty": null
-   },
-   {
     "q": "Q667722",
     "name": "Valentín Canalizo",
     "from": 1844,
     "to": 1844,
     "article": "Valentín Canalizo",
+    "dynasty": null
+   },
+   {
+    "q": "Q189145",
+    "name": "Антонио Лопес де Санта-Анна",
+    "from": 1844,
+    "to": 1844,
+    "article": "Antonio López de Santa Anna",
     "dynasty": null
    },
    {
@@ -72642,6 +72666,14 @@
     "dynasty": null
    },
    {
+    "q": "Q561564",
+    "name": "Manuel de la Peña y Peña",
+    "from": 1847,
+    "to": 1847,
+    "article": "Manuel de la Peña y Peña",
+    "dynasty": null
+   },
+   {
     "q": "Q2208980",
     "name": "Pedro María de Anaya",
     "from": 1847,
@@ -72655,14 +72687,6 @@
     "from": 1847,
     "to": 1847,
     "article": "Antonio López de Santa Anna",
-    "dynasty": null
-   },
-   {
-    "q": "Q561564",
-    "name": "Manuel de la Peña y Peña",
-    "from": 1847,
-    "to": 1847,
-    "article": "Manuel de la Peña y Peña",
     "dynasty": null
    },
    {
@@ -72811,7 +72835,7 @@
    },
    {
     "q": "Q299168",
-    "name": "Victoriano Huerta",
+    "name": "pitudo Huerta",
     "from": 1913,
     "to": 1914,
     "article": "Victoriano Huerta",
@@ -75688,19 +75712,19 @@
     "dynasty": null
    },
    {
-    "q": "Q526389",
-    "name": "Vojislav Mihailović",
-    "from": 2004,
-    "to": 2004,
-    "article": "Vojislav Mihailović",
-    "dynasty": null
-   },
-   {
     "q": "Q581943",
     "name": "Predrag Marković",
     "from": 2004,
     "to": 2004,
     "article": "Predrag Marković",
+    "dynasty": null
+   },
+   {
+    "q": "Q526389",
+    "name": "Vojislav Mihailović",
+    "from": 2004,
+    "to": 2004,
+    "article": "Vojislav Mihailović",
     "dynasty": null
    },
    {
@@ -75950,7 +75974,7 @@
    },
    {
     "q": "Q788903",
-    "name": "Андраш Бака",
+    "name": "András Baka",
     "from": 2026,
     "to": null,
     "article": "András Baka",
@@ -77256,19 +77280,19 @@
     "dynasty": null
    },
    {
-    "q": "Q188974",
-    "name": "Pedro Eugenio Aramburu",
-    "from": 1955,
-    "to": 1958,
-    "article": "Pedro Eugenio Aramburu",
-    "dynasty": null
-   },
-   {
     "q": "Q365431",
     "name": "Eduardo Lonardi",
     "from": 1955,
     "to": 1955,
     "article": "Eduardo Lonardi",
+    "dynasty": null
+   },
+   {
+    "q": "Q188974",
+    "name": "Pedro Eugenio Aramburu",
+    "from": 1955,
+    "to": 1958,
+    "article": "Pedro Eugenio Aramburu",
     "dynasty": null
    },
    {
@@ -77989,19 +78013,19 @@
     "dynasty": "Prasat Thong dynasty"
    },
    {
-    "q": "Q1058870",
-    "name": "Chao Fa Chai",
-    "from": 1656,
-    "to": 1656,
-    "article": "Sanphet VI (Chai)",
-    "dynasty": "Prasat Thong dynasty"
-   },
-   {
     "q": "Q889431",
     "name": "Si Suthammaracha",
     "from": 1656,
     "to": 1656,
     "article": "Si Suthammaracha",
+    "dynasty": "Prasat Thong dynasty"
+   },
+   {
+    "q": "Q1058870",
+    "name": "Chao Fa Chai",
+    "from": 1656,
+    "to": 1656,
+    "article": "Sanphet VI (Chai)",
     "dynasty": "Prasat Thong dynasty"
    },
    {
@@ -78984,19 +79008,19 @@
     "dynasty": null
    },
    {
-    "q": "Q605467",
-    "name": "Antonio Thrasybule Kébreau",
-    "from": 1957,
-    "to": 1957,
-    "article": "Antonio Thrasybule Kébreau",
-    "dynasty": null
-   },
-   {
     "q": "Q187697",
     "name": "François Duvalier",
     "from": 1957,
     "to": 1971,
     "article": "François Duvalier",
+    "dynasty": null
+   },
+   {
+    "q": "Q605467",
+    "name": "Antonio Thrasybule Kébreau",
+    "from": 1957,
+    "to": 1957,
+    "article": "Antonio Thrasybule Kébreau",
     "dynasty": null
    },
    {
@@ -79016,6 +79040,14 @@
     "dynasty": null
    },
    {
+    "q": "Q653169",
+    "name": "Prosper Avril",
+    "from": 1988,
+    "to": 1990,
+    "article": "Prosper Avril",
+    "dynasty": null
+   },
+   {
     "q": "Q470492",
     "name": "Leslie Manigat",
     "from": 1988,
@@ -79032,12 +79064,12 @@
     "dynasty": null
    },
    {
-    "q": "Q653169",
-    "name": "Prosper Avril",
-    "from": 1988,
-    "to": 1990,
-    "article": "Prosper Avril",
-    "dynasty": null
+    "q": "Q461636",
+    "name": "Ertha Pascal-Trouillot",
+    "from": 1990,
+    "to": 1991,
+    "article": "Ertha Pascal-Trouillot",
+    "dynasty": "Category:Trouillot family"
    },
    {
     "q": "Q887405",
@@ -79046,14 +79078,6 @@
     "to": 1990,
     "article": "Hérard Abraham",
     "dynasty": null
-   },
-   {
-    "q": "Q461636",
-    "name": "Ertha Pascal-Trouillot",
-    "from": 1990,
-    "to": 1991,
-    "article": "Ertha Pascal-Trouillot",
-    "dynasty": "Category:Trouillot family"
    },
    {
     "q": "Q209617",
@@ -79259,19 +79283,19 @@
     "dynasty": null
    },
    {
-    "q": "Q192512",
-    "name": "Mengistu Haile Mariam",
-    "from": 1974,
-    "to": 1974,
-    "article": "Mengistu Haile Mariam",
-    "dynasty": null
-   },
-   {
     "q": "Q659082",
     "name": "Tafari Benti",
     "from": 1974,
     "to": 1977,
     "article": "Tafari Benti",
+    "dynasty": null
+   },
+   {
+    "q": "Q192512",
+    "name": "Mengistu Haile Mariam",
+    "from": 1974,
+    "to": 1974,
+    "article": "Mengistu Haile Mariam",
     "dynasty": null
    },
    {
@@ -80224,19 +80248,19 @@
   ],
   "terms": [
    {
-    "q": "Q153832",
-    "name": "Alcide De Gasperi",
-    "from": 1946,
-    "to": 1946,
-    "article": "Alcide De Gasperi",
-    "dynasty": null
-   },
-   {
     "q": "Q1245",
     "name": "Enrico de Nicola",
     "from": 1946,
     "to": 1948,
     "article": "Enrico De Nicola",
+    "dynasty": null
+   },
+   {
+    "q": "Q153832",
+    "name": "Alcide De Gasperi",
+    "from": 1946,
+    "to": 1946,
+    "article": "Alcide De Gasperi",
     "dynasty": null
    },
    {
@@ -80978,19 +81002,19 @@
     "dynasty": null
    },
    {
-    "q": "Q334059",
-    "name": "Farooq Leghari",
-    "from": 1993,
-    "to": 1997,
-    "article": "Farooq Leghari",
-    "dynasty": null
-   },
-   {
     "q": "Q660584",
     "name": "Wasim Sajjad",
     "from": 1993,
     "to": 1993,
     "article": "Wasim Sajjad",
+    "dynasty": null
+   },
+   {
+    "q": "Q334059",
+    "name": "Farooq Leghari",
+    "from": 1993,
+    "to": 1997,
+    "article": "Farooq Leghari",
     "dynasty": null
    },
    {
@@ -81642,7 +81666,7 @@
    },
    {
     "q": "Q788903",
-    "name": "Андраш Бака",
+    "name": "András Baka",
     "from": 2026,
     "to": null,
     "article": "András Baka",
@@ -81767,19 +81791,19 @@
     "dynasty": null
    },
    {
-    "q": "Q469415",
-    "name": "Ho Chong",
-    "from": 1960,
-    "to": 1960,
-    "article": "Ho Chong",
-    "dynasty": null
-   },
-   {
     "q": "Q16094998",
     "name": "Paek Nak-chun",
     "from": 1960,
     "to": 1960,
     "article": "Baek Nak-jun",
+    "dynasty": null
+   },
+   {
+    "q": "Q469415",
+    "name": "Ho Chong",
+    "from": 1960,
+    "to": 1960,
+    "article": "Ho Chong",
     "dynasty": null
    },
    {
@@ -84056,14 +84080,6 @@
     "dynasty": "Imperial House of Japan"
    },
    {
-    "q": "Q357253",
-    "name": "Emperor Chūkyō",
-    "from": 1221,
-    "to": 1221,
-    "article": "Emperor Chūkyō",
-    "dynasty": "Imperial House of Japan"
-   },
-   {
     "q": "Q357221",
     "name": "Go-Horikawa",
     "from": 1221,
@@ -84085,6 +84101,14 @@
     "from": 1221,
     "to": 1232,
     "article": "Emperor Go-Horikawa",
+    "dynasty": "Imperial House of Japan"
+   },
+   {
+    "q": "Q357253",
+    "name": "Emperor Chūkyō",
+    "from": 1221,
+    "to": 1221,
+    "article": "Emperor Chūkyō",
     "dynasty": "Imperial House of Japan"
    },
    {
@@ -86172,19 +86196,19 @@
     "dynasty": null
    },
    {
-    "q": "Q2963140",
-    "name": "Chey Chettha V",
-    "from": 1749,
-    "to": 1755,
-    "article": "Chey Chettha V",
-    "dynasty": null
-   },
-   {
     "q": "Q3473926",
     "name": "Satha II",
     "from": 1749,
     "to": 1749,
     "article": "Satha II",
+    "dynasty": null
+   },
+   {
+    "q": "Q2963140",
+    "name": "Chey Chettha V",
+    "from": 1749,
+    "to": 1755,
+    "article": "Chey Chettha V",
     "dynasty": null
    },
    {
@@ -86331,19 +86355,19 @@
     "dynasty": null
    },
    {
-    "q": "Q22949078",
-    "name": "Ahmed Awad Ibn Auf",
-    "from": 2019,
-    "to": 2019,
-    "article": "Ahmed Awad Ibn Auf",
-    "dynasty": null
-   },
-   {
     "q": "Q63111184",
     "name": "Abdel Fattah al-Burhan",
     "from": 2019,
     "to": 2019,
     "article": "Abdel Fattah al-Burhan",
+    "dynasty": null
+   },
+   {
+    "q": "Q22949078",
+    "name": "Ahmed Awad Ibn Auf",
+    "from": 2019,
+    "to": 2019,
+    "article": "Ahmed Awad Ibn Auf",
     "dynasty": null
    }
   ]
@@ -86601,19 +86625,19 @@
     "dynasty": null
    },
    {
-    "q": "Q309995",
-    "name": "Paul Deschanel",
-    "from": 1920,
-    "to": 1920,
-    "article": "Paul Deschanel",
-    "dynasty": null
-   },
-   {
     "q": "Q274540",
     "name": "Alexandre Millerand",
     "from": 1920,
     "to": 1924,
     "article": "Alexandre Millerand",
+    "dynasty": null
+   },
+   {
+    "q": "Q309995",
+    "name": "Paul Deschanel",
+    "from": 1920,
+    "to": 1920,
+    "article": "Paul Deschanel",
     "dynasty": null
    },
    {
@@ -86746,7 +86770,7 @@
    },
    {
     "q": "Q3052772",
-    "name": "Эмманюэль Макрон",
+    "name": "Emmanuel Macron",
     "from": 2017,
     "to": null,
     "article": "Emmanuel Macron",
@@ -87451,20 +87475,20 @@
     "dynasty": null
    },
    {
-    "q": "Q307168",
-    "name": "Abdul Aziz al-Hakim",
-    "from": 2003,
-    "to": 2003,
-    "article": "Abdul Aziz al-Hakim",
-    "dynasty": "Hakim family"
-   },
-   {
     "q": "Q316495",
     "name": "Ibrahim al-Jaafari",
     "from": 2003,
     "to": 2003,
     "article": "Ibrahim al-Jaafari",
     "dynasty": null
+   },
+   {
+    "q": "Q307168",
+    "name": "Abdul Aziz al-Hakim",
+    "from": 2003,
+    "to": 2003,
+    "article": "Abdul Aziz al-Hakim",
+    "dynasty": "Hakim family"
    },
    {
     "q": "Q180911",
@@ -88247,19 +88271,19 @@
     "dynasty": null
    },
    {
-    "q": "Q888030",
-    "name": "Maamun al-Kuzbari",
-    "from": 1961,
-    "to": 1961,
-    "article": "Maamun al-Kuzbari",
-    "dynasty": null
-   },
-   {
     "q": "Q169841",
     "name": "Nazim al-Kudsi",
     "from": 1961,
     "to": 1963,
     "article": "Nazim al-Qudsi",
+    "dynasty": null
+   },
+   {
+    "q": "Q888030",
+    "name": "Maamun al-Kuzbari",
+    "from": 1961,
+    "to": 1961,
+    "article": "Maamun al-Kuzbari",
     "dynasty": null
    },
    {
@@ -89101,19 +89125,19 @@
     "dynasty": null
    },
    {
-    "q": "Q207942",
-    "name": "Sani Abacha",
-    "from": 1993,
-    "to": 1998,
-    "article": "Sani Abacha",
-    "dynasty": null
-   },
-   {
     "q": "Q471351",
     "name": "Ernest Shonekan",
     "from": 1993,
     "to": 1993,
     "article": "Ernest Shonekan",
+    "dynasty": null
+   },
+   {
+    "q": "Q207942",
+    "name": "Sani Abacha",
+    "from": 1993,
+    "to": 1998,
+    "article": "Sani Abacha",
     "dynasty": null
    },
    {
@@ -89355,19 +89379,19 @@
     "dynasty": null
    },
    {
-    "q": "Q1627285",
-    "name": "Honoré Traoré",
-    "from": 2014,
-    "to": 2014,
-    "article": "Honoré Traoré",
-    "dynasty": null
-   },
-   {
     "q": "Q18402168",
     "name": "Yacouba Isaac Zida",
     "from": 2014,
     "to": 2014,
     "article": "Yacouba Isaac Zida",
+    "dynasty": null
+   },
+   {
+    "q": "Q1627285",
+    "name": "Honoré Traoré",
+    "from": 2014,
+    "to": 2014,
+    "article": "Honoré Traoré",
     "dynasty": null
    },
    {
@@ -89514,19 +89538,19 @@
     "dynasty": null
    },
    {
-    "q": "Q120965176",
-    "name": "Abdourahamane Tiani",
-    "from": 2023,
-    "to": null,
-    "article": "Abdourahamane Tiani",
-    "dynasty": null
-   },
-   {
     "q": "Q5680106",
     "name": "Hassoumi Massoudou",
     "from": 2023,
     "to": null,
     "article": "Hassoumi Massaoudou",
+    "dynasty": null
+   },
+   {
+    "q": "Q120965176",
+    "name": "Abdourahamane Tiani",
+    "from": 2023,
+    "to": null,
+    "article": "Abdourahamane Tiani",
     "dynasty": null
    }
   ]
@@ -89663,19 +89687,19 @@
     "dynasty": "House of Windsor"
    },
    {
-    "q": "Q339040",
-    "name": "Clifford Campbell",
-    "from": 1962,
-    "to": 1973,
-    "article": "Clifford Campbell",
-    "dynasty": null
-   },
-   {
     "q": "Q3366368",
     "name": "Kenneth Blackburne",
     "from": 1962,
     "to": 1962,
     "article": "Kenneth Blackburne",
+    "dynasty": null
+   },
+   {
+    "q": "Q339040",
+    "name": "Clifford Campbell",
+    "from": 1962,
+    "to": 1973,
+    "article": "Clifford Campbell",
     "dynasty": null
    },
    {
@@ -89861,19 +89885,19 @@
     "dynasty": null
    },
    {
-    "q": "Q314691",
-    "name": "Mohamed Boudiaf",
-    "from": 1992,
-    "to": 1992,
-    "article": "Mohamed Boudiaf",
-    "dynasty": null
-   },
-   {
     "q": "Q327129",
     "name": "Ali Kafi",
     "from": 1992,
     "to": 1994,
     "article": "Ali Kafi",
+    "dynasty": null
+   },
+   {
+    "q": "Q314691",
+    "name": "Mohamed Boudiaf",
+    "from": 1992,
+    "to": 1992,
+    "article": "Mohamed Boudiaf",
     "dynasty": null
    },
    {
@@ -90004,19 +90028,19 @@
     "dynasty": null
    },
    {
-    "q": "Q888030",
-    "name": "Maamun al-Kuzbari",
-    "from": 1961,
-    "to": 1961,
-    "article": "Maamun al-Kuzbari",
-    "dynasty": null
-   },
-   {
     "q": "Q169841",
     "name": "Nazim al-Kudsi",
     "from": 1961,
     "to": 1963,
     "article": "Nazim al-Qudsi",
+    "dynasty": null
+   },
+   {
+    "q": "Q888030",
+    "name": "Maamun al-Kuzbari",
+    "from": 1961,
+    "to": 1961,
+    "article": "Maamun al-Kuzbari",
     "dynasty": null
    },
    {
@@ -90298,19 +90322,19 @@
     "dynasty": null
    },
    {
-    "q": "Q433057",
-    "name": "Godfrey Binaisa",
-    "from": 1979,
-    "to": 1980,
-    "article": "Godfrey Binaisa",
-    "dynasty": null
-   },
-   {
     "q": "Q452024",
     "name": "Yusuf Lule",
     "from": 1979,
     "to": 1979,
     "article": "Yusuf Lule",
+    "dynasty": null
+   },
+   {
+    "q": "Q433057",
+    "name": "Godfrey Binaisa",
+    "from": 1979,
+    "to": 1980,
+    "article": "Godfrey Binaisa",
     "dynasty": null
    },
    {
@@ -92229,19 +92253,19 @@
     "dynasty": null
    },
    {
-    "q": "Q3075634",
-    "name": "Mamadu Ture Kuruma",
-    "from": 2012,
-    "to": 2012,
-    "article": "Mamadu Ture Kuruma",
-    "dynasty": null
-   },
-   {
     "q": "Q314538",
     "name": "Raimundo Pereira",
     "from": 2012,
     "to": 2012,
     "article": "Raimundo Pereira",
+    "dynasty": null
+   },
+   {
+    "q": "Q3075634",
+    "name": "Mamadu Ture Kuruma",
+    "from": 2012,
+    "to": 2012,
+    "article": "Mamadu Ture Kuruma",
     "dynasty": null
    },
    {
@@ -92771,19 +92795,19 @@
     "dynasty": null
    },
    {
-    "q": "Q888030",
-    "name": "Maamun al-Kuzbari",
-    "from": 1961,
-    "to": 1961,
-    "article": "Maamun al-Kuzbari",
-    "dynasty": null
-   },
-   {
     "q": "Q169841",
     "name": "Nazim al-Kudsi",
     "from": 1961,
     "to": 1963,
     "article": "Nazim al-Qudsi",
+    "dynasty": null
+   },
+   {
+    "q": "Q888030",
+    "name": "Maamun al-Kuzbari",
+    "from": 1961,
+    "to": 1961,
+    "article": "Maamun al-Kuzbari",
     "dynasty": null
    },
    {
@@ -93556,19 +93580,19 @@
     "dynasty": null
    },
    {
-    "q": "Q318458",
-    "name": "Nguyễn Phú Trọng",
-    "from": 2018,
-    "to": 2021,
-    "article": "Nguyễn Phú Trọng",
-    "dynasty": null
-   },
-   {
     "q": "Q10841571",
     "name": "Đặng Thị Ngọc Thịnh",
     "from": 2018,
     "to": 2018,
     "article": "Đặng Thị Ngọc Thịnh",
+    "dynasty": null
+   },
+   {
+    "q": "Q318458",
+    "name": "Nguyễn Phú Trọng",
+    "from": 2018,
+    "to": 2021,
+    "article": "Nguyễn Phú Trọng",
     "dynasty": null
    },
    {
@@ -94456,20 +94480,20 @@
     "dynasty": null
    },
    {
-    "q": "Q310592",
-    "name": "Mohammad-Ali Rajai",
-    "from": 1981,
-    "to": 1981,
-    "article": "Mohammad-Ali Rajai",
-    "dynasty": null
-   },
-   {
     "q": "Q57336",
     "name": "Ali Khamenei",
     "from": 1981,
     "to": 1989,
     "article": "Ali Khamenei",
     "dynasty": "Khamenei family"
+   },
+   {
+    "q": "Q310592",
+    "name": "Mohammad-Ali Rajai",
+    "from": 1981,
+    "to": 1981,
+    "article": "Mohammad-Ali Rajai",
+    "dynasty": null
    },
    {
     "q": "Q57336",
@@ -94758,14 +94782,6 @@
     "dynasty": null
    },
    {
-    "q": "Q380474",
-    "name": "Sibghatullah Mojaddedi",
-    "from": 1992,
-    "to": 1992,
-    "article": "Sibghatullah Mojaddedi",
-    "dynasty": null
-   },
-   {
     "q": "Q317360",
     "name": "Abdul Rahim Hatif",
     "from": 1992,
@@ -94779,6 +94795,14 @@
     "from": 1992,
     "to": 2001,
     "article": "Burhanuddin Rabbani",
+    "dynasty": null
+   },
+   {
+    "q": "Q380474",
+    "name": "Sibghatullah Mojaddedi",
+    "from": 1992,
+    "to": 1992,
+    "article": "Sibghatullah Mojaddedi",
     "dynasty": null
    },
    {
@@ -96197,19 +96221,19 @@
     "dynasty": null
    },
    {
-    "q": "Q44612",
-    "name": "Horst Seehofer",
-    "from": 2012,
-    "to": 2012,
-    "article": "Horst Seehofer",
-    "dynasty": null
-   },
-   {
     "q": "Q2538",
     "name": "Joachim Gauck",
     "from": 2012,
     "to": 2017,
     "article": "Joachim Gauck",
+    "dynasty": null
+   },
+   {
+    "q": "Q44612",
+    "name": "Horst Seehofer",
+    "from": 2012,
+    "to": 2012,
+    "article": "Horst Seehofer",
     "dynasty": null
    },
    {
@@ -96373,6 +96397,14 @@
   ],
   "terms": [
    {
+    "q": "Q1060355",
+    "name": "Simeon II of Bulgaria",
+    "from": 1943,
+    "to": 1946,
+    "article": "Simeon II",
+    "dynasty": "House of Saxe-Coburg and Gotha-Koháry (Bulgaria)"
+   },
+   {
     "q": "Q350248",
     "name": "Vasil Kolarov",
     "from": 1946,
@@ -96532,19 +96564,19 @@
     "dynasty": null
    },
    {
-    "q": "Q2828958",
-    "name": "Akbarsho Iskandrov",
-    "from": 1991,
-    "to": 1991,
-    "article": "Akbarsho Iskandarov",
-    "dynasty": null
-   },
-   {
     "q": "Q558515",
     "name": "Rahmon Nabiyev",
     "from": 1991,
     "to": 1992,
     "article": "Rahmon Nabiyev",
+    "dynasty": null
+   },
+   {
+    "q": "Q2828958",
+    "name": "Akbarsho Iskandrov",
+    "from": 1991,
+    "to": 1991,
+    "article": "Akbarsho Iskandarov",
     "dynasty": null
    },
    {
@@ -97601,19 +97633,19 @@
     "dynasty": null
    },
    {
-    "q": "Q355737",
-    "name": "Ante Jelavić",
-    "from": 1998,
-    "to": 2001,
-    "article": "Ante Jelavić",
-    "dynasty": null
-   },
-   {
     "q": "Q4808727",
     "name": "Živko Radišić",
     "from": 1998,
     "to": 2002,
     "article": "Živko Radišić",
+    "dynasty": null
+   },
+   {
+    "q": "Q355737",
+    "name": "Ante Jelavić",
+    "from": 1998,
+    "to": 2001,
+    "article": "Ante Jelavić",
     "dynasty": null
    },
    {
@@ -97841,19 +97873,19 @@
     "dynasty": null
    },
    {
-    "q": "Q310136",
-    "name": "Nebojša Radmanović",
-    "from": 2012,
-    "to": 2013,
-    "article": "Nebojša Radmanović",
-    "dynasty": null
-   },
-   {
     "q": "Q312355",
     "name": "Bakir Izetbegović",
     "from": 2012,
     "to": 2012,
     "article": "Bakir Izetbegović",
+    "dynasty": null
+   },
+   {
+    "q": "Q310136",
+    "name": "Nebojša Radmanović",
+    "from": 2012,
+    "to": 2013,
+    "article": "Nebojša Radmanović",
     "dynasty": null
    },
    {
@@ -97897,19 +97929,19 @@
     "dynasty": null
    },
    {
-    "q": "Q944643",
-    "name": "Mladen Ivanić",
-    "from": 2016,
-    "to": 2017,
-    "article": "Mladen Ivanić",
-    "dynasty": null
-   },
-   {
     "q": "Q312355",
     "name": "Bakir Izetbegović",
     "from": 2016,
     "to": 2016,
     "article": "Bakir Izetbegović",
+    "dynasty": null
+   },
+   {
+    "q": "Q944643",
+    "name": "Mladen Ivanić",
+    "from": 2016,
+    "to": 2017,
+    "article": "Mladen Ivanić",
     "dynasty": null
    },
    {
@@ -97921,19 +97953,19 @@
     "dynasty": null
    },
    {
-    "q": "Q335688",
-    "name": "Milorad Dodik",
-    "from": 2018,
-    "to": 2022,
-    "article": "Milorad Dodik",
-    "dynasty": null
-   },
-   {
     "q": "Q297825",
     "name": "Željko Komšić",
     "from": 2018,
     "to": 2022,
     "article": "Željko Komšić",
+    "dynasty": null
+   },
+   {
+    "q": "Q335688",
+    "name": "Milorad Dodik",
+    "from": 2018,
+    "to": 2022,
+    "article": "Milorad Dodik",
     "dynasty": null
    },
    {
@@ -99053,19 +99085,19 @@
     "dynasty": null
    },
    {
-    "q": "Q526389",
-    "name": "Vojislav Mihailović",
-    "from": 2004,
-    "to": 2004,
-    "article": "Vojislav Mihailović",
-    "dynasty": null
-   },
-   {
     "q": "Q581943",
     "name": "Predrag Marković",
     "from": 2004,
     "to": 2004,
     "article": "Predrag Marković",
+    "dynasty": null
+   },
+   {
+    "q": "Q526389",
+    "name": "Vojislav Mihailović",
+    "from": 2004,
+    "to": 2004,
+    "article": "Vojislav Mihailović",
     "dynasty": null
    },
    {
@@ -99305,20 +99337,20 @@
     "dynasty": null
    },
    {
-    "q": "Q307168",
-    "name": "Abdul Aziz al-Hakim",
-    "from": 2003,
-    "to": 2003,
-    "article": "Abdul Aziz al-Hakim",
-    "dynasty": "Hakim family"
-   },
-   {
     "q": "Q316495",
     "name": "Ibrahim al-Jaafari",
     "from": 2003,
     "to": 2003,
     "article": "Ibrahim al-Jaafari",
     "dynasty": null
+   },
+   {
+    "q": "Q307168",
+    "name": "Abdul Aziz al-Hakim",
+    "from": 2003,
+    "to": 2003,
+    "article": "Abdul Aziz al-Hakim",
+    "dynasty": "Hakim family"
    },
    {
     "q": "Q180911",
@@ -100246,20 +100278,20 @@
     "dynasty": null
    },
    {
-    "q": "Q3289754",
-    "name": "Rajasinha I of Sitawaka",
-    "from": 1581,
-    "to": 1591,
-    "article": "Rajasinha I",
-    "dynasty": "House of Siri Sanga Bo"
-   },
-   {
     "q": "Q5293787",
     "name": "Dona Catherina of Kandy",
     "from": 1581,
     "to": 1581,
     "article": "Kusumasana Devi",
     "dynasty": null
+   },
+   {
+    "q": "Q3289754",
+    "name": "Rajasinha I of Sitawaka",
+    "from": 1581,
+    "to": 1591,
+    "article": "Rajasinha I",
+    "dynasty": "House of Siri Sanga Bo"
    },
    {
     "q": "Q3529329",
@@ -100608,6 +100640,29 @@
     "from": 1741,
     "to": 1756,
     "article": "Ana II of Matamba",
+    "dynasty": null
+   }
+  ]
+ },
+ "Alchon Huns": {
+  "items": [
+   "Q21050766"
+  ],
+  "terms": [
+   {
+    "q": "Q2588669",
+    "name": "Toramana",
+    "from": 493,
+    "to": 515,
+    "article": "Toramana",
+    "dynasty": null
+   },
+   {
+    "q": "Q2573564",
+    "name": "Mihirakula",
+    "from": 515,
+    "to": 540,
+    "article": "Mihirakula",
     "dynasty": null
    }
   ]
@@ -100974,29 +101029,6 @@
    }
   ]
  },
- "Alchon Huns": {
-  "items": [
-   "Q21050766"
-  ],
-  "terms": [
-   {
-    "q": "Q2588669",
-    "name": "Toramana",
-    "from": 493,
-    "to": 515,
-    "article": "Toramana",
-    "dynasty": null
-   },
-   {
-    "q": "Q2573564",
-    "name": "Mihirakula",
-    "from": 515,
-    "to": 540,
-    "article": "Mihirakula",
-    "dynasty": null
-   }
-  ]
- },
  "Tambralinga": {
   "items": [
    "Q2509414"
@@ -101046,116 +101078,6 @@
     "from": 1887,
     "to": 1943,
     "article": "Ganga Singh",
-    "dynasty": null
-   }
-  ]
- },
- "Zulu Kingdom": {
-  "items": [
-   "Q729768"
-  ],
-  "terms": [
-   {
-    "q": "Q27695",
-    "name": "Shaka Zulu",
-    "from": 1816,
-    "to": 1828,
-    "article": "Shaka",
-    "dynasty": null
-   },
-   {
-    "q": "Q888215",
-    "name": "Dinuzulu kaCetshwayo",
-    "from": 1884,
-    "to": 1913,
-    "article": "Dinuzulu KaCetshwayo",
-    "dynasty": null
-   },
-   {
-    "q": "Q2750604",
-    "name": "Solomon kaDinuzulu",
-    "from": 1913,
-    "to": 1933,
-    "article": "Solomon kaDinuzulu",
-    "dynasty": null
-   }
-  ]
- },
- "Travancore": {
-  "items": [
-   "Q150058"
-  ],
-  "terms": [
-   {
-    "q": "Q2596305",
-    "name": "Marthanda Varma",
-    "from": 1729,
-    "to": 1758,
-    "article": "Marthanda Varma",
-    "dynasty": null
-   },
-   {
-    "q": "Q5269245",
-    "name": "Dharma Raja",
-    "from": 1758,
-    "to": 1798,
-    "article": "Dharma Raja",
-    "dynasty": "Travancore royal family"
-   },
-   {
-    "q": "Q4850086",
-    "name": "Balarama Varma",
-    "from": 1798,
-    "to": 1810,
-    "article": "Avittom Thirunal Balarama Varma",
-    "dynasty": null
-   },
-   {
-    "q": "Q5590134",
-    "name": "Gowri Lakshmi Bayi",
-    "from": 1810,
-    "to": 1815,
-    "article": "Gowri Lakshmi Bayi",
-    "dynasty": null
-   },
-   {
-    "q": "Q2283372",
-    "name": "Svati Tirunal",
-    "from": 1813,
-    "to": 1846,
-    "article": "Swathi Thirunal Rama Varma",
-    "dynasty": null
-   },
-   {
-    "q": "Q5590135",
-    "name": "Gowri Parvati Bayi",
-    "from": 1815,
-    "to": 1829,
-    "article": "Gowri Parvati Bayi",
-    "dynasty": "Travancore royal family"
-   },
-   {
-    "q": "Q7902738",
-    "name": "Uthradom Thirunal",
-    "from": 1846,
-    "to": 1860,
-    "article": "Marthanda Varma II",
-    "dynasty": null
-   },
-   {
-    "q": "Q932644",
-    "name": "Ayilyam Thirunal",
-    "from": 1860,
-    "to": 1880,
-    "article": "Ayilyam Thirunal",
-    "dynasty": null
-   },
-   {
-    "q": "Q3595588",
-    "name": "Visakham Thirunal",
-    "from": 1880,
-    "to": 1885,
-    "article": "Visakham Thirunal",
     "dynasty": null
    }
   ]
@@ -101433,6 +101355,116 @@
     "from": 1993,
     "to": null,
     "article": "Muwenda Mutebi II of Buganda",
+    "dynasty": null
+   }
+  ]
+ },
+ "Zulu Kingdom": {
+  "items": [
+   "Q729768"
+  ],
+  "terms": [
+   {
+    "q": "Q27695",
+    "name": "Shaka Zulu",
+    "from": 1816,
+    "to": 1828,
+    "article": "Shaka",
+    "dynasty": null
+   },
+   {
+    "q": "Q888215",
+    "name": "Dinuzulu kaCetshwayo",
+    "from": 1884,
+    "to": 1913,
+    "article": "Dinuzulu KaCetshwayo",
+    "dynasty": null
+   },
+   {
+    "q": "Q2750604",
+    "name": "Solomon kaDinuzulu",
+    "from": 1913,
+    "to": 1933,
+    "article": "Solomon kaDinuzulu",
+    "dynasty": null
+   }
+  ]
+ },
+ "Travancore": {
+  "items": [
+   "Q150058"
+  ],
+  "terms": [
+   {
+    "q": "Q2596305",
+    "name": "Marthanda Varma",
+    "from": 1729,
+    "to": 1758,
+    "article": "Marthanda Varma",
+    "dynasty": null
+   },
+   {
+    "q": "Q5269245",
+    "name": "Dharma Raja",
+    "from": 1758,
+    "to": 1798,
+    "article": "Dharma Raja",
+    "dynasty": "Travancore royal family"
+   },
+   {
+    "q": "Q4850086",
+    "name": "Balarama Varma",
+    "from": 1798,
+    "to": 1810,
+    "article": "Avittom Thirunal Balarama Varma",
+    "dynasty": null
+   },
+   {
+    "q": "Q5590134",
+    "name": "Gowri Lakshmi Bayi",
+    "from": 1810,
+    "to": 1815,
+    "article": "Gowri Lakshmi Bayi",
+    "dynasty": null
+   },
+   {
+    "q": "Q2283372",
+    "name": "Svati Tirunal",
+    "from": 1813,
+    "to": 1846,
+    "article": "Swathi Thirunal Rama Varma",
+    "dynasty": null
+   },
+   {
+    "q": "Q5590135",
+    "name": "Gowri Parvati Bayi",
+    "from": 1815,
+    "to": 1829,
+    "article": "Gowri Parvati Bayi",
+    "dynasty": "Travancore royal family"
+   },
+   {
+    "q": "Q7902738",
+    "name": "Uthradom Thirunal",
+    "from": 1846,
+    "to": 1860,
+    "article": "Marthanda Varma II",
+    "dynasty": null
+   },
+   {
+    "q": "Q932644",
+    "name": "Ayilyam Thirunal",
+    "from": 1860,
+    "to": 1880,
+    "article": "Ayilyam Thirunal",
+    "dynasty": null
+   },
+   {
+    "q": "Q3595588",
+    "name": "Visakham Thirunal",
+    "from": 1880,
+    "to": 1885,
+    "article": "Visakham Thirunal",
     "dynasty": null
    }
   ]
