@@ -1,0 +1,1005 @@
+{
+  "about": "Europe, the Middle East and the Caucasus: historical-basemaps snapshots renamed to match Cliopatria where they are the same state (with Nubia north of 17°N, which no other region takes), and curated heartlands for peoples and states neither dataset maps — Celtic, Iberian and Italic peoples, Germanic, Slavic, Baltic and Finnic peoples, North Caucasian states and Arabian emirates. Blobs mark approximate heartlands, not borders.",
+  "historicalBasemaps": {
+    "region": {
+      "boxes": [
+        [
+          -25,
+          34,
+          45,
+          72
+        ],
+        [
+          25,
+          12,
+          63,
+          42
+        ]
+      ]
+    },
+    "include": [
+      "Alamans",
+      "Alans",
+      "Algiers",
+      "Arabia (Nejd)",
+      "Arabs",
+      "Arameans",
+      "Astrakhan Khanate",
+      "Avars",
+      "Baltic tribes",
+      "Balts",
+      "Basques",
+      "Beaker",
+      "Bega",
+      "Blemmyes",
+      "Boihaenum",
+      "Boii",
+      "Bosporan Kingdom",
+      "Brushed Pottery culture",
+      "Bulgar Khanate",
+      "Caliphate of Córdoba",
+      "Canaan",
+      "Cappadocia",
+      "Celtiberians",
+      "Celtic kingdoms",
+      "Celts",
+      "Chelmia",
+      "Chuds",
+      "Cimerians",
+      "Curonians",
+      "Cycladic",
+      "Czechs",
+      "Dacia",
+      "Dacians",
+      "Danube Bulgars",
+      "Dumonii",
+      "Elam",
+      "Ests",
+      "Etrurians",
+      "Fatimid Caliphate",
+      "Finns",
+      "Geats",
+      "Georgia",
+      "Germanic tribes",
+      "Greek city-states",
+      "Greek colonies",
+      "Hadramaut",
+      "Hallstatt culture",
+      "Heruli",
+      "Himyarite Kingdom",
+      "Hittites",
+      "Hurrian Kingdoms",
+      "Ilkhanate",
+      "Illyrians",
+      "Irlanda",
+      "Karelians",
+      "Kerma",
+      "Khazars",
+      "Kingdom of David and Solomon",
+      "Kingdom of Gala",
+      "Kingdom of Lysimachus",
+      "Kingdom of Syphax",
+      "Kryvichs",
+      "Kurs",
+      "Kuwait",
+      "La Tène culture",
+      "Lusatian culture",
+      "Magyars",
+      "Mahra",
+      "Makkura",
+      "Meroe",
+      "Milograd culture",
+      "Minoan",
+      "Moravians",
+      "N. European Bronze Age cultures",
+      "Nabatean Kingdom",
+      "Nejd",
+      "Norsemen",
+      "Numidia",
+      "Phrygians",
+      "Polanes",
+      "Pomeranian culture",
+      "Proto-Slavs",
+      "Prussians",
+      "Qataban",
+      "Rus' Khaganate",
+      "Saami",
+      "Saba",
+      "Sabines",
+      "Sabini",
+      "Sami",
+      "Samis",
+      "Samnites",
+      "Severians",
+      "Slavic tribes",
+      "Slavonic tribes",
+      "Suomi",
+      "Swedes",
+      "Sámi",
+      "Thrace",
+      "Ur",
+      "Urartu",
+      "Urnfield cultures",
+      "Vandals",
+      "Veps",
+      "Yemen",
+      "Zayyanid Caliphate",
+      "Únětice"
+    ],
+    "exclude": [
+      "Ur@-2000",
+      "Hadramaut@1530",
+      "Hadramaut@1600",
+      "Hadramaut@1650",
+      "Hadramaut@1700",
+      "Hadramaut@1715",
+      "Hadramaut@1000",
+      "Hadramaut@1100",
+      "Hadramaut@1200",
+      "Hadramaut@1279",
+      "Hadramaut@1300",
+      "Hadramaut@1400",
+      "Hadramaut@1492",
+      "Hadramaut@1500",
+      "Kingdom of David and Solomon@-1500",
+      "Phrygians@-1500",
+      "Cimerians@-1500",
+      "Cimerians@-1000",
+      "Arabia",
+      "Nejd@1878",
+      "Avars@900",
+      "Khazars@1000",
+      "Vandals@400",
+      "Vandals@600"
+    ],
+    "rename": {
+      "Ur@-4000": "Sumerian City-States",
+      "Ur@-3000": "Sumerian City-States",
+      "Hurrian Kingdoms": "Hurrians",
+      "Kerma": "Kingdom of Kerma",
+      "Minoan": "Minoan civilization",
+      "Cycladic": "Cycladic culture",
+      "Canaan": "Canaan",
+      "Hittites": "Hittites",
+      "Saba": "Sabaeans",
+      "Qataban": "Qataban",
+      "Hadramaut@-323": "Kingdom of Hadhramaut",
+      "Hadramaut@-300": "Kingdom of Hadhramaut",
+      "Hadramaut@-200": "Kingdom of Hadhramaut",
+      "Hadramaut@-100": "Kingdom of Hadhramaut",
+      "Hadramaut@-1": "Kingdom of Hadhramaut",
+      "Hadramaut@100": "Kingdom of Hadhramaut",
+      "Hadramaut@200": "Kingdom of Hadhramaut",
+      "Hadramaut@300": "Kingdom of Hadhramaut",
+      "Hadramaut@400": "Kingdom of Hadhramaut",
+      "Himyarite Kingdom": "Himyarite Kingdom",
+      "Kingdom of David and Solomon@-1000": "Kingdom of Israel",
+      "Meroe": "Kingdom of Kush",
+      "Makkura": "Makuria",
+      "Blemmyes": "Blemmyes",
+      "Bega": "Beja people",
+      "Arameans": "Arameans",
+      "Phrygians@-1000": "Phrygia",
+      "Urartu": "Kingdom of Urartu",
+      "Cappadocia": "Kingdom of Cappadocia",
+      "Nabatean Kingdom": "Nabataeans",
+      "Elam": "Elam",
+      "Arabs": "Arab tribes",
+      "Mahra": "Mahra Sultanate",
+      "Yemen": "Qasimids",
+      "Nejd@1783": "Emirate of Diriyah",
+      "Nejd@1815": "Emirate of Nejd",
+      "Arabia (Nejd)": "Emirate of Nejd and Hasa",
+      "Kuwait": "Kuwait",
+      "Fatimid Caliphate": "Fatimid Caliphate",
+      "Caliphate of Córdoba": "Caliphate of Córdoba",
+      "Ilkhanate": "Ilkhanate",
+      "Zayyanid Caliphate": "Zayyanid dynasty",
+      "Algiers": "Regency of Algiers",
+      "Georgia": "Kingdom of Georgia",
+      "Astrakhan Khanate": "Astrakhan Khanate",
+      "Bosporan Kingdom": "Cimmerian Bosporus",
+      "Kingdom of Lysimachus": "Kingdom of Lysimachus",
+      "Kingdom of Syphax": "Masaesyli",
+      "Kingdom of Gala": "Massylii",
+      "Numidia": "Kingdom of Numidia",
+      "Beaker": "Bell Beaker culture",
+      "Únětice": "Únětice culture",
+      "Urnfield cultures": "Urnfield culture",
+      "N. European Bronze Age cultures@-1500": "Nordic Bronze Age",
+      "N. European Bronze Age cultures@-1000": "Nordic Bronze Age",
+      "N. European Bronze Age cultures@-700": "Pre-Roman Iron Age",
+      "Lusatian culture": "Lusatian culture",
+      "Milograd culture": "Milograd culture",
+      "La Tène culture": "La Tène culture",
+      "Hallstatt culture": "Hallstatt culture",
+      "Pomeranian culture": "Pomeranian culture",
+      "Brushed Pottery culture": "Brushed Pottery culture",
+      "Cimerians@-700": "Cimmerians",
+      "Celtiberians": "Celtiberians",
+      "Saami": "Sámi",
+      "Sámi": "Sámi",
+      "Sami": "Sámi",
+      "Samis": "Sámi",
+      "Thrace": "Thracians",
+      "Illyrians": "Illyrians",
+      "Greek city-states": "Greek city-states",
+      "Greek colonies": "Greek colonies",
+      "Celts": "Celts",
+      "Germanic tribes": "Germanic peoples",
+      "Norsemen": "Norsemen",
+      "Sabini": "Sabines",
+      "Sabines": "Sabines",
+      "Boii": "Boii",
+      "Etrurians": "Etruscans",
+      "Samnites": "Samnites",
+      "Curonians": "Curonians",
+      "Kurs": "Curonians",
+      "Dacians": "Dacians",
+      "Dacia": "Dacia",
+      "Dumonii": "Dumnonii",
+      "Boihaenum": "Marcomanni",
+      "Alans": "Alans",
+      "Heruli": "Heruli",
+      "Alamans": "Alemanni",
+      "Swedes": "Swedes (tribe)",
+      "Geats": "Geats",
+      "Basques": "Basques",
+      "Vandals@500": "Vandal Kingdom",
+      "Czechs": "Czechs",
+      "Moravians": "Moravians",
+      "Danube Bulgars": "First Bulgarian Empire",
+      "Bulgar Khanate": "First Bulgarian Empire",
+      "Magyars": "Magyars",
+      "Severians": "Severians",
+      "Kryvichs": "Krivichs",
+      "Polanes": "Polans",
+      "Balts": "Balts",
+      "Baltic tribes": "Balts",
+      "Proto-Slavs": "Early Slavs",
+      "Slavonic tribes": "Early Slavs",
+      "Slavic tribes": "Early Slavs",
+      "Rus' Khaganate": "Rus' Khaganate",
+      "Ests": "Estonians",
+      "Finns": "Finns",
+      "Suomi": "Finns",
+      "Karelians": "Karelians",
+      "Veps": "Veps",
+      "Chuds": "Chuds",
+      "Prussians": "Old Prussians",
+      "Celtic kingdoms": "Gaelic Ireland",
+      "Irlanda": "Gaelic Ireland",
+      "Chelmia": "Zachlumia",
+      "Khazars": "Khazaria",
+      "Avars": "Avar Khaganate"
+    },
+    "wikipedia": {
+      "Hurrians": "Hurrians",
+      "Kingdom of Kerma": "Kerma culture",
+      "Cycladic culture": "Cycladic culture",
+      "Canaan": "Canaan",
+      "Kingdom of Hadhramaut": "Hadhramaut",
+      "Kingdom of Israel": "Kingdom of Israel (Samaria)",
+      "Blemmyes": "Blemmyes",
+      "Beja people": "Beja people",
+      "Arameans": "Arameans",
+      "Arab tribes": "Arabs",
+      "Mahra Sultanate": "Mahra Sultanate",
+      "Emirate of Nejd and Hasa": "Emirate of Nejd and Hasa",
+      "Regency of Algiers": "Regency of Algiers",
+      "Masaesyli": "Masaesyli",
+      "Massylii": "Massylii",
+      "Bell Beaker culture": "Bell Beaker culture",
+      "Únětice culture": "Únětice culture",
+      "Urnfield culture": "Urnfield culture",
+      "Nordic Bronze Age": "Nordic Bronze Age",
+      "Pre-Roman Iron Age": "Pre-Roman Iron Age",
+      "Lusatian culture": "Lusatian culture",
+      "Milograd culture": "Milograd culture",
+      "La Tène culture": "La Tène culture",
+      "Hallstatt culture": "Hallstatt culture",
+      "Pomeranian culture": "Pomeranian culture",
+      "Brushed Pottery culture": "Brushed Pottery culture",
+      "Cimmerians": "Cimmerians",
+      "Celtiberians": "Celtiberians",
+      "Sámi": "Sámi",
+      "Thracians": "Thracians",
+      "Illyrians": "Illyrians",
+      "Greek city-states": "Polis",
+      "Greek colonies": "Greek colonisation",
+      "Celts": "Celts",
+      "Germanic peoples": "Germanic peoples",
+      "Norsemen": "Norsemen",
+      "Sabines": "Sabines",
+      "Boii": "Boii",
+      "Samnites": "Samnites",
+      "Curonians": "Curonians",
+      "Dacians": "Dacians",
+      "Dacia": "Dacia",
+      "Dumnonii": "Dumnonii",
+      "Marcomanni": "Marcomanni",
+      "Alans": "Alans",
+      "Heruli": "Heruli",
+      "Alemanni": "Alemanni",
+      "Swedes (tribe)": "Swedes (tribe)",
+      "Geats": "Geats",
+      "Basques": "Basques",
+      "Czechs": "Czechs",
+      "Moravians": "Moravians",
+      "Magyars": "Hungarian prehistory",
+      "Severians": "Severians",
+      "Krivichs": "Krivichs",
+      "Polans": "Polans (western)",
+      "Balts": "Balts",
+      "Early Slavs": "Early Slavs",
+      "Estonians": "Ancient Estonia",
+      "Finns": "Finns",
+      "Karelians": "Karelians",
+      "Veps": "Veps",
+      "Chuds": "Chud",
+      "Old Prussians": "Old Prussians",
+      "Gaelic Ireland": "Gaelic Ireland",
+      "Zachlumia": "Zachlumia"
+    },
+    "peoples": [
+      "Hurrians",
+      "Arameans",
+      "Arab tribes",
+      "Blemmyes",
+      "Beja people",
+      "Cimmerians",
+      "Celtiberians",
+      "Sámi",
+      "Thracians",
+      "Illyrians",
+      "Celts",
+      "Germanic peoples",
+      "Norsemen",
+      "Sabines",
+      "Boii",
+      "Samnites",
+      "Curonians",
+      "Dacians",
+      "Dumnonii",
+      "Marcomanni",
+      "Alans",
+      "Heruli",
+      "Alemanni",
+      "Swedes (tribe)",
+      "Geats",
+      "Basques",
+      "Czechs",
+      "Moravians",
+      "Magyars",
+      "Severians",
+      "Krivichs",
+      "Polans",
+      "Balts",
+      "Early Slavs",
+      "Estonians",
+      "Finns",
+      "Karelians",
+      "Veps",
+      "Chuds",
+      "Old Prussians",
+      "Greek colonies"
+    ],
+    "peopleKeywords": [
+      "culture"
+    ],
+    "certainty": {
+      "Kingdom of Israel": "uncertain",
+      "Cimmerians": "uncertain",
+      "Hurrians": "uncertain",
+      "Canaan": "uncertain",
+      "Kingdom of Kerma": "uncertain"
+    },
+    "notes": {
+      "Kingdom of Israel": "The kingdoms of Israel and Judah in the 10th–8th centuries BCE; the source map labels this area the kingdom of David and Solomon, whose extent is debated by historians.",
+      "Arab tribes": "Bedouin tribes of the Arabian interior, outside the states of the coasts and oases.",
+      "Pre-Roman Iron Age": "The Iron Age of northern Europe before Roman influence reached it, c. 500 BCE onwards.",
+      "Early Slavs": "Slavic-speaking peoples of eastern and central Europe before the first Slavic states.",
+      "Gaelic Ireland": "Ireland's Gaelic kingdoms and lordships, before and alongside the Anglo-Norman lordship."
+    }
+  },
+  "polities": [
+    {
+      "name": "Gauls",
+      "from": -450,
+      "to": -51,
+      "blob": [
+        2.3,
+        46.6,
+        3.8
+      ],
+      "wikipedia": "Gauls",
+      "description": "Celtic peoples of Gaul, organised in tribal states such as the Arverni and Aedui, until Julius Caesar's conquest (58–50 BCE).",
+      "certainty": "approximate",
+      "kind": "people"
+    },
+    {
+      "name": "Celtic Britons",
+      "from": -500,
+      "to": 410,
+      "blob": [
+        -2.3,
+        52.6,
+        2.6
+      ],
+      "wikipedia": "Celtic Britons",
+      "description": "The Celtic-speaking peoples of Britain; southern Britain became a Roman province from 43 CE, and the map shows them where Rome did not rule.",
+      "certainty": "approximate",
+      "kind": "people"
+    },
+    {
+      "name": "Caledonians",
+      "from": -100,
+      "to": 300,
+      "blob": [
+        -4.3,
+        57.0,
+        1.8
+      ],
+      "wikipedia": "Caledonians",
+      "description": "Peoples of northern Scotland who fought Rome under Calgacus at Mons Graupius (83 CE) and beyond Hadrian's and the Antonine walls.",
+      "certainty": "uncertain",
+      "kind": "people"
+    },
+    {
+      "name": "Picts",
+      "from": 300,
+      "to": 843,
+      "blob": [
+        -3.8,
+        57.0,
+        1.8
+      ],
+      "wikipedia": "Picts",
+      "description": "The people of eastern and northern Scotland in late antiquity and the early Middle Ages, joined with the Gaels of Dál Riata in the kingdom of Alba c. 843.",
+      "certainty": "uncertain"
+    },
+    {
+      "name": "Gaelic Ireland",
+      "from": -500,
+      "to": 1607,
+      "blob": [
+        -8.0,
+        53.3,
+        2.0
+      ],
+      "wikipedia": "Gaelic Ireland",
+      "description": "Ireland's Gaelic kingdoms and lordships, which outside the Pale held out against the English crown until the Flight of the Earls in 1607.",
+      "certainty": "approximate"
+    },
+    {
+      "name": "Iberians",
+      "from": -600,
+      "to": -19,
+      "blob": [
+        -1.0,
+        40.2,
+        2.4
+      ],
+      "wikipedia": "Iberians",
+      "description": "Peoples of the east and south of the Iberian peninsula, with their own script, conquered by Rome over the two centuries after the Second Punic War.",
+      "certainty": "approximate",
+      "kind": "people"
+    },
+    {
+      "name": "Lusitanians",
+      "from": -600,
+      "to": -19,
+      "blob": [
+        -7.5,
+        39.8,
+        1.4
+      ],
+      "wikipedia": "Lusitanians",
+      "description": "An Indo-European people of the west of the peninsula who under Viriathus resisted Rome in 155–139 BCE.",
+      "certainty": "approximate",
+      "kind": "people"
+    },
+    {
+      "name": "Cantabri",
+      "from": -400,
+      "to": -19,
+      "blob": [
+        -4.2,
+        43.1,
+        0.6
+      ],
+      "wikipedia": "Cantabri",
+      "description": "A people of the northern coast of Spain, the last in the peninsula to be conquered by Rome, in the Cantabrian Wars (29–19 BCE).",
+      "certainty": "uncertain",
+      "kind": "people"
+    },
+    {
+      "name": "Ligures",
+      "from": -700,
+      "to": -14,
+      "blob": [
+        8.5,
+        44.3,
+        0.9
+      ],
+      "wikipedia": "Ligures",
+      "description": "The Ligurians of the north-western Italian coast and southern Gaul, subdued by Rome by c. 14 BCE.",
+      "certainty": "uncertain",
+      "kind": "people"
+    },
+    {
+      "name": "Adriatic Veneti",
+      "from": -700,
+      "to": -49,
+      "blob": [
+        12.0,
+        45.6,
+        0.8
+      ],
+      "wikipedia": "Adriatic Veneti",
+      "description": "An Iron Age people of north-eastern Italy, allies of Rome, whose territory became part of Roman Italy in 49 BCE.",
+      "certainty": "uncertain",
+      "kind": "people"
+    },
+    {
+      "name": "Samnites",
+      "from": -600,
+      "to": -290,
+      "blob": [
+        14.6,
+        41.4,
+        0.9
+      ],
+      "wikipedia": "Samnites",
+      "description": "An Oscan-speaking people of the southern Apennines who fought three wars against Rome (343–290 BCE).",
+      "certainty": "approximate",
+      "kind": "people"
+    },
+    {
+      "name": "Dacia",
+      "from": -82,
+      "to": 106,
+      "blob": [
+        24.5,
+        45.8,
+        2.2
+      ],
+      "wikipedia": "Dacia",
+      "description": "The Dacian kingdom, united under Burebista and later Decebalus, conquered by Trajan in 101–106 CE.",
+      "certainty": "approximate"
+    },
+    {
+      "name": "Dardani",
+      "from": -400,
+      "to": -28,
+      "blob": [
+        21.2,
+        42.6,
+        0.7
+      ],
+      "wikipedia": "Dardani",
+      "description": "A people of the central Balkans, often in conflict with Macedon, absorbed by Rome by c. 28 BCE.",
+      "certainty": "uncertain",
+      "kind": "people"
+    },
+    {
+      "name": "Epirus",
+      "from": -330,
+      "to": -167,
+      "blob": [
+        20.6,
+        39.6,
+        0.8
+      ],
+      "wikipedia": "Epirus (ancient state)",
+      "description": "The kingdom and then league of Epirus, home of Pyrrhus, until its destruction by Rome in 167 BCE.",
+      "certainty": "approximate"
+    },
+    {
+      "name": "Germanic peoples",
+      "from": -500,
+      "to": 500,
+      "blob": [
+        10.5,
+        53.3,
+        3.8
+      ],
+      "wikipedia": "Germanic peoples",
+      "description": "The Germanic-speaking peoples north of the Rhine and Danube frontier, described by Roman writers as many tribes.",
+      "certainty": "approximate",
+      "kind": "people"
+    },
+    {
+      "name": "Early Slavs",
+      "from": 500,
+      "to": 900,
+      "blob": [
+        27.0,
+        51.0,
+        4.5
+      ],
+      "wikipedia": "Early Slavs",
+      "description": "Slavic-speaking peoples who spread across eastern and central Europe from c. the 6th century.",
+      "certainty": "approximate",
+      "kind": "people"
+    },
+    {
+      "name": "Polans",
+      "from": 800,
+      "to": 966,
+      "blob": [
+        17.5,
+        52.3,
+        1.1
+      ],
+      "wikipedia": "Polans (western)",
+      "description": "The West Slavic tribe of the Warta basin whose Piast dukes founded the Polish state; Mieszko I was baptised in 966.",
+      "certainty": "uncertain"
+    },
+    {
+      "name": "Obotrites",
+      "from": 700,
+      "to": 1167,
+      "blob": [
+        11.5,
+        53.8,
+        0.8
+      ],
+      "wikipedia": "Obotrites",
+      "description": "A confederation of Polabian Slavs in Mecklenburg, absorbed into the Holy Roman Empire after the Wendish Crusade period.",
+      "certainty": "uncertain"
+    },
+    {
+      "name": "Lutici",
+      "from": 983,
+      "to": 1150,
+      "blob": [
+        13.5,
+        53.5,
+        0.8
+      ],
+      "wikipedia": "Lutici",
+      "description": "A federation of Polabian Slavs who rose against German rule in 983 and kept their independence and pagan religion into the 12th century.",
+      "certainty": "uncertain"
+    },
+    {
+      "name": "Sorbs",
+      "from": 600,
+      "to": 1100,
+      "blob": [
+        14.0,
+        51.4,
+        0.9
+      ],
+      "wikipedia": "Sorbs",
+      "description": "West Slavs of Lusatia and the Elbe–Saale region, gradually brought under German rule from the 10th century.",
+      "certainty": "uncertain",
+      "kind": "people"
+    },
+    {
+      "name": "Old Prussians",
+      "from": 500,
+      "to": 1283,
+      "blob": [
+        20.8,
+        54.2,
+        1.0
+      ],
+      "wikipedia": "Old Prussians",
+      "description": "Baltic tribes of the south-eastern Baltic coast, conquered by the Teutonic Order by 1283.",
+      "certainty": "approximate",
+      "kind": "people"
+    },
+    {
+      "name": "Yotvingians",
+      "from": 500,
+      "to": 1283,
+      "blob": [
+        22.8,
+        53.9,
+        0.8
+      ],
+      "wikipedia": "Yotvingians",
+      "description": "A Baltic people between the Prussians and the Lithuanians, subdued by 1283.",
+      "certainty": "uncertain",
+      "kind": "people"
+    },
+    {
+      "name": "Curonians",
+      "from": 500,
+      "to": 1267,
+      "blob": [
+        21.5,
+        56.6,
+        0.8
+      ],
+      "wikipedia": "Curonians",
+      "description": "A Baltic people of the Courland coast, known as raiders, conquered by the Livonian Order by 1267.",
+      "certainty": "approximate",
+      "kind": "people"
+    },
+    {
+      "name": "Semigallians",
+      "from": 500,
+      "to": 1290,
+      "blob": [
+        24.0,
+        56.5,
+        0.8
+      ],
+      "wikipedia": "Semigallians",
+      "description": "A Baltic people of the Lielupe basin who held out against the Livonian Order until 1290.",
+      "certainty": "approximate",
+      "kind": "people"
+    },
+    {
+      "name": "Latgalians",
+      "from": 500,
+      "to": 1214,
+      "blob": [
+        26.5,
+        56.8,
+        0.9
+      ],
+      "wikipedia": "Latgalians (historic)",
+      "description": "A Baltic people of eastern Latvia, brought under the Livonian crusaders by c. 1214.",
+      "certainty": "uncertain",
+      "kind": "people"
+    },
+    {
+      "name": "Samogitians",
+      "from": 500,
+      "to": 1422,
+      "blob": [
+        22.5,
+        55.6,
+        0.8
+      ],
+      "wikipedia": "Samogitians",
+      "description": "Baltic people of western Lithuania, the last pagans of Europe, whose land the Treaty of Melno (1422) confirmed as Lithuanian.",
+      "certainty": "approximate",
+      "kind": "people"
+    },
+    {
+      "name": "Livonians",
+      "from": 500,
+      "to": 1207,
+      "blob": [
+        24.3,
+        57.3,
+        0.6
+      ],
+      "wikipedia": "Livonians",
+      "description": "A Finnic people of the Gulf of Riga coast, among the first conquered by the Livonian crusade.",
+      "certainty": "uncertain",
+      "kind": "people"
+    },
+    {
+      "name": "Estonians",
+      "from": -500,
+      "to": 1227,
+      "blob": [
+        25.5,
+        58.7,
+        1.4
+      ],
+      "wikipedia": "Ancient Estonia",
+      "description": "The Finnic peoples of Estonia, organised in counties and parishes, conquered by Danes and German crusaders by 1227.",
+      "certainty": "approximate",
+      "kind": "people"
+    },
+    {
+      "name": "Finns",
+      "from": 500,
+      "to": 1249,
+      "blob": [
+        25.0,
+        62.0,
+        2.2
+      ],
+      "wikipedia": "Finns",
+      "description": "Finnic peoples of Finland before the Swedish crusades of the 12th–13th centuries.",
+      "certainty": "uncertain",
+      "kind": "people"
+    },
+    {
+      "name": "Karelians",
+      "from": 800,
+      "to": 1323,
+      "blob": [
+        31.0,
+        62.5,
+        1.6
+      ],
+      "wikipedia": "Karelians",
+      "description": "Finnic people of Karelia, divided between Sweden and Novgorod by the Treaty of Nöteborg in 1323.",
+      "certainty": "uncertain",
+      "kind": "people"
+    },
+    {
+      "name": "Sámi",
+      "from": -1000,
+      "to": 1900,
+      "blob": [
+        22.0,
+        68.0,
+        3.4
+      ],
+      "wikipedia": "Sámi",
+      "description": "The Sámi of northern Fennoscandia, reindeer herders and hunters, gradually brought under Norwegian, Swedish and Russian rule. Shown to c. 1900.",
+      "certainty": "uncertain",
+      "kind": "people"
+    },
+    {
+      "name": "Alania",
+      "from": 900,
+      "to": 1239,
+      "blob": [
+        43.8,
+        43.3,
+        1.2
+      ],
+      "wikipedia": "Alania",
+      "description": "A Christian kingdom of the Alans in the northern Caucasus, destroyed by the Mongols in 1238–39.",
+      "certainty": "approximate"
+    },
+    {
+      "name": "Circassia",
+      "from": 1400,
+      "to": 1829,
+      "blob": [
+        39.5,
+        44.4,
+        1.5
+      ],
+      "wikipedia": "Circassia",
+      "description": "The lands of the Circassians (Adyghe) on the north-eastern Black Sea coast, divided among princely families and loosely tied to the Crimean Khanate and the Ottomans.",
+      "certainty": "approximate"
+    },
+    {
+      "name": "Circassia",
+      "from": 1830,
+      "to": 1864,
+      "blob": [
+        39.5,
+        44.4,
+        1.5
+      ],
+      "wikipedia": "Circassia",
+      "description": "Russia claimed Circassia after the Treaty of Adrianople (1829) but had to conquer it in the Russo-Circassian War, which ended in 1864 with mass expulsions. Drawn over the Russian claim.",
+      "certainty": "approximate",
+      "contested": true
+    },
+    {
+      "name": "Kabardia",
+      "from": 1500,
+      "to": 1825,
+      "blob": [
+        43.5,
+        43.6,
+        0.8
+      ],
+      "wikipedia": "Kabardia",
+      "description": "The Circassian principality of Kabarda in the central North Caucasus, brought under Russian rule in the early 19th century.",
+      "certainty": "uncertain"
+    },
+    {
+      "name": "Shamkhalate of Tarki",
+      "from": 1500,
+      "to": 1867,
+      "blob": [
+        47.4,
+        42.9,
+        0.7
+      ],
+      "wikipedia": "Shamkhalate of Tarki",
+      "description": "A Kumyk state on the Caspian coast of Dagestan, abolished by Russia in 1867.",
+      "certainty": "uncertain"
+    },
+    {
+      "name": "Avar Khanate",
+      "from": 1500,
+      "to": 1864,
+      "blob": [
+        46.6,
+        42.5,
+        0.6
+      ],
+      "wikipedia": "Avar Khanate",
+      "description": "The khanate of the Avars of highland Dagestan, centred on Khunzakh, abolished by Russia in 1864.",
+      "certainty": "uncertain"
+    },
+    {
+      "name": "Caucasian Imamate",
+      "from": 1828,
+      "to": 1859,
+      "blob": [
+        46.0,
+        42.8,
+        1.0
+      ],
+      "wikipedia": "Caucasian Imamate",
+      "description": "The state of the Dagestani and Chechen highlanders who fought the Russian Empire under Imam Shamil until his surrender in 1859.",
+      "certainty": "approximate",
+      "contested": true
+    },
+    {
+      "name": "Lihyan",
+      "from": -500,
+      "to": -100,
+      "blob": [
+        37.9,
+        26.6,
+        0.8
+      ],
+      "wikipedia": "Lihyan",
+      "description": "An ancient Arabian kingdom of the north-western Hejaz, centred on Dedan (al-Ula).",
+      "certainty": "uncertain"
+    },
+    {
+      "name": "Kingdom of Kinda",
+      "from": 425,
+      "to": 540,
+      "blob": [
+        45.5,
+        22.5,
+        2.6
+      ],
+      "wikipedia": "Kingdom of Kinda",
+      "description": "A confederation of central Arabian tribes under the Kindite kings, allied at times with Himyar, which broke up in the 6th century.",
+      "certainty": "uncertain"
+    },
+    {
+      "name": "Qarmatians",
+      "from": 899,
+      "to": 1077,
+      "blob": [
+        49.5,
+        25.5,
+        1.8
+      ],
+      "wikipedia": "Qarmatians",
+      "description": "An Ismaili state in Bahrain and eastern Arabia, notorious for sacking Mecca and carrying off the Black Stone in 930.",
+      "certainty": "uncertain"
+    },
+    {
+      "name": "Sharifate of Mecca",
+      "from": 968,
+      "to": 1925,
+      "blob": [
+        40.0,
+        22.0,
+        2.4
+      ],
+      "wikipedia": "Sharifate of Mecca",
+      "description": "The Sharifs of Mecca governed the Hejaz and the holy cities from c. 968 under a succession of overlords until the Saudi conquest in 1924–25.",
+      "certainty": "uncertain"
+    },
+    {
+      "name": "Banu Khalid",
+      "from": 1669,
+      "to": 1796,
+      "blob": [
+        49.5,
+        25.5,
+        1.8
+      ],
+      "wikipedia": "Banu Khalid",
+      "description": "The Banu Khalid tribal emirate of al-Hasa in eastern Arabia, which drove out the Ottomans in 1670 and fell to the first Saudi state in 1796.",
+      "certainty": "uncertain"
+    },
+    {
+      "name": "Kathiri",
+      "from": 1395,
+      "to": 1967,
+      "blob": [
+        49.0,
+        16.0,
+        1.0
+      ],
+      "wikipedia": "Kathiri",
+      "description": "The Kathiri sultanate of the Hadhramaut, centred on Seiyun, later a British protectorate.",
+      "certainty": "uncertain"
+    }
+  ]
+}

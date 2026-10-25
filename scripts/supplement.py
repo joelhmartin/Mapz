@@ -261,8 +261,10 @@ for i, feats in enumerate(features_by_snapshot):
         geom = make_valid(shape(f["geometry"]))
         hb_geoms[(raw, years[i])] = geom
         c = geom.representative_point()
-        region = next((r for r in regions if r.contains(c)), None)
-        if region is None or not region.accepts(raw, seen[raw], years[i]):
+        # The first region whose boxes contain the feature and whose lists accept its name: boxes
+        # may overlap (the Asian steppe and eastern Europe), and each region names its own peoples.
+        region = next((r for r in regions if r.contains(c) and r.accepts(raw, seen[raw], years[i])), None)
+        if region is None:
             continue
         # A rename keyed "Name@year" applies to that snapshot only (the same label can mean
         # different states in different centuries).
