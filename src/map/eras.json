@@ -1,0 +1,4 @@
+{
+  "about": "Era slices of the polity tiles: one source per era, so a year step only reloads the slice it falls in. Each era runs from `from` up to the next era's `from`; scripts/build-data.mjs puts every polity into each era its dates overlap.",
+  "starts": [-3400, -500, 300, 900, 1300, 1600, 1800, 1900]
+}

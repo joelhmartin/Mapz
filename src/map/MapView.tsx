@@ -12,7 +12,7 @@ import { Protocol } from 'pmtiles';
 import 'maplibre-gl/dist/maplibre-gl.css';
 // MapLibre locates its worker next to its own module by default, which breaks once bundled.
 import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url';
-import { POLITIES, SEA, buildStyle } from './style';
+import { POLITY_FILL_LAYERS, SEA, buildStyle, eraOf, eraSource, eraYear } from './style';
 import { registerTextures } from './textures';
 import { addBattleLayers, isBattleVisible, setBattlesVisible, type BattleProps } from './battles';
 import {
@@ -118,7 +118,7 @@ function targetAt(
       .filter((f) => isWarActive(f.properties as WarFeatureProps, year));
     if (wars.length) return { target: { type: 'war', props: wars[0].properties as WarFeatureProps } };
   }
-  const f = pickPolity(map.queryRenderedFeatures(e.point, { layers: ['polities-fill'] }), year);
+  const f = pickPolity(map.queryRenderedFeatures(e.point, { layers: POLITY_FILL_LAYERS }), year);
   if (!f) return null;
   return { target: { type: 'polity', props: f.properties as PolityFeatureProps }, polityId: f.id as number };
 }
@@ -197,13 +197,17 @@ export function MapView({ year, selectedKey, showBattles, showMovements, showWar
       sync.current();
     });
 
+    // Hover state lives on the era slice shown at the time, which may differ from the next one.
+    let hoverSource = '';
     const setHover = (id: number | null) => {
-      if (hoverId.current === id) return;
+      const source = eraSource(eraOf(state.current.year));
+      if (hoverId.current === id && hoverSource === source) return;
       if (hoverId.current !== null) {
-        map.setFeatureState({ source: POLITIES, sourceLayer: 'polities', id: hoverId.current }, { hover: false });
+        map.setFeatureState({ source: hoverSource, sourceLayer: 'polities', id: hoverId.current }, { hover: false });
       }
       hoverId.current = id;
-      if (id !== null) map.setFeatureState({ source: POLITIES, sourceLayer: 'polities', id }, { hover: true });
+      hoverSource = source;
+      if (id !== null) map.setFeatureState({ source, sourceLayer: 'polities', id }, { hover: true });
     };
 
     const at = (e: MapMouseEvent) => targetAt(map, e, state.current);
@@ -255,7 +259,13 @@ export function MapView({ year, selectedKey, showBattles, showMovements, showWar
     const map = mapRef.current;
     if (!map || !ready.current) return;
     const { year, selectedKey, showBattles, showMovements, showWars } = state.current;
-    if (applied.current.year !== year) map.setGlobalStateProperty('year', year);
+    if (applied.current.year !== year) {
+      // Only the active era's slice reloads: set its year first, then switch to it if needed.
+      const era = eraOf(year);
+      map.setGlobalStateProperty(eraYear(era), year);
+      map.setGlobalStateProperty('era', era);
+      map.setGlobalStateProperty('year', year);
+    }
     if (applied.current.selectedKey !== selectedKey) map.setGlobalStateProperty('selected', selectedKey ?? '');
     setBattlesVisible(map, showBattles);
     setLayersVisible(map, MOVEMENT_LAYERS, showMovements);

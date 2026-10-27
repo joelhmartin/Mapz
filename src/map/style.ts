@@ -1,10 +1,26 @@
 import type { ExpressionSpecification, LayerSpecification, StyleSpecification } from 'maplibre-gl';
 import { SEA_HATCH, WASH } from './textures';
+import eras from './eras.json';
 
-// One source per tile file, so changing one never makes the map re-process the others.
+// One source per tile file, so changing one never makes the map re-process the others. The
+// polities and their labels are split into era slices (src/map/eras.json), one source each, and
+// every era's layers read their own year from the global state (`y0`, `y1`, …): a year step only
+// changes the active era's year, so only that slice is re-processed. The global `era` shows that
+// era's layers and hides the rest without touching the others' tiles.
 export const BASE = 'base';
-export const POLITIES = 'polities';
-export const LABELS = 'labels';
+// Placeholders in the layer list below; buildStyle() expands them into one source per era.
+const POLITIES = 'polities';
+const LABELS = 'labels';
+
+export const ERA_STARTS: number[] = eras.starts;
+export const eraOf = (y: number) => {
+  let k = 0;
+  while (k + 1 < ERA_STARTS.length && y >= ERA_STARTS[k + 1]) k++;
+  return k;
+};
+export const eraSource = (k: number) => `era-${k}`;
+export const eraYear = (k: number) => `y${k}`;
+export const POLITY_FILL_LAYERS = ERA_STARTS.map((_, k) => `polities-fill-e${k}`);
 
 // Old-map palette.
 export const INK = '#3b2a1a';
@@ -46,7 +62,10 @@ export function buildStyle(initialYear: number, selectedKey: string | null, glob
     // The globe switches to a flat map by itself once zoomed in close.
     projection: { type: globe ? 'globe' : 'mercator' },
     state: {
+      // Battles, wars and movements follow `year`; each era slice follows its own copy.
       year: { default: initialYear },
+      era: { default: eraOf(initialYear) },
+      ...Object.fromEntries(ERA_STARTS.map((_, k) => [eraYear(k), { default: initialYear }])),
       selected: { default: selectedKey ?? '' },
     },
     'font-faces': {
@@ -55,15 +74,19 @@ export function buildStyle(initialYear: number, selectedKey: string | null, glob
     },
     sources: {
       [BASE]: pmtiles('basemap.pmtiles', '<a href="https://www.naturalearthdata.com">Natural Earth</a>'),
-      [POLITIES]: pmtiles(
-        'polities.pmtiles',
-        'Borders: <a href="https://github.com/Seshat-Global-History-Databank/cliopatria">Cliopatria</a> ' +
-          '(Seshat, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>), ' +
-          '<a href="https://github.com/aourednik/historical-basemaps">historical-basemaps</a> (GPL-3.0), Mapz',
+      ...Object.fromEntries(
+        ERA_STARTS.map((_, k) => [
+          eraSource(k),
+          pmtiles(
+            `eras/${k}.pmtiles`,
+            'Borders: <a href="https://github.com/Seshat-Global-History-Databank/cliopatria">Cliopatria</a> ' +
+              '(Seshat, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>), ' +
+              '<a href="https://github.com/aourednik/historical-basemaps">historical-basemaps</a> (GPL-3.0), Mapz',
+          ),
+        ]),
       ),
-      [LABELS]: pmtiles('labels.pmtiles'),
     },
-    layers: [
+    layers: perEra([
       { id: 'sea', type: 'background', paint: { 'background-color': SEA, 'background-pattern': SEA_HATCH } },
       // Water-lining: the parallel strokes engravers ran along coasts on old charts.
       ...waterLines(),
@@ -227,7 +250,7 @@ export function buildStyle(initialYear: number, selectedKey: string | null, glob
           'text-halo-blur': 0.5,
         },
       },
-    ],
+    ]),
   };
 }
 
@@ -248,4 +271,29 @@ function waterLines(): LayerSpecification[] {
       'line-offset': ['interpolate', ['linear'], ['zoom'], 3, -offset / 2, 6, -offset],
     },
   }));
+}
+
+// Expands every polities or labels layer into one copy per era: its own source, its own year in
+// the global state, and visible only while that era is the active one.
+function perEra(layers: LayerSpecification[]): LayerSpecification[] {
+  const swapYear = (v: unknown, k: number): unknown =>
+    Array.isArray(v)
+      ? v[0] === 'global-state' && v[1] === 'year'
+        ? ['global-state', eraYear(k)]
+        : v.map((x) => swapYear(x, k))
+      : v && typeof v === 'object'
+        ? Object.fromEntries(Object.entries(v).map(([key, x]) => [key, swapYear(x, k)]))
+        : v;
+  return layers.flatMap((layer) => {
+    if (!('source' in layer) || (layer.source !== POLITIES && layer.source !== LABELS)) return [layer];
+    return ERA_STARTS.map((_, k) => {
+      const copy = swapYear(layer, k) as LayerSpecification & { layout?: Record<string, unknown> };
+      return {
+        ...copy,
+        id: `${layer.id}-e${k}`,
+        source: eraSource(k),
+        layout: { ...copy.layout, visibility: ['case', ['==', ['global-state', 'era'], k], 'visible', 'none'] },
+      } as LayerSpecification;
+    });
+  });
 }

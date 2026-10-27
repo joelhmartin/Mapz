@@ -122,13 +122,15 @@ clio.features.forEach((f, i) => {
   // Polygons skip the display name (the UI derives it from `key`): the worker decodes every
   // feature's properties each time the year filter changes, so lighter features reload faster.
   const { name: _name, id: _id, ...polyProps } = props;
-  polyLines[zc].push(JSON.stringify({ type: 'Feature', id: i + 1, properties: polyProps, geometry: f.geometry }));
+  const span = { from: p.FromYear, to: p.ToYear };
+  polyLines[zc].push({ ...span, json: JSON.stringify({ type: 'Feature', id: i + 1, properties: polyProps, geometry: f.geometry }) });
 
   const [x, y] = polylabel(largestPolygon(f.geometry), 0.05);
   if (!isComposite) {
-    labelLines[zc].push(
-      JSON.stringify({ type: 'Feature', id: i + 1, properties: props, geometry: { type: 'Point', coordinates: [x, y] } }),
-    );
+    labelLines[zc].push({
+      ...span,
+      json: JSON.stringify({ type: 'Feature', id: i + 1, properties: props, geometry: { type: 'Point', coordinates: [x, y] } }),
+    });
   }
 
   const entry = (index[p.Name] ??= {
@@ -199,23 +201,28 @@ function join(out, parts, attribution) {
   console.log(`Wrote ${out} (${(fs.statSync(out).size / 1e6).toFixed(1)} MB)`);
 }
 
-// Three files, one per map source, so a change to one source never makes the map re-process
-// the others: the basemap never changes, territories are shown or hidden by year through paint
-// properties alone, and only the small labels source is re-filtered as the year moves.
-// Each is built per zoom class (tippecanoe's per-feature "minzoom" is unreliable in some
-// builds) and then merged.
+// The basemap is one file. Territories and their labels are split into era slices, one file
+// (and one map source) per era with both layers, so a year step only makes the map re-process
+// the slice for that era. A polity goes into every era its dates overlap. Each slice is built
+// per zoom class (tippecanoe's per-feature "minzoom" is unreliable in some builds) and merged.
+const ERA_STARTS = JSON.parse(fs.readFileSync('src/map/eras.json', 'utf8')).starts;
+const eras = ERA_STARTS.map((from, k) => ({ from, to: k + 1 < ERA_STARTS.length ? ERA_STARTS[k + 1] - 1 : Infinity }));
 console.log('Running tippecanoe…');
-const polityParts = [];
-const labelParts = [];
-ZOOM_CLASSES.forEach((c, i) => {
-  const poly = path.join(BUILD, `polities-z${c.minzoom}.ndjson`);
-  const labels = path.join(BUILD, `labels-z${c.minzoom}.ndjson`);
-  fs.writeFileSync(poly, polyLines[i].join('\n'));
-  fs.writeFileSync(labels, labelLines[i].join('\n'));
-  polityParts.push(path.join(BUILD, `polities-z${c.minzoom}.pmtiles`));
-  labelParts.push(path.join(BUILD, `labels-z${c.minzoom}.pmtiles`));
-  tippecanoe(polityParts.at(-1), c.minzoom, [['polities', poly]]);
-  tippecanoe(labelParts.at(-1), c.minzoom, [['labels', labels]]);
+const eraParts = eras.map(() => []);
+eras.forEach((era, k) => {
+  const inEra = (l) => l.from <= era.to && l.to >= era.from;
+  ZOOM_CLASSES.forEach((c, i) => {
+    const poly = path.join(BUILD, `polities-e${k}-z${c.minzoom}.ndjson`);
+    const labels = path.join(BUILD, `labels-e${k}-z${c.minzoom}.ndjson`);
+    fs.writeFileSync(poly, polyLines[i].filter(inEra).map((l) => l.json).join('\n'));
+    fs.writeFileSync(labels, labelLines[i].filter(inEra).map((l) => l.json).join('\n'));
+    const out = path.join(BUILD, `era-e${k}-z${c.minzoom}.pmtiles`);
+    tippecanoe(out, c.minzoom, [
+      ['polities', poly],
+      ['labels', labels],
+    ]);
+    eraParts[k].push(out);
+  });
 });
 
 const basemap = path.join(BUILD, 'basemap.pmtiles');
@@ -235,6 +242,7 @@ const POLITY_CREDIT =
   '<a href="https://github.com/Seshat-Global-History-Databank/cliopatria">Cliopatria</a> (Seshat, CC-BY 4.0) · ' +
   '<a href="https://github.com/aourednik/historical-basemaps">historical-basemaps</a> (GPL-3.0)';
 join(path.join(OUT, 'basemap.pmtiles'), [basemap], '<a href="https://www.naturalearthdata.com">Natural Earth</a>');
-join(path.join(OUT, 'polities.pmtiles'), polityParts, POLITY_CREDIT);
-join(path.join(OUT, 'labels.pmtiles'), labelParts);
-fs.rmSync(path.join(OUT, 'world.pmtiles'), { force: true });
+fs.rmSync(path.join(OUT, 'eras'), { recursive: true, force: true });
+fs.mkdirSync(path.join(OUT, 'eras'), { recursive: true });
+eraParts.forEach((parts, k) => join(path.join(OUT, 'eras', `${k}.pmtiles`), parts, POLITY_CREDIT));
+for (const old of ['world.pmtiles', 'polities.pmtiles', 'labels.pmtiles']) fs.rmSync(path.join(OUT, old), { force: true });

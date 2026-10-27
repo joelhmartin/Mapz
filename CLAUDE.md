@@ -12,7 +12,7 @@ Interactive historical world map: territories of every power from 3400 BCE to to
 
 - `scripts/fetch-sources.sh` downloads raw data to `data/raw/` (gitignored).
 - `scripts/supplement.py` (Python + shapely) merges `historical-basemaps` snapshots and curated polities (`data/curated/*.json`) into `data/build/supplement.ndjson`, clipped so nothing overlaps. Precedence: Cliopatria > curated > historical-basemaps. Curated polities are clipped era by era (split wherever an overlapping Cliopatria polity starts or ends), so long date ranges are fine; eras clipped to under 20% of the shape are dropped. A snapshot feature goes to the first region (file order) whose boxes contain it and whose include/exclude lists accept its name, so region boxes may overlap.
-- `scripts/build-data.mjs` writes `public/data/{basemap,polities,labels}.pmtiles` and `polities.json` (the index the UI reads). The built files are committed.
+- `scripts/build-data.mjs` writes `public/data/basemap.pmtiles`, one `public/data/eras/<k>.pmtiles` per era slice (layers `polities` and `labels`; eras are listed in `src/map/eras.json`, and a polity goes into every era its dates overlap) and `polities.json` (the index the UI reads). The built files are committed.
 - `scripts/fetch-battles.mjs` and `scripts/fetch-wars.mjs` run in GitHub Actions (`update-battles.yml`) because Wikidata is not reachable from the dev container; shared query helpers are in `scripts/lib/wikidata.mjs`. Use the same pattern (a workflow that fetches and commits data) for any other Wikidata/Wikipedia data.
 - `scripts/build-wars.mjs` turns battles plus `data/wikidata/wars.json` into `public/data/wars.{geojson,json}` (theatres and the war index). It runs in the workflow and can be re-run locally.
 - `scripts/fetch-rulers.mjs` (workflow `update-rulers.yml`, which also runs when `polities.json` changes) fetches heads of state for every polity from Wikidata into `data/wikidata/rulers.json`; `scripts/build-rulers.mjs` filters them to each polity's span and writes `public/data/rulers/<shard>.json`, which `src/lib/rulers.ts` loads lazily for the info panel. A run that returns far fewer terms than the last fails instead of committing.
@@ -24,7 +24,8 @@ Interactive historical world map: territories of every power from 3400 BCE to to
 ## Performance rules
 
 - Never call `setFilter`/`setLayoutProperty` per year step. Year-dependent filters use `['global-state', 'year']` so only the affected source reloads.
-- Keep the basemap, polities, labels and battles in separate sources so a change to one never reloads the others.
+- Polities and labels are one source per era slice. Each era's layers filter on their own global-state year (`y0`, `y1`, …) and are shown by `['global-state', 'era']`, so a year step reloads only the active slice and switching eras needs no `setLayoutProperty`. Write polity layers once in `style.ts`; `perEra()` expands them.
+- Keep the basemap, the era slices and the overlays (battles, wars, movements) in separate sources so a change to one never reloads the others.
 - Keep per-feature properties in the polity tiles minimal; the worker decodes them on every year change.
 - Pattern fills (`fill-pattern`) are expensive to lay out; only put them on the static basemap, never on the polities source.
 
