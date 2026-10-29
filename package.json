@@ -11,7 +11,8 @@
     "data:build": "node scripts/build-data.mjs",
     "data": "npm run data:fetch && npm run data:supplement && npm run data:build && npm run data:migrations",
     "data:supplement": "python3 scripts/supplement.py",
-    "data:migrations": "node scripts/build-migrations.mjs"
+    "data:migrations": "node scripts/build-migrations.mjs",
+    "bench": "node scripts/bench-year-step.mjs"
   },
   "repository": {
     "type": "git",

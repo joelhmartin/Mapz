@@ -152,6 +152,8 @@ export function MapView({ year, selectedKey, showBattles, showMovements, showWar
       pitchWithRotate: false,
     });
     mapRef.current = map;
+    // `?bench` exposes the map to scripts/bench-year-step.mjs; nothing else reads it.
+    if (new URLSearchParams(window.location.search).has('bench')) (window as unknown as { __map: unknown }).__map = map;
     map.touchZoomRotate.disableRotation();
     map.keyboard.disableRotation();
     registerTextures(map, SEA);

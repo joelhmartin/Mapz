@@ -37,6 +37,8 @@ npm run data            # only if data changed; needs tippecanoe + shapely
 npx vite preview        # then screenshot with Playwright (Chromium is preinstalled)
 ```
 
+For performance work, measure before and after with `npm run bench` (against a running `vite preview`, or `-- --url <site>`; `--throttle` emulates a slow connection). In this container rendering is software GL, so repaint dominates; compare `reload` as well as `step`.
+
 Useful view URLs: `?year=1879&at=28,-24,4` (southern Africa), `?year=1300&at=-174,-17,4.5` (Tonga).
 
 ## Expansion queue
